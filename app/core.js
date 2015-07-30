@@ -21,7 +21,7 @@
 
   require('../node_modules/angular-toggle-switch/angular-toggle-switch-bootstrap.css');
   require('../node_modules/angular-toggle-switch/angular-toggle-switch.css');
-  require('../node_modules/angular-aside/dist/css/angular-aside.min.css');
+  require('../lib/angular-aside.css');
   require('../lib/angular-growl.css');
 
   require('expose?moment!moment');

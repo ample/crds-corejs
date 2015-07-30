@@ -8,7 +8,6 @@ var definePlugin = new webpack.DefinePlugin({
     __STRIPE_PUBKEY__ : JSON.stringify(process.env.CRDS_STRIPE_PUBKEY || 'pk_test_TR1GulD113hGh2RgoLhFqO0M')
 });
 
-
 module.exports = function(config) {
   config.set({
 
@@ -27,6 +26,7 @@ module.exports = function(config) {
       './node_modules/phantomjs-polyfill/bind-polyfill.js',
       './node_modules/angular/angular.js',
       'node_modules/angular-mocks/angular-mocks.js',
+      'node_modules/moment/moment.js',
       'spec/spec_index.js'
     ],
 
@@ -45,7 +45,7 @@ module.exports = function(config) {
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['mocha'],
+    reporters: ['teamcity'],
 
 
     // web server port
@@ -54,6 +54,7 @@ module.exports = function(config) {
     webpack: {
       module: {
         loaders: [
+          { test: /\.css$/, loader: 'style-loader!css-loader' },
           { test: /\.js$/, include: [
               path.resolve(__dirname, 'app'),
               path.resolve(__dirname, './node_modules/angular-stripe')
@@ -94,21 +95,18 @@ module.exports = function(config) {
     // enable / disable watching file and executing tests whenever any file changes
     autoWatch: true,
 
-
-    // start these browsers
-    // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
     browsers: ['PhantomJS'],
 
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
-    singleRun: false,
+    singleRun: true,
 
     // Plugins
     plugins: [
       require('karma-webpack'),
       require('karma-jasmine'),
-      require('karma-mocha-reporter'),
+      require('karma-teamcity-reporter'),
       require('karma-phantomjs-launcher'),
       require('karma-env-preprocessor')
     ]
