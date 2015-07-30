@@ -28,6 +28,7 @@
 
   require('../styles/main.scss');
 
+  require('./content/sidebarContent.html'); 
   require('./templates/nav.html');
   require('./templates/nav-mobile.html');
   require('./templates/404.html');
