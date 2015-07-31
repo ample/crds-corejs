@@ -6,7 +6,7 @@
     'ngSanitize',
     'ngPayments',
     'ui.router',
-    'ui.utils',
+    'ui.event',
     'ngCookies',
     'ngMessages',
     'angular-growl',
