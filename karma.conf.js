@@ -54,6 +54,7 @@ module.exports = function(config) {
     webpack: {
       module: {
         loaders: [
+          { test: /\.css$/, loader: 'style-loader!css-loader' },
           { test: /\.js$/, include: [
               path.resolve(__dirname, 'app'),
               path.resolve(__dirname, './node_modules/angular-stripe')
