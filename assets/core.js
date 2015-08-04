@@ -66007,7 +66007,7 @@
 /* 129 */
 /***/ function(module, exports) {
 
-	var v1="<ul> <li> <div class=\"input-group side-nav-search\"> <input type=\"text\" class=\"form-control\" placeholder=\"Search\">\n<span class=\"input-group-addon\"><svg viewBox=\"0 0 32 32\" class=\"icon icon-search3\"><use xmlns:xlink=\"http://www.w3.org/1999/xlink\" xlink:href=\"#search3\"></use></svg></span> </div> </li> <li> <svg viewBox=\"0 0 32 32\" class=\"icon icon-arrow-right9\"> <use xlink:href=\"#arrow-right9\"></use> </svg>\n<a href=\"#\" ng-click=\"myCrdsCollapse = !myCrdsCollapse\">My Crossroads</a> <ul collapse=\"!myCrdsCollapse\" class=\"drop-menu\"> <li ng-if=\"$root.username == undefined\"> <div class=\"dd_menu side-nav-login clearfix\"> <login-form prefix=\"mobile-page\" ng-click=\"app.prevent($event)\"></login-form> </div> <ul> <li><a ui-sref=\"register\" ng-click=\"ok($event)\">Create an Account</a> </li> </ul> </li> <li ng-if=\"$root.username != undefined\"> <ul> <li><a ui-sref=\"profile\" ng-click=\"ok($event)\">Profile</a> </li> <li><a ui-sref=\"history\" ng-click=\"ok($event)\">Giving History</a> </li> <li><a ui-sref=\"serve-signup\" ng-click=\"ok($event)\">Sign Up to Serve</a></li> <li><a ui-sref=\"mytrips\" ng-click=\"ok($event)\">My Trips</a></li> <li><a href=\"#/\" ng-click=\"logout($event)\" class=\"ng-cloak\" ng-click=\"ok($event)\">Sign Out</a> </li> </ul> </li> </ul> </li> <li> <svg viewBox=\"0 0 32 32\" class=\"icon icon-arrow-right9\"> <use xlink:href=\"#arrow-right9\"></use> </svg>\n<a href=\"#\" ng-click=\"engageCollapse = !engageCollapse\">Engage</a> <ul collapse=\"!engageCollapse\" class=\"drop-menu\"> <li><a ui-sref=\"content({link:'/engage/'})\" ng-click=\"ok($event)\">Get Involved (Overview)</a> </li> <li><a href=\"#\" ng-click=\"ok($event)\">Connect</a> </li> <li><a href=\"/corkboard/\">Corkboard</a> </li> <li><a href=\"#\" ng-click=\"ok($event)\">Reach Out</a> </li> </ul> </li> <li> <svg viewBox=\"0 0 32 32\" class=\"icon icon-arrow-right9\"> <use xlink:href=\"#arrow-right9\"></use> </svg>\n<a href=\"#\" ng-click=\"growCollapse = !growCollapse\">Grow</a> <ul collapse=\"!growCollapse\" class=\"drop-menu\"> <li><a ui-sref=\"grow\" ng-click=\"ok($event)\">Essentials of Growth</a> </li> <li><a ui-sref=\"thedaily\" ng-click=\"ok($event)\">Subscribe to the Daily</a> </li> <li><a ui-sref=\"get-in-community\" ng-click=\"ok($event)\">Get in Community</a> </li> <li><a ui-sref=\"family-resources\" ng-click=\"ok($event)\">Family Resources</a> </li> </ul> </li> <li> <svg viewBox=\"0 0 32 32\" class=\"icon icon-arrow-right9\"> <use xlink:href=\"#arrow-right9\"></use> </svg>\n<a href=\"#\" ng-click=\"aboutCollapse = !aboutCollapse\">About</a> <ul collapse=\"!aboutCollapse\" class=\"drop-menu\"> <li><a ui-sref=\"explore-crossroads\" ng-click=\"ok($event)\">Explore Crossroads</a> </li> <li><a ui-sref=\"who-we-are\" ng-click=\"ok($event)\">Who We Are</a> </li> <li><a ui-sref=\"blog\" ng-click=\"ok($event)\">Blog</a> </li> <li><a ui-sref=\"service-times\" ng-click=\"ok($event)\">Service Times &amp; Directions</a> </li> <li><a ui-sref=\"pastoral-care\" ng-click=\"ok($event)\">Pastoral Care</a> </li> </ul> </li> <li> <svg viewBox=\"0 0 32 32\" class=\"icon icon-arrow-right9\"> <use xlink:href=\"#arrow-right9\"></use> </svg>\n<a href=\"#\" ng-click=\"giveCollapse = !giveCollapse\">Give</a> <ul collapse=\"!giveCollapse\" class=\"drop-menu\"> <li><a ui-sref=\"recurring-gift\" ng-click=\"ok($event)\">Recurring Gift</a> </li> <li><a ui-sref=\"give\" ng-click=\"ok($event)\">One-time Gift</a> </li> <li><a ui-sref=\"transfer-stock\" ng-click=\"ok($event)\">Transfer Stock</a> </li> <li><a ui-sref=\"estate-giving\" ng-click=\"ok($event)\">Estate Giving</a> </li> <li><a ui-sref=\"tripgiving\" ng-click=\"ok($event)\">Give to Someone's Trip</a> </li> <li><a href=\"/corkboard/\">Give Your Stuff</a> </li> </ul> </li> <li> <svg viewBox=\"0 0 32 32\" class=\"icon icon-arrow-right9\"> <use xlink:href=\"#arrow-right9\"></use> </svg>\n<a href=\"#\" ng-click=\"mediaCollapse = !mediaCollapse\">Media</a> <ul collapse=\"!mediaCollapse\" class=\"drop-menu\"> <li><a ui-sref=\"messages\" ng-click=\"ok($event)\">Weekend Messages</a> </li> <li><a ui-sref=\"music\" ng-click=\"ok($event)\">Music</a> </li> <li><a ui-sref=\"video\" ng-click=\"ok($event)\">Videos</a> </li> </ul> </li> <li> <svg viewBox=\"0 0 32 32\" class=\"icon icon-arrow-right9\"> <use xlink:href=\"#arrow-right9\"></use> </svg>\n<a href=\"#\" ng-click=\"adminCollapse = !adminCollapse\">Admin</a> <ul collapse=\"!adminCollapse\" class=\"drop-menu\"> <li><a href=\"https://admindemo.crossroads.net/ministryplatform/\" target=\"_blank\" ng-click=\"ok($event)\">Ministry Platform (Demo)</a> </li> <li><a href=\"https://adminint.crossroads.net/ministryplatform/\" target=\"_blank\" ng-click=\"ok($event)\">Ministry Platform (Integration)</a> </li> </ul> </li> </ul>";
+	var v1="<ul> <li> <div class=\"input-group side-nav-search\"> <input type=\"text\" class=\"form-control\" placeholder=\"Search\">\n<span class=\"input-group-addon\"><svg viewBox=\"0 0 32 32\" class=\"icon icon-search3\"><use xmlns:xlink=\"http://www.w3.org/1999/xlink\" xlink:href=\"#search3\"></use></svg></span> </div> </li> <li> <svg viewBox=\"0 0 32 32\" class=\"icon icon-arrow-right9\"> <use xlink:href=\"#arrow-right9\"></use> </svg>\n<a href=\"#\" ng-click=\"myCrdsCollapse = !myCrdsCollapse\">My Crossroads</a> <ul collapse=\"!myCrdsCollapse\" class=\"drop-menu\"> <li ng-if=\"$root.username == undefined\"> <div class=\"dd_menu side-nav-login clearfix\"> <login-form prefix=\"mobile-page\" ng-click=\"app.prevent($event)\"></login-form> </div> <ul> <li><a ui-sref=\"register\" ng-click=\"ok($event)\">Create an Account</a> </li> </ul> </li> <li ng-if=\"$root.username != undefined\"> <ul> <li><a ui-sref=\"profile\" ng-click=\"ok($event)\">Profile</a> </li> <li><a ui-sref=\"history\" ng-click=\"ok($event)\">Giving History</a> </li> <li><a ui-sref=\"serve-signup\" ng-click=\"ok($event)\">Sign Up to Serve</a></li> <li><a ui-sref=\"mytrips\" ng-click=\"ok($event)\">My Trips</a></li> <li><a href=\"#/\" ng-click=\"logout($event)\" class=\"ng-cloak\" ng-click=\"ok($event)\">Sign Out</a> </li> </ul> </li> </ul> </li> <li> <svg viewBox=\"0 0 32 32\" class=\"icon icon-arrow-right9\"> <use xlink:href=\"#arrow-right9\"></use> </svg>\n<a href=\"#\" ng-click=\"engageCollapse = !engageCollapse\">Engage</a> <ul collapse=\"!engageCollapse\" class=\"drop-menu\"> <li><a ui-sref=\"content({link:'/engage/'})\" ng-click=\"ok($event)\">Get Involved (Overview)</a> </li> <li><a href=\"#\" ng-click=\"ok($event)\">Connect</a> </li> <li><a href=\"/corkboard/\">Corkboard</a> </li> <li><a href=\"#\" ng-click=\"ok($event)\">Reach Out</a> </li> </ul> </li> <li> <svg viewBox=\"0 0 32 32\" class=\"icon icon-arrow-right9\"> <use xlink:href=\"#arrow-right9\"></use> </svg>\n<a href=\"#\" ng-click=\"growCollapse = !growCollapse\">Grow</a> <ul collapse=\"!growCollapse\" class=\"drop-menu\"> <li><a ui-sref=\"grow\" ng-click=\"ok($event)\">Essentials of Growth</a> </li> <li><a ui-sref=\"thedaily\" ng-click=\"ok($event)\">Subscribe to the Daily</a> </li> <li><a ui-sref=\"get-in-community\" ng-click=\"ok($event)\">Get in Community</a> </li> <li><a ui-sref=\"family-resources\" ng-click=\"ok($event)\">Family Resources</a> </li> </ul> </li> <li> <svg viewBox=\"0 0 32 32\" class=\"icon icon-arrow-right9\"> <use xlink:href=\"#arrow-right9\"></use> </svg>\n<a href=\"#\" ng-click=\"aboutCollapse = !aboutCollapse\">About</a> <ul collapse=\"!aboutCollapse\" class=\"drop-menu\"> <li><a ui-sref=\"explore-crossroads\" ng-click=\"ok($event)\">Explore Crossroads</a> </li> <li><a ui-sref=\"who-we-are\" ng-click=\"ok($event)\">Who We Are</a> </li> <li><a ui-sref=\"blog\" ng-click=\"ok($event)\">Blog</a> </li> <li><a ui-sref=\"service-times\" ng-click=\"ok($event)\">Service Times &amp; Directions</a> </li> <li><a ui-sref=\"pastoral-care\" ng-click=\"ok($event)\">Pastoral Care</a> </li> </ul> </li> <li> <svg viewBox=\"0 0 32 32\" class=\"icon icon-arrow-right9\"> <use xlink:href=\"#arrow-right9\"></use> </svg>\n<a href=\"#\" ng-click=\"giveCollapse = !giveCollapse\">Give</a> <ul collapse=\"!giveCollapse\" class=\"drop-menu\"> <li><a ui-sref=\"recurring-gift\" ng-click=\"ok($event)\">Recurring Gift</a> </li> <li><a ui-sref=\"give\" ng-click=\"ok($event)\">One-time Gift</a> </li> <li><a ui-sref=\"transfer-stock\" ng-click=\"ok($event)\">Transfer Stock</a> </li> <li><a ui-sref=\"estate-giving\" ng-click=\"ok($event)\">Estate Giving</a> </li> <li><a ui-sref=\"tripgiving\" ng-click=\"ok($event)\">Give to Someone's Trip</a> </li> <li><a href=\"/corkboard/\">Give Your Stuff</a> </li> </ul> </li> <li> <svg viewBox=\"0 0 32 32\" class=\"icon icon-arrow-right9\"> <use xlink:href=\"#arrow-right9\"></use> </svg>\n<a href=\"#\" ng-click=\"mediaCollapse = !mediaCollapse\">Media</a> <ul collapse=\"!mediaCollapse\" class=\"drop-menu\"> <li><a ui-sref=\"messages\" ng-click=\"ok($event)\">Weekend Messages</a> </li> <li><a ui-sref=\"music\" ng-click=\"ok($event)\">Music</a> </li> <li><a ui-sref=\"video\" ng-click=\"ok($event)\">Videos</a> </li> </ul> </li> <li> <svg viewBox=\"0 0 32 32\" class=\"icon icon-arrow-right9\"> <use xlink:href=\"#arrow-right9\"></use> </svg>\n<a href=\"#\" ng-click=\"adminCollapse = !adminCollapse\">Admin</a> <ul collapse=\"!adminCollapse\" class=\"drop-menu\"> <li><a href=\"https://admindemo.crossroads.net/ministryplatform/\" target=\"_blank\" ng-click=\"ok($event)\">Ministry Platform (Demo)</a> </li> <li><a href=\"https://adminint.crossroads.net/ministryplatform/\" target=\"_blank\" ng-click=\"ok($event)\">Ministry Platform (Integration)</a> </li> <li><a ui-sref=\"myprofile\">My Profile</a> </li> <li><a ui-sref=\"mytrips\">My Trips</a> </li> <li><a ui-sref=\"demo/go-trip-giving\">Go Trip Giving</a> </li> <li><a ui-sref=\"give/history\">Giving History</a> </li> <li><a ui-sref=\"go-trip-signup({trip_location: 'india'})\">GO India Signup</a> </li> <li><a ui-sref=\"go-trip-signup({trip_location: 'nola'})\">Go New Orleans Signup</a> </li> <li><a ui-sref=\"go-trip-signup({trip_location: 'south-africa'})\">Go South Africa Signup</a> </li> <li><a ui-sref=\"go-trip-signup({trip_location: 'nicaragua'})\">GO Nicaragua Signup</a> </li> </ul> </li> </ul>";
 	window.angular.module(["ng"]).run(["$templateCache",function(c){c.put("templates/nav-mobile.html", v1)}]);
 	module.exports=v1;
 
@@ -66031,7 +66031,7 @@
 /* 132 */
 /***/ function(module, exports) {
 
-	var v1="<footer ng-if=\"!app.state.current.data.hideMenu\"> <div class=\"container\"> <div class=\"row\"> <div class=\"col-sm-2 push-bottom\"> <h5><img class=\"img-responsive\" src=\"http://s3.amazonaws.com/crossroads-media/images/BOSS_190_110.jpg\"></h5> </div> <div class=\"col-sm-4 push-bottom\"> <h5 class=\"series-title\"> <strong> Current Series August 18 &#8211; September 14: Like A Boss </strong> </h5> <p class=\"series-description\">Do your job like a BOSS. Crush that spreadsheet. Mulch like you own the place. Pack those lunches like you're the world champ of Capri Sun. God designed us to work, and he loves when we pile-drive our to-do lists into oblivion. So let's learn what it takes to work with purpose and authority (besides just growing a stache)</p> <a href=\"\">View Series</a> </div> <div class=\"col-sm-3 open push-bottom\"> <h5><strong>One Church | Five Locations</strong></h5> <a href=\"\">Uptown</a><br> <a href=\"\">Florence</a><br> <a href=\"\">Mason</a><br> <a href=\"\">Oakley</a><br> <a href=\"\">West Side</a><br> </div> <div class=\"col-sm-3 office push-bottom\"> <sn-addthis-toolbox class=\"addthis_crossroads_sharing clearfix addthis_32x32_style\"> <a href class=\"addthis_button_facebook\"></a>\n<a href class=\"addthis_button_twitter\"></a>\n<a href class=\"addthis_button_email\"></a> </sn-addthis-toolbox> <br> <br> <a href=\"/prayerrequest\">Submit a Prayer Request</a><br> <a href=\"/servicetimesanddirections\">Service Times &amp; Directions</a><br> <a href=\"/privacypolicy\">Privacy Policy</a><br> <br> <img class=\"img-responsive\" src=\"//crossroads-media.s3.amazonaws.com/images/coc_logo.png\" alt=\"Partner of Church of Cincinnati\"> </div> </div> </div> </footer>";
+	var v1="<footer ng-if=\"!app.state.current.data.hideMenu\" class=\"hidden-print\"> <div class=\"container\"> <div class=\"row\"> <div class=\"col-sm-2 push-bottom\"> <h5><img class=\"img-responsive\" src=\"http://s3.amazonaws.com/crossroads-media/images/BOSS_190_110.jpg\"></h5> </div> <div class=\"col-sm-4 push-bottom\"> <h5 class=\"series-title\"> <strong> Current Series August 18 &#8211; September 14: Like A Boss </strong> </h5> <p class=\"series-description\">Do your job like a BOSS. Crush that spreadsheet. Mulch like you own the place. Pack those lunches like you're the world champ of Capri Sun. God designed us to work, and he loves when we pile-drive our to-do lists into oblivion. So let's learn what it takes to work with purpose and authority (besides just growing a stache)</p> <a href=\"\">View Series</a> </div> <div class=\"col-sm-3 open push-bottom\"> <h5><strong>One Church | Five Locations</strong></h5> <a href=\"\">Uptown</a><br> <a href=\"\">Florence</a><br> <a href=\"\">Mason</a><br> <a href=\"\">Oakley</a><br> <a href=\"\">West Side</a><br> </div> <div class=\"col-sm-3 office push-bottom\"> <sn-addthis-toolbox class=\"addthis_crossroads_sharing clearfix addthis_32x32_style\"> <a href class=\"addthis_button_facebook\"></a>\n<a href class=\"addthis_button_twitter\"></a>\n<a href class=\"addthis_button_email\"></a> </sn-addthis-toolbox> <br> <br> <a href=\"/prayerrequest\">Submit a Prayer Request</a><br> <a href=\"/servicetimesanddirections\">Service Times &amp; Directions</a><br> <a href=\"/privacypolicy\">Privacy Policy</a><br> <br> <img class=\"img-responsive\" src=\"//crossroads-media.s3.amazonaws.com/images/coc_logo.png\" alt=\"Partner of Church of Cincinnati\"> </div> </div> </div> </footer>";
 	window.angular.module(["ng"]).run(["$templateCache",function(c){c.put("templates/footer.html", v1)}]);
 	module.exports=v1;
 
@@ -66039,7 +66039,7 @@
 /* 133 */
 /***/ function(module, exports) {
 
-	var v1="<header ng-if=\"!app.state.current.data.hideMenu\"> <div class=\"overlay-container\"></div>  <ng-include src=\"'templates/brand-bar.html'\"></ng-include> <div id=\"menu\"> <div class=\"container\"> <div class=\"row\">  <div class=\"col-xs-12 menu__container hidden-print\"> <div class=\"navbar-header\"> <div ng-class=\"{show: menu.isMobileShowing}\"> <button type=\"button\" class=\"nav__side--toggle navbar-left hidden-md hidden-lg hidden-xl\" ng-click=\"app.openAside('left', true)\"> <span class=\"sr-only\">Toggle navigation</span>\n<span class=\"icon-bar\"></span>\n<span class=\"icon-bar\"></span>\n<span class=\"icon-bar\"></span> </button> </div> <a class=\"navbar-brand logo\" ui-sref=\"home\" href=\"/\"><img src=\"//crossroads-media.s3.amazonaws.com/images/logo.svg\" alt=\"crossroads\"> </a> <ul class=\"navbar--login list-unstyled\"> <span id=\"current-user\" class=\"hidden-xs\" ng-if=\"$root.username != undefined\" ng-cloak> {{$root.username}} </span> <li class=\"hidden-xs ng-cloak\" ng-show=\"$root.username != undefined\" ng-cloak> <a ui-sref=\"logout\" class=\"ng-cloak\">Sign Out</a> </li> <li class=\"hidden-xs\" data-toggle=\"dropdown\" ng-show=\"$root.username == undefined\"> <button class=\"btn btn-primary\" id=\"form-toggle\" ng-click=\"toggleDesktopLogin(); passwordPrefix='login-dropdown'\"> <span>Log In</span> </button> </li> <li> <ul class=\"navbar--login__dropdown list-unstyled col-md-3 soft-top soft-sides\" role=\"menu\" aria-labelledby=\"dropdownMenu1\" ng-class=\"{toggleOpen: loginShow}\"> <li role=\"presentation\"> <div class=\"navbar--register__container\"> <div class=\"dd_menu\"> <login-form></login-form> </div> </div> </li> </ul> </li> </ul> <ul class=\"navbar--login list-unstyled\"> <li class=\"hidden-xs\" data-toggle=\"dropdown\" ng-show=\"$root.username == undefined\"> <button class=\"btn btn-standard\" id=\"form-toggle\" ng-click=\"toggleDesktopRegister(); passwordPrefix='registration'\"> <span>Create an Account</span> </button> </li> <li> <ul class=\"navbar--login__dropdown list-unstyled col-md-3 soft-top soft-sides\" role=\"menu\" aria-labelledby=\"dropdownMenu2\" ng-class=\"{toggleOpen: registerShow}\"> <li role=\"presentation\"> <div class=\"navbar--register__container\"> <div class=\"dd_menu\"> <register-form></register-form> </div> </div> </li> </ul> </li> </ul>  <div class=\"pull-right site-search visible-lg visible-md\"> <a class=\"btn btn-link\" href=\"\" ui-sref=\"search\"> <svg viewBox=\"0 0 32 32\" class=\"icon icon-medium icon-search3\"> <use xlink:href=\"#search3\"></use> </svg> </a> </div>  </div> <ng-include src=\"'templates/nav.html'\"> </ng-include> </div> </div> </div> </div> </header>";
+	var v1="<header ng-if=\"!app.state.current.data.hideMenu\" class=\"hidden-print\"> <div class=\"overlay-container\"></div>  <ng-include src=\"'templates/brand-bar.html'\"></ng-include> <div id=\"menu\"> <div class=\"container\"> <div class=\"row\">  <div class=\"col-xs-12 menu__container\"> <div class=\"navbar-header\"> <div ng-class=\"{show: menu.isMobileShowing}\"> <button type=\"button\" class=\"nav__side--toggle navbar-left hidden-md hidden-lg hidden-xl\" ng-click=\"app.openAside('left', true)\"> <span class=\"sr-only\">Toggle navigation</span>\n<span class=\"icon-bar\"></span>\n<span class=\"icon-bar\"></span>\n<span class=\"icon-bar\"></span> </button> </div> <a class=\"navbar-brand logo\" ui-sref=\"home\" href=\"/\"><img src=\"//crossroads-media.s3.amazonaws.com/images/logo.svg\" alt=\"crossroads\"> </a> <ul class=\"navbar--login list-unstyled\"> <span id=\"current-user\" class=\"hidden-xs\" ng-if=\"$root.username != undefined\" ng-cloak> {{$root.username}} </span> <li class=\"hidden-xs ng-cloak\" ng-show=\"$root.username != undefined\" ng-cloak> <a ui-sref=\"logout\" class=\"ng-cloak\">Sign Out</a> </li> <li class=\"hidden-xs\" data-toggle=\"dropdown\" ng-show=\"$root.username == undefined\"> <button class=\"btn btn-primary\" id=\"form-toggle\" ng-click=\"toggleDesktopLogin(); passwordPrefix='login-dropdown'\"> <span>Log In</span> </button> </li> <li> <ul class=\"navbar--login__dropdown list-unstyled col-md-3 soft-top soft-sides\" role=\"menu\" aria-labelledby=\"dropdownMenu1\" ng-class=\"{toggleOpen: loginShow}\"> <li role=\"presentation\"> <div class=\"navbar--register__container\"> <div class=\"dd_menu\"> <login-form></login-form> </div> </div> </li> </ul> </li> </ul> <ul class=\"navbar--login list-unstyled\"> <li class=\"hidden-xs\" data-toggle=\"dropdown\" ng-show=\"$root.username == undefined\"> <button class=\"btn btn-standard\" id=\"form-toggle\" ng-click=\"toggleDesktopRegister(); passwordPrefix='registration'\"> <span>Create an Account</span> </button> </li> <li> <ul class=\"navbar--login__dropdown list-unstyled col-md-3 soft-top soft-sides\" role=\"menu\" aria-labelledby=\"dropdownMenu2\" ng-class=\"{toggleOpen: registerShow}\"> <li role=\"presentation\"> <div class=\"navbar--register__container\"> <div class=\"dd_menu\"> <register-form></register-form> </div> </div> </li> </ul> </li> </ul>  <div class=\"pull-right site-search visible-lg visible-md\"> <a class=\"btn btn-link\" href=\"\" ui-sref=\"search\"> <svg viewBox=\"0 0 32 32\" class=\"icon icon-medium icon-search3\"> <use xlink:href=\"#search3\"></use> </svg> </a> </div>  </div> <ng-include src=\"'templates/nav.html'\"> </ng-include> </div> </div> </div> </div> </header>";
 	window.angular.module(["ng"]).run(["$templateCache",function(c){c.put("templates/header.html", v1)}]);
 	module.exports=v1;
 
@@ -66063,7 +66063,6 @@
 	    'ngSanitize',
 	    'ngPayments',
 	    'ui.router',
-	    'ui.event',
 	    'ngCookies',
 	    'ngMessages',
 	    'angular-growl',
@@ -66085,6 +66084,7 @@
 	    })
 	    //TODO Pull out to service and/or config file
 	    .constant('MESSAGES', {})
+
 	    .config(function (growlProvider) {
 	      growlProvider.globalPosition('top-center');
 	      growlProvider.globalTimeToLive(6000);
@@ -66250,15 +66250,15 @@
 	(function () {
 	  'use strict';
 	  module.exports = function LoginController(
-	    $scope, 
-	    $rootScope, 
-	    AUTH_EVENTS, 
-	    MESSAGES, 
-	    AuthService, 
-	    $state, 
-	    $log, 
-	    Session, 
-	    $timeout, 
+	    $scope,
+	    $rootScope,
+	    AUTH_EVENTS,
+	    MESSAGES,
+	    AuthService,
+	    $state,
+	    $log,
+	    Session,
+	    $timeout,
 	    User) {
 
 	    $log.debug('Inside Login controller');
@@ -66270,7 +66270,7 @@
 	    $scope.checkEmail = function() {
 	        return ($scope.navlogin.username.$error.required && $scope.navlogin.$submitted && $scope.navlogin.username.$dirty ||
 	            $scope.navlogin.username.$error.required && $scope.navlogin.$submitted && !$scope.navlogin.username.$touched ||
-	            $scope.navlogin.username.$error.required && $scope.navlogin.$submitted && $scope.navlogin.username.$touched || 
+	            $scope.navlogin.username.$error.required && $scope.navlogin.$submitted && $scope.navlogin.username.$touched ||
 	            !$scope.navlogin.username.$error.required && $scope.navlogin.username.$dirty && !$scope.navlogin.username.$valid);
 	    };
 
@@ -66289,8 +66289,8 @@
 	    };
 
 	    $scope.login = function () {
-	        if (($scope.credentials === undefined) || 
-	            ($scope.credentials.username === undefined || 
+	        if (($scope.credentials === undefined) ||
+	            ($scope.credentials.username === undefined ||
 	            $scope.credentials.password === undefined)) {
 	            $scope.pending = true;
 	            $scope.loginFailed = false;
@@ -66325,12 +66325,10 @@
 	            });
 	        }
 	    };
-	  
+
 
 	    function clearCredentials() {
-	        if ($scope.credentials !== undefined) {
-	            // TODO Added to debug/research US1403 - should remove after issue is resolved
-	            console.log('US1403: clearing credentials defined in login_controller');
+	        if ($scope.credentials !== undefined) {            
 	            $scope.credentials.username = undefined;
 	            $scope.credentials.password = undefined;
 	        }
@@ -66403,17 +66401,16 @@
 	  'use strict';
 	  module.exports = LogoutController;
 
-	  LogoutController.$inject = ['$rootScope', '$scope', '$log', 'AuthService', '$state'];
+	  LogoutController.$inject = ['$rootScope', '$scope', '$log', 'AuthService', '$state', 'Session'];
 
-	  function LogoutController($rootScope, $scope, $log, AuthService, $state) {
+	  function LogoutController($rootScope, $scope, $log, AuthService, $state, Session) {
 	    $log.debug('Inside Logout-Controller');
 
 	    logout();
 
-	    function logout(){
-	      console.log('US1403: logging out user in logout_controller');
+	    function logout(){    
 	        AuthService.logout();
-	        $state.go('home');
+	        Session.redirectIfNeeded($state);
 	    }
 	  }
 	})();
@@ -66604,7 +66601,7 @@
 	                .post(("http://mp-int-web.cloudapp.net/gateway/") + 'api/login', credentials)
 	                .then(function (res) {
 	                    console.log(res.data);
-	                    Session.create(res.data.userToken, res.data.userId, res.data.username);
+	                    Session.create(res.data.userToken, res.data.userTokenExp, res.data.userId, res.data.username);
 	                    // The username from the credentials is really the email address
 	                    // In a future story, the contact email address will always be in sync with the user email address.
 	                    $rootScope.email = credentials.username;
@@ -66616,8 +66613,6 @@
 	        };
 
 	        authService.logout = function () {
-	            // TODO Added to debug/research US1403 - should remove after issue is resolved
-	            console.log('US1403: logging out user in auth_service');
 	            $rootScope.email = null;
 	            $rootScope.username = null;
 	            $rootScope.userid = null;
@@ -66629,7 +66624,7 @@
 	        //We are pretty sure they are copied from an example of how WE SHOULD be doing this,
 	        //instead we are using the above rootScope
 	        authService.isAuthenticated = function () {
-	            return !!Session.userId;
+	            return Session.isActive();
 	        };
 
 	        authService.isAuthorized = function (authorizedRoles) {
@@ -66657,9 +66652,13 @@
 
 	  function SessionService($log, $cookies, $http) {
 	    var self = this;
-	    this.create = function (sessionId, userId, username) {
+	    this.create = function (sessionId, userTokenExp, userId, username) {
 	      console.log('creating cookies!');
-	      $cookies.put('sessionId', sessionId);
+	      var expDate = new Date();
+	      expDate.setTime(expDate.getTime() + (userTokenExp * 1000));
+	      $cookies.put('sessionId', sessionId, {
+	         'expires': expDate
+	      });
 	      $cookies.put('userId', userId);
 	      $cookies.put('username', username);
 
@@ -66704,9 +66703,6 @@
 	    };
 
 	    this.clear = function () {
-	      // TODO Added to debug/research US1403 - should remove after issue is resolved
-	      console.log('US1403: clearing session in session_service');
-
 	      $cookies.remove('sessionId');
 	      $cookies.remove('userId');
 	      $cookies.remove('username');
@@ -66721,13 +66717,8 @@
 
 	    //TODO: Get this working to DRY up login_controller and register_controller
 	    this.redirectIfNeeded = function($state){
-	      // TODO Added to debug/research US1403 - should remove after issue is resolved
-	      console.log('US1403: redirectIfNeeded session_service');
 
 	      if (self.hasRedirectionInfo()) {
-	        // TODO Added to debug/research US1403 - should remove after issue is resolved
-	        console.log('US1403: redirectIfNeeded session_service - has redirect info');
-
 	        var url = self.exists('redirectUrl');
 	        var params = self.exists('params');
 	        self.removeRedirectRoute();
@@ -68895,22 +68886,20 @@
 	    'use strict';
 	    angular.module('crossroads.core').run( AppRun );
 
-	    AppRun.$inject = ['Session', 
-	        '$rootScope', 
-	        'MESSAGES', 
-	        '$http', 
-	        '$log', 
-	        '$state', 
-	        '$timeout', 
-	        '$location', 
+	    AppRun.$inject = ['Session',
+	        '$rootScope',
+	        'MESSAGES',
+	        '$http',
+	        '$log',
+	        '$state',
+	        '$timeout',
+	        '$location',
 	        '$cookies'];
 
 	    function AppRun(Session, $rootScope, MESSAGES, $http, $log, $state, $timeout, $location, $cookies) {
 	        $rootScope.MESSAGES = MESSAGES;
 
 	        function clearAndRedirect(event, toState,toParams) {
-	            // TODO Added to debug/research US1403 - should remove after issue is resolved
-	            console.log('US1403: clearAndRedirect to ' + toState.name + ' in core.run');
 	            console.log($location.search());
 
 	            Session.clear();
@@ -68922,18 +68911,16 @@
 	        }
 
 	        $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
-	           console.log('US1403: stateChangeStart event handler (' + 
-	            fromState.name + '->' + toState.name + '), do not yet know if session active, in core.run');
-
-	           if (toState.name === 'logout') {
-	            console.log('US1403: stateChangeStart toState logout');
-	            return;
+	            if (toState.name === 'logout') {
+	                if (fromState.data === undefined || !fromState.data.isProtected) {
+	                    Session.addRedirectRoute(fromState.name, fromParams);
+	                }
+	                else {
+	                    Session.addRedirectRoute('home', '');
+	                }
+	                return;
 	            }
 	           if (Session.isActive()) {
-	            
-	              // TODO Added to debug/research US1403 - should remove after issue is resolved
-	              console.log('US1403: stateChangeStart event handler (' + 
-	                fromState.name + '->' + toState.name + '), session active, in core.run');
 	              $http({
 	                method: 'GET',
 	                url :("http://mp-int-web.cloudapp.net/gateway/") + 'api/authenticated',
@@ -68941,22 +68928,19 @@
 	                headers: {
 	                  'Authorization': $cookies.get('sessionId')
 	                }}).success(function (user) {
-	                    // TODO Added to debug/research US1403 - should remove after issue is resolved
-	                    console.log('US1403: stateChangeStart event handler, successful call to api/authenticated in core.run');
 	                    $rootScope.userid = user.userId;
 	                    $rootScope.username = user.username;
 	                    $rootScope.roles = user.roles;
 	                }).error(function (e) {
-	                    // TODO Added to debug/research US1403 - should remove after issue is resolved
-	                    console.log('US1403: stateChangeStart event handler, failed call to api/authenticated in core.run');
 	                    clearAndRedirect(event, toState, toParams);
 	                });
 	            } else if (toState.data !== undefined && toState.data.isProtected) {
-	                // TODO Added to debug/research US1403 - should remove after issue is resolved
-	                console.log('US1403: stateChangeStart event handler (' + 
-	                    fromState.name + '->' + toState.name + '), no session w/protected data, in core.run');
 	                clearAndRedirect(event, toState, toParams);
-	        }
+	            } else {
+	                $rootScope.userid = null;
+	                $rootScope.username = null;
+	            }
+	        //}
 	        });
 	    }
 	})();
@@ -69032,9 +69016,7 @@
 	//================================================
 	// Check if the user is connected
 	//================================================
-	var checkLoggedin = function ($q, $timeout, $http, $location, $rootScope, $cookies) {
-	  // TODO Added to debug/research US1403 - should remove after issue is resolved
-	  console.log('US1403: checkLoggedIn');
+	var checkLoggedin = function ($q, $timeout, $http, $location, $rootScope, $cookies) {  
 	  var deferred = $q.defer();
 	  $http.defaults.headers.common['Authorization'] = $cookies.get('sessionId');
 	  $http({
@@ -69044,18 +69026,12 @@
 	      'Authorization': $cookies.get('sessionId')
 	    }
 	  }).success(function (user) {
-	    // TODO Added to debug/research US1403 - should remove after issue is resolved
-	    console.log('US1403: checkLoggedIn success');
 	    // Authenticated
 	    if (user.userId !== undefined) {
-	      // TODO Added to debug/research US1403 - should remove after issue is resolved
-	      console.log('US1403: checkLoggedIn success with user');
 	      $timeout(deferred.resolve, 0);
 	      $rootScope.userid = user.userId;
 	      $rootScope.username = user.username;
 	    } else {
-	      // TODO Added to debug/research US1403 - should remove after issue is resolved
-	      console.log('US1403: checkLoggedIn success, undefined user');
 	      Session.clear();
 	      $rootScope.message = 'You need to log in.';
 	      $timeout(function () {
@@ -69079,7 +69055,7 @@
 	 */
 	function formatDate(date, days){
 	  if(days === undefined){
-	    days = 0; 
+	    days = 0;
 	  }
 	  var d = moment(date);
 	  d.add(days, 'd');

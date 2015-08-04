@@ -6,7 +6,6 @@
     'ngSanitize',
     'ngPayments',
     'ui.router',
-    'ui.event',
     'ngCookies',
     'ngMessages',
     'angular-growl',
@@ -28,6 +27,7 @@
     })
     //TODO Pull out to service and/or config file
     .constant('MESSAGES', {})
+
     .config(function (growlProvider) {
       growlProvider.globalPosition('top-center');
       growlProvider.globalTimeToLive(6000);
