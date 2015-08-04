@@ -2,7 +2,7 @@
 require('../app/core');
 describe('CoreController', function() {
 
-  beforeEach(angular.mock.module('crossroads'));
+  beforeEach(angular.mock.module('crossroads.core'));
 
   var $controller, $rootScope, Message, MESSAGES, $aside, $scope, controller, growl, screenSize, $state;
 
