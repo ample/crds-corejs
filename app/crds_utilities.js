@@ -1,4 +1,4 @@
-'use strict';
+'use strict()';
 
 var moment = require('moment');
 
@@ -18,10 +18,10 @@ var getCookie =  function(cname) {
 var preventRouteTypeUrlEncoding = function(urlMatcherFactory, routeType, urlPattern) {
   return (urlMatcherFactory.type(routeType, {
     encode: function (val) {
-      return val != null ? val.toString() : val;
+      return val !== null ? val.toString() : val;
     },
     decode: function (val) {
-      return val != null ? val.toString() : val;
+      return val !== null ? val.toString() : val;
     },
     is: function (val) {
       return this.pattern.test(val);
@@ -35,7 +35,7 @@ var preventRouteTypeUrlEncoding = function(urlMatcherFactory, routeType, urlPatt
 //================================================
 var checkLoggedin = function ($q, $timeout, $http, $location, $rootScope, $cookies) {  
   var deferred = $q.defer();
-  $http.defaults.headers.common['Authorization'] = $cookies.get('sessionId');
+  $http.defaults.headers.common.Authorization = $cookies.get('sessionId');
   $http({
     method: 'GET',
     url: __API_ENDPOINT__ + 'api/authenticated',
