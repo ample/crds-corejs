@@ -23,41 +23,6 @@ gulp.task("build-dev", ["webpack:build-dev"], function() {
 	gulp.watch(webpackConfig, ["webpack:build-dev"]);
 });
 
-gulp.task('build-browser-sync', function () {
-  webpackConfig.devtool = "eval";
-  webpackConfig.debug = true;
-  webpackConfig.output.path = "/";
-
-  // force gulpWebpack to watch for file changes
-  webpackConfig.watch = true;
-
-  // Build app to assets - watch for changes
-  gulp.src(webpackConfig.watchPattern)
-    .pipe(gulpWebpack(webpackConfig))
-    .pipe(gulp.dest("./assets"));
-});
-
-// Browser-Sync build
-// May be useful for live injection of SCSS / CSS changes for UI/UX
-// Also should reload pages when JS / HTML are regenerated
-gulp.task("browser-sync-dev", ["build-browser-sync"], function() {
-
-	// Watch for final assets to build
-	gulp.watch("./assets/*.js", function() {
-		if (browserSyncCompiles >= 1) {
-			gutil.log("Forcing BrowserSync reload");
-			browserSync.reload();
-		}
-		browserSyncCompiles += 1;
-	});
-
-	browserSync.init({
-		server: {
-			baseDir: "./"
-		}
-	});
-});
-
 // Production build
 gulp.task("build", ["webpack:build"]);
 
