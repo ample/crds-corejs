@@ -14,7 +14,8 @@
     'ngAside',
     'mailchimp',
     'matchMedia',
-    'ui.bootstrap'
+    'ui.bootstrap',
+    'ui.mask'
     ])
     .constant('AUTH_EVENTS', {
       loginSuccess: 'auth-login-success',

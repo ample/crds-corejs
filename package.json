@@ -79,6 +79,7 @@
     "angular-mailchimp": "./lib/angular-mailchimp.js",
     "angular-match-media": "./lib/angular-match-media.js",
     "ui-event": "./node_modules/angular-ui-event/dist/event.js",
+    "ui-mask": "./node_modules/angular-ui-utils/modules/mask/mask.js",
     "angular-aside": "./lib/angular-aside.js",
     "angular-addthis": "./lib/angular-addthis.js",
     "angular-payments": "./lib/angular.payments.js"
