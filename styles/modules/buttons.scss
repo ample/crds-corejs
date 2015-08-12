@@ -150,8 +150,15 @@ $button-border-darken-amount: 15%;
 
 .input-group-btn {
   .btn {
-    border-bottom-width: 1px;
+    border: 1px solid #CCCCCC;
+    border-left-width: 0;
   }
+}
+
+.has-error .input-group-btn .btn {
+  color: #c9302c;
+  background-color: #f2dede;
+  border-color: #c9302c;
 }
 
 h2 {
