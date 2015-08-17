@@ -7,10 +7,11 @@ $button-border-darken-amount: 15%;
 //// BUTTON STYLES ////
 .btn {
   @include button-size($padding-base-vertical, $padding-base-horizontal, $font-size-base, $line-height-base, $border-radius-base);
-  &:focus, &:active {
+  &:focus, &:active, &:hover {
     text-decoration: none;
     outline: none;
   }
+
 }
 
 .btn-default {
@@ -149,8 +150,35 @@ $button-border-darken-amount: 15%;
 
 .input-group-btn {
   .btn {
-    border-bottom-width: 1px;
+    border-width: 1px;
+    border-left-width: 0;
   }
+  
+  .btn-standard {
+    border-color: $btn-default-border;
+  }
+  
+  .btn-primary {
+    border-color: darken($brand-primary, 20%);
+  }
+  
+  .btn-secondary {
+    border-color: darken($brand-secondary, 20%);
+  }
+  
+  .btn-standard-dark {
+    border-color: darken($gray-dark, 20%);
+  }
+  
+  .btn-default {
+    border-color: $btn-default-border;
+  }
+}
+
+.has-error .input-group-btn .btn {
+  color: #c9302c;
+  background-color: #f2dede;
+  border-color: #c9302c;
 }
 
 h2 {

@@ -97,6 +97,10 @@
   color: $gray-light;
   padding-bottom: ($line-height-computed*3);
 
+  h5 {
+    color: $gray-light;
+  }
+
   h2 {
     color: $gray-lighter;
     font-weight: normal;
@@ -142,17 +146,26 @@
   .input-group-btn:last-child > .btn, .input-group-btn:last-child > .btn-group {
     margin-left: 0px;
   }
-
-  .icon {
-    height: 18px;
-    width: 18px;
-  }
 }
 
 .message-action-buttons {
   .btn-block:first-child {
     margin-top: 5px;
   }
+	.btn-group {
+		margin-top: 0;
+	}
+}
+.podcast-dropdown {
+	hr {
+		margin-top: 12px;
+		margin-bottom: 12px;
+	}
+	color: $text-color;
+}
+.dropdown-rss-link {
+	margin-bottom: 0;
+	white-space: nowrap;
 }
 
 //Streaming Banner
