@@ -170,16 +170,21 @@
 
 //Streaming Banner
 .streaming-banner {
-	width: 100%;
-	background-size: contain;
 	position: relative;
-
-	img {
-		position: relative;
-		z-index: 0;
-		min-width:100%;
+	background-image: url(http://crossroads-media.s3.amazonaws.com/images/streaming-banner-mobile.jpg);
+  background-size: cover;
+	background-position: top left;
+	background-repeat: no-repeat;
+	padding: $grid-gutter-width/2;
+	margin-top: 2.5vw;
+	margin-bottom: 2.5vw;
+	@media (min-width: $screen-sm-min) {
+		background-image: linear-gradient(to right, rgb(0,0,0) 1%, rgba(255,255,255,0) 45%), url(http://crossroads-media.s3.amazonaws.com/images/streaming-banner-bg.jpg);
 	}
-
+	img {
+		margin-top: -2.5vw;
+		margin-bottom: -2.5vw;
+	}
 	a {
 		display: block;
 		position: absolute;
@@ -188,7 +193,6 @@
 		bottom: 0;
 		right: 0;
 		z-index: 1;
-		padding: $line-height-computed/2 $padding-base-horizontal*2 0;
 	}
 
 	h2 {
@@ -197,7 +201,6 @@
 		margin: 0;
 		line-height: 1;
 		text-align: right;
-
 		span {
 			display: block;
 		}
@@ -208,7 +211,6 @@
 		margin: 0;
 		font-weight: 100;
 		text-align: right;
-
 		span {
 			display: block;
 		}
@@ -218,12 +220,10 @@
 		h2 {
 			padding-top: $line-height-computed/2;
 			text-align: left;
-
 			span {
 				display: block;
 			}
 		}
-
 		h4 {
 			text-align: left;
 		}
