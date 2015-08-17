@@ -155,7 +155,7 @@ $button-border-darken-amount: 15%;
   }
   
   .btn-standard {
-    border-color: #CCC;
+    border-color: $btn-default-border;
   }
   
   .btn-primary {
@@ -168,6 +168,10 @@ $button-border-darken-amount: 15%;
   
   .btn-standard-dark {
     border-color: darken($gray-dark, 20%);
+  }
+  
+  .btn-default {
+    border-color: $btn-default-border;
   }
 }
 
