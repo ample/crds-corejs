@@ -17,6 +17,12 @@
 }
 
 .go-trip-card {
+  .card-img {
+    img {
+      background-color: $gray-lighter;
+    }
+  }
+  
   .list-group {
     //margin-top: $line-height-computed/4;
 
