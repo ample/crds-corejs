@@ -155,6 +155,79 @@
   }
 }
 
+//Streaming Banner
+.streaming-banner {
+	width: 100%;
+	background-size: contain;
+	position: relative;
+
+	img {
+		position: relative;
+		z-index: 0;
+		min-width: 100%;
+	}
+
+	a {
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		z-index: 1;
+		padding: $line-height-computed/2 $padding-base-horizontal*2 0;
+	}
+
+	h2 {
+		@extend .brand-font;
+		color: white;
+		margin: 0;
+		line-height: 1;
+		text-align: right;
+
+		span {
+			display: block;
+		}
+	}
+
+	h4 {
+		color: white;
+		margin: 0;
+		font-weight: 100;
+		text-align: right;
+
+		span {
+			display: block;
+		}
+	}
+
+	@media (min-width: $screen-sm-min) {
+		h2 {
+			padding-top: $line-height-computed/3;
+			text-align: left;
+
+			span {
+				display: block;
+			}
+		}
+
+		h4 {
+			text-align: left;
+		}
+	}
+
+	@media (min-width: $screen-md-min) {
+		h2 {
+			padding-top: $line-height-computed*2;
+		}
+	}
+
+	@media (min-width: $screen-lg-min) {
+		h2 {
+			padding-top: $line-height-computed*3;
+		}
+	}
+}
 
 /***************************************************************************************
 * Message Preview Include - used on _includes/media/message_preview.html
