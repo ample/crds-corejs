@@ -150,35 +150,8 @@ $button-border-darken-amount: 15%;
 
 .input-group-btn {
   .btn {
-    border-width: 1px;
-    border-left-width: 0;
+    border-bottom-width: 1px;
   }
-  
-  .btn-standard {
-    border-color: $btn-default-border;
-  }
-  
-  .btn-primary {
-    border-color: darken($brand-primary, 20%);
-  }
-  
-  .btn-secondary {
-    border-color: darken($brand-secondary, 20%);
-  }
-  
-  .btn-standard-dark {
-    border-color: darken($gray-dark, 20%);
-  }
-  
-  .btn-default {
-    border-color: $btn-default-border;
-  }
-}
-
-.has-error .input-group-btn .btn {
-  color: #c9302c;
-  background-color: #f2dede;
-  border-color: #c9302c;
 }
 
 h2 {

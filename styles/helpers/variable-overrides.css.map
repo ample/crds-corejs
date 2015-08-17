@@ -1,10 +1,7 @@
 {
-  "version": 3,
-  "file": "variable-overrides.css",
-  "sources": [
-    "variable-overrides.scss"
-  ],
-  "sourcesContent": [],
-  "mappings": "",
-  "names": []
+"version": 3,
+"mappings": "",
+"sources": [],
+"names": [],
+"file": "variable-overrides.css"
 }

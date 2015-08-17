@@ -37,7 +37,9 @@
     display: block;
     overflow: hidden;
     background: $gray-lighter;
-
+    img {
+        @include opacity(.1); // temporary solution until we find a long term solution for icons
+    }
     .change-photo {
         display: block;
         position: absolute;
