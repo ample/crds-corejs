@@ -164,7 +164,7 @@
 	img {
 		position: relative;
 		z-index: 0;
-		min-width: 100%;
+		min-width:100%;
 	}
 
 	a {
@@ -203,7 +203,7 @@
 
 	@media (min-width: $screen-sm-min) {
 		h2 {
-			padding-top: $line-height-computed/3;
+			padding-top: $line-height-computed/2;
 			text-align: left;
 
 			span {
