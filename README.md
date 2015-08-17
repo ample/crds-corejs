@@ -1,6 +1,5 @@
 # Crossroads Core Angular Module
 
-<img src="http://mp-build.cloudapp.net/app/rest/builds/buildType:(id:Skunkworks_CrdsCoreFeatureBuilds)/statusIcon/" />
 
 This is the core angular module for the Crossroads.net site. It includes multiple dependencies used throughout the crossroads ecosystem including:
 * Angular
