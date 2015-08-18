@@ -15,7 +15,6 @@
 
   function AppRun(Session, $rootScope, MESSAGES, $http, $log, $state, $timeout, $location, $cookies, $document) {
     $rootScope.MESSAGES = MESSAGES;
-    debugger;
     setOriginForCmsPreviewPane($document);
 
     function clearAndRedirect(event, toState, toParams) {
