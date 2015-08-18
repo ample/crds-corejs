@@ -57,7 +57,7 @@
   require('./date_field/date_field_directive');
   require('./password_field/password_field_directive');
   require('./filters');
-
+  require('./services/cc_brand_codes');
   require('./core.config');
   require('./core.controller');
   require('./core.run');
