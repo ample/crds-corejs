@@ -11,14 +11,21 @@
 .card-img {
   padding: $line-height-computed/4 $line-height-computed/2;
   text-align: center;
-
   img, .corkboard-icon {
-    width: 30%;
+    width: 100%;
     background-color: transparent;
     border-radius: 50%;
     border: 3px solid rgba(214, 224, 226, 0.8);
     position: relative;
     margin: 0 auto;
+    @media (min-width: 500px) {
+      width: 70%;
+    }
+  }
+}
+.card-img-stacked {
+  img, .corkboard-icon {
+    width: 30%;
     @media (min-width: 500px) {
       width: 20%;
     }
@@ -27,9 +34,6 @@
     }
   }
 }
-
-
-
 .card-header {
   padding: $line-height-computed/2 $grid-gutter-width/2;
    a {
