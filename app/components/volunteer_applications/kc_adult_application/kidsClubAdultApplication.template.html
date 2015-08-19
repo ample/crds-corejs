@@ -64,8 +64,8 @@
     <div class="row">
       <div class="form-group col-sm-6">
         <label class="block">Marital Status</label>
-        <select class="form-control col-sm-12" name="maritalStatus" 
-          ng-model="kcAdultApplication.volunteer.maritalStatusId" 
+        <select class="form-control col-sm-12" name="maritalStatus"
+          ng-model="kcAdultApplication.volunteer.maritalStatusId"
           ng-options="item.dp_RecordID as item.dp_RecordName for item in kcAdultApplication.maritalStatuses"
           disabled="true">
           <option></option>
@@ -122,7 +122,7 @@
           <option value="West Side - Sun - 8:15am">West Side - Sun - 8:15am</option>
           <option value="West Side - Sun - 10:00am">West Side - Sun - 10:00am</option>
           <option value="West Side - Sun 11:45am">West Side - Sun 11:45am</option>
-          <option value="Clifton - Sun - 7pm">Clifton - Sun - 7pm</option>
+          <option value="Uptown - Sun - 7pm">Uptown - Sun - 7pm</option>
         </select>
         <ng-messages for="adult.serviceAttend.$error" ng-if="kcAdultApplication.showError(adult, 'serviceAttend')">
           <span ng-message="required">
@@ -474,7 +474,7 @@
             <option value="West Side - Sun - 8:15am">West Side - Sun - 8:15am</option>
             <option value="West Side - Sun - 10:00am">West Side - Sun - 10:00am</option>
             <option value="West Side - Sun 11:45am">West Side - Sun 11:45am</option>
-            <option value="Clifton - Sun - 7pm">Clifton - Sun - 7pm</option>
+            <option value="Uptown - Sun - 7pm">Uptown - Sun - 7pm</option>
           </select>
           <ng-messages for="adult.availabilityWeekendSite.$error" ng-if="kcAdultApplication.showError(adult, 'availabilityWeekendSite')">
             <span ng-message="required">
