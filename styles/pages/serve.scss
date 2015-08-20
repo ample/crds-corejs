@@ -67,7 +67,6 @@
     bottom: 0;
     left: 0;
     right: 0;
-    z-index: 3;
   }
 
   .panel-heading {
@@ -75,7 +74,6 @@
     font-weight: bold;
     cursor: pointer;
     position: relative;
-    z-index: 1;
     padding: 0 $padding-base-horizontal/2 $padding-base-vertical;
     border-bottom: none;
 
@@ -91,7 +89,6 @@
       float: left;
       width: 100%;
       position: static;
-      z-index: 4;
       margin-top: -5px;
       position: relative;
 
