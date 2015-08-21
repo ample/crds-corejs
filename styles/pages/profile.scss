@@ -32,6 +32,10 @@
     }
 }
 
+.change-profile-pic {
+  height: 300px;
+}
+
 .profile-pic {
     position: relative;
     display: block;
@@ -49,6 +53,8 @@
         background: $brand-primary;
         text-align: center;
         color: white;
+        font-weight: normal;
+        cursor: pointer;
         @include transition(all .1s ease-in);
         @include opacity(.8);
     }

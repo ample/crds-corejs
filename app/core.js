@@ -18,12 +18,14 @@
   require('angular-match-media');
   require('angular-mailchimp');
   require('lodash');
+  require('angular-image-crop');
   
 
   require('../node_modules/angular-toggle-switch/angular-toggle-switch-bootstrap.css');
   require('../node_modules/angular-toggle-switch/angular-toggle-switch.css');
   require('../lib/angular-aside.css');
   require('../lib/angular-growl.css');
+  require('../lib/ng-img-crop.css');
 
   require('expose?moment!moment');
 
