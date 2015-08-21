@@ -10,7 +10,7 @@ require('./session_service');
                 .post(__API_ENDPOINT__ + 'api/login', credentials)
                 .then(function (res) {
                     console.log(res.data);
-                    Session.create(res.data.userToken, res.data.userTokenExp, res.data.userId, res.data.username);
+                    Session.create(res.data.userToken, res.data.userTokenExp, res.data.userId, res.data.username, res.data.age);
                     // The username from the credentials is really the email address
                     // In a future story, the contact email address will always be in sync with the user email address.
                     $rootScope.email = credentials.username;
