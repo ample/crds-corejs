@@ -11,11 +11,12 @@
     '$timeout',
     '$location',
     '$cookies',
-    '$document'];
+    '$document',
+    '$window'];
 
-  function AppRun(Session, $rootScope, MESSAGES, $http, $log, $state, $timeout, $location, $cookies, $document) {
+  function AppRun(Session, $rootScope, MESSAGES, $http, $log, $state, $timeout, $location, $cookies, $document, $window) {
     $rootScope.MESSAGES = MESSAGES;
-    setOriginForCmsPreviewPane($document);
+    setOriginForCmsPreviewPane($document, $window);
 
     function clearAndRedirect(event, toState, toParams) {
       console.log($location.search());
@@ -66,7 +67,13 @@
       //}
     });
 
-    function setOriginForCmsPreviewPane($document) {
+    function setOriginForCmsPreviewPane($document, $window) {
+
+      if (window===window.top) {
+        // Not in a frame so do nothing
+        return;
+      }
+
       var document = $document[0];
 
       // work-around for displaying cr.net inside preview pane for CMS
