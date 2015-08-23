@@ -11,12 +11,11 @@
     '$timeout',
     '$location',
     '$cookies',
-    '$document',
-    '$window'];
+    '$document'];
 
-  function AppRun(Session, $rootScope, MESSAGES, $http, $log, $state, $timeout, $location, $cookies, $document, $window) {
+  function AppRun(Session, $rootScope, MESSAGES, $http, $log, $state, $timeout, $location, $cookies, $document) {
     $rootScope.MESSAGES = MESSAGES;
-    setOriginForCmsPreviewPane($document, $window);
+    setOriginForCmsPreviewPane($document);
 
     function clearAndRedirect(event, toState, toParams) {
       console.log($location.search());
@@ -67,22 +66,27 @@
       //}
     });
 
-    function setOriginForCmsPreviewPane($document, $window) {
-
-      if (window===window.top) {
-        // Not in a frame so do nothing
-        return;
-      }
-
+    function setOriginForCmsPreviewPane($document) {
       var document = $document[0];
 
       // work-around for displaying cr.net inside preview pane for CMS
-      var parentDomain = 'crossroads.net';
-      if (document.domain.toLowerCase() === 'localhost') {
-        parentDomain = 'localhost';
+      var domain = document.domain;
+      var parts = domain.split('.');
+      if (parts.length === 4) {
+        // possible ip address
+        var firstChar = parts[0].charAt(0);
+        if (firstChar >= '0' && firstChar <= '9')  {
+          // ip address
+          document.domain = domain;
+          return;
+        }
       }
 
-      document.domain = parentDomain;
+      while (parts.length > 2) {
+        parts.shift();
+      }
+
+      document.domain = parts.join('.');
     }
   }
 })();
