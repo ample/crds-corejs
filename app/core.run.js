@@ -70,12 +70,23 @@
       var document = $document[0];
 
       // work-around for displaying cr.net inside preview pane for CMS
-      var parentDomain = 'crossroads.net';
-      if (document.domain.toLowerCase() === 'localhost') {
-        parentDomain = 'localhost';
+      var domain = document.domain;
+      var parts = domain.split('.');
+      if (parts.length === 4) {
+        // possible ip address
+        var firstChar = parts[0].charAt(0);
+        if (firstChar >= '0' && firstChar <= '9')  {
+          // ip address
+          document.domain = domain;
+          return;
+        }
       }
 
-      document.domain = parentDomain;
+      while (parts.length > 2) {
+        parts.shift();
+      }
+
+      document.domain = parts.join('.');
     }
   }
 })();
