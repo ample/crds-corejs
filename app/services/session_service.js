@@ -6,7 +6,7 @@
 
   function SessionService($log, $cookies, $http) {
     var self = this;
-    this.create = function (sessionId, userTokenExp, userId, username) {
+    this.create = function (sessionId, userTokenExp, userId, username, age) {
       console.log('creating cookies!');
       var expDate = new Date();
       expDate.setTime(expDate.getTime() + (userTokenExp * 1000));
@@ -15,7 +15,7 @@
       });
       $cookies.put('userId', userId);
       $cookies.put('username', username);
-
+      $cookies.put('age', age);
       // Set the defaults for $http in case the current page needs to
       // authenticate to API without a new $httpProvider being injected
       $http.defaults.headers.common['Authorization']= sessionId;
@@ -61,6 +61,7 @@
       $cookies.remove('userId');
       $cookies.remove('username');
       $cookies.remove('family');
+      $cookies.remove('age');
       $http.defaults.headers.common['Authorization']= undefined;
       return true;
     };

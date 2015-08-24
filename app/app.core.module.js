@@ -15,7 +15,8 @@
     'mailchimp',
     'matchMedia',
     'ui.bootstrap',
-    'ui.mask'
+    'ui.mask',
+    'ngImgCrop'
     ])
     .constant('AUTH_EVENTS', {
       loginSuccess: 'auth-login-success',
