@@ -1,6 +1,6 @@
 {
   "name": "crds-core",
-  "version": "0.0.18",
+  "version": "0.0.19",
   "description": "Core Angular Module for Crossroads",
   "main": "index.js",
   "repository": {
@@ -82,6 +82,7 @@
     "ui-mask": "./node_modules/angular-ui-mask/dist/mask.js",
     "angular-aside": "./lib/angular-aside.js",
     "angular-addthis": "./lib/angular-addthis.js",
-    "angular-payments": "./lib/angular.payments.js"
+    "angular-payments": "./lib/angular.payments.js",
+    "angular-image-crop": "./lib/ng-img-crop.js"
   }
 }
