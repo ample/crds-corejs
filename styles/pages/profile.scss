@@ -41,6 +41,7 @@
     display: block;
     overflow: hidden;
     background: $gray-lighter;
+    cursor: pointer;
 
     .change-photo {
         display: block;
@@ -54,7 +55,6 @@
         text-align: center;
         color: white;
         font-weight: normal;
-        cursor: pointer;
         @include transition(all .1s ease-in);
         @include opacity(.8);
     }
