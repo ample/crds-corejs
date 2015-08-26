@@ -2,7 +2,11 @@ require('../../app/core');
 
 describe('loadingButton', function() {
 
-  var $compile, $rootScope, element, scope, isolateScope;
+  var $compile;
+  var $rootScope;
+  var element;
+  var scope;
+  var isolateScope;
 
   beforeEach(function() {
     angular.mock.module('crossroads.core');

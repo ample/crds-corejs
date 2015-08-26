@@ -57,11 +57,16 @@
   require('./password_field/password_field_directive');
   require('./register/register_directive');
   require('./cms/services/cms_services_module');
+  require('./components/giving/bankInfo');
+  require('./components/giving/creditCardInfo');
+  require('./components/giving/bankCreditCardDetails');
+
 
   // Common Services
   require('./services/cc_brand_codes');
   require('./services/payment.service');
   require('./services/programs.service.js');
+  require('./services/giveTransfer.service.js');
 
   require('./content');
   require('./filters');

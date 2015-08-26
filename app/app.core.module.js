@@ -42,6 +42,7 @@
     .directive('stopEvent', require('./shared/stopevent.directive.js'))
     .directive('requireMultiple', require('./shared/requireMultiple.directive.js'))
     .directive('autofocus', require('./shared/autofocus.directive.js'))
+    .directive('currencyMask', require('./shared/currencyMask.directive'))
     .factory('ContentPageService', require('./cms/services/content_page.service'));
 
 })();
