@@ -44,8 +44,6 @@
   require('./login');
   require('./logout');
   require('./home');
-  require('./register/register_directive');
-  require('./cms/services/cms_services_module');
 
   // Common Components
   require('./components/btnLoading.directive');
@@ -53,13 +51,21 @@
   require('./components/preloader');
   require('./components/volunteer_applications');
   require('./components/loadingButton');
-
-  require('./content');
   require('./email_field/email_field_directive');
   require('./date_field/date_field_directive');
   require('./password_field/password_field_directive');
-  require('./filters');
+  require('./register/register_directive');
+  require('./cms/services/cms_services_module');
+
+  // Common Services
   require('./services/cc_brand_codes');
+  require('./services/payment.service');
+
+
+  require('./content');
+  require('./filters');
+
+  
   require('./core.config');
   require('./core.controller');
   require('./core.run');
