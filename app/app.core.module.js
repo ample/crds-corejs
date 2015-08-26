@@ -1,5 +1,5 @@
 'use strict()';
-(function(){
+(function() {
 
   angular.module('crossroads.core', [
     'ngResource',
@@ -9,6 +9,7 @@
     'ngCookies',
     'ngMessages',
     'angular-growl',
+    'angular-stripe',
     'toggle-switch',
     'sn.addthis',
     'ngAside',
@@ -27,10 +28,11 @@
       isAuthenticated: 'auth-is-authenticated',
       notAuthorized: 'auth-not-authorized'
     })
+
     //TODO Pull out to service and/or config file
     .constant('MESSAGES', {})
 
-    .config(function (growlProvider) {
+    .config(function(growlProvider) {
       growlProvider.globalPosition('top-center');
       growlProvider.globalTimeToLive(6000);
       growlProvider.globalDisableIcons(true);

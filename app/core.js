@@ -10,6 +10,7 @@
   require('angular-toggle-switch');
   require('ui-event');
   require('ui-mask');
+  require('angular-stripe');
   require('angular-payments');
   require('angular-bootstrap-npm');
   require('angular-ui-router');
@@ -60,7 +61,7 @@
   // Common Services
   require('./services/cc_brand_codes');
   require('./services/payment.service');
-
+  require('./services/programs.service.js');
 
   require('./content');
   require('./filters');
