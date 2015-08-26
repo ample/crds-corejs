@@ -18,7 +18,6 @@ var moment = require('moment');
       showWeeks: 'false'
     };
     vm.gradeLevelSelected = gradeLevelSelected;
-    vm.locationSelected = locationSelected;
     vm.parentSignatureDate = moment().format('MM/DD/YYYY');
     vm.phoneFormat = /^\(?(\d{3})\)?[\s.-]?(\d{3})[\s.-]?(\d{4})$/;
     vm.reference1 = {};
@@ -58,21 +57,6 @@ var moment = require('moment');
           vm.serveAgeKids.age3toPreK ||
           vm.serveAgeKids.Kto5Grade)
         ) {
-        return true;
-      }
-      return false;
-    }
-
-    /**
-     * Checks if one of the availability locations has been selected and returns
-     * true if it has, false otherwise
-     */
-    function locationSelected(){
-      if (vm.availabilityOakley ||
-          vm.availabilityFlorence ||
-          vm.availabilityWestSide ||
-          vm.availabilityMason ||
-          vm.availabilityClifton) {
         return true;
       }
       return false;
