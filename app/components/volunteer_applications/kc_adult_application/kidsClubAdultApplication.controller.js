@@ -25,7 +25,6 @@ var moment = require('moment');
     vm.datePickers = { childDob1 : false, childDob2: false, signatureDate: false };
     vm.format = 'MM/dd/yyyy';
     vm.gradeLevelSelected = gradeLevelSelected;
-    vm.locationSelected = locationSelected;
     vm.maritalStatuses = [];
     vm.open = open;
     vm.phoneFormat = /^\(?(\d{3})\)?[\s.-]?(\d{3})[\s.-]?(\d{4})$/;
@@ -63,21 +62,6 @@ var moment = require('moment');
       if (vm.volunteer.birthToTwo ||
           vm.volunteer.threeToPreK ||
           vm.volunteer.kToFifth)
-        return true;
-      return false;
-    }
-
-    /**
-     * Checks if one of the availability locations has been selected and returns
-     * true if it has, false otherwise
-     */
-    function locationSelected(){
-      if (vm.volunteer.availabilityOakley
-          || vm.volunteer.availabilityFlorence
-          || vm.volunteer.availabilityWestSide
-          || vm.volunteer.availabilityMason
-          || vm.volunteer.availabilityClifton
-        )
         return true;
       return false;
     }
