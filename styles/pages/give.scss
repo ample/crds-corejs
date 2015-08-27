@@ -139,6 +139,12 @@
         @extend .text-success;
         font-weight: bold;
     }
+  
+    .dollar-amount-decline {
+      @extend .text-muted;
+      font-weight: bold;
+      text-decoration: line-through;
+    }
     .payment-type-icon {
       vertical-align: middle;
       height: 15px;
