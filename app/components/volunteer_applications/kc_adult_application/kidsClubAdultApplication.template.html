@@ -93,7 +93,7 @@
     <div class="row">
       <div class="form-group col-sm-6" ng-class="{'has-error': kcAdultApplication.showError(adult, 'attending')}">
         <label class="control-label required" for="attending">When did you start attending Crossroads?</label>
-        <input type="text" class="form-control" ng-model="kcAdultApplication.volunteer.attending" id="attending" placeholder="mm/dd/yyyy" validate-date ng-model-options="{updateOn: 'blur'}"required name="attending">
+        <input type="text" class="form-control" ng-model="kcAdultApplication.volunteer.attending" id="attending" placeholder="mm/yyyy" validate-date='MM/YYYY' ng-model-options="{updateOn: 'blur'}"required name="attending">
         <ng-messages for="adult.attending.$error" ng-if="kcAdultApplication.showError(adult, 'attending')">
           <span ng-message="invalidDate">
             <span ng-bind-html="$root.MESSAGES.invalidData.content | html"></span>
