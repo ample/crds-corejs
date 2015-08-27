@@ -10,6 +10,7 @@
         this.account = '';
         this.amount = '';
         this.ccNumberClass = '';
+        this.changeAccountInfo = false;
         this.declinedPayment = false;
         this.donor = '';
         this.email = '';

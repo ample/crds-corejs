@@ -57,9 +57,6 @@
   require('./password_field/password_field_directive');
   require('./register/register_directive');
   require('./cms/services/cms_services_module');
-  require('./components/giving/bankInfo');
-  require('./components/giving/creditCardInfo');
-  require('./components/giving/bankCreditCardDetails');
 
 
   // Common Services
