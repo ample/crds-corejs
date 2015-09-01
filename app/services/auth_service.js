@@ -41,7 +41,9 @@ require('./session_service');
                 authorizedRoles = [authorizedRoles];
             }
             return (authService.isAuthenticated() &&
-                authorizedRoles.indexOf(Session.userRole) !== -1);
+                (_.find($rootScope.roles, function(role) {
+                  return(authorizedRoles.indexOf(role.Id) >= 0);
+                }) !== undefined));
         };
 
         return authService;
