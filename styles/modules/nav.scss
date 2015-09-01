@@ -7,9 +7,9 @@
 
 .navbar-brand {
   float: left;
-  padding: $navbar-padding-vertical $navbar-padding-horizontal 0px $navbar-padding-horizontal;
   font-size: $font-size-large;
-  line-height: $line-height-computed;
+  line-height: 1;
+  padding: $navbar-padding-vertical 2px;
 
   &:hover,
   &:focus {
@@ -129,11 +129,6 @@ header.show .container {
 }
 
 /******************** Mobile ********************/
-
-
-.navbar-brand {
-  padding: 15px 0px;
-}
 
 .navbar-header{
   width: 100%;
@@ -474,9 +469,13 @@ header.show .container {
 
 /***** Mobile Nav *****/
 
-@media (max-width: 992px) {
+@media (max-width: $screen-md) {
   .navbar-brand.logo {
-    width: 75%;
+    width: 100%;
+    left: 0;
+    position: absolute;
+    z-index: 1;
+
     > img {
       margin-left: auto;
       margin-right: auto;
@@ -496,6 +495,9 @@ header.show .container {
 ***************************************************************************************/
 
 ul.cr-nav {
+  margin-left: -8px;
+  clear: both;
+
   > li {
     > a {
       display: inline-block;
@@ -509,6 +511,11 @@ ul.cr-nav {
         // Tate - got rid of gradient. Don't love it.
         background: $brand-primary;
         //@include gradient(#7AA8C2, #4A81A0);
+      }
+
+      &.btn {
+        vertical-align: sub;
+        padding-bottom: 0px;
       }
     }
 
