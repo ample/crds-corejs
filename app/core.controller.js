@@ -44,6 +44,9 @@
       $state.go('content', {link:'/server-error/'});
     });
 
+    $scope.$on('$viewContentLoaded', function(event){
+      imgix.fluid();
+    });
 
     //////////////////////////
     /////// $ROOTSCOPE ///////
