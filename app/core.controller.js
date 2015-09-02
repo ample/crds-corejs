@@ -45,7 +45,7 @@
     });
 
     $scope.$on('$viewContentLoaded', function(event){
-      imgix.fluid();
+      imgix.fluid({ fluidClass: 'img-responsive'});
     });
 
     //////////////////////////
