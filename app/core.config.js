@@ -4,9 +4,17 @@
   var app = angular.module("crossroads.core");
   app.config(AppConfig);
 
-  AppConfig.$inject = ['$httpProvider', '$locationProvider', 'datepickerConfig', 'datepickerPopupConfig', '$cookiesProvider'];
+  AppConfig.$inject = ['$provide', '$httpProvider', '$locationProvider', 'datepickerConfig', 'datepickerPopupConfig', '$cookiesProvider'];
 
-  function AppConfig($httpProvider, $locationProvider, datepickerConfig, datepickerPopupConfig, $cookiesProvider){
+  function AppConfig($provide, $httpProvider, $locationProvider, datepickerConfig, datepickerPopupConfig, $cookiesProvider){
+    $provide.decorator('$state', function($delegate, $rootScope) {
+      $rootScope.$on('$stateChangeStart', function(event, state, params) {
+        $delegate.next = state;
+        $delegate.toParams = params;
+      });
+      return $delegate;
+    });
+
     $locationProvider.html5Mode({
         enabled:true,
         requireBase:false

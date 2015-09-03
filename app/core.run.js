@@ -73,19 +73,15 @@
       //}
     });
     $rootScope.$on("$stateChangeSuccess", function(event, toState){
-      if (toState.resolve && toState.resolve.Meta){
-        debugger;
-        $rootScope.meta = toState.resolve.Meta();
-      } else if (toState.data && toState.data.meta){
-        debugger;
+      if (toState.data && toState.data.meta){
         $rootScope.meta = toState.data.meta;
-        if(ContentSiteConfigService.siteconfig.title){
-          $rootScope.meta.title = $rootScope.meta.title +
-            ' | ' + ContentSiteConfigService.siteconfig.title;
-        } else {
-          $rootScope.meta.title = $rootScope.meta.title +
-            ' | ' + 'Crossroads';
-        }
+      }
+      if(ContentSiteConfigService.siteconfig.title){
+        $rootScope.meta.title = $rootScope.meta.title +
+          ' | ' + ContentSiteConfigService.siteconfig.title;
+      } else {
+        $rootScope.meta.title = $rootScope.meta.title +
+          ' | ' + 'Crossroads';
       }
     });
 
