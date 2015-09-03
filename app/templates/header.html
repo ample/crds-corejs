@@ -19,12 +19,45 @@
                         </div>
                         <a class="navbar-brand logo" ui-sref="home" href="/"><img src="//crossroads-media.s3.amazonaws.com/images/logo.svg" alt="crossroads">
                         </a>
-                        <ul class="navbar--login list-unstyled visible-lg visible-md">
-                            <span id="current-user" class="hidden-xs" ng-if="$root.username != undefined" ng-cloak> {{$root.username}} </span>
-                            <li class="hidden-xs ng-cloak" ng-show="$root.username != undefined" ng-cloak>
-                                <a ui-sref="logout" class="ng-cloak">Sign Out</a>
+
+                        <a ui-sref="login" class="mobile-account hidden-md hidden-lg hidden-xl" ng-show="$root.username == undefined">
+                          <svg viewBox="0 0 32 32" class="icon icon-user6 icon-large">
+                              <use xlink:href="#user6"></use>
+                          </svg>
+                        </a>
+
+
+                        <div class="pull-right" dropdown on-toggle="toggled(open)">
+                          <a href="#" id="user-dropdown" class="mobile-account" ng-show="$root.username != undefined" dropdown-toggle>
+                            <span id="current-user" class="current-user-name hidden-xs" ng-if="$root.username != undefined" ng-cloak> {{$root.username}} </span>
+                            <svg viewBox="0 0 32 32" class="icon icon-user6 icon-large">
+                                <use xlink:href="#user6"></use>
+                            </svg>
+                          </a>
+                          <ul class="dropdown-menu ng-cloak" aria-labelledby="user-dropdown" ng-show="$root.username != undefined" ng-cloak>
+                            <li>
+                              <a ui-sref="profile">Profile</a>
                             </li>
-                            <li class="hidden-xs" data-toggle="dropdown" ng-show="$root.username == undefined">
+                            <li>
+                              <a ui-sref="history">Giving History</a>
+                            </li>
+                            <li>
+                              <a ui-sref="serve-signup">Sign Up to Serve</a>
+                            </li>
+                            <li>
+                              <a ui-sref="mytrips">My Trips</a>
+                            </li>
+                            <li>
+                              <a ui-sref="logout" class="ng-cloak">Sign Out</a>
+                            </li>
+                          </ul>
+                        </div>
+
+
+                        <ul class="navbar--login list-unstyled">
+
+
+                            <li class="hidden-xs hidden-sm" data-toggle="dropdown" ng-show="$root.username == undefined">
                                 <button class="btn btn-primary" id="form-toggle" ng-click="toggleDesktopLogin(); passwordPrefix='login-dropdown'">
                                     <span>Log In</span>
                                 </button>
@@ -35,7 +68,6 @@
                                     <li role="presentation">
                                         <div class="navbar--register__container">
                                             <div class="dd_menu">
-
                                                 <login-form></login-form>
                                             </div>
                                         </div>

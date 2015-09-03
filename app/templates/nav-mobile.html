@@ -4,36 +4,14 @@
             <input type="text" class="form-control" placeholder="Search">
             <span class="input-group-addon"><svg viewBox="0 0 32 32" class="icon icon-search3"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#search3"></use></svg></span>
         </div>
-
     </li>
-    <li>
-        <svg viewBox="0 0 32 32" class="icon icon-arrow-right9">
-            <use xlink:href="#arrow-right9"></use>
-        </svg>
-        <a href="#" ng-click="myCrdsCollapse = !myCrdsCollapse">My Crossroads</a>
-        <ul collapse="!myCrdsCollapse" class="drop-menu">
-            <li ng-if="$root.username == undefined">
-                <div class="dd_menu side-nav-login clearfix">
-                    <login-form prefix="mobile-page" ng-click="app.prevent($event)"></login-form>
-                </div>
-                <ul>
-                    <li><a ui-sref="register" ng-click="ok($event)">Create an Account</a>
-                    </li>
-                </ul>
-            </li>
-            <li ng-if="$root.username != undefined">
-                <ul>
-                    <li><a ui-sref="profile" ng-click="ok($event)">Profile</a>
-                    </li>
-                    <li><a ui-sref="history" ng-click="ok($event)">Giving History</a>
-                    </li>
-                    <li><a ui-sref="serve-signup" ng-click="ok($event)">Sign Up to Serve</a></li>
-                    <li><a ui-sref="mytrips" ng-click="ok($event)">My Trips</a></li>
-                    <li><a href="#/" ng-click="logout($event)" class="ng-cloak" ng-click="ok($event)">Sign Out</a>
-                    </li>
-                </ul>
-            </li>
-        </ul>
+    <li ng-if="$root.username == undefined" class="side-nav-not-logged-in">
+      <button class="btn btn-standard push-half-left" ui-sref="login" ng-click="ok($event)" >
+          <span>Log In</span>
+      </button>
+      <div class="inline">
+        <a ui-sref="register" ng-click="ok($event)" class="push-half-left">Create an Account</a>
+      </div>
     </li>
     <li>
         <svg viewBox="0 0 32 32" class="icon icon-arrow-right9">

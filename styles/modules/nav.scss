@@ -292,6 +292,14 @@ header.show .container {
   display: block;
 }
 
+.mobile-account {
+  float: right;
+  padding: 12px 0 0;
+  position: relative;
+  z-index: 1001;
+  color: #555;
+}
+
 
 /******************** Desktop ********************/
 
@@ -432,7 +440,7 @@ header.show .container {
   opacity: 0;
   display: none;
   position: absolute;
-  right: 12px;
+  right: 0px;
   top: -170%;
   border: 1px solid #ccc;
   background-color: #fff;
@@ -443,7 +451,7 @@ header.show .container {
 
 .navbar--login__dropdown.toggleOpen {
   opacity: 1;
-  top: 75%;
+  top: 85%;
   display: block;
   z-index: 1000000;
   transition: opacity 0.2s, top 0.75s;
@@ -465,6 +473,13 @@ header.show .container {
   position: absolute;
   right: 5px;
   top: 10px;
+}
+
+.current-user-name {
+  display: block;
+  float: left;
+  padding-right: 6px;
+  line-height: 1.5;
 }
 
 /***** Mobile Nav *****/
@@ -515,7 +530,7 @@ ul.cr-nav {
 
       &.btn {
         vertical-align: sub;
-        padding-bottom: 0px;
+        padding-bottom: 2px;
       }
     }
 
@@ -547,8 +562,8 @@ ul.cr-nav {
 }
 
 .dropdown-menu-large {
-  margin-left: 16px;
-  margin-right: 16px;
+  margin-left: 8px;
+  margin-right: 8px;
   padding: 20px 0px;
   right: 1%;
 }
@@ -742,11 +757,27 @@ ul.cr-nav {
   .side-nav-search {
     padding: 10px;
     position: relative;
+    border-bottom: 1px solid lighten($gray-darker, 15%);
 
     input {
       position: static;
     }
   }
+
+  .side-nav-not-logged-in {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid lighten($gray-darker, 15%);
+
+    a {
+      color: $gray-light;
+
+      &:hover {
+        color: $gray-lighter;
+      }
+    }
+  }
+
   .side-nav-login {
     padding: 10px;
 
