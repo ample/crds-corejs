@@ -2,62 +2,6 @@
     <div class="hidden-xs hidden-sm">
         <ul class="nav nav-pills cr-nav">
             <li class="dropdown dropdown-large" dropdown>
-                <a href="#" class="dropdown-toggle" dropdown-toggle>My Crossroads</a>
-                <ul class="dropdown-menu dropdown-menu-large dropdown-menu-featured-row row">
-                    <li class="col-sm-3" ng-if="$root.username == undefined">
-                        <ul>
-                            <login-form prefix="menu" ng-click="app.prevent($event)"></login-form>
-                        </ul>
-                    </li>
-                    <li class="col-sm-3" ng-if="$root.username != undefined">
-                        <ul>
-                            <li class="dropdown-header">My Account</li>
-                            <li><a ui-sref="profile">Profile</a>
-                            </li>
-                            <li><a ui-sref="history">Giving History</a>
-                             </li>
-                             <li><a ui-sref="serve-signup">Sign Up to Serve</a></li>
-                             <li><a ui-sref="mytrips">My Trips</a></li>
-                        </ul>
-                    </li>
-                    <li class="col-sm-3" ng-if="$root.username ==undefined">
-                        <ul>
-                            <li class="dropdown-header">Create an Account</li>
-                            <li><a ui-sref="register">Create an Account</a>
-                            </li>
-                            <li><a ui-sref="why">Why Create an Account?</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="col-sm-3">
-                        <ul>
-                            <li class="dropdown-header">Recent Weekend Services</li>
-                            <li><a href="#">The Feed</a>
-                            </li>
-                            <li><a href="#">Weekend service audio</a>
-                            </li>
-                            <li><a href="#">Weekend service video</a>
-                            </li>
-                            <li><a href="#">Weekend Kids' Club lesson</a>
-                            </li>
-                            <li><a href="#">Weekend Middle School lesson</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="col-sm-3">
-                        <ul>
-                            <li class="dropdown-header">Learn about Crossroads</li>
-                            <li><a ui-sref="blog">Blog</a>
-                            </li>
-                            <li><a ui-sref="home">Home</a>
-                            </li>
-                            <li><a ui-sref="explore">Explore Crossroads</a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </li>
-            <li class="dropdown dropdown-large" dropdown>
                 <a href="#" class="dropdown-toggle" dropdown-toggle>Engage</a>
                 <ul class="dropdown-menu dropdown-menu-large dropdown-menu-featured-row row">
                     <li class="col-sm-3 ">

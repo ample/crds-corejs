@@ -297,7 +297,7 @@ header.show .container {
   padding: 12px 0 0;
   position: relative;
   z-index: 1001;
-  color: #555;
+  color: $cr-grey;
 }
 
 
@@ -757,8 +757,6 @@ ul.cr-nav {
   .side-nav-search {
     padding: 10px;
     position: relative;
-    border-bottom: 1px solid lighten($gray-darker, 15%);
-
     input {
       position: static;
     }
