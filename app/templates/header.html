@@ -3,13 +3,13 @@
   <!-- Brand Bar -->
   <ng-include src="'templates/brand-bar.html'"></ng-include>
 
-  <div id="menu">
+  <div id="menu" class="menu">
     <div class="container">
       <div class="row">
         <!-- TODO refactor this out into it's own directive, that uses the login and registration directives. The new directive should take an argument that is the internal directive (login and/or registration)* -->
         <div class="col-xs-12 menu__container">
 
-          <div class="navbar-header">
+          <div class=""><!--removed class navbar-header-->
 
             <!--HAMBURGER MENU-->
             <div ng-class="{show: menu.isMobileShowing}">
@@ -25,6 +25,9 @@
             <a class="navbar-brand logo" ui-sref="home" href="/">
               <img src="//crossroads-media.s3.amazonaws.com/images/logo.svg" alt="crossroads">
             </a>
+
+            <!--MAIN NAV MENU-->
+            <ng-include src="'templates/nav.html'"> </ng-include>
 
             <!--PROFILE ICON AND DROPDOWN-->
             <div class="pull-right hidden-xs hidden-sm" dropdown on-toggle="toggled(open)">
@@ -57,7 +60,7 @@
             </div>
 
             <!--LOGIN BUTTON AND DROPDOWN-->
-            <ul class="navbar--login list-unstyled hidden-xs hidden-sm">
+            <ul class="pull-right navbar--login list-unstyled hidden-xs hidden-sm">
               <li class="" data-toggle="dropdown" ng-show="$root.username == undefined">
                 <button class="btn btn-standard" id="form-toggle" ng-click="toggleDesktopLogin(); passwordPrefix='login-dropdown'">
                   <span>Log In</span>
@@ -77,8 +80,6 @@
             </ul>
 
           </div><!--navbar-header-->
-
-          <ng-include src="'templates/nav.html'"> </ng-include>
 
         </div><!--/col-->
       </div><!--/row-->

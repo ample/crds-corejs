@@ -4,13 +4,12 @@
 /***************************************************************************************
 * Navbar
 ***************************************************************************************/
+.menu {
+  margin-top: 10px;
+}
 
 .navbar-brand {
-  float: left;
-  font-size: $font-size-large;
-  line-height: 1;
   padding: $navbar-padding-vertical 2px;
-
   &:hover,
   &:focus {
     text-decoration: none;
@@ -294,7 +293,7 @@ header.show .container {
 
 .mobile-account {
   float: right;
-  padding: 12px 0 0;
+  padding: 5px 0 0;
   position: relative;
   z-index: 1001;
   color: $cr-grey;
@@ -408,7 +407,7 @@ header.show .container {
 }
 
 .navbar--login {
-  float: right;
+  //float: right;
   margin-top: 2px;
   background-color: #fff;
   &:hover {
@@ -423,7 +422,7 @@ header.show .container {
   }
 
   .dropdown-menu {
-    left: calc(100% - 300px);
+    left: calc(100% - 315px);
     width: 300px;
   }
 }
@@ -438,6 +437,7 @@ header.show .container {
 
 .navbar--login__dropdown  {
   @extend .dropdown-menu;
+  top: 80%;
 }
 .navbar--login__dropdown.toggleOpen {
   top: 85%;
@@ -498,9 +498,8 @@ header.show .container {
 ***************************************************************************************/
 
 ul.cr-nav {
-  margin-left: -8px;
-  clear: both;
-
+  margin-top: 5px;
+  margin-left: 10px;
   > li {
     > a {
       display: inline-block;
