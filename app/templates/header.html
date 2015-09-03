@@ -8,7 +8,10 @@
       <div class="row">
         <!-- TODO refactor this out into it's own directive, that uses the login and registration directives. The new directive should take an argument that is the internal directive (login and/or registration)* -->
         <div class="col-xs-12 menu__container">
+
           <div class="navbar-header">
+
+            <!--HAMBURGER MENU-->
             <div ng-class="{show: menu.isMobileShowing}">
               <button type="button" class="nav__side--toggle navbar-left hidden-md hidden-lg hidden-xl" ng-click="app.openAside('left', true)">
                 <span class="sr-only">Toggle navigation</span>
@@ -17,10 +20,13 @@
                 <span class="icon-bar"></span>
               </button>
             </div>
+
+            <!--LOGO-->
             <a class="navbar-brand logo" ui-sref="home" href="/">
               <img src="//crossroads-media.s3.amazonaws.com/images/logo.svg" alt="crossroads">
             </a>
 
+            <!--PROFILE ICON AND DROPDOWN-->
             <div class="pull-right hidden-xs hidden-sm" dropdown on-toggle="toggled(open)">
               <a href="#" id="user-dropdown" class="mobile-account" ng-show="$root.username != undefined" dropdown-toggle title="{{$root.username}}">
                 <svg viewBox="0 0 32 32" class="icon icon-user6 icon-large">
@@ -50,7 +56,7 @@
               </ul>
             </div>
 
-
+            <!--LOGIN BUTTON AND DROPDOWN-->
             <ul class="navbar--login list-unstyled hidden-xs hidden-sm">
               <li class="" data-toggle="dropdown" ng-show="$root.username == undefined">
                 <button class="btn btn-standard" id="form-toggle" ng-click="toggleDesktopLogin(); passwordPrefix='login-dropdown'">
@@ -69,23 +75,13 @@
                 </ul>
               </li>
             </ul>
-            <ul class="navbar--login list-unstyled visible-lg visible-md">
-              <li>
-                <ul class="navbar--login__dropdown list-unstyled col-md-3 soft-top soft-sides" role="menu" aria-labelledby="dropdownMenu2" ng-class="{toggleOpen: registerShow}">
-                  <li role="presentation">
-                    <div class="navbar--register__container">
-                      <div class="dd_menu">
-                        <register-form></register-form>
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </div>
+
+          </div><!--navbar-header-->
+
           <ng-include src="'templates/nav.html'"> </ng-include>
-        </div>
-      </div>
-    </div>
-  </div>
+
+        </div><!--/col-->
+      </div><!--/row-->
+    </div><!--/container-->
+  </div><!--/#menu-->
 </header>

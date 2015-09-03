@@ -437,24 +437,12 @@ header.show .container {
 }
 
 .navbar--login__dropdown  {
-  opacity: 0;
-  display: none;
-  position: absolute;
-  right: 0px;
-  top: -170%;
-  border: 1px solid #ccc;
-  background-color: #fff;
-  box-shadow: 0 6px 12px rgba(0,0,0,.175);
-  z-index: -1000000;
-  transition: opacity 0.2s, top 0.75s;
+  @extend .dropdown-menu;
 }
-
 .navbar--login__dropdown.toggleOpen {
-  opacity: 1;
   top: 85%;
   display: block;
   z-index: 1000000;
-  transition: opacity 0.2s, top 0.75s;
 }
 
 .navbar--login__input {
