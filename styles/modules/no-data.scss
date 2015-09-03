@@ -1,0 +1,13 @@
+.no-data {
+  text-align: center;
+  margin-top: $line-height-computed*2;
+  margin-bottom: $line-height-computed*2;
+  .icon {
+    width: 100px;
+    height: 100px;
+    color: $gray-lighter;
+  }
+  h1,h2,h3,h4,h5 {
+    margin-top: 0;
+  }
+}
