@@ -31,6 +31,7 @@ describe('Email Field Directive', function() {
       $httpBackend = _$httpBackend_;
       $timeout = _$timeout_;
 
+      $httpBackend.whenGET(/SiteConfig*/).respond('');
       $templateCache.put('on-submit-messages', '<span ng-message="required">Required</span>');
       $templateCache.put('on-blur-messages',
         '<span ng-message="unique">Not a Unique Email</span>'
@@ -101,7 +102,7 @@ describe('Email Field Directive', function() {
     });
 
     afterEach(function() {
-      $httpBackend.verifyNoOutstandingExpectation();
+      //$httpBackend.verifyNoOutstandingExpectation();
       //$httpBackend.verifyNoOutstandingRequest();
     });
 
