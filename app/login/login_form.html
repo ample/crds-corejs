@@ -26,10 +26,18 @@
                 <div class="row">
                   <div class="col-xs-12">
                     <input type="submit" name="submit_nav" value="Log In" ng-class="{disabled: processing }" id="submit_nav" class="btn btn-primary btn-block-mobile"/>
-                    <a href="" ng-if="showRegister" ui-sref="{{registerUrl}}" class="btn btn-standard">Create an Account</a>
                     <p class="forgot_password pull-right"><a ui-sref="forgotPassword">Forgot password?</a></p>
                   </div>
-              </div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-12">
+                    <hr>
+                    <div class="text-center or-divider">
+                      <p><span> or </span></p>
+                    </div>
+                    <p class="text-center"><a class="link-secondary" ui-sref="register" >Create an account</a></p>
+                  </div>
+                </div><!--/row-->
             </div>
         </form>
     </div>
