@@ -1,7 +1,7 @@
 <ul>
     <li>
         <div class="input-group side-nav-search">
-          <input type="text" class="form-control" placeholder="Search">
+          <input type="search" class="form-control" placeholder="Search">
           <span class="input-group-btn">
             <button class="btn btn-standard"><svg viewBox="0 0 32 32" class="icon icon-search3"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#search3"></use></svg></button>
           </span>
@@ -14,7 +14,11 @@
         <svg viewBox="0 0 32 32" class="icon icon-arrow-right9">
             <use xlink:href="#arrow-right9"></use>
         </svg>
-        <a href="#" ng-click="profileCollapse = !profileCollapse">My Profile</a>
+        <a href="#" ng-click="profileCollapse = !profileCollapse">
+          My Profile
+          <img class="nav-profile-image push-half-left" ng-src="https://randomuser.me/api/portraits/med/women/53.jpg" src="https://randomuser.me/api/portraits/med/women/53.jpg">
+
+        </a>
         <ul collapse="!profileCollapse" class="drop-menu">
           <li role="separator" class="divider"></li>
           <li>

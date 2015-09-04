@@ -97,7 +97,28 @@ $breadcrumb-separator:          ">" !default;
 
 
 
+//== Components
+//
+//## Define common padding and border radius sizes and more. Values based on 14px text and 1.428 line-height (~20px to start).
 
+$padding-base-vertical:     6px !default;
+$padding-base-horizontal:   16px !default;
+
+$padding-large-vertical:    10px !default;
+$padding-large-horizontal:  22px !default;
+
+$padding-small-vertical:    5px !default;
+$padding-small-horizontal:  14px !default;
+
+$padding-xs-vertical:       1px !default;
+$padding-xs-horizontal:     8px !default;
+
+$line-height-large:         1.33 !default;
+$line-height-small:         1.5 !default;
+
+$border-radius-base:        4px !default;
+$border-radius-large:       5px !default;
+$border-radius-small:       3px !default;
 
 
 
