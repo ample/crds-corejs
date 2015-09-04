@@ -6,10 +6,11 @@ describe('CoreController', function() {
 
   var $controller, $rootScope, Message, MESSAGES, $aside, $scope, controller, growl, screenSize, $state;
 
-  beforeEach(inject(function(_$controller_, _$rootScope_, _ContentBlock_, _MESSAGES_, _$aside_, _growl_, _screenSize_, _$state_, _$log_){
+  beforeEach(inject(function(_$controller_, _$rootScope_, _ContentBlock_, _SiteConfig_, _MESSAGES_, _$aside_, _growl_, _screenSize_, _$state_, _$log_){
     $controller = _$controller_;
     $rootScope = _$rootScope_;
     ContentBlock = _ContentBlock_;
+    SiteConfig = _SiteConfig_;
     MESSAGES = _MESSAGES_;
     $aside = _$aside_;
     growl = _growl_;
@@ -21,6 +22,7 @@ describe('CoreController', function() {
       '$rootScope': $rootScope,
       'MESSAGES': MESSAGES,
       'ContentBlock': ContentBlock,
+      'SiteConfig': SiteConfig,
       'growl': growl,
       '$aside': $aside,
       'screenSize': screenSize,
