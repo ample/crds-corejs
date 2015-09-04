@@ -2,15 +2,18 @@ require('../../app/core');
 
 describe('preloader', function() {
 
-  var $compile, $rootScope, element, scope, isolateScope;
+  var $compile, $rootScope, element, scope, isolateScope, $httpBackend;
 
   beforeEach(function() {
     angular.mock.module('crossroads.core');
   });
 
-  beforeEach(inject(function(_$compile_, _$rootScope_) {
+  beforeEach(inject(function(_$compile_, _$rootScope_, _$httpBackend_) {
     $compile = _$compile_;
     $rootScope = _$rootScope_;
+
+    $httpBackend = _$httpBackend_;
+    $httpBackend.whenGET(/SiteConfig*/).respond(''); 
   }));
 
   it('should not have a fullscreen class', function(){
