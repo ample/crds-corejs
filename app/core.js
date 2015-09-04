@@ -10,6 +10,7 @@
   require('angular-toggle-switch');
   require('ui-event');
   require('ui-mask');
+  require('angular-stripe');
   require('angular-payments');
   require('angular-bootstrap-npm');
   require('angular-ui-router');

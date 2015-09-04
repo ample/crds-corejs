@@ -16,7 +16,8 @@
     'matchMedia',
     'ui.bootstrap',
     'ui.mask',
-    'ngImgCrop'
+    'ngImgCrop',
+    'angular-stripe'
     ])
     .constant('AUTH_EVENTS', {
       loginSuccess: 'auth-login-success',
