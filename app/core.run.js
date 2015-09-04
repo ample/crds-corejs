@@ -11,11 +11,18 @@
     '$timeout',
     '$location',
     '$cookies',
-    '$document'];
+    '$document',
+    'ContentSiteConfigService',
+    'SiteConfig'];
 
-  function AppRun(Session, $rootScope, MESSAGES, $http, $log, $state, $timeout, $location, $cookies, $document) {
+  function AppRun(Session, $rootScope, MESSAGES, $http, $log, $state, $timeout, $location, $cookies, $document, ContentSiteConfigService, SiteConfig) {
     $rootScope.MESSAGES = MESSAGES;
     setOriginForCmsPreviewPane($document);
+
+    SiteConfig.get({id:1}).$promise.then(function(result ) {
+          ContentSiteConfigService.siteconfig = result.siteConfig;
+        }
+      );
 
     function clearAndRedirect(event, toState, toParams) {
       console.log($location.search());
@@ -64,6 +71,18 @@
         $rootScope.username = null;
       }
       //}
+    });
+    $rootScope.$on("$stateChangeSuccess", function(event, toState){
+      if (toState.data && toState.data.meta){
+        $rootScope.meta = toState.data.meta;
+      }
+      if(ContentSiteConfigService.siteconfig.title){
+        $rootScope.meta.title = $rootScope.meta.title +
+          ' | ' + ContentSiteConfigService.siteconfig.title;
+      } else {
+        $rootScope.meta.title = $rootScope.meta.title +
+          ' | ' + 'Crossroads';
+      }
     });
 
     function setOriginForCmsPreviewPane($document) {
