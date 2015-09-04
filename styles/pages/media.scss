@@ -86,13 +86,6 @@
   }
 }
 
-.audio-container {
-  .media {
-    //margin-top: -($line-height-computed*2);
-
-  }
-}
-
 .media-details {
   color: $gray-light;
   padding-bottom: ($line-height-computed*3);
@@ -115,6 +108,7 @@
 
   .label {
     color: $gray-lighter;
+		margin-right: 5px;
   }
 }
 
