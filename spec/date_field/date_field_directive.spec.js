@@ -8,8 +8,9 @@ describe('Date Field Directive', function() {
     angular.mock.module('crossroads.core');
   });
 
-  beforeEach(inject(function($compile, $rootScope) {
+  beforeEach(inject(function($compile, $rootScope, $httpBackend) {
     $scope = $rootScope;
+    $httpBackend.whenGET(/SiteConfig*/).respond('');
     var element = angular.element(
       '<form name="form">' +
       '<input type="text" ng-model="model.aDate" name="aDate" invalidate-past-date />' +

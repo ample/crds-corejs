@@ -1,5 +1,5 @@
 'use strict()';
-(function(){
+(function() {
 
   angular.module('crossroads.core', [
     'ngResource',
@@ -9,6 +9,7 @@
     'ngCookies',
     'ngMessages',
     'angular-growl',
+    'angular-stripe',
     'toggle-switch',
     'sn.addthis',
     'ngAside',
@@ -16,7 +17,8 @@
     'matchMedia',
     'ui.bootstrap',
     'ui.mask',
-    'ngImgCrop'
+    'ngImgCrop',
+    'angular-stripe'
     ])
     .constant('AUTH_EVENTS', {
       loginSuccess: 'auth-login-success',
@@ -27,10 +29,11 @@
       isAuthenticated: 'auth-is-authenticated',
       notAuthorized: 'auth-not-authorized'
     })
+
     //TODO Pull out to service and/or config file
     .constant('MESSAGES', {})
 
-    .config(function (growlProvider) {
+    .config(function(growlProvider) {
       growlProvider.globalPosition('top-center');
       growlProvider.globalTimeToLive(6000);
       growlProvider.globalDisableIcons(true);
@@ -40,6 +43,7 @@
     .directive('stopEvent', require('./shared/stopevent.directive.js'))
     .directive('requireMultiple', require('./shared/requireMultiple.directive.js'))
     .directive('autofocus', require('./shared/autofocus.directive.js'))
-    .factory('ContentPageService', require('./cms/services/content_page.service'));
+    .factory('ContentPageService', require('./cms/services/content_page.service'))
+    .factory('ContentSiteConfigService', require('./cms/services/content_siteconfig.service'));
 
 })();
