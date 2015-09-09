@@ -49,7 +49,7 @@
     function updateResponsiveImages() {
       imgix.fluid({
         fluidClass: 'img-responsive',
-        autoInsertCSSBestPractices: true,
+        autoInsertCSSBestPractices: true
       });
     }
 

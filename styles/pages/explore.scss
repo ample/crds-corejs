@@ -38,6 +38,10 @@
   font-size: 26px;
   position: absolute;
   top: 16px;
+
+  &:hover {
+    color: $cr-orange;
+  }
 }
 .explore-btt {
   position: absolute;
@@ -71,6 +75,7 @@
   text-transform: uppercase;
   line-height: 24px;
   margin-bottom: 8px;
+  color: #fff;
 }
 .opening-more {
   color: #999999;
@@ -363,7 +368,7 @@
   }
   .opening-container {
     position: relative;
-    top: 160px;
+    top: 150px;
     color: #ffffff;
     opacity: 1;
     max-width: 600px;
