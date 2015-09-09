@@ -11,9 +11,10 @@
     'growl',
     '$aside',
     'screenSize',
-    '$state'];
+    '$state',
+    '$timeout'];
 
-  function CoreController($scope, $rootScope, MESSAGES, ContentBlock, growl, $aside, screenSize, $state) {
+  function CoreController($scope, $rootScope, MESSAGES, ContentBlock, growl, $aside, screenSize, $state, $timeout) {
 
     var vm = this;
 
@@ -34,16 +35,23 @@
     });
 
     $scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
+      $timeout(updateResponsiveImages);
       vm.resolving = false;
     });
 
-    $scope.$on('$stateChangeError', function(event,toState, toParams, fromState, fromParams, error){
+    $scope.$on('$stateChangeError', function (event, toState, toParams, fromState, fromParams, error) {
       console.error('$stateChangeError: ' + error);
       //TODO: put the 'toState' in the session if we want to redirect to that page
       vm.resolving = false;
-      $state.go('content', {link:'/server-error/'});
+      $state.go('content', {link: '/server-error/'});
     });
 
+    function updateResponsiveImages() {
+      imgix.fluid({
+        fluidClass: 'img-responsive',
+        autoInsertCSSBestPractices: true,
+      });
+    }
 
     //////////////////////////
     /////// $ROOTSCOPE ///////
