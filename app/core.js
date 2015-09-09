@@ -10,6 +10,7 @@
   require('angular-toggle-switch');
   require('ui-event');
   require('ui-mask');
+  require('angular-stripe');
   require('angular-payments');
   require('angular-bootstrap-npm');
   require('angular-ui-router');
@@ -19,7 +20,7 @@
   require('angular-mailchimp');
   require('lodash');
   require('angular-image-crop');
-  
+  require('expose?imgix!../lib/imgix.min');
 
   require('../node_modules/angular-toggle-switch/angular-toggle-switch-bootstrap.css');
   require('../node_modules/angular-toggle-switch/angular-toggle-switch.css');
@@ -44,8 +45,6 @@
   require('./login');
   require('./logout');
   require('./home');
-  require('./register/register_directive');
-  require('./cms/services/cms_services_module');
 
   // Common Components
   require('./components/btnLoading.directive');
@@ -53,13 +52,18 @@
   require('./components/preloader');
   require('./components/volunteer_applications');
   require('./components/loadingButton');
-
-  require('./content');
   require('./email_field/email_field_directive');
   require('./date_field/date_field_directive');
   require('./password_field/password_field_directive');
+  require('./register/register_directive');
+  require('./cms/services/cms_services_module');
+
+
+  // Common Services
+  require('./content');
   require('./filters');
-  require('./services/cc_brand_codes');
+
+  
   require('./core.config');
   require('./core.controller');
   require('./core.run');
