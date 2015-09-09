@@ -351,6 +351,12 @@
   font-size: 20px;
   font-weight: 100;
   letter-spacing: 1.5;
+  text-align: center;
+  
+  .icon {
+    display: block;
+    margin: 0 auto;
+  }
 }
 
 @media (min-width: 551px) {
@@ -371,8 +377,8 @@
     top: 150px;
     color: #ffffff;
     opacity: 1;
-    max-width: 600px;
-    margin: 0 auto;
+    //max-width: 600px;
+    //margin: 0 auto;
   }
   .opening-title {
     font-size: 40px;
