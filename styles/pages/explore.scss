@@ -352,10 +352,16 @@
   font-weight: 100;
   letter-spacing: 1.5;
   text-align: center;
-  
+
   .icon {
     display: block;
     margin: 0 auto;
+  }
+}
+
+#nextopening {
+  .icon {
+    transform: rotate(180deg);
   }
 }
 

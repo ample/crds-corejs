@@ -5,6 +5,7 @@
     'ngResource',
     'ngSanitize',
     'ngPayments',
+    'duScroll',
     'ui.router',
     'ngCookies',
     'ngMessages',

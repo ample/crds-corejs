@@ -1,6 +1,6 @@
 (function(){
   'use strict';
-  
+
   require('angular');
   require('angular-resource');
   require('angular-sanitize');
@@ -10,6 +10,7 @@
   require('angular-toggle-switch');
   require('ui-event');
   require('ui-mask');
+  require('angular-scroll');
   require('angular-stripe');
   require('angular-payments');
   require('angular-bootstrap-npm');
@@ -32,7 +33,7 @@
 
   require('../styles/main.scss');
 
-  require('./content/sidebarContent.html'); 
+  require('./content/sidebarContent.html');
   require('./templates/nav.html');
   require('./templates/nav-mobile.html');
   require('./templates/404.html');
@@ -63,7 +64,7 @@
   require('./content');
   require('./filters');
 
-  
+
   require('./core.config');
   require('./core.controller');
   require('./core.run');
