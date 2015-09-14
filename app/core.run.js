@@ -41,7 +41,7 @@
           Session.addRedirectRoute(fromState.name, fromParams);
         }
         else {
-          Session.addRedirectRoute('home', '');
+          Session.addRedirectRoute('content', {link:'/'});
         }
         return;
       }
