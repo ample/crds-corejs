@@ -49,7 +49,7 @@ gulp.task('tag', ['npmPublish'], function(callback){
   }
 
   return gulp.src('./')
-    .pipe(git.commit(message))
+    .pipe(git.commit(message, {args: '-a'}))
     .pipe(git.tag(v, message))
     .pipe(git.push('origin', branch, '--tags'), function(err){
       if(err) { throw err; } 
