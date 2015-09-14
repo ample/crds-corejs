@@ -24,16 +24,22 @@ gulp.task("default", ["webpack-dev-server"]);
 // Advantage: No server required, can run app from filesystem
 // Disadvantage: Requests are not blocked until bundle is available,
 //               can serve an old app on refresh
-gulp.task("build-dev", ["webpack:build-dev"], function() {
-	gulp.watch(webpackConfig, ["webpack:build-dev"]);
+gulp.task('build-dev', ['webpack:build-dev'], function() {
+	gulp.watch(webpackConfig, ['webpack:build-dev']);
 });
 
 // Production build
 gulp.task('build', ['webpack:build']);
 
 gulp.task('bump', function () {
+  var type = argv.releaseType;
+
+  if (!type) {
+    type = 'patch'; 
+  }
+
   return gulp.src(['./package.json'])
-    .pipe(bump())
+    .pipe(bump({type:'prerelease'}))
     .pipe(gulp.dest('./'));
 });
 
@@ -49,7 +55,6 @@ gulp.task('tag', ['npmPublish'], function(callback){
     var error = new Error('Branch is required as an argument --branch development');
     return callback(error);
   }
-
   return gulp.src('./')
     .pipe(git.commit(message, {args: '-a'}))
     .pipe(git.tag(v, message))
@@ -63,6 +68,7 @@ gulp.task('npmPublish', ['bump'], function(callback) {
   var username = argv.username;
   var password = argv.password;
   var email = argv.email;
+  var type = argv.releaseTyp;
   if (!username) {
       var usernameError = new Error('Username is required as an argument --username exampleUsername');
       return callback(usernameError);
@@ -74,6 +80,9 @@ gulp.task('npmPublish', ['bump'], function(callback) {
   if (!email) {
       var emailError = new Error('Email is required as an argument --email example@email.com');
       return callback(emailError);
+  }
+  if (!type) {
+    type = 'patch';
   }
 
   var uri = 'http://registry.npmjs.org/';
@@ -109,6 +118,10 @@ gulp.task('npmPublish', ['bump'], function(callback) {
             body: body,
             auth: auth
         };
+
+        if (type === 'prerelease') {
+          publishParams.tag = ''; 
+        }
         npm.registry.publish(uri, publishParams, function (publishError, resp) {
           if (publishError) {
             return callback(publishError);
