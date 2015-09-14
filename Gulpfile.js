@@ -120,7 +120,7 @@ gulp.task('npmPublish', ['bump'], function(callback) {
         };
 
         if (type === 'prerelease') {
-          publishParams.tag = ''; 
+          publishParams.tag = metadata.version; 
         }
         npm.registry.publish(uri, publishParams, function (publishError, resp) {
           if (publishError) {
