@@ -37,6 +37,8 @@ gulp.task('bump', function () {
     .pipe(gulp.dest('./'));
 });
 
+gulp.task('versionAndPublish', ['tag']);
+
 gulp.task('tag', ['npmPublish'], function(callback){
   var branch = argv.branch;
   var pkg = require('./package.json');
