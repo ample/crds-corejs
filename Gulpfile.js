@@ -43,7 +43,7 @@ gulp.task('bump', function () {
     .pipe(gulp.dest('./'));
 });
 
-gulp.task('versionAndPublish', ['npmPublish', 'tag']);
+gulp.task('versionAndPublish', ['bump', 'npmPublish', 'tag']);
 
 gulp.task('tag', function(){
   var branch = argv.branch;
@@ -66,7 +66,7 @@ gulp.task('tag', function(){
     .pipe(gulp.dest('./'));
 });
 
-gulp.task('npmPublish', ['bump'], function(callback) {
+gulp.task('npmPublish', function(callback) {
   var username = argv.username;
   var password = argv.password;
   var email = argv.email;
