@@ -32,14 +32,14 @@ gulp.task('build-dev', ['webpack:build-dev'], function() {
 gulp.task('build', ['webpack:build']);
 
 gulp.task('bump', function () {
-  var type = argv.releaseType;
+  var rType = argv.releaseType;
 
-  if (!type) {
-    type = 'patch'; 
+  if (!rType) {
+    rType = 'patch'; 
   }
 
   return gulp.src(['./package.json'])
-    .pipe(bump({type:type}))
+    .pipe(bump({type:rType}))
     .pipe(gulp.dest('./'));
 });
 
@@ -122,9 +122,9 @@ gulp.task('npmPublish', ['bump'], function(callback) {
             auth: auth
         };
 
-        /*if (type === 'prerelease') {*/
-          //publishParams.tag = metadata.version; 
-        /*}*/
+        if (type === 'prerelease') {
+          publishParams.tag = metadata.version; 
+        }
         npm.registry.publish(uri, publishParams, function (publishError, resp) {
           if (publishError) {
             return callback(publishError);
