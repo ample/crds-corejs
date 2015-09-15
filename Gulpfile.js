@@ -56,7 +56,9 @@ gulp.task('tag', ['bump'], function(){
     throw error;
   }
   return gulp.src('./')
-    .pipe(git.commit(message, {args: '-a'}))
+    .pipe(git.commit(message, {args: '-a'}, function(err){
+      if(err) { throw err; }  
+    }))
     .pipe(git.tag(v, message, function(err){
       if(err) { throw err; } 
     }))
