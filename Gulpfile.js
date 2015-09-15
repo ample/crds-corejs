@@ -61,7 +61,7 @@ gulp.task('tag', ['bump', 'npmPublish'], function(){
     /*.pipe(git.tag(v, message, {quiet: true}, function(err){*/
       //if(err) { throw err; } 
     /*}))*/
-    .pipe(git.push('origin', branch, {args: ' --tags'}, function(err){
+    .pipe(git.push('origin', branch, {}, function(err){
       if (err) { throw err; }  
     }))
     .pipe(gulp.dest('./'));
