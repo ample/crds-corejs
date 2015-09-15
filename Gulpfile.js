@@ -43,7 +43,7 @@ gulp.task('bump', function () {
     .pipe(gulp.dest('./'));
 });
 
-gulp.task('versionAndPublish', ['bump', 'tag', 'npmPublish']);
+gulp.task('versionAndPublish', ['bump', 'npmPublish', 'tag']);
 
 gulp.task('tag', ['bump'], function(){
   var branch = argv.branch;
