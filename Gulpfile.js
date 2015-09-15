@@ -68,7 +68,8 @@ gulp.task('npmPublish', ['bump'], function(callback) {
   var username = argv.username;
   var password = argv.password;
   var email = argv.email;
-  var type = argv.releaseTyp;
+  var type = argv.releaseType;
+
   if (!username) {
       var usernameError = new Error('Username is required as an argument --username exampleUsername');
       return callback(usernameError);
@@ -119,14 +120,14 @@ gulp.task('npmPublish', ['bump'], function(callback) {
             auth: auth
         };
 
-        if (type === 'prerelease') {
-          publishParams.tag = metadata.version; 
-        }
+        /*if (type === 'prerelease') {*/
+          //publishParams.tag = metadata.version; 
+        /*}*/
         npm.registry.publish(uri, publishParams, function (publishError, resp) {
           if (publishError) {
             return callback(publishError);
           }
-          console.log('Publish succesfull: ' + JSON.stringify(resp));
+          console.log('Publish succesful: ' + JSON.stringify(resp));
           return callback();
         });
       });
