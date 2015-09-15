@@ -43,9 +43,7 @@ gulp.task('bump', function () {
     .pipe(gulp.dest('./'));
 });
 
-gulp.task('versionAndPublish', ['npmPublish'], function(){
-     
-});
+gulp.task('versionAndPublish', ['bump', 'tag', 'npmPublish']);
 
 gulp.task('tag', ['bump'], function(){
   var branch = argv.branch;
@@ -62,9 +60,9 @@ gulp.task('tag', ['bump'], function(){
     .pipe(git.tag(v, message, function(err){
       if(err) { throw err; } 
     }))
-    .pipe(git.push('origin', branch, {args: '--tags'}), function(err){
+    .pipe(git.push('origin', branch, {args: '--tags'}, function(err){
       if(err) { throw err; } 
-    })
+    }))
     .pipe(gulp.dest('./'));
 });
 
