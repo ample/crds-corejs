@@ -44,7 +44,7 @@ gulp.task('bump', function () {
 });
 
 gulp.task('versionAndPublish', ['npmPublish'], function(){
- 
+     
 });
 
 gulp.task('tag', ['bump'], function(){
