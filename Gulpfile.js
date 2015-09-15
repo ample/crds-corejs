@@ -39,11 +39,11 @@ gulp.task('bump', function () {
   }
 
   return gulp.src(['./package.json'])
-    .pipe(bump({type:'prerelease'}))
+    .pipe(bump({type:type}))
     .pipe(gulp.dest('./'));
 });
 
-gulp.task('versionAndPublish', ['npmPublish', 'tag']);
+gulp.task('versionAndPublish', ['tag', 'npmPublish']);
 
 gulp.task('tag', function(callback){
   var branch = argv.branch;
