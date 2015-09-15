@@ -57,7 +57,9 @@ gulp.task('tag', function(callback){
   }
   return gulp.src('./')
     .pipe(git.commit(message, {args: '-a'}))
-    .pipe(git.tag(v, message))
+    .pipe(git.tag(v, message, function(err){
+      if(err) { throw err; } 
+    }))
     .pipe(git.push('origin', branch, {args: '--tags'}), function(err){
       if(err) { throw err; } 
     })
