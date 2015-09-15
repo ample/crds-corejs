@@ -50,7 +50,7 @@ gulp.task('tag', ['bump'], function(){
   var pkg = require('./package.json');
   var v = 'v' + pkg.version;
   var message = 'Release ' + v;
-
+  console.log(branch);
   if (!branch) {
     var error = new Error('Branch is required as an argument --branch development');
     throw error;
