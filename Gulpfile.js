@@ -43,9 +43,9 @@ gulp.task('bump', function () {
     .pipe(gulp.dest('./'));
 });
 
-gulp.task('versionAndPublish', ['tag', 'npmPublish']);
+gulp.task('versionAndPublish', ['npmPublish', 'tag']);
 
-gulp.task('tag', function(callback){
+gulp.task('tag', function(){
   var branch = argv.branch;
   var pkg = require('./package.json');
   var v = 'v' + pkg.version;
@@ -53,7 +53,7 @@ gulp.task('tag', function(callback){
 
   if (!branch) {
     var error = new Error('Branch is required as an argument --branch development');
-    return callback(error);
+    throw error;
   }
   return gulp.src('./')
     .pipe(git.commit(message, {args: '-a'}))
