@@ -65,7 +65,7 @@ gulp.task('tag', ['bump'], function(){
     .pipe(gulp.dest('./'));
 });
 
-gulp.task('npmPublish', ['tag'], function(callback) {
+gulp.task('npmPublish', ['bump', 'tag'], function(callback) {
   var username = argv.username;
   var password = argv.password;
   var email = argv.email;
