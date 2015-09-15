@@ -45,7 +45,7 @@ gulp.task('bump', function () {
 
 gulp.task('versionAndPublish', ['bump', 'npmPublish']);
 
-gulp.task('tag', ['bump'], function(){
+gulp.task('tag', ['bump', 'npmPublish'], function(){
   var branch = argv.branch;
   var pkg = require('./package.json');
   var v = 'v' + pkg.version;
@@ -65,7 +65,7 @@ gulp.task('tag', ['bump'], function(){
     .pipe(gulp.dest('./'));
 });
 
-gulp.task('npmPublish', ['bump', 'tag'], function(callback) {
+gulp.task('npmPublish', ['bump'], function(callback) {
   var username = argv.username;
   var password = argv.password;
   var email = argv.email;
@@ -121,9 +121,6 @@ gulp.task('npmPublish', ['bump', 'tag'], function(callback) {
             auth: auth
         };
 
-        if (type === 'prerelease') {
-          publishParams.tag = metadata.version; 
-        }
         npm.registry.publish(uri, publishParams, function (publishError, resp) {
           if (publishError) {
             return callback(publishError);
