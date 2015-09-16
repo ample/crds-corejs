@@ -44,7 +44,6 @@
   require('./app.core.module');
   require('./login');
   require('./logout');
-  require('./home');
 
   // Common Components
   require('./components/btnLoading.directive');
