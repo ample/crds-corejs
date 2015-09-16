@@ -7,6 +7,7 @@ This is the core angular module for the Crossroads.net site. It includes multipl
 * Angular Cookies
 * Angular Messages
 * Angular Sanitize
+* Angular Stripe
 * Ui-Router *may be removed in the future*
 * Ui-Bootstrap
 * [UI Event](http://htmlpreview.github.io/?https://github.com/angular-ui/ui-event/master/demo/index.html)
@@ -17,11 +18,12 @@ This is the core angular module for the Crossroads.net site. It includes multipl
 * lodash
 * moment
 
+
+
 ### Installation
 `npm i crds-core --save-dev` 
 
 At the top of your entry file (most likely app.js) `require('crds-core')`
-
 
 ### Building and Testing
 The module is built with gulp using webpack for packaging.
@@ -29,4 +31,3 @@ The module is built with gulp using webpack for packaging.
 * Pull down the repo
 * Install dependencies `npm i`
 * Run tests `karma start karma.conf.js`
-
