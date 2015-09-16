@@ -12,9 +12,9 @@
     '$aside',
     'screenSize',
     '$state',
-    '$timeout'];
+    'ResponsiveImageService'];
 
-  function CoreController($scope, $rootScope, MESSAGES, ContentBlock, growl, $aside, screenSize, $state, $timeout) {
+  function CoreController($scope, $rootScope, MESSAGES, ContentBlock, growl, $aside, screenSize, $state, ResponsiveImageService) {
 
     var vm = this;
 
@@ -35,7 +35,7 @@
     });
 
     $scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
-      $timeout(updateResponsiveImages);
+      ResponsiveImageService.updateResponsiveImages();
       vm.resolving = false;
     });
 
@@ -45,13 +45,6 @@
       vm.resolving = false;
       $state.go('content', {link: '/server-error/'});
     });
-
-    function updateResponsiveImages() {
-      imgix.fluid({
-        fluidClass: 'img-responsive',
-        autoInsertCSSBestPractices: true,
-      });
-    }
 
     //////////////////////////
     /////// $ROOTSCOPE ///////
