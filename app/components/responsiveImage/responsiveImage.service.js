@@ -14,9 +14,18 @@
 
     function replaceImages() {
       imgix.fluid({
-        fluidClass: 'img-responsive',
-        autoInsertCSSBestPractices: true
+        fluidClass: 'imgix-fluid',
+        updateOnResizeDown: true,
+        updateOnPinchZoom: true,
+        pixelStep: 10,
       });
+      var bgOptions = {
+        fluidClass: 'imgix-fluid-bg',
+        updateOnResizeDown: true,
+        updateOnPinchZoom: true,
+        pixelStep: 10,
+      };
+      imgix.fluid(bgOptions);
     };
   }
 })();
