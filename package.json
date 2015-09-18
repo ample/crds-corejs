@@ -1,6 +1,6 @@
 {
   "name": "crds-core",
-  "version": "0.0.71",
+  "version": "0.0.72",
   "description": "Core Angular Module for Crossroads",
   "main": "index.js",
   "repository": {
