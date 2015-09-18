@@ -5,6 +5,5 @@
   app.filter('htmlToPlainText', require('./html_to_plain_text.filter'));
   
   require('./html.filter');
-  require('./html.filter');
   require('./truncate.filter');
 })()
