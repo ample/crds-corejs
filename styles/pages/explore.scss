@@ -38,12 +38,19 @@
   font-size: 26px;
   position: absolute;
   top: 16px;
+
+  &:hover {
+    color: $cr-orange;
+  }
 }
 .explore-btt {
   position: absolute;
   bottom: 20px;
   right: 20px;
 }
+
+/* Opening */
+
 #opening {
   background-color: #002b47;
 }
@@ -65,24 +72,26 @@
   left: 0;
   color: #ffffff;
 }
-
 .opening-title {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  text-transform: uppercase;
+  @extend .brand-font;
   line-height: 24px;
   margin-bottom: 8px;
-}
-.opening-more {
-  color: #999999;
+  color: #fff;
 }
 .opening-more a {
-  color: #ffffff;
+  text-decoration: underline;
+  color: #fff;
+
+  &:hover {
+    color: #e1e1e1;
+  }
 }
-.opening-more a:hover {
-  color: #cccccc;
-}
+
+/* Map */
+
+
 #map {
-  background-color: #e0e1e6;
+  background-color: #DAD9DE;
 }
 .map-img {
   position: absolute;
@@ -95,37 +104,33 @@
 }
 .map-container {
   position: relative;
-  top: 220px;
+  top: 210px;
   left: 0;
   color: #005984;
-  margin: 0 25px;
 }
 .map-title {
   line-height: 24px;
   margin-bottom: 8px;
+  color: $brand-primary;
 }
 .map-desc {
   color: #999999;
 }
+
 .map-more a {
   color: #af5e31;
-  margin-right: 12.5%;
-}
-.map-more a:hover {
-  color: #5f331b;
+  margin-right: 5%;
+
+  a:hover {
+    color: #5f331b;
+  }
 }
 .map-flag-container {
   display: none;
 }
-.map-flag-1 {
-  display: none;
-}
-.map-flag-2 {
-  display: none;
-}
-.map-flag-3 {
-  display: none;
-}
+
+/* Kids Club */
+
 #kidsclub {
   background-color: #ffc500;
 }
@@ -140,24 +145,27 @@
 }
 .kidsclub-container {
   position: relative;
-  top: 24px;
+  //top: 24px;
   max-width: 330px;
   margin: 0 auto;
   padding-left: 11.650485436893%;
   color: #005984;
+  left: 0;
 }
 .kidsclub-title {
   line-height: 24px;
   margin-bottom: 8px;
 }
 .kidsclub-desc {
-  color: #f5f5f5;
-}
-.kidsclub-desc a {
-  color: #af5e31;
-}
-.kidsclub-desc a:hover {
-  color: #5f331b;
+  color: #222222;
+
+  a {
+    color: #af5e31;
+
+    &:hover {
+      color: #5f331b;
+    }
+  }
 }
 .kidsclub-logo-container {
   display: none;
@@ -168,6 +176,44 @@
 .kidsclub-logo {
   display: none;
 }
+
+
+/* Student Ministry */
+
+#studentministry {
+  background-color: #000;
+}
+.studentministry-img {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 550px;
+  height: 416px;
+  max-width: 550px;
+  margin-left: -275px;
+}
+.studentministry-container {
+  position: relative;
+  top: 100px;
+  color: #fff;
+
+  a {
+    color: #18afe4;
+  }
+}
+.studentministry-title {
+  text-align: left;
+  line-height: 24px;
+  margin-bottom: 8px;
+  color: #18afe4;
+  @extend .brand-font;
+}
+.studentministry-overlay {
+  display: none;
+}
+
+/* Coffee */
+
 #coffee {
   background-color: #d9dbe0;
 }
@@ -186,7 +232,6 @@
   left: 0;
   color: #005984;
   margin: 0 25px;
-
 }
 .coffee-title {
   line-height: 24px;
@@ -194,13 +239,16 @@
 }
 .coffee-desc {
   color: #999999;
+
+  a {
+    color: #af5e31;
+
+    &:hover {
+      color: #5f331b;
+    }
+  }
 }
-.coffee-desc a {
-  color: #af5e31;
-}
-.coffee-desc a:hover {
-  color: #5f331b;
-}
+
 .coffee-pour-container {
   display: none;
 }
@@ -210,6 +258,9 @@
 .coffee-splenda {
   display: none;
 }
+
+/* Drums */
+
 #drums {
   background-color: #000;
 }
@@ -230,10 +281,10 @@
 }
 .drums-title {
   text-align: center;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  text-transform: uppercase;
+  @extend .brand-font;
   line-height: 24px;
   margin-bottom: 8px;
+  color: #fff;
 }
 .drums-desc {
   line-height: 17px;
@@ -242,6 +293,9 @@
 .drums-overlay {
   display: none;
 }
+
+/* Clothes */
+
 #clothes {
   background-color: #fff;
 }
@@ -257,7 +311,7 @@
 .clothes-container {
   position: relative;
   top: 250px;
-  left: 0;
+  //left: 0;
   color: #005984;
   margin: 0 25px;
 }
@@ -268,6 +322,9 @@
 .clothes-desc {
   color: #999999;
 }
+
+/* Photos */
+
 #photos {
   background-color: #dfdde0;
 }
@@ -294,13 +351,16 @@
 }
 .photos-desc {
   color: #999999;
+
+  a {
+    color: #af5e31;
+
+    &:hover {
+      color: #5f331b;
+    }
+  }
 }
-.photos-desc a {
-  color: #af5e31;
-}
-.photos-desc a:hover {
-  color: #5f331b;
-}
+
 .photos-stack-container {
   display: none;
 }
@@ -316,6 +376,8 @@
 .photo-4 {
   display: none;
 }
+
+/* Meet */
 #meet {
   background: #fff;
 }
@@ -327,17 +389,18 @@
   margin: 0 25px;
 }
 .meet-title {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  text-transform: uppercase;
+  @extend .brand-font;
   line-height: 24px;
   margin-bottom: 8px;
 }
 .meet-desc {
   color: #999999;
+
+  a {
+    color: #af5e31;
+  }
 }
-.meet-desc a {
-  color: #af5e31;
-}
+
 .next {
   visibility: visible;
   position: absolute;
@@ -346,6 +409,28 @@
   font-size: 20px;
   font-weight: 100;
   letter-spacing: 1.5;
+  text-align: center;
+
+  .icon {
+    display: block;
+    margin: 0 auto;
+  }
+}
+.explore-small-heading {
+  line-height: 2;
+  margin-top: 0px;
+}
+
+.explore-social {
+  svg {
+    vertical-align: sub;
+  }
+}
+
+#nextopening {
+  .icon {
+    transform: rotate(180deg);
+  }
 }
 
 @media (min-width: 551px) {
@@ -363,11 +448,9 @@
   }
   .opening-container {
     position: relative;
-    top: 160px;
+    top: 150px;
     color: #ffffff;
     opacity: 1;
-    max-width: 600px;
-    margin: 0 auto;
   }
   .opening-title {
     font-size: 40px;
@@ -375,10 +458,11 @@
   }
   #map {
     background-color: #d9dbe0;
-    background-image: url(//crossroads-media.s3.amazonaws.com/images/explore_map_bg_large.jpg) !important;
+    background-image: url(//crossroads-media.s3.amazonaws.com/images/explore_map_bg_large_flags.jpg) !important;
     background-position: 50% 0px;
-    background-repeat: no-repeat;
+    background-repeat: repeat-x;
     background-attachment: fixed;
+    background-size: 920px;
     height: 1000px;
     z-index: 7;
   }
@@ -387,12 +471,11 @@
   }
   .map-container {
     position: relative;
-    top: 253px;
-    left: -250px;
-    margin: 0 auto;
-    //padding-right: 485px;
+    top: 270px;
+    margin: 0;
+    padding-left: 20px;
     color: #005984;
-    max-width: 375px;
+    max-width: 395px;
   }
   .map-title {
     font-size: 34px;
@@ -403,30 +486,18 @@
     display: block;
     position: absolute;
     top: 0;
-    right: 50%;
+    right: 0;
+    left: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    margin: 0 auto;
   }
-  .map-flag-1 {
-    position: absolute;
-    left: -66px;
-    top: 282px;
-    display: block;
-  }
-  .map-flag-2 {
-    position: absolute;
-    left: 258px;
-    top: 185px;
-    display: block;
-  }
-  .map-flag-3 {
-    position: absolute;
-    left: 434px;
-    top: 18px;
-    display: block;
-  }
+
   #kidsclub {
     background-color:#ffffff;
     background-image:url(//crossroads-media.s3.amazonaws.com/images/explore_kidsclub_bg_large.jpg);
-    background-position:50% 0px;
+    background-position: 50% 0px;
     background-repeat:no-repeat;
     background-attachment:fixed;
     height: 1000px;
@@ -437,10 +508,9 @@
   }
   .kidsclub-container {
     top: 244px;
-    left: -250px;
+    left: -100px;
     margin: 0 auto;
     padding-left: 0;
-    //padding-right: 500px;
   }
   .kidsclub-title {
     font-size: 34px;
@@ -466,7 +536,7 @@
   }
   .kidsclub-logo {
     position: absolute;
-    left: -136px;
+    left: -200px;
     top: 385px;
     width: 436px;
     height: 300px;
@@ -475,6 +545,36 @@
     background-repeat: no-repeat;
     display: block;
   }
+
+  #studentministry {
+    background-color: #000;
+    background-image: url(//crossroads-media.s3.amazonaws.com/images/explore_studentministry_bg_large.jpg);
+    background-position: 50% 0px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 1000px;
+    z-index: 4;
+  }
+  .studentministry-img {
+    display: none;
+  }
+  .studentministry-container {
+    position: relative;
+    top: 250px;
+  }
+  .studentministry-title {
+    font-size: 40px;
+    line-height: 37px;
+  }
+  .studentministry-overlay {
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0;
+    display: block;
+  }
+
   #coffee {
     background-color: #fff;
     background-image: url(//crossroads-media.s3.amazonaws.com/images/explore_coffee_bg_large.jpg);
@@ -489,7 +589,7 @@
   }
   .coffee-container {
     top: 90px;
-    left: -250px;
+    //left: -250px;
     margin: 0 auto;
     //padding-right: 410px;
     color: #005984;
@@ -562,12 +662,12 @@
   }
   .clothes-container {
     position: relative;
-    top: 100px;
-    left: -250px;
-    margin: 0 auto;
+    top: 50px;
+    //left: -160px;
+    margin: 0;
     //padding-right: 410px;
     color: #005984;
-    max-width: 450px;
+    max-width: 300px;
   }
   .clothes-title {
     font-size: 34px;
@@ -589,10 +689,9 @@
   .photos-container {
     float: none;
     top: 162px;
-    left: -230px;
+    left: -80px;
     max-width: 366px;
     margin: 0 auto;
-   // padding-right: 410px;
     color: #005984;
   }
   .photos-title {
@@ -603,7 +702,8 @@
   .photos-stack-container {
     position: absolute;
     top: 0;
-    right: 50%;
+    //right: 50%;
+    right: 25%;
     display: block;
   }
   .photo-1 {
@@ -632,7 +732,7 @@
   }
   #meet {
     background-color: #fff;
-    height: 1500px;
+    min-height: 1000px;
     z-index: 1;
   }
   .meet-container {
@@ -646,21 +746,47 @@
     line-height: 37px;
   }
   #opening .next a,
+  #studentministry .next a,
   #drums .next a {
     display: block;
     color: #fff;
     opacity: 1;
   }
 }
+
+//768px
+
+@media (min-width: $screen-sm) {
+  #map {
+    background-size: 1300px;
+  }
+  .map-container {
+    top: 330px;
+    max-width: 455px;
+  }
+  .kidsclub-container {
+    left: -210px;
+  }
+}
+
+
+@media (min-width: $screen-md) {
+  .photos-container {
+    left: -230px;
+  }
+  .photos-stack-container {
+    padding-right: 280px;
+  }
+}
+
 /* TABLET AND SMALLER
 /  ----------------------------------------------------*/
 @media (max-width: 767px) {
   .kidsclub-container {
     position: relative;
-    top: 24px;
-    max-width: 330px;
     margin: 0 auto;
     padding-left: 11.650485436893%;
     color: #005984;
+
   }
 }
