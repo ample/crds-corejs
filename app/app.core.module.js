@@ -12,8 +12,6 @@
     'angular-growl',
     'angular-stripe',
     'toggle-switch',
-    'snapscroll',
-    'swipe',
     'sn.addthis',
     'ngAside',
     'mailchimp',
