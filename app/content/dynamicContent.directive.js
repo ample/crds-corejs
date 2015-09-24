@@ -8,7 +8,7 @@ function DynamicContentDirective($compile) {
       replace: true,
       link: function (scope, ele, attrs) {
         scope.$watch(attrs.dynamicContent, function(html) {
-          ele.html(html);
+          ele.html(html.$$unwrapTrustedValue());
           $compile(ele.contents())(scope);
         });
       }
