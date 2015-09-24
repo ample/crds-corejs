@@ -23,6 +23,7 @@
   require('angular-image-crop');
   require('expose?imgix!../lib/imgix.min');
 
+
   require('../node_modules/angular-toggle-switch/angular-toggle-switch-bootstrap.css');
   require('../node_modules/angular-toggle-switch/angular-toggle-switch.css');
   require('../lib/angular-aside.css');
