@@ -19,9 +19,11 @@
   require('angular-aside');
   require('angular-match-media');
   require('angular-mailchimp');
+  require('angular-snapscroll');
   require('lodash');
   require('angular-image-crop');
   require('expose?imgix!../lib/imgix.min');
+  require('expose?angular-swipe!../lib/angular-swipe.min');
 
   require('../node_modules/angular-toggle-switch/angular-toggle-switch-bootstrap.css');
   require('../node_modules/angular-toggle-switch/angular-toggle-switch.css');
