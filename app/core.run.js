@@ -72,16 +72,27 @@
       }
       //}
     });
-    $rootScope.$on("$stateChangeSuccess", function(event, toState){
+    $rootScope.$on('$stateChangeSuccess', function(event, toState){
       if (toState.data && toState.data.meta){
         $rootScope.meta = toState.data.meta;
       }
       if(ContentSiteConfigService.siteconfig.title){
+        $rootScope.meta.siteconfig = ContentSiteConfigService.siteconfig;
         $rootScope.meta.title = $rootScope.meta.title +
           ' | ' + ContentSiteConfigService.siteconfig.title;
       } else {
+        $rootScope.meta.siteconfig = {
+          'title':'Crossroads',
+          'locale':'en_US'
+        };
         $rootScope.meta.title = $rootScope.meta.title +
           ' | ' + 'Crossroads';
+      }
+      $rootScope.meta.url = $location.absUrl();
+      if(!$rootScope.meta.image){
+        $rootScope.meta.image = {
+          'filename':'http://crossroads-media.s3.amazonaws.com/images/coffee_cup.jpg'
+        };
       }
     });
 
