@@ -1,0 +1,138 @@
+$explorebreakpoint: 551px;
+
+.explore {
+  /* Fullpage JS */
+  .section {
+    background-position: 50% 50%;
+    background-size: cover;
+    position: relative;
+
+    h1 {
+      margin: 0;
+    }
+  }
+}
+
+.opening-title,
+.map-title,
+.studentministry-title,
+.drums-title,
+.meet-title {
+  font-family: "Roboto Condensed", Helvetica, sans-serif;
+  text-transform: uppercase;
+  font-weight: 900;
+  letter-spacing: -1.8px;
+}
+
+// Opening
+
+.opening {
+  background-color: #002D4E;
+  color: #ffffff;
+
+  .opening-bg {
+    background-image: url(http://crossroads-media.s3.amazonaws.com/images/explore_opening_bg_large.jpg);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  .opening-title {
+    font-size: 40px;
+    line-height: 37px;
+    margin-bottom: 8px;
+    color: #fff;
+  }
+
+  a {
+    text-decoration: underline;
+    color: #fff;
+  }
+}
+
+// Map
+
+.map {
+  background-color: #d9dbe0;
+  background-image: url(//crossroads-media.s3.amazonaws.com/images/explore_map_bg_large_flags.jpg) !important;
+  background-position: 50% 0px;
+  background-repeat: repeat-x;
+  background-size: 920px;
+
+  .map-img {
+    display: none;
+  }
+
+  .map-container {
+    position: relative;
+    top: 0;
+    margin: 0;
+    padding-left: 20px;
+    color: #005984;
+    max-width: 395px;
+    color: #005984;
+  }
+
+  .map-title {
+    color: $brand-primary;
+    line-height: 24px;
+    margin-bottom: 8px;
+
+    @media (min-width: $explorebreakpoint) {
+      font-size: 34px;
+      line-height: 37px;
+    }
+  }
+
+  .map-desc {
+    color: #999999;
+  }
+
+  .map-more a {
+    color: #af5e31;
+    margin-right: 2%;
+
+    a:hover {
+      color: #5f331b;
+    }
+  }
+}
+
+//Animations
+
+.transition {
+  transition: all 1500ms cubic-bezier(0.23, 1, .32, 1);
+}
+.transition2 {
+  transition: all 900ms cubic-bezier(0.645,.045,.355,1);
+}
+.fadeIn {
+  opacity: 0;
+  visibility:hidden;
+}
+.rise20 {
+    opacity: 0;
+    visibility:hidden;
+    transform: translateY(20px) translateZ(0) translate3d(0, 0, 0);
+    transform-style: preserve-3d
+}
+.rise10, .rise10-3 {
+    opacity: 0;
+    visibility:hidden;
+    transform: translateY(10px) translateZ(0) translate3d(0, 0, 0);
+    transform-style: preserve-3d
+}
+
+
+// Slides
+.slideCon {
+  display: table;
+  height: 100%;
+  width: 100%;
+}
+.slideCell {
+  display: table-cell;
+  vertical-align: middle;
+}
