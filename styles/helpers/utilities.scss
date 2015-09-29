@@ -1,6 +1,6 @@
 //** Background Images **/
 .img-background {
-  background: cover;
+  background-size: cover;
   background-position: 50% 50%;
   background-repeat: no-repeat;
 }
@@ -369,6 +369,13 @@
     float: none;
     display: inline-block;
     vertical-align: middle;
+}
+.vertical-center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
 }
 
 .smaller {
