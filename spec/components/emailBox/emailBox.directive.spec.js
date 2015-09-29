@@ -23,30 +23,94 @@
       scope = $rootScope.$new();
       $httpBackend = _$httpBackend_;
       $httpBackend.whenGET(/SiteConfig*/).respond('');
-      element = '<email-box send-message-callback=\'sendMessageCallback(message)\' >' +
-        '</email-box';
-      scope.sendMessageCallback = function(message) {};
-
-      element = $compile(element)(scope);
-      scope.$digest();
-      emailBox = element.isolateScope().emailBox;
+      $httpBackend.flush();
     }));
 
-    it('should call the send message callback', function() {
-      spyOn(scope, 'sendMessageCallback');
-      emailBox.sendMessage();
-      expect(scope.sendMessageCallback).toHaveBeenCalled();
+    describe('General Specs', function() {
+
+      beforeEach(inject(function(_$compile_, _$rootScope_,_$httpBackend_) {
+        element = '<email-box ' +
+          'send-message-callback=\'sendMessageCallback(message, onSuccess, onError)\' loading=\'loading\'>' +
+          '</email-box';
+        scope.sendMessageCallback = function(message, onSuccess, onError) {
+          onSuccess();
+        };
+
+        scope.loading = false;
+        element = $compile(element)(scope);
+        scope.$digest();
+        emailBox = element.isolateScope().emailBox;
+      }));
+
+      it('should call the send message callback', function() {
+        spyOn(scope, 'sendMessageCallback');
+        emailBox.messageForm.$valid = true;
+        emailBox.sendMessage();
+        expect(scope.sendMessageCallback).toHaveBeenCalled();
+      });
+
+      it('should call the send message callback with the correct text', function() {
+        spyOn(scope, 'sendMessageCallback').and.callThrough();
+        emailBox.messageText = 'this is a test';
+        emailBox.messageForm.$valid = true;
+        emailBox.sendMessage();
+        expect(scope.sendMessageCallback)
+          .toHaveBeenCalledWith('this is a test', jasmine.any(Function), jasmine.any(Function));
+      });
+
+      it('should default isMessageToggled to false', function() {
+        expect(emailBox.isMessageToggled).toEqual(false);
+      });
+
     });
 
-    it('should call the send message callback with the correct text', function() {
-      spyOn(scope, 'sendMessageCallback').and.callThrough();
-      emailBox.messageText = 'this is a test';
-      emailBox.sendMessage();
-      expect(scope.sendMessageCallback).toHaveBeenCalledWith('this is a test');
+    describe('Error Handler', function() {
+
+      beforeEach(function() {
+        element = '<email-box ' +
+          'send-message-callback=\'sendMessageCallback(message, onSuccess, onError)\' loading=\'loading\'>' +
+          '</email-box';
+        scope.sendMessageCallback = function(message, onSuccess, onError) {
+          onError();
+        };
+
+        scope.loading = false;
+        element = $compile(element)(scope);
+        scope.$digest();
+        emailBox = element.isolateScope().emailBox;
+      });
+
+      it('should call the error callback', function() {
+        emailBox.messageText = 'this is a test';
+        emailBox.messageForm.$valid = true;
+        emailBox.sendMessage();
+        expect(emailBox.messageText).toBe('this is a test');
+      });
+
     });
 
-    it('should default isMessageToggled to false', function() {
-      expect(emailBox.isMessageToggled).toEqual(false);
+    describe('Success Handler', function() {
+      beforeEach(function() {
+        element = '<email-box ' +
+          'send-message-callback=\'sendMessageCallback(message, onSuccess, onError)\' loading=\'loading\'>' +
+          '</email-box';
+        scope.sendMessageCallback = function(message, onSuccess, onError) {
+          onSuccess();
+        };
+
+        scope.loading = false;
+        element = $compile(element)(scope);
+        scope.$digest();
+        emailBox = element.isolateScope().emailBox;
+      });
+
+      it('should call the onSuccess callback', function() {
+        emailBox.messageText = 'this is a test';
+        emailBox.messageForm.$valid = true;
+        emailBox.sendMessage();
+        expect(emailBox.messageText).toBe(null);
+      });
+
     });
 
   });

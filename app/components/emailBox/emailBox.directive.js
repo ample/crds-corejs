@@ -11,7 +11,8 @@
       replace: true,
       scope: {
         isMessageToggled: '=?',
-        sendMessageCallback: '&'
+        sendMessageCallback: '&sendMessageCallback',
+        loading: '='
       },
       templateUrl: 'emailBox/emailBox.html',
       controller: 'EmailBoxController as emailBox',

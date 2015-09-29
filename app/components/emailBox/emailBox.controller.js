@@ -10,9 +10,14 @@
    * have been passed into the directive:
    *   - isMessageToggled = boolean
    *   - sendMessageCallback = function to handle sending the message
+   *   - loading = boolean to determine if the send button should show
+   *               the loading state
    */
   function EmailBoxController() {
     var vm = this;
+    vm.cancel = cancel;
+    vm.formError = false;
+    vm.hasError = hasError;
     vm.messageText = '';
     vm.sendMessage = sendMessage;
 
@@ -28,9 +33,37 @@
       }
     }
 
+    function cancel() {
+      vm.isMessageToggled = false;
+      vm.messageText = null;
+      vm.messageForm.$setPristine();
+      vm.formError = false;
+    }
+
+    function hasError() {
+      return vm.messageForm.messageText.$error &&
+        vm.messageForm.messageText.$invalid &&
+        vm.formError;
+    }
+
     function sendMessage() {
-      var message = vm.messageText;
-      vm.sendMessageCallback({message: vm.messageText});
+      if (!vm.messageForm.$valid) {
+        vm.formError = true;
+        return;
+      }
+
+      vm.loading = true;
+      vm.sendMessageCallback({
+        message: vm.messageText,
+        onSuccess: function() {
+          vm.messageText = null;
+          vm.isMessageToggled = false;
+        },
+
+        onError: function() {
+
+        }
+      });
     }
   }
 
