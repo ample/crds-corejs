@@ -1,0 +1,18 @@
+<div class="push-half-ends clearfix">
+  <textarea 
+     class="form-control push-half-bottom"
+     rows="10"
+     placeholder="Type your message here&hellip;">
+  </textarea>
+  <div class="pull-right">
+    <button
+       class="btn btn-default" 
+       ng-click="emailBox.isMessageToggled = false">
+      Cancel
+    </button>
+    <button class="btn btn-primary"
+      ng-click="emailBox.sendMessage()" >
+      Send Message
+    </button>
+  </div>
+</div>
