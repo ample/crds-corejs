@@ -12,9 +12,10 @@
     '$aside',
     'screenSize',
     '$state',
-    'ResponsiveImageService'];
+    'ResponsiveImageService',
+    '$window'];
 
-  function CoreController($scope, $rootScope, MESSAGES, ContentBlock, growl, $aside, screenSize, $state, ResponsiveImageService) {
+  function CoreController($scope, $rootScope, MESSAGES, ContentBlock, growl, $aside, screenSize, $state, ResponsiveImageService, $window) {
 
     var vm = this;
 
@@ -35,6 +36,7 @@
     });
 
     $scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
+      $window.prerenderReady = true;
       ResponsiveImageService.updateResponsiveImages();
       vm.resolving = false;
     });
