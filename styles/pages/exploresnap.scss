@@ -7,7 +7,13 @@
 
 $explorebreakpoint: 651px;
 
+
+
 .explore {
+  .fp-tableCell {
+    vertical-align: top;
+  }
+
   .section {
     position: relative;
     h1 {
@@ -34,7 +40,7 @@ $explorebreakpoint: 651px;
 .drums-title,
 .meet-title {
   font-family: "Roboto", Helvetica, sans-serif;
-  font-weight: normal;
+  font-weight: 300;
   letter-spacing: -1px;
 }
 
@@ -57,29 +63,17 @@ $explorebreakpoint: 651px;
 // Map
 .map {
   background-color: #d9dbe0;
-  .img-background {
-    background-size: 150%;
-    background-position: 50% 0%;
-    background-repeat: no-repeat;
-    @media (min-width: 479px) {
-      background-size: 70%;
-      background-position: 100% 0%;
+
+  .map-content {
+    @media (min-width: $screen-sm) {
+      margin-top: -$line-height-computed*6;
     }
   }
-  .map-container {
-    @media (min-width: 479px) {
-      width: 54%;
-    }
-  }
+
   .map-title {
     color: $brand-primary;
     line-height: 26px;
     margin-bottom: 8px;
-
-    @media (min-width: $explorebreakpoint) {
-      font-size: 34px;
-      line-height: 37px;
-    }
   }
   .map-desc {
     color: #999999;
@@ -93,6 +87,28 @@ $explorebreakpoint: 651px;
   }
 }
 
+// Kids Club
+.kidsclub {
+  @include gradient(#F4A000,#FFCF00);
+  position: relative;
+
+  .kc-logo {
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+
+  .bubble-stick {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    max-height: 70%;
+  }
+}
+
+
+
 //Animations
 
 .fade-bg {
@@ -100,16 +116,16 @@ $explorebreakpoint: 651px;
   visibility:hidden;
 }
 .rise20 {
-    opacity: 0;
-    visibility:hidden;
-    transform: translateY(20px) translateZ(0) translate3d(0, 0, 0);
-    transform-style: preserve-3d
+  opacity: 0;
+  visibility:hidden;
+  transform: translateY(20px) translateZ(0) translate3d(0, 0, 0);
+  transform-style: preserve-3d
 }
 .rise10 {
-    opacity: 0;
-    visibility:hidden;
-    transform: translateY(10px) translateZ(0) translate3d(0, 0, 0);
-    transform-style: preserve-3d
+  opacity: 0;
+  visibility:hidden;
+  transform: translateY(10px) translateZ(0) translate3d(0, 0, 0);
+  transform-style: preserve-3d
 }
 
 
