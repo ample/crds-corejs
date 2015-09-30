@@ -29,14 +29,16 @@ $explorebreakpoint: 651px;
   }
 }
 
-.opening-title {
+.opening-title,
+.studentministry-title {
   font-family: "Roboto Condensed", Helvetica, sans-serif;
   text-transform: uppercase;
   font-weight: 900;
   letter-spacing: -1.1px;
 }
+
 .map-title,
-.studentministry-title,
+.kidsclub-title,
 .drums-title,
 .meet-title {
   font-family: "Roboto", Helvetica, sans-serif;
@@ -98,6 +100,16 @@ $explorebreakpoint: 651px;
     z-index: 2;
   }
 
+  .kidsclub-desc {
+    color: #222222;
+    a {
+      color: #af5e31;
+      &:hover {
+        color: #5f331b;
+      }
+    }
+  }
+
   .bubble-stick {
     position: absolute;
     right: 0;
@@ -107,6 +119,33 @@ $explorebreakpoint: 651px;
   }
 }
 
+
+// Student Ministry
+
+.studentministry {
+  background: #0F0901;
+
+  .studentministry-img {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 550px;
+    height: 416px;
+    max-width: 550px;
+    margin-left: -275px;
+  }
+
+  .studentministry-container {
+    color: #fff;
+    a {
+      color: #18afe4;
+    }
+  }
+
+  .studentministry-title {
+    color: #18afe4;
+  }
+}
 
 
 //Animations
