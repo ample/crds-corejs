@@ -377,6 +377,27 @@
   transform: translate(-50%, -50%);
   width: 100%;
 }
+.vertical-bottom {
+  position: absolute;
+  left: 50%;
+  bottom: 0%;
+  transform: translate(-50%, 0%);
+  width: 100%;
+}
+.vertical-70 {
+  position: absolute;
+  left: 50%;
+  top: 70%;
+  transform: translate(-50%, -70%);
+  width: 100%;
+}
+.vertical-80 {
+  position: absolute;
+  left: 50%;
+  top: 80%;
+  transform: translate(-50%, -80%);
+  width: 100%;
+}
 
 .smaller {
     font-size: 70%;

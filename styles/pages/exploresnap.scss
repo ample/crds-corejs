@@ -5,36 +5,15 @@
 /* EXPLORE
 /  ----------------------------------------------------*/
 
-$explorebreakpoint: 551px;
+$explorebreakpoint: 651px;
 
 .explore {
-  /* Fullpage JS */
   .section {
-    background-position: 50% 50%;
-    background-size: cover;
     position: relative;
     h1 {
       margin: 0;
     }
   }
-}
-
-.opening-title,
-.map-title,
-.studentministry-title,
-.drums-title,
-.meet-title {
-  font-family: "Roboto Condensed", Helvetica, sans-serif;
-  text-transform: uppercase;
-  font-weight: 900;
-  letter-spacing: -1.8px;
-}
-
-// Opening
-.opening {
-  background-color: #002D4E;
-  color: #ffffff;
-
   .slide-bg {
     position: absolute;
     top: 0;
@@ -42,14 +21,33 @@ $explorebreakpoint: 551px;
     right: 0;
     bottom: 0;
   }
+}
 
+.opening-title {
+  font-family: "Roboto Condensed", Helvetica, sans-serif;
+  text-transform: uppercase;
+  font-weight: 900;
+  letter-spacing: -1.1px;
+}
+.map-title,
+.studentministry-title,
+.drums-title,
+.meet-title {
+  font-family: "Roboto", Helvetica, sans-serif;
+  font-weight: normal;
+  letter-spacing: -1px;
+}
+
+// Opening
+.opening {
+  background-color: #002D4E;
+  color: #ffffff;
   .opening-title {
     font-size: 40px;
     line-height: 37px;
     margin-bottom: 8px;
     color: #fff;
   }
-
   a {
     text-decoration: underline;
     color: #fff;
@@ -57,28 +55,25 @@ $explorebreakpoint: 551px;
 }
 
 // Map
-
 .map {
   background-color: #d9dbe0;
-  background-size: 920px;
-
-  .map-img {
-    display: none;
+  .img-background {
+    background-size: 150%;
+    background-position: 50% 0%;
+    background-repeat: no-repeat;
+    @media (min-width: 479px) {
+      background-size: 70%;
+      background-position: 100% 0%;
+    }
   }
-
   .map-container {
-    position: relative;
-    top: 0;
-    margin: 0;
-    padding-left: 20px;
-    color: #005984;
-    max-width: 395px;
-    color: #005984;
+    @media (min-width: 479px) {
+      width: 54%;
+    }
   }
-
   .map-title {
     color: $brand-primary;
-    line-height: 24px;
+    line-height: 26px;
     margin-bottom: 8px;
 
     @media (min-width: $explorebreakpoint) {
@@ -86,15 +81,12 @@ $explorebreakpoint: 551px;
       line-height: 37px;
     }
   }
-
   .map-desc {
     color: #999999;
   }
-
   .map-more a {
     color: #af5e31;
     margin-right: 2%;
-
     a:hover {
       color: #5f331b;
     }
