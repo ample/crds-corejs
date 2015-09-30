@@ -31,6 +31,7 @@ $explorebreakpoint: 651px;
 
 .opening-title,
 .studentministry-title,
+.drums-title,
 .meet-title {
   font-family: "Roboto Condensed", Helvetica, sans-serif;
   text-transform: uppercase;
@@ -39,8 +40,7 @@ $explorebreakpoint: 651px;
 }
 
 .map-title,
-.kidsclub-title,
-.drums-title,
+.kidsclub-title
  {
   font-family: "Roboto", Helvetica, sans-serif;
   font-weight: 300;
@@ -148,6 +148,22 @@ $explorebreakpoint: 651px;
   }
 }
 
+// Drums
+
+.drums {
+  background-color: #000;
+  color: #F2EFE3;
+  text-align: center;
+
+  .drums-title {
+    color: #fff;
+    line-height: 1;
+  }
+
+  .drums-desc {
+    line-height: 17px;
+  }
+}
 
 // Meet
 .meet {
