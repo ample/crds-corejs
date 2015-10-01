@@ -170,6 +170,82 @@ $explorebreakpoint: 651px;
 
 .photos {
   background: #DAD7DB;
+  overflow: hidden;
+  .img-background {
+    display: none;
+    @media (min-width: $screen-md-min) {
+      display: block;
+    }
+  }
+  .photos-content-container {
+    margin-top: 0%;
+    @media (min-width: $screen-sm-min) {
+      margin-top: 10%;
+    }
+  }
+  .photos-container {
+    margin-top: 25%;
+    @media (min-width: $screen-sm-min) {
+      margin-top: 8%;
+    }
+  }
+  .photo1,
+  .photo2,
+  .photo3,
+  .photo4 {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 10%;
+    visibility: hidden;
+  }
+  .photo1 {
+    transform: rotate(-11deg) translate(0%, -50%);
+  }
+  .photo2 {
+    transform: rotate(2deg) translate(-23%, -9%);
+  }
+  .photo3 {
+    transform: rotate(-19deg) translate(20%, 27%);
+  }
+  .photo4 {
+    transform: rotate(14deg) translate(-24%, 58%);
+  }
+  @media (min-width: $screen-sm-min) {
+    .photo1 {
+      transform: rotate(-11deg) translate(0%, -50%);
+    }
+    .photo2 {
+      transform: rotate(2deg) translate(-13%, -9%);
+    }
+    .photo3 {
+      transform: rotate(-19deg) translate(0%, 27%);
+    }
+    .photo4 {
+      transform: rotate(5deg) translate(-10%, 75%);
+    }
+  }
+  @media (min-width: $screen-md-min) {
+    .photo1 {
+      transform: rotate(-11deg) translate(10%, -50%);
+    }
+    .photo2 {
+      transform: rotate(2deg) translate(-3%, -9%);
+    }
+    .photo3 {
+      transform: rotate(-19deg) translate(10%, 27%);
+    }
+    .photo4 {
+      transform: rotate(5deg) translate(-15%, 75%);
+    }
+  }
+  @media (min-width: $screen-lg-min) {
+    .photo4 {
+      transform: rotate(5deg) translate(-40%, 60%);
+    }
+  }
 }
 
 
