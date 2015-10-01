@@ -22,9 +22,17 @@
     }
 
     function intializeAddThis() {
-      if (addthis) {
-        addthis.init();
+      if (!$window.addthis) {
+        return;
       }
+
+      configureAddThisPublicKey();
+      $window.addthis.init();
+    }
+
+    function configureAddThisPublicKey() {
+      $window.addthis_config = $window.addthis_config || {};
+      $window.addthis_config.pubid = $window.addthis_config.pubid || "ra-5391d6a6145291c4";
     }
   }
 })();
