@@ -3,7 +3,7 @@
 
   module.exports = EmailBoxController;
 
-  EmailBoxController.$inject = [];
+  EmailBoxController.$inject = ['$rootScope'];
 
   /**
    * Variables available on scope because they
@@ -13,7 +13,7 @@
    *   - loading = boolean to determine if the send button should show
    *               the loading state
    */
-  function EmailBoxController() {
+  function EmailBoxController($rootScope) {
     var vm = this;
     vm.cancel = cancel;
     vm.formError = false;
@@ -49,6 +49,7 @@
     function sendMessage() {
       if (!vm.messageForm.$valid) {
         vm.formError = true;
+        $rootScope.$emit('notify', $rootScope.MESSAGES.generalError);
         return;
       }
 

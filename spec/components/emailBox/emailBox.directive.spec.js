@@ -42,6 +42,13 @@
         emailBox = element.isolateScope().emailBox;
       }));
 
+      it('should display a global error message', function() {
+        spyOn($rootScope, '$emit');
+        emailBox.messageForm.$valid = false;
+        emailBox.sendMessage();
+        expect($rootScope.$emit).toHaveBeenCalledWith('notify', $rootScope.MESSAGES.generalError);
+      });
+
       it('should call the send message callback', function() {
         spyOn(scope, 'sendMessageCallback');
         emailBox.messageForm.$valid = true;
