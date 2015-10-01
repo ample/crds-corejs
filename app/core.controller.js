@@ -13,9 +13,9 @@
     'screenSize',
     '$state',
     'ResponsiveImageService',
-    '$window'];
+    'PageRenderedService'];
 
-  function CoreController($scope, $rootScope, MESSAGES, ContentBlock, growl, $aside, screenSize, $state, ResponsiveImageService, $window) {
+  function CoreController($scope, $rootScope, MESSAGES, ContentBlock, growl, $aside, screenSize, $state, ResponsiveImageService, PageRenderedService) {
 
     var vm = this;
 
@@ -36,8 +36,8 @@
     });
 
     $scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
-      $window.prerenderReady = true;
       ResponsiveImageService.updateResponsiveImages();
+      PageRenderedService.pageLoaded();
       vm.resolving = false;
     });
 
