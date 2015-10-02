@@ -13,7 +13,6 @@ describe('preloader', function() {
     $rootScope = _$rootScope_;
 
     $httpBackend = _$httpBackend_;
-    $httpBackend.whenGET(/SiteConfig*/).respond(''); 
   }));
 
   it('should not have a fullscreen class', function(){

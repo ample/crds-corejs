@@ -13,7 +13,6 @@ describe('loadingButton', function() {
     $rootScope = _$rootScope_;
     scope = $rootScope.$new();
     $httpBackend = _$httpBackend_;
-    $httpBackend.whenGET(/SiteConfig*/).respond(''); 
     element = '<loading-button input-type=\'submit\' ' +
                                'normal-text=\'Load\' ' +
                                'loading-text=\'Loading...\' ' +
@@ -25,7 +24,6 @@ describe('loadingButton', function() {
     element = $compile(element)(scope);
     scope.$digest();
     isolateScope = element.isolateScope();
-    $httpBackend.flush();
   }));
 
   it('should set the loading state to false', function(){

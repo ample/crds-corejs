@@ -46,5 +46,6 @@
     .directive('autofocus', require('./shared/autofocus.directive.js'))
     .factory('ContentPageService', require('./cms/services/content_page.service'))
     .factory('ContentSiteConfigService', require('./cms/services/content_siteconfig.service'))
-    .factory('ResponsiveImageService', require('./components/responsiveImage/responsiveImage.service'));
+    .factory('ResponsiveImageService', require('./components/responsiveImage/responsiveImage.service'))
+    .factory('PageRenderedService', require('./components/pageRendered/pageRendered.service'));
 })();

@@ -70,6 +70,8 @@
         "crds_utilities" : false,
         "spyOn": false,
         "_$location_" : false,
-        "expect" : false
+        "expect" : false,
+        "addthis" : false
+        "jasmine": false
     }
 }
