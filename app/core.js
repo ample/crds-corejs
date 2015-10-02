@@ -44,7 +44,7 @@
   require('./login');
   require('./logout');
 
-  // Common Components
+  // Common Components.
   require('./components/btnLoading.directive');
   require('./components/svgIcon.directive');
   require('./components/preloader');
