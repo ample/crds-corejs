@@ -38,7 +38,9 @@ $explorebreakpoint: 651px;
   font-weight: 900;
   letter-spacing: -1.1px;
 }
-
+.meet-title {
+  color: $brand-primary;
+}
 .map-title,
 .kidsclub-title,
 .photos-title,
@@ -49,6 +51,14 @@ $explorebreakpoint: 651px;
   letter-spacing: -1px;
   line-height: 1;
   color: $brand-primary;
+}
+.map-desc,
+.photos-desc,
+.coffee-desc,
+.clothes-desc,
+.photos-desc,
+.meet-desc {
+  color: $gray-light;
 }
 
 // Opening
@@ -202,6 +212,19 @@ $explorebreakpoint: 651px;
 
   .drums-desc {
     line-height: 17px;
+  }
+}
+
+// clothes
+.clothes {
+  .clothes-pile {
+    width: 120%;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    max-width: initial;
+    transform: translate(0%, -10%);
+    z-index: -1;
   }
 }
 

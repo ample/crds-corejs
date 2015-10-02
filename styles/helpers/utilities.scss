@@ -384,6 +384,13 @@
   transform: translate(-50%, 0%);
   width: 100%;
 }
+.vertical-10 {
+  position: absolute;
+  left: 50%;
+  top: 10%;
+  transform: translate(-50%, -10%);
+  width: 100%;
+}
 .vertical-20 {
   position: absolute;
   left: 50%;
