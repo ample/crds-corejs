@@ -10,7 +10,6 @@ describe('Date Field Directive', function() {
 
   beforeEach(inject(function($compile, $rootScope, $httpBackend) {
     $scope = $rootScope;
-    $httpBackend.whenGET(/SiteConfig*/).respond('');
     var element = angular.element(
       '<form name="form">' +
       '<input type="text" ng-model="model.aDate" name="aDate" invalidate-past-date />' +
