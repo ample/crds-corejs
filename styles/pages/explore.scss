@@ -2,797 +2,400 @@
   Crossroads Mobile Explore
   Special styles for presenting special styles for the mobile optimized version of the explore page
 */
-/* EXPLORE
-/  ----------------------------------------------------*/
 
-.exploreold {
-  .pixels-scrolled {
-    background: white;
-    padding: 5px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 11;
+.explore {
+  .fp-tableCell {
+    vertical-align: top;
   }
-  .math {
-    background: gray;
-    padding: 5px;
-    position: fixed;
-    top: 20px;
-    left: 0;
-    z-index: 11;
-  }
-  #explore {
-    margin: 0;
+  .section {
+    position: relative;
     overflow: hidden;
-  }
-  /*
-  .explore-section {
-    height: 416px;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    position: relative;
-    margin: 0 auto;
-    overflow: hidden;
-  }
-  *
-  .home-link {
-    font-size: 26px;
-    position: absolute;
-    top: 16px;
-
-    &:hover {
-      color: $cr-orange;
+    h1 {
+      margin: 0;
     }
   }
-  .explore-btt {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-  }
-
-  /* Opening */
-
-  #opening {
-    background-color: #002b47;
-  }
-  .opening-img {
+  .slide-bg {
     position: absolute;
     top: 0;
-    left: 50%;
-    width: 550px;
-    height: 550px;
-    max-width: 550px;
-    margin-left: -275px;
-  }
-  .opening-img-large {
-    display: none;
-  }
-  .opening-container {
-    position: relative;
-    top: 80px;
     left: 0;
-    color: #ffffff;
-  }
-  .opening-title {
-    @extend .brand-font;
-    line-height: 24px;
-    margin-bottom: 8px;
-    color: #fff;
-  }
-  .opening-more a {
-    text-decoration: underline;
-    color: #fff;
-
-    &:hover {
-      color: #e1e1e1;
-    }
+    right: 0;
+    bottom: 0;
   }
 
-  /* Map */
-
-
-  #map {
-    background-color: #DAD9DE;
-  }
-
-  .map-img {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 550px;
-    height: 335px;
-    max-width: 550px;
-    margin-left: -275px;
-  }
-  .map-container {
-    position: relative;
-    top: 210px;
-    left: 0;
-    color: #005984;
-  }
-  .map-title {
-    line-height: 24px;
-    margin-bottom: 8px;
-    color: $brand-primary;
-  }
-  .map-desc {
-    color: #999999;
-  }
-
-  .map-more a {
-    color: #af5e31;
-    margin-right: 2%;
-
-    a:hover {
-      color: #5f331b;
-    }
-  }
-  .map-flag-container {
-    display: none;
-  }
-
-  /* Kids Club */
-
-  #kidsclub {
-    background-color: #ffc500;
-  }
-  .kidsclub-img {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 550px;
-    height: 550px;
-    max-width: 550px;
-    margin-left: -275px;
-  }
-  .kidsclub-container {
-    position: relative;
-    //top: 24px;
-    max-width: 330px;
-    margin: 0 auto;
-    padding-left: 11.650485436893%;
-    color: #005984;
-    left: 0;
-  }
-  .kidsclub-title {
-    line-height: 24px;
-    margin-bottom: 8px;
-  }
-  .kidsclub-desc {
-    color: #222222;
-
-    a {
-      color: #af5e31;
-
-      &:hover {
-        color: #5f331b;
-      }
-    }
-  }
-  .kidsclub-logo-container {
-    display: none;
-  }
-  .kidsclub-bottle {
-    display: none;
-  }
-  .kidsclub-logo {
-    display: none;
-  }
-
-
-  /* Student Ministry */
-
-  #studentministry {
-    background-color: #000;
-  }
-  .studentministry-img {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 550px;
-    height: 416px;
-    max-width: 550px;
-    margin-left: -275px;
-  }
-  .studentministry-container {
-    position: relative;
-    top: 100px;
-    color: #fff;
-
-    a {
-      color: #18afe4;
-    }
-  }
-  .studentministry-title {
-    text-align: left;
-    line-height: 24px;
-    margin-bottom: 8px;
-    color: #18afe4;
-    @extend .brand-font;
-  }
-  .studentministry-overlay {
-    display: none;
-  }
-
-  /* Coffee */
-
-  #coffee {
-    background-color: #d9dbe0;
-  }
-  .coffee-img {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 550px;
-    height: 550px;
-    max-width: 550px;
-    margin-left: -275px;
-  }
-  .coffee-container {
-    position: relative;
-    top: 30px;
-    left: 0;
-    color: #005984;
-    margin: 0 25px;
-  }
-  .coffee-title {
-    line-height: 24px;
-    margin-bottom: 8px;
-  }
-  .coffee-desc {
-    color: #999999;
-
-    a {
-      color: #af5e31;
-
-      &:hover {
-        color: #5f331b;
-      }
-    }
-  }
-
-  .coffee-pour-container {
-    display: none;
-  }
-  .coffee-lid {
-    display: none;
-  }
-  .coffee-splenda {
-    display: none;
-  }
-
-  /* Drums */
-
-  #drums {
-    background-color: #000;
-  }
-  .drums-img {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 550px;
-    height: 370px;
-    max-width: 550px;
-    margin-left: -275px;
-  }
-  .drums-container {
-    position: relative;
-    top: 250px;
-    left: 0;
-    color: #F2EFE3;
-  }
-  .drums-title {
-    text-align: center;
-    @extend .brand-font;
-    line-height: 24px;
-    margin-bottom: 8px;
-    color: #fff;
-  }
-  .drums-desc {
-    line-height: 17px;
-    text-align: center;
-  }
-  .drums-overlay {
-    display: none;
-  }
-
-  /* Clothes */
-
-  #clothes {
-    background-color: #fff;
-  }
-  .clothes-img {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 550px;
-    height: 305.5px;
-    max-width: 550px;
-    margin-left: -275px;
-  }
-  .clothes-container {
-    position: relative;
-    top: 250px;
-    //left: 0;
-    color: #005984;
-    margin: 0 25px;
-  }
-  .clothes-title {
-    line-height: 24px;
-    margin-bottom: 8px;
-  }
-  .clothes-desc {
-    color: #999999;
-  }
-
-  /* Photos */
-
-  #photos {
-    background-color: #dfdde0;
-  }
-  .photos-img {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 550px;
-    height: 416px;
-    max-width: 550px;
-    margin-left: -275px;
-  }
-  .photos-container {
-    position: relative;
-    top: 31px;
-    max-width: 308px;
-    margin-left: 6%;
-    float: right;
-    color: #005984;
-  }
-  .photos-title {
-    line-height: 24px;
-    margin-bottom: 8px;
-  }
-  .photos-desc {
-    color: #999999;
-
-    a {
-      color: #af5e31;
-
-      &:hover {
-        color: #5f331b;
-      }
-    }
-  }
-
-  .photos-stack-container {
-    display: none;
-  }
-  .photo-1 {
-    display: none;
-  }
-  .photo-2 {
-    display: none;
-  }
-  .photo-3 {
-    display: none;
-  }
-  .photo-4 {
-    display: none;
-  }
-
-  /* Meet */
-  #meet {
-    background: #fff;
-  }
-  .meet-container {
-    position: relative;
-    top: 70px;
-    left: 0;
-    color: #005984;
-    margin: 0 25px;
+  .opening-title,
+  .studentministry-title,
+  .drums-title,
+  .meet-title {
+    font-family: "Roboto Condensed", Helvetica, sans-serif;
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: -1.1px;
   }
   .meet-title {
-    @extend .brand-font;
-    line-height: 24px;
-    margin-bottom: 8px;
+    color: $brand-primary;
   }
+  .map-title,
+  .kidsclub-title,
+  .photos-title,
+  .coffee-title,
+  .clothes-title, {
+    font-family: "Roboto", Helvetica, sans-serif;
+    font-weight: 300;
+    letter-spacing: -1px;
+    line-height: 1;
+    color: $brand-primary;
+  }
+  .map-desc,
+  .photos-desc,
+  .coffee-desc,
+  .clothes-desc,
+  .photos-desc,
   .meet-desc {
-    color: #999999;
-
-    a {
-      color: #af5e31;
-    }
+    color: $gray-light;
   }
 
-  .next {
-    visibility: visible;
-    position: absolute;
-    top: 900px;
-    right: 20px;
-    font-size: 20px;
-    font-weight: 100;
-    letter-spacing: 1.5;
-    text-align: center;
-
-    .icon {
-      display: block;
-      margin: 0 auto;
-    }
-  }
-  .explore-small-heading {
-    line-height: 2;
-    margin-top: 0px;
-  }
-
-  .explore-social {
-    svg {
-      vertical-align: sub;
-    }
-  }
-
-  #nextopening {
-    .icon {
-      transform: rotate(180deg);
-    }
-  }
-
-  @media (min-width: 551px) {
-    #opening {
-      background-color: #fff;
-      background-image: url(//crossroads-media.s3.amazonaws.com/images/explore_opening_bg_large.jpg);
-      background-position: 50% 0px;
-      background-repeat: repeat-y;
-      background-attachment: fixed;
-      height: 1000px;
-      z-index: 8;
-    }
-    .opening-img {
-      display: none;
-    }
-    .opening-container {
-      position: relative;
-      top: 150px;
-      color: #ffffff;
-      opacity: 1;
-    }
+  // Opening
+  .opening {
+    background-color: #002D4E;
+    color: #ffffff;
     .opening-title {
       font-size: 40px;
       line-height: 37px;
+      margin-bottom: 8px;
+      color: #fff;
     }
+    a {
+      text-decoration: underline;
+      color: #fff;
+    }
+  }
 
-    #map {
-      background-color: #d9dbe0;
-      background-image: url(//crossroads-media.s3.amazonaws.com/images/explore_map_bg_large_flags.jpg) !important;
-      background-position: 50% 0px;
-      background-repeat: repeat-x;
-      background-attachment: fixed;
-      background-size: 920px;
-      height: 1000px;
-      z-index: 7;
+  // Map
+  .map {
+    background-color: #d9dbe0;
+    .map-position {
+      @extend .vertical-bottom;
+      @media (min-width: $screen-md-min) {
+        @extend .vertical-center;
+      }
+      .map-content {
+        background-color: rgba(217, 219, 224, 0.9);
+        padding-top: $line-height-computed;
+        padding-bottom: $line-height-computed;
+        @media (min-width: $screen-md-min) {
+          background-color: transparent;
+        }
+      }
     }
     .map-img {
-      display: none;
+      position: absolute;
+      top: 0%;
+      left: 0%;
+      max-width: initial;
+      transform: translate(-30%, 0%);
+      width: 170%;
+      @media (min-width: $screen-md-min) {
+        width: 96%;
+        transform: translate(30%, 0%);
+      }
     }
-    .map-container {
-      position: relative;
-      top: 270px;
-      margin: 0;
-      padding-left: 20px;
-      color: #005984;
-      max-width: 395px;
+    .map-flag {
+      position: absolute;
+      top: 0%;
+      left: 0%;
+      max-width: initial;
+      width: 20%;
+      visibility: hidden;
+      @media (min-width: $screen-md-min) {
+        width: 9%;
+      }
+    }
+    .map-flag-mason {
+      transform: translate(379%, 0%);
+    }
+    .map-flag-westside {
+      transform: translate(71%, 69%);
+    }
+    .map-flag-oakley {
+      transform: translate(247%, 100%);
+    }
+    .map-flag-uptown {
+      transform: translate(170%, 103%);
+    }
+    .map-flag-florence {
+      transform: translate(55%, 145%);
+    }
+    @media (min-width: $screen-md-min) {
+      .map-flag-mason {
+        transform: translate(1122%, 23%);
+      }
+      .map-flag-westside {
+        transform: translate(737%, 111%);
+      }
+      .map-flag-oakley {
+        transform: translate(957%, 150%);
+      }
+      .map-flag-uptown {
+        transform: translate(857%, 155%);
+      }
+      .map-flag-florence {
+        transform: translate(667%, 211%);
+      }
     }
     .map-title {
-      font-size: 34px;
-      line-height: 37px;
-      font-weight: 300;
+      line-height: 26px;
+      margin-bottom: 8px;
     }
-    .map-flag-container {
-      display: block;
-      position: absolute;
-      top: 0;
-      right: 0;
-      left: 0;
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      margin: 0 auto;
+    .map-desc {
+      color: #999999;
     }
+    .map-more a {
+      color: #af5e31;
+      margin-right: 2%;
+      visibility: hidden;
+      a:hover {
+        color: #5f331b;
+      }
+    }
+  }
 
-    #kidsclub {
-      background-color:#ffffff;
-      background-image:url(//crossroads-media.s3.amazonaws.com/images/explore_kidsclub_bg_large.jpg);
-      background-position: 50% 0px;
-      background-repeat:no-repeat;
-      background-attachment:fixed;
-      height: 1000px;
-      z-index: 6;
-    }
-    .kidsclub-img {
-      display: none;
-    }
-    .kidsclub-container {
-      top: 244px;
-      left: -100px;
-      margin: 0 auto;
-      padding-left: 0;
-    }
-    .kidsclub-title {
-      font-size: 34px;
-      line-height: 37px;
-      font-weight: 300;
-    }
-    .kidsclub-logo-container {
-      position: absolute;
-      top: 0;
-      right: 50%;
-      display: block;
-    }
-    .kidsclub-bottle {
-      position: absolute;
-      left: 336px;
-      top: 600px;
-      width: 282px;
-      height: 492px;
-      background-image: url(//crossroads-media.s3.amazonaws.com/images/explore_kidsclub_bottle.png);
-      background-position: 50% 0px;
-      background-repeat: no-repeat;
-      display: block;
-    }
-    .kidsclub-logo {
-      position: absolute;
-      left: -200px;
-      top: 385px;
-      width: 436px;
-      height: 300px;
-      background-image: url(//crossroads-media.s3.amazonaws.com/images/explore_kidsclub_logo.png);
-      background-position: 50% 0px;
-      background-repeat: no-repeat;
-      display: block;
-    }
+  // Kids Club
+  .kidsclub {
+    @include gradient(#F4A000,#FFCF00);
+    position: relative;
 
-    #studentministry {
-      background-color: #000;
-      background-image: url(//crossroads-media.s3.amazonaws.com/images/explore_studentministry_bg_large.jpg);
-      background-position: 50% 0px;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      background-size: cover;
-      height: 1000px;
-      z-index: 4;
-    }
-    .studentministry-img {
-      display: none;
-    }
-    .studentministry-container {
-      position: relative;
-      top: 250px;
-    }
-    .studentministry-title {
-      font-size: 40px;
-      line-height: 37px;
-    }
-    .studentministry-overlay {
-      width: 100%;
-      height: 100%;
-      background: #000;
-      opacity: 0;
-      display: block;
-    }
-
-    #coffee {
-      background-color: #fff;
-      background-image: url(//crossroads-media.s3.amazonaws.com/images/explore_coffee_bg_large.jpg);
-      background-position: 50% 0px;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      height: 1000px;
-      z-index: 5;
-    }
-    .coffee-img {
-      display: none;
-    }
-    .coffee-container {
-      top: 90px;
-      //left: -250px;
+    .kc-logo {
       margin: 0 auto;
-      //padding-right: 410px;
-      color: #005984;
-      max-width: 450px;
-    }
-    .coffee-title {
-      font-size: 34px;
-      line-height: 37px;
-      font-weight: 300;
-    }
-    .coffee-pour-container {
-      position: absolute;
-      top: 0;
-      right: 50%;
-      display: block;
-    }
-    .coffee-lid {
-      position: absolute;
-      left: -58px;
-      top: 257px;
-      display: block;
-    }
-    .coffee-splenda {
-      position: absolute;
-      left: -272px;
-      top: 576px;
-      display: block;
-    }
-    #drums {
-      background-color: #000;
-      background-image: url(//crossroads-media.s3.amazonaws.com/images/explore_drums_bg_large.jpg);
-      background-position: 50% 0px;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      height: 1000px;
-      z-index: 4;
-    }
-    .drums-img {
-      display: none;
-    }
-    .drums-container {
       position: relative;
-      top: 520px;
-      color: #F2EFE3;
-      max-width: 548px;
-      margin: 0 auto;
-    }
-    .drums-title {
-      font-size: 34px;
-      line-height: 37px;
-    }
-    .drums-overlay {
-      width: 100%;
-      height: 100%;
-      background: #000;
-      opacity: 0;
-      display: block;
-    }
-    #clothes {
-      background-color: #fff;
-      background-image: url(//crossroads-media.s3.amazonaws.com/images/explore_clothes_bg_large.jpg);
-      background-position: 50% 90px;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      height: 1000px;
-      z-index: 3;
-    }
-    .clothes-img {
-      display: none;
-    }
-    .clothes-container {
-      position: relative;
-      top: 50px;
-      //left: -160px;
-      margin: 0;
-      //padding-right: 410px;
-      color: #005984;
-      max-width: 300px;
-    }
-    .clothes-title {
-      font-size: 34px;
-      line-height: 37px;
-      font-weight: 300;
-    }
-    #photos {
-      background-color: #fff;
-      background-image: url(//crossroads-media.s3.amazonaws.com/images/explore_photos_bg_large.jpg);
-      background-position: 50% 0px;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      height: 1000px;
       z-index: 2;
     }
-    .photos-img {
-      display: none;
+
+    .kidsclub-desc {
+      color: #ffffff;
     }
-    .photos-container {
-      float: none;
-      top: 162px;
-      left: -80px;
-      max-width: 366px;
-      margin: 0 auto;
-      color: #005984;
+
+    .bubble-stick {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      z-index: 1;
+      max-height: 70%;
     }
-    .photos-title {
-      font-size: 34px;
-      line-height: 37px;
-      font-weight: 300;
-    }
-    .photos-stack-container {
+  }
+
+  // Student Ministry
+  .studentministry {
+    background: #0F0901;
+
+    .studentministry-img {
       position: absolute;
       top: 0;
-      //right: 50%;
-      right: 25%;
-      display: block;
+      left: 50%;
+      width: 550px;
+      height: 416px;
+      max-width: 550px;
+      margin-left: -275px;
     }
-    .photo-1 {
-      position: absolute;
-      left: -220px;
-      top: 398px;
-      display: block;
-    }
-    .photo-2 {
-      position: absolute;
-      left: 40px;
-      top: 325px;
-      display: block;
-    }
-    .photo-3 {
-      position: absolute;
-      left: -40px;
-      top: 208px;
-      display: block;
-    }
-    .photo-4 {
-      position: absolute;
-      left: 0px;
-      top: 98px;
-      display: block;
-    }
-    #meet {
-      background-color: #fff;
-      min-height: 1000px;
-      z-index: 1;
-    }
-    .meet-container {
-      position: relative;
-      top: 170px;
-      left: 0;
-      color: #005984;
-    }
-    .meet-title {
-      font-size: 34px;
-      line-height: 37px;
-    }
-    #opening .next a,
-    #studentministry .next a,
-    #drums .next a {
-      display: block;
+
+    .studentministry-container {
       color: #fff;
-      opacity: 1;
+      a {
+        color: #18afe4;
+      }
+    }
+
+    .studentministry-title {
+      color: #18afe4;
     }
   }
 
-  //768px
-
-  @media (min-width: $screen-sm) {
-    #map {
-      background-size: 1300px;
+  // Coffee
+  .coffee {
+    background: linear-gradient(to bottom, rgba(217,219,224,1) 0%, rgba(217,219,224,1) 50%, rgba(238,241,247,1) 60%, rgba(217,219,224,1) 77%, rgba(232,234,239,1) 100%);
+    position: relative;
+    .cup {
+      transform: translate(30%, 40%);
     }
-    .map-container {
-      top: 330px;
-      max-width: 455px;
+    .cup-bottom,
+    .cup-top,
+    .cup-coffee,
+    .cup-lid {
+      position: absolute;
+      top: 0%;
+      left: 0%;
+      max-width: initial;
+      transform: translate(30%, 20%);
+      width: 90%;
+      @media (min-width: $screen-md-min) {
+        transform: translate(100%, 10%);
+      }
     }
-    .kidsclub-container {
-      left: -210px;
+    .cup-coffee {
+      visibility: hidden;
+    }
+    .cup-lid {
+      visibility: hidden;
+    }
+    .sugar {
+      position: absolute;
+      top: 0%;
+      left: 0%;
+      max-width: initial;
+      transform: translate(16%, 376%);
+      width: 24%;
+      visibility: hidden;
+      @media (min-width: $screen-md-min) {
+        transform: translate(250%, 341%);
+      }
     }
   }
 
+  // Drums
+  .drums {
+    background-color: #000;
+    color: #F2EFE3;
+    text-align: center;
 
-  @media (min-width: $screen-md) {
+    .drums-title {
+      color: #fff;
+      line-height: 1;
+    }
+
+    .drums-desc {
+      line-height: 17px;
+    }
+  }
+
+  // Clothes
+  .clothes {
+    .clothes-pile {
+      width: 120%;
+      position: absolute;
+      top: 0%;
+      left: 0%;
+      max-width: initial;
+      transform: translate(0%, -10%);
+      z-index: -1;
+    }
+  }
+
+  // Photos
+  .photos {
+    background: #DAD7DB;
+    overflow: hidden;
+    .img-background {
+      display: none;
+      @media (min-width: $screen-md-min) {
+        display: block;
+      }
+    }
+    .photos-content-container {
+      margin-top: 0%;
+      @media (min-width: $screen-sm-min) {
+        margin-top: 10%;
+      }
+    }
     .photos-container {
-      left: -230px;
+      margin-top: 25%;
+      @media (min-width: $screen-sm-min) {
+        margin-top: 8%;
+      }
     }
-    .photos-stack-container {
-      padding-right: 280px;
+    .photo1,
+    .photo2,
+    .photo3,
+    .photo4 {
+      position: absolute;
+      top: 0%;
+      left: 0%;
+      width: 80%;
+      margin-left: 10%;
+      margin-top: 10%;
+      visibility: hidden;
+    }
+    .photo1 {
+      transform: rotate(-11deg) translate(0%, -50%);
+    }
+    .photo2 {
+      transform: rotate(2deg) translate(-23%, -9%);
+    }
+    .photo3 {
+      transform: rotate(-19deg) translate(20%, 27%);
+    }
+    .photo4 {
+      transform: rotate(14deg) translate(-24%, 58%);
+    }
+    @media (min-width: $screen-sm-min) {
+      .photo1 {
+        transform: rotate(-11deg) translate(0%, -50%);
+      }
+      .photo2 {
+        transform: rotate(2deg) translate(-13%, -9%);
+      }
+      .photo3 {
+        transform: rotate(-19deg) translate(0%, 27%);
+      }
+      .photo4 {
+        transform: rotate(5deg) translate(-10%, 75%);
+      }
+    }
+    @media (min-width: $screen-md-min) {
+      .photo1 {
+        transform: rotate(-11deg) translate(10%, -50%);
+      }
+      .photo2 {
+        transform: rotate(2deg) translate(-3%, -9%);
+      }
+      .photo3 {
+        transform: rotate(-19deg) translate(10%, 27%);
+      }
+      .photo4 {
+        transform: rotate(5deg) translate(-15%, 75%);
+      }
+    }
+    @media (min-width: $screen-lg-min) {
+      .photo4 {
+        transform: rotate(5deg) translate(-40%, 60%);
+      }
     }
   }
 
-  /* TABLET AND SMALLER
-  /  ----------------------------------------------------*/
-  @media (max-width: 767px) {
-    .kidsclub-container {
-      position: relative;
-      margin: 0 auto;
-      padding-left: 11.650485436893%;
-      color: #005984;
-
+  // Meet
+  .meet {
+    .meet-desc {
+      color: #999999;
+      a {
+        @extend .link-secondary;
+      }
     }
   }
-}
+
+  // Animations
+  .fade-bg {
+    visibility:hidden;
+  }
+  .rise20 {
+    opacity: 0;
+    visibility:hidden;
+    transform: translateY(20px) translateZ(0) translate3d(0, 0, 0);
+    transform-style: preserve-3d
+  }
+  .rise10 {
+    opacity: 0;
+    visibility:hidden;
+    transform: translateY(10px) translateZ(0) translate3d(0, 0, 0);
+    transform-style: preserve-3d
+  }
+
+  // Slides
+  .slideCon {
+    display: table;
+    height: 100%;
+    width: 100%;
+  }
+  .slideCell {
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+} //explore
