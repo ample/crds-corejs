@@ -22,8 +22,6 @@
       $rootScope = _$rootScope_;
       scope = $rootScope.$new();
       $httpBackend = _$httpBackend_;
-      $httpBackend.whenGET(/SiteConfig*/).respond('');
-      $httpBackend.flush();
     }));
 
     describe('General Specs', function() {

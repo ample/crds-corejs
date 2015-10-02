@@ -19,11 +19,6 @@
     $rootScope.MESSAGES = MESSAGES;
     setOriginForCmsPreviewPane($document);
 
-    SiteConfig.get({id:1}).$promise.then(function(result ) {
-          ContentSiteConfigService.siteconfig = result.siteConfig;
-        }
-      );
-
     function clearAndRedirect(event, toState, toParams) {
       console.log($location.search());
 
@@ -77,24 +72,33 @@
         $rootScope.meta = toState.data.meta;
       }
       if(ContentSiteConfigService.siteconfig.title){
-        $rootScope.meta.siteconfig = ContentSiteConfigService.siteconfig;
-        $rootScope.meta.title = $rootScope.meta.title +
-          ' | ' + ContentSiteConfigService.siteconfig.title;
+        setupMetaData();
       } else {
-        $rootScope.meta.siteconfig = {
-          'title':'Crossroads',
-          'locale':'en_US'
-        };
-        $rootScope.meta.title = $rootScope.meta.title +
-          ' | ' + 'Crossroads';
+        SiteConfig.get({id:1}).$promise.then(function(result ) {
+              ContentSiteConfigService.siteconfig = result.siteConfig;
+              setupMetaData();
+            }
+          );
       }
+    });
+
+    function setupMetaData() {
+      var titleSuffix = ' | ' + ContentSiteConfigService.siteconfig.title;
+      $rootScope.meta.siteconfig = ContentSiteConfigService.siteconfig;
+      if($rootScope.meta.title.indexOf(titleSuffix, $rootScope.meta.title.length - titleSuffix.length) === -1){
+        $rootScope.meta.title = $rootScope.meta.title + titleSuffix;
+      }
+
       $rootScope.meta.url = $location.absUrl();
+      if(!$rootScope.meta.statusCode){
+        $rootScope.meta.statusCode = '200';
+      }
       if(!$rootScope.meta.image){
         $rootScope.meta.image = {
           'filename':'http://crossroads-media.s3.amazonaws.com/images/coffee_cup.jpg'
         };
       }
-    });
+    }
 
     function setOriginForCmsPreviewPane($document) {
       var document = $document[0];

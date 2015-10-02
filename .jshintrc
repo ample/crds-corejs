@@ -71,6 +71,7 @@
         "spyOn": false,
         "_$location_" : false,
         "expect" : false,
+        "addthis" : false
         "jasmine": false
     }
 }
