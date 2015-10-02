@@ -12,9 +12,10 @@
     '$aside',
     'screenSize',
     '$state',
-    'ResponsiveImageService'];
+    'ResponsiveImageService',
+    'PageRenderedService'];
 
-  function CoreController($scope, $rootScope, MESSAGES, ContentBlock, growl, $aside, screenSize, $state, ResponsiveImageService) {
+  function CoreController($scope, $rootScope, MESSAGES, ContentBlock, growl, $aside, screenSize, $state, ResponsiveImageService, PageRenderedService) {
 
     var vm = this;
 
@@ -36,6 +37,7 @@
 
     $scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
       ResponsiveImageService.updateResponsiveImages();
+      PageRenderedService.pageLoaded();
       vm.resolving = false;
     });
 
