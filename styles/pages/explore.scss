@@ -58,6 +58,15 @@
   .opening {
     background-color: #002D4E;
     color: #ffffff;
+    .img-background {
+      background-size: cover;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      background-image: url(http://crossroads-media.imgix.net/images/explore/opening/explore_opening_bg.jpg?dpr=2&w=375&h=627&fit=crop);
+      @media (min-width: $screen-sm-min) {
+        background-image: url(http://crossroads-media.imgix.net/images/explore/opening/explore_opening_bg.jpg?dpr=2&w1440&ixjsv=1.1.2&q=50);
+      }
+    };
     .opening-title {
       font-size: 46px;
       line-height: 46px;
@@ -67,6 +76,9 @@
     a {
       text-decoration: underline;
       color: #fff;
+    }
+    .opening-img-placeholder {
+      opacity: .3;
     }
   }
 
@@ -188,6 +200,7 @@
       position: absolute;
       right: 3%;
       bottom: 49%;
+      display: none;
     }
     .smallBubble{
     	width:60px;
