@@ -33,6 +33,11 @@
       if (toState.resolve && !event.defaultPrevented) {
         vm.resolving = true;
       }
+
+      if (fromState.name == 'explore') {
+        $("#fullpage").hide();
+        $.fn.fullpage.destroy('all');
+      }
     });
 
     $scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
