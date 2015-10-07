@@ -331,10 +331,27 @@
         display: block;
       }
     }
+    .camera {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      max-width: 700px;
+      display: none;
+
+      @media (min-width: $screen-sm-min) {
+        display: block;
+      }
+
+      @media (max-width: $screen-md-min) {
+        max-width: 500px;
+      }
+    }
     .photos-content-container {
       margin-top: 0%;
+      z-index: 10;
+
       @media (min-width: $screen-sm-min) {
-        margin-top: 10%;
+        margin-top: 5%;
       }
     }
     .photos-container {
