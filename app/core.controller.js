@@ -13,9 +13,10 @@
     'screenSize',
     '$state',
     'ResponsiveImageService',
-    'PageRenderedService'];
+    'PageRenderedService',
+    '$modal'];
 
-  function CoreController($scope, $rootScope, MESSAGES, ContentBlock, growl, $aside, screenSize, $state, ResponsiveImageService, PageRenderedService) {
+  function CoreController($scope, $rootScope, MESSAGES, ContentBlock, growl, $aside, screenSize, $state, ResponsiveImageService, PageRenderedService, $modal) {
 
     var vm = this;
 
@@ -25,6 +26,7 @@
     vm.resolving = true;
     vm.state = $state;
     vm.mapContentBlocks = mapContentBlocks;
+    vm.stayLoggedInPrompt = stayLoggedInPrompt;
 
     ////////////////////////////
     // State Change Listeners //
@@ -120,6 +122,14 @@
 
     function prevent(evt){
       evt.stopPropagation();
+    }
+    
+    function stayLoggedInPrompt() {
+      var stayLoggedInPrompt = $modal.open({
+        templateUrl: 'stayLoggedInModal/stayLoggedInModal.html',
+        controller: 'StayLoggedInController',
+        backdrop: true
+      });
     }
 
   }
