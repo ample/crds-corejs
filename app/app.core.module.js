@@ -47,5 +47,7 @@
     .factory('ContentPageService', require('./cms/services/content_page.service'))
     .factory('ContentSiteConfigService', require('./cms/services/content_siteconfig.service'))
     .factory('ResponsiveImageService', require('./components/responsiveImage/responsiveImage.service'))
-    .factory('PageRenderedService', require('./components/pageRendered/pageRendered.service'));
+    .factory('PageRenderedService', require('./components/pageRendered/pageRendered.service'))
+    .factory('AttributeTypeService', require('./services/attributeType.service'));
+
 })();
