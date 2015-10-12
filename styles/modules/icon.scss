@@ -132,11 +132,11 @@ label .icon {
 
 .loading {
   position: relative;
-  width: 50px;
-  height: 50px;
+  width: 75px;
+  height: 75px;
   background: transparent;
   margin: 0 auto;
-  animation: spin 1000ms linear infinite;
+  animation: spin 700ms linear infinite;
 }
 
 .loading.fullscreen {

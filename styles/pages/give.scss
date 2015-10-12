@@ -163,26 +163,13 @@
       height: 15px;
       width: 17px;
     }
-
-    .pending {
-      @extend .text-muted;
-
-      .dollar-amount {
-        @extend .text-muted;
-      }
-
-      span.label {
-        margin-left: $line-height-computed/4;
-      }
-
-      @media screen {
-        svg {
-          -webkit-filter: grayscale(100%);
-          filter: grayscale(100%);
-          filter: gray;
-        }
-      }
+  
+    .giving-bank-icon {
+      vertical-align: sub;
+      display: inline;
     }
+
+
 }
 
 .give-info {
