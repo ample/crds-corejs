@@ -3,6 +3,31 @@
   Special styles for presenting special styles for the mobile optimized version of the explore page
 */
 
+.explore-nav {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  z-index: 3000;
+  line-height: 1;
+  transition: all .25s linear;
+
+  .explore-up {
+    display: block;
+  }
+
+  .explore-down {
+    display: block;
+  }
+}
+
+.fp-viewing-3, .fp-viewing-5 {
+  .explore-nav {
+    a {
+      color: #fff;
+    }
+  }
+}
+
 .explore {
   .fp-tableCell {
     vertical-align: top;
@@ -83,6 +108,41 @@
     }
     .opening-img-placeholder {
       opacity: .3;
+    }
+
+    .opening-scroll-down {
+      position: absolute;
+      width: 100%;
+      bottom: 10px;
+      z-index: 4;
+      text-align: center;
+
+      .icon {
+        border: 2px solid white;
+        border-radius: 50%;
+        transition: all .25s linear;
+
+        &:hover {
+          opacity: .7;
+        }
+      }
+    }
+  }
+
+  .preload-bubble {
+    height: 1px;
+    width: 1px;
+  }
+
+  .explore-home {
+    .icon {
+      color: #6E8496;
+      transition: all .25s linear;
+
+      .icon {}
+      &:hover {
+        color: #C1CBD4;
+      }
     }
   }
 
@@ -444,6 +504,28 @@
       color: #999999;
       a {
         @extend .link-secondary;
+      }
+    }
+  }
+
+  .meet-scroll-top-cont {
+    transition: all .25s linear;
+    position: absolute;
+    bottom: 10px;
+
+    .icon {
+      border: 2px solid $cr-blue;
+      border-radius: 50%;
+      display: block;
+      clear: both;
+      margin: 0 auto;
+    }
+
+    &:hover {
+      color: $cr-orange;
+      .icon {
+        color: $cr-orange;
+        border-color: $cr-orange;
       }
     }
   }
