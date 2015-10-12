@@ -51,6 +51,7 @@
   require('./components/volunteer_applications');
   require('./components/loadingButton');
   require('./components/emailBox');
+  require('./components/stayLoggedInModal');
   require('./email_field/email_field_directive');
   require('./date_field/date_field_directive');
   require('./password_field/password_field_directive');
