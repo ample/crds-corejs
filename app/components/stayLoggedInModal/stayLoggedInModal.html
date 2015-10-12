@@ -2,12 +2,12 @@
   <h3 class="modal-title">Session Ended</h3>
 </div>
 <div class="modal-body">
-  <p>Please enter your password to pick up where you left off.</p>
+  <div ng-bind-html="$root.MESSAGES.sessionEndedMessage.content | html"></div>
   <label>Password</label>
   <password-field required="true" passwd="credentials.password" submitted="navlogin.$submitted" prefix="passwordPrefix"></password-field>
 </div>
 <div class="modal-footer">
   <a ui-sref="forgotPassword" href="/forgot-password" class="pull-left">Forgot password?</a>
-  <button class="btn btn-standard" type="button" ng-click="modal.cancel()">Cancel</button>
-  <button class="btn btn-primary" type="button" ng-click="modal.ok()">Submit</button>
+  <button class="btn btn-standard" type="button" ng-click="StayLoggedIn.cancel()">Cancel</button>
+  <button class="btn btn-primary" type="button" ng-click="StayLoggedIn.ok()">Login</button>
 </div>

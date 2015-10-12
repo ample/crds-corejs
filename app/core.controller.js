@@ -127,7 +127,7 @@
     function stayLoggedInPrompt() {
       var stayLoggedInPrompt = $modal.open({
         templateUrl: 'stayLoggedInModal/stayLoggedInModal.html',
-        controller: 'StayLoggedInController',
+        controller: 'StayLoggedInController as StayLoggedIn',
         backdrop: true
       });
     }
