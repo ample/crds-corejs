@@ -197,7 +197,6 @@ label {
 /***************************************************************************************
 * Forms
 ***************************************************************************************/
-
 select.form-control {
   appearance: none;
   background-image:
@@ -214,11 +213,15 @@ select.form-control {
     1px 1.5em;
   background-repeat: no-repeat;
   padding-right: 46px;
+  box-shadow: none;
 }
 input[type=text],
 input[type=email],
 input[type=textarea],
 input[type=textfield],
+input[type=search],
+input[type=password],
+input[type=tel],
 textarea
  {
   appearance: none;
