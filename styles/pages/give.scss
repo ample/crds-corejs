@@ -21,11 +21,6 @@
     .panel-body {
         padding: 10px 8px;
     }
-    .give-button {
-      svg {
-        vertical-align: sub;
-      }
-    }
 }
 
 .give-amount {
@@ -152,7 +147,7 @@
         @extend .text-success;
         font-weight: bold;
     }
-  
+
     .dollar-amount-decline {
       @extend .text-muted;
       font-weight: bold;
