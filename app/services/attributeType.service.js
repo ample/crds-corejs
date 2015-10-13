@@ -22,25 +22,20 @@
     }
 
     /**
-     * Takes an attributeTypeId, the list of attributes from a person,
+     * Takes a list of attributes from a person,
      * the list of attributes defined for the particular attributeType and
      * a predicate to transform the attributes that belong to a person
      *
      * returns the transformed list of attributes that the person has defined
      */
-    function transformPersonMultiAttributes(attributeTypeId,
-        contactAttributes,
-        attributeList,
-        successPredicate) {
-
-      var contactAttrs = _.filter(contactAttributes, function(attr) {
-        return attr.attributeTypeId === attributeTypeId;
-      });
+    function transformPersonMultiAttributes(contactAttributes, attributeList, successPredicate) {
 
       _.forEach(attributeList, function(attr) {
-        _.forEach(contactAttrs, function(mine) {
+        _.forEach(contactAttributes, function(mine) {
           if (mine.attributeId === attr.attributeId) {
-            successPredicate(attr);
+            if (successPredicate !== undefined) {
+              successPredicate(mine, attr);
+            }
           }
         });
       });
