@@ -106,7 +106,7 @@
       color: #fff;
     }
     .opening-img-placeholder {
-      opacity: .3;
+      //opacity: .3;
     }
 
     .opening-scroll-down {
@@ -121,7 +121,7 @@
         border-radius: 50%;
 
         &:hover {
-          opacity: .7;
+          //opacity: .7;
         }
       }
     }
@@ -215,6 +215,7 @@
         transform: translate(667%, 211%);
       }
     }
+
     .map-desc {
       color: #999999;
     }
@@ -522,6 +523,10 @@
   }
 
   // Animations
+  .fade {
+    opacity: 0;
+    visibility: hidden;
+  }
   .fade-bg {
     visibility:hidden;
   }
