@@ -50,7 +50,7 @@ var checkLoggedin = function ($q, $timeout, $http, $location, $rootScope, $cooki
       $rootScope.username = user.username;
     } else {
       Session.clear();
-      $rootScope.message = 'You need to log in.';
+      $rootScope.message = 'You need to sign in.';
       $timeout(function () {
         deferred.reject();
       }, 0);
