@@ -377,6 +377,7 @@
     }
     .img-background {
       filter: blur(35px) brightness(4.75);
+      transition: all 1500ms cubic-bezier(0.23,1,.32,1);
     }
   }
 
