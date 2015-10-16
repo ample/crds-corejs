@@ -9,7 +9,6 @@
   right: 10px;
   z-index: 3000;
   line-height: 1;
-  transition: all .25s linear;
 
   .explore-up {
     display: block;
@@ -107,7 +106,7 @@
       color: #fff;
     }
     .opening-img-placeholder {
-      opacity: .3;
+      //opacity: .3;
     }
 
     .opening-scroll-down {
@@ -120,10 +119,9 @@
       .icon {
         border: 2px solid white;
         border-radius: 50%;
-        transition: all .25s linear;
 
         &:hover {
-          opacity: .7;
+          //opacity: .7;
         }
       }
     }
@@ -137,7 +135,6 @@
   .explore-home {
     .icon {
       color: #6E8496;
-      transition: all .25s linear;
 
       .icon {}
       &:hover {
@@ -218,9 +215,7 @@
         transform: translate(667%, 211%);
       }
     }
-    .map-title {
-      margin-bottom: 0px;
-    }
+
     .map-desc {
       color: #999999;
     }
@@ -333,9 +328,7 @@
   .coffee {
     background: linear-gradient(to bottom, rgba(217,219,224,1) 0%, rgba(217,219,224,1) 50%, rgba(238,241,247,1) 60%, rgba(217,219,224,1) 77%, rgba(232,234,239,1) 100%);
     position: relative;
-    .cup {
-      transform: translate(30%, 40%);
-    }
+
     .cup-bottom,
     .cup-top,
     .cup-coffee,
@@ -384,6 +377,7 @@
     }
     .img-background {
       filter: blur(35px) brightness(4.75);
+      transition: all 1500ms cubic-bezier(0.23,1,.32,1);
     }
   }
 
@@ -509,7 +503,6 @@
   }
 
   .meet-scroll-top-cont {
-    transition: all .25s linear;
     position: absolute;
     bottom: 10px;
 
@@ -531,6 +524,10 @@
   }
 
   // Animations
+  .fade {
+    opacity: 0;
+    visibility: hidden;
+  }
   .fade-bg {
     visibility:hidden;
   }
