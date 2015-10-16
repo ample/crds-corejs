@@ -1,5 +1,6 @@
 %icon {
   display: inline-block;
+  vertical-align: middle;
 }
 
 .icon {
@@ -42,10 +43,6 @@
   @extend %icon;
   width: 64px;
   height: 64px;
-}
-
-.icon-middle {
-  vertical-align: middle;
 }
 
 .icon-right {
@@ -103,20 +100,6 @@ svg:focus {
 }
 
 /***************************************************************************************
-* Heading Icons
-***************************************************************************************/
-
-h1 .icon,
-h2 .icon,
-h3 .icon,
-h4 .icon,
-h5 .icon,
-label .icon {
-  vertical-align: sub;
-}
-
-
-/***************************************************************************************
 * Loading Icons
 ***************************************************************************************/
 
@@ -132,11 +115,11 @@ label .icon {
 
 .loading {
   position: relative;
-  width: 50px;
-  height: 50px;
+  width: 75px;
+  height: 75px;
   background: transparent;
   margin: 0 auto;
-  animation: spin 1000ms linear infinite;
+  animation: spin 700ms linear infinite;
 }
 
 .loading.fullscreen {

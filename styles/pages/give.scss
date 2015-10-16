@@ -21,11 +21,6 @@
     .panel-body {
         padding: 10px 8px;
     }
-    .give-button {
-      svg {
-        vertical-align: sub;
-      }
-    }
 }
 
 .give-amount {
@@ -152,7 +147,7 @@
         @extend .text-success;
         font-weight: bold;
     }
-  
+
     .dollar-amount-decline {
       @extend .text-muted;
       font-weight: bold;
@@ -163,26 +158,13 @@
       height: 15px;
       width: 17px;
     }
-
-    .pending {
-      @extend .text-muted;
-
-      .dollar-amount {
-        @extend .text-muted;
-      }
-
-      span.label {
-        margin-left: $line-height-computed/4;
-      }
-
-      @media screen {
-        svg {
-          -webkit-filter: grayscale(100%);
-          filter: grayscale(100%);
-          filter: gray;
-        }
-      }
+  
+    .giving-bank-icon {
+      vertical-align: sub;
+      display: inline;
     }
+
+
 }
 
 .give-info {

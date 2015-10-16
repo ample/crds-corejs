@@ -24,8 +24,12 @@
                     </span>
                 </div>
                 <div class="row">
+                  <!-- HTML for "keey me signed in feature" -->
+                  <div class="col-xs-12 push-bottom" ng-hide="true" checked>
+                    <input type="checkbox"> Stay Signed In
+                  </div>
                   <div class="col-xs-12">
-                    <input type="submit" name="submit_nav" value="Log In" ng-class="{disabled: processing }" id="submit_nav" class="btn btn-primary btn-block-mobile"/>
+                    <input type="submit" name="submit_nav" value="Sign In" ng-class="{disabled: processing }" id="submit_nav" class="btn btn-primary btn-block-mobile"/>
                     <p class="forgot_password pull-right"><a ui-sref="forgotPassword">Forgot password?</a></p>
                   </div>
                 </div>
@@ -35,7 +39,7 @@
                     <div class="text-center or-divider">
                       <p><span> or </span></p>
                     </div>
-                    <p class="text-center"><a class="link-secondary" ng-if="showRegister" ui-sref="{{registerUrl}}"  >Create an account</a></p>
+                    <p class="text-center"><a class="link-secondary" ng-if="showRegister" ui-sref="{{registerUrl}}"  >Register an account</a></p>
                   </div>
                 </div><!--/row-->
             </div>

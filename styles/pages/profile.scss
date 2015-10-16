@@ -261,3 +261,17 @@
         color: black;
     }
 }
+
+.profile-ethnicity {
+  padding: 0 0 1px 0;
+  @media (min-width: $screen-sm-min) {
+      @include content-columns(2);
+  }
+  .checkbox {
+      margin-top: 0px;
+      clear: both;
+      @media (min-width: $screen-sm-min) {
+          margin-left: 0;
+      }
+  }
+}
