@@ -7,8 +7,7 @@
 
   function AttributeType($resource, $cookies) {
     return {
-      AttributeTypes: AttributeTypes,
-      transformPersonMultiAttributes: transformPersonMultiAttributes
+      AttributeTypes: AttributeTypes
     };
 
     function AttributeTypes(params) {
@@ -19,28 +18,6 @@
             query: { method:'GET', cache: true, isArray:true }
           }
         );
-    }
-
-    /**
-     * Takes a list of attributes from a person,
-     * the list of attributes defined for the particular attributeType and
-     * a predicate to transform the attributes that belong to a person
-     *
-     * returns the transformed list of attributes that the person has defined
-     */
-    function transformPersonMultiAttributes(contactAttributes, attributeList, successPredicate) {
-
-      _.forEach(attributeList, function(attr) {
-        _.forEach(contactAttributes, function(mine) {
-          if (mine.attributeId === attr.attributeId) {
-            if (successPredicate !== undefined) {
-              successPredicate(mine, attr);
-            }
-          }
-        });
-      });
-
-      return attributeList;
     }
   }
 })();
