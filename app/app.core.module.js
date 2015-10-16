@@ -44,10 +44,12 @@
     .directive('stopEvent', require('./shared/stopevent.directive.js'))
     .directive('requireMultiple', require('./shared/requireMultiple.directive.js'))
     .directive('autofocus', require('./shared/autofocus.directive.js'))
+    .directive('errSrc', require('./shared/errSrc.directive.js'))
     .factory('ContentPageService', require('./cms/services/content_page.service'))
     .factory('ContentSiteConfigService', require('./cms/services/content_siteconfig.service'))
     .factory('ResponsiveImageService', require('./components/responsiveImage/responsiveImage.service'))
     .factory('PageRenderedService', require('./components/pageRendered/pageRendered.service'))
-    .factory('AttributeTypeService', require('./services/attributeType.service'));
+    .factory('AttributeTypeService', require('./services/attributeType.service'))
+    .factory('ImageService', require('./services/image.service'));
 
 })();
