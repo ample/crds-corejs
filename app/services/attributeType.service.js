@@ -7,15 +7,17 @@
 
   function AttributeType($resource, $cookies) {
     return {
-      AttributeTypes: function(params) {
-        return $resource(__API_ENDPOINT__ + 'api/AttributeType/:id',
+      AttributeTypes: AttributeTypes
+    };
+
+    function AttributeTypes(params) {
+      return $resource(__API_ENDPOINT__ + 'api/AttributeType/:id',
           params,
           {
             get: { method:'GET', cache: true },
             query: { method:'GET', cache: true, isArray:true }
           }
         );
-      }
-    };
+    }
   }
 })();
