@@ -1,8 +1,9 @@
-(function () {
+(function() {
+  'use strict';
 
   module.exports = errSrc;
 
-  function errSrc(){
+  function errSrc() {
     return {
       link: function postLink(scope, element, attrs) {
         element.bind('error', function() {

@@ -1,8 +1,7 @@
 (function() {
   'use strict';
-
   module.exports = LoginForm;
-
+  LoginForm.$inject = ['$log', 'AUTH_EVENTS'];
   function LoginForm($log, AUTH_EVENTS) {
     return {
       restrict: 'EA',
