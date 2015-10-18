@@ -19,6 +19,7 @@
   require('angular-image-crop');
   require('angulartics');
   require('angulartics-google-analytics');
+
   //require('angulartics-google-tagmanager');
 
   require('ui-event');
@@ -62,6 +63,8 @@
   require('./password_field/password_field_directive');
   require('./register/register_directive');
   require('./cms/services/cms_services_module');
+
+  require('./profile/picture');
 
   // Common Services
   require('./content');
