@@ -18,7 +18,7 @@
   require('angular-mailchimp');
   require('angular-image-crop');
   require('angulartics');
-  require('../node_modules/angulartics/src/angulartics-gtm.js');
+  require('../node_modules/angulartics/src/angulartics-gtm');
 
   require('ui-event');
   require('ui-mask');
@@ -28,6 +28,7 @@
   require('expose?imgix!../lib/imgix.min');
 
   require('../lib/angular-growl');
+  //require('../lib/lunametrics-youtube.gtm');
 
   require('../node_modules/angular-toggle-switch/angular-toggle-switch-bootstrap.css');
   require('../node_modules/angular-toggle-switch/angular-toggle-switch.css');
