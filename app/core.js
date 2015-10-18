@@ -18,9 +18,7 @@
   require('angular-mailchimp');
   require('angular-image-crop');
   require('angulartics');
-  require('angulartics-google-analytics');
-
-  //require('angulartics-google-tagmanager');
+  require('../node_modules/angulartics/src/angulartics-gtm.js');
 
   require('ui-event');
   require('ui-mask');
