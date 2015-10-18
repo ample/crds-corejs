@@ -3,6 +3,10 @@
 
   angular.module('crossroads.core', [
     'ngResource',
+    'angulartics',
+    'angulartics.google.analytics',
+    //'angulartics.google.tagmanager',
+    //'angulartics.newrelic.insights',
     'ngSanitize',
     'ngPayments',
     'duScroll',
