@@ -1,20 +1,13 @@
-'use strict';
+(function() {
+  'use strict';
 
-require('./login_page.html');
-require('./forgot_password.html');
-require('./reset_password.html');
+  angular.module('crossroads.core')
+    .controller('LoginController', require('./login_controller'))
+    .directive('loginForm', require('./login_form_directive'))
+    ;
 
-var app = angular.module('crossroads.core');
-
-app.controller("LoginCtrl", ["$scope",
-    '$rootScope',
-    'AUTH_EVENTS',
-    'MESSAGES',
-    'AuthService',
-    '$state',
-    '$log',
-    'Session',
-    '$timeout',
-    'User', require('./login_controller')])
-;
-app.directive("loginForm", ['$log','AUTH_EVENTS', require('./login_form_directive')]);
+  require('./login_form.html');
+  require('./login_page.html');
+  require('./forgot_password.html');
+  require('./reset_password.html');
+})();

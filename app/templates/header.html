@@ -32,12 +32,7 @@
             <!--PROFILE ICON AND DROPDOWN-->
             <div class="pull-right hidden-xs hidden-sm" dropdown on-toggle="toggled(open)">
               <a href="#" id="user-dropdown" class="mobile-account" ng-show="$root.username != undefined" dropdown-toggle title="{{$root.username}}">
-                <img class="nav-profile-image" ng-src="https://randomuser.me/api/portraits/med/women/53.jpg" src="https://randomuser.me/api/portraits/med/women/53.jpg">
-
-                <!--Placeholder if user doesn't have profile image on file
-                <img class="nav-profile-image" ng-src="http://crossroads-media.s3.amazonaws.com/images/avatar.svg" src="http://crossroads-media.s3.amazonaws.com/images/avatar.svg">
-                -->
-
+                <profile-picture-view class="nav-profile-image"/>
               </a>
               <ul class="dropdown-menu ng-cloak" aria-labelledby="user-dropdown" ng-show="$root.username != undefined" ng-cloak>
                 <li>

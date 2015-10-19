@@ -23,7 +23,6 @@
   require('angular-image-crop');
   require('expose?imgix!../lib/imgix.min');
 
-
   require('../node_modules/angular-toggle-switch/angular-toggle-switch-bootstrap.css');
   require('../node_modules/angular-toggle-switch/angular-toggle-switch.css');
   require('../lib/angular-aside.css');
@@ -58,12 +57,11 @@
   require('./password_field/password_field_directive');
   require('./register/register_directive');
   require('./cms/services/cms_services_module');
-
+  require('./profile/picture');
 
   // Common Services
   require('./content');
   require('./filters');
-
 
   require('./core.config');
   require('./core.controller');

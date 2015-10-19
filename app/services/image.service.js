@@ -8,7 +8,9 @@
   function ImageService($resource, $cookies) {
     return {
       Image: $resource(__API_ENDPOINT__ + 'api/image/:id'),
-      ProfileImage: $resource(__API_ENDPOINT__ + 'api/image/profile/:id')
+      ProfileImage: $resource(__API_ENDPOINT__ + 'api/image/profile/:id'),
+      ProfileImageBaseURL: __API_ENDPOINT__ + 'api/image/profile/',
+      DefaultProfileImage: '//crossroads-media.imgix.net/images/avatar.svg'
     };
   }
 })();
