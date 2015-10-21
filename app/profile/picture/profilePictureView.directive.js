@@ -13,7 +13,7 @@
         contactId: '=?',
       },
       templateUrl: 'picture/profilePictureView.template.html',
-      controller: 'ProfilePictureViewController as view',
+      controller: 'ProfilePictureViewController as pictureView',
     };
   }
 })();
