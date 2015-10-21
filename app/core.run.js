@@ -1,4 +1,4 @@
-﻿(function () {
+﻿(function() {
   'use strict';
   angular.module('crossroads.core').run(AppRun);
 
@@ -30,33 +30,34 @@
       $state.go('login');
     }
 
-    $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {
+    $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
       if (toState.name === 'logout') {
         if (fromState.data === undefined || !fromState.data.isProtected) {
           Session.addRedirectRoute(fromState.name, fromParams);
-        }
-        else {
+        } else {
           Session.addRedirectRoute('content', {link:'/'});
         }
+
         return;
       }
 
       if (toState.data !== undefined && toState.data.preventRouteAuthentication) {
         return;
       }
+
       if (Session.isActive()) {
         $http({
           method: 'GET',
           url: __API_ENDPOINT__ + 'api/authenticated',
           withCredentials: true,
           headers: {
-            'Authorization': $cookies.get('sessionId')
+            Authorization: $cookies.get('sessionId')
           }
-        }).success(function (user) {
+        }).success(function(user) {
           $rootScope.userid = user.userId;
           $rootScope.username = user.username;
           $rootScope.roles = user.roles;
-        }).error(function (e) {
+        }).error(function(e) {
           clearAndRedirect(event, toState, toParams);
         });
       } else if (toState.data !== undefined && toState.data.isProtected) {
@@ -65,37 +66,33 @@
         $rootScope.userid = null;
         $rootScope.username = null;
       }
+
       //}
     });
-    $rootScope.$on('$stateChangeSuccess', function(event, toState){
-      if (toState.data && toState.data.meta){
+
+    $rootScope.$on('$stateChangeSuccess', function(event, toState) {
+      if (toState.data && toState.data.meta) {
         $rootScope.meta = toState.data.meta;
       }
-      if(ContentSiteConfigService.siteconfig.title){
-        setupMetaData();
-      } else {
-        SiteConfig.get({id:1}).$promise.then(function(result ) {
-              ContentSiteConfigService.siteconfig = result.siteConfig;
-              setupMetaData();
-            }
-          );
-      }
+
+      setupMetaData();
     });
 
     function setupMetaData() {
       var titleSuffix = ' | ' + ContentSiteConfigService.siteconfig.title;
       $rootScope.meta.siteconfig = ContentSiteConfigService.siteconfig;
-      if($rootScope.meta.title.indexOf(titleSuffix, $rootScope.meta.title.length - titleSuffix.length) === -1){
+      if ($rootScope.meta.title.indexOf(titleSuffix, $rootScope.meta.title.length - titleSuffix.length) === -1) {
         $rootScope.meta.title = $rootScope.meta.title + titleSuffix;
       }
 
       $rootScope.meta.url = $location.absUrl();
-      if(!$rootScope.meta.statusCode){
+      if (!$rootScope.meta.statusCode) {
         $rootScope.meta.statusCode = '200';
       }
-      if(!$rootScope.meta.image){
+
+      if (!$rootScope.meta.image) {
         $rootScope.meta.image = {
-          'filename':'http://crossroads-media.s3.amazonaws.com/images/coffee_cup.jpg'
+          filename:'http://crossroads-media.s3.amazonaws.com/images/coffee_cup.jpg'
         };
       }
     }
