@@ -3,6 +3,8 @@
 
   angular.module('crossroads.core', [
     'ngResource',
+    'angulartics',
+    'angulartics.google.tagmanager',
     'ngSanitize',
     'ngPayments',
     'duScroll',

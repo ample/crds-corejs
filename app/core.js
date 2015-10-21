@@ -6,10 +6,7 @@
   require('angular-sanitize');
   require('angular-messages');
   require('angular-cookies');
-  require('../lib/angular-growl');
   require('angular-toggle-switch');
-  require('ui-event');
-  require('ui-mask');
   require('angular-scroll');
   require('angular-stripe');
   require('angular-payments');
@@ -19,17 +16,24 @@
   require('angular-aside');
   require('angular-match-media');
   require('angular-mailchimp');
-  require('lodash');
   require('angular-image-crop');
+  require('angulartics');
+  require('../node_modules/angulartics/src/angulartics-gtm.js');
+
+  require('ui-event');
+  require('ui-mask');
+
+  require('lodash');
+  require('expose?moment!moment');
   require('expose?imgix!../lib/imgix.min');
+
+  require('../lib/angular-growl');
 
   require('../node_modules/angular-toggle-switch/angular-toggle-switch-bootstrap.css');
   require('../node_modules/angular-toggle-switch/angular-toggle-switch.css');
   require('../lib/angular-aside.css');
   require('../lib/angular-growl.css');
   require('../lib/ng-img-crop.css');
-
-  require('expose?moment!moment');
 
   require('../styles/main.scss');
 
@@ -57,6 +61,7 @@
   require('./password_field/password_field_directive');
   require('./register/register_directive');
   require('./cms/services/cms_services_module');
+
   require('./profile/picture');
 
   // Common Services
