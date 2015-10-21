@@ -123,6 +123,10 @@
 
 .gift-table {
   border-bottom: 1px solid $table-border-color;
+
+  .icon {
+    vertical-align: baseline;
+  }
 }
 
 .gift-table, .recent-gifts {
@@ -158,7 +162,7 @@
       height: 15px;
       width: 17px;
     }
-  
+
     .giving-bank-icon {
       vertical-align: sub;
       display: inline;
