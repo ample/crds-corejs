@@ -123,6 +123,10 @@
 
 .gift-table {
   border-bottom: 1px solid $table-border-color;
+
+  .icon {
+    vertical-align: sub;
+  }
 }
 
 .gift-table, .recent-gifts {
@@ -133,9 +137,8 @@
             display: block;
             padding-bottom: 5px;
             padding-left: 8px;
-
             .icon {
-              vertical-align: sub;
+              margin-right: 3px;
             }
         }
     }
@@ -158,13 +161,6 @@
       height: 15px;
       width: 17px;
     }
-  
-    .giving-bank-icon {
-      vertical-align: sub;
-      display: inline;
-    }
-
-
 }
 
 .give-info {
