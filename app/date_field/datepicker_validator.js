@@ -5,7 +5,7 @@
       link: function(scope, element, attrs, ngModel) {
         ngModel.$validators.minDate = function(value) {
           if (!attrs.minDate) {
-            return false;
+            return true;
           }
 
           var valueDate = value;
@@ -24,7 +24,7 @@
 
         ngModel.$validators.maxDate = function(value) {
           if (!attrs.maxDate) {
-            return false;
+            return true;
           }
 
           var valueDate = value;
