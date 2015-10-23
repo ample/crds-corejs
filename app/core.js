@@ -58,6 +58,7 @@
   require('./components/stayLoggedInModal');
   require('./email_field/email_field_directive');
   require('./date_field/date_field_directive');
+  require('./date_field/datepicker_validator');
   require('./password_field/password_field_directive');
   require('./register/register_directive');
   require('./cms/services/cms_services_module');
