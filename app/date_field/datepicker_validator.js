@@ -1,5 +1,27 @@
+'use strict';
 (function() {
-  angular.module('crossroads.core').directive('datepickerValidator', function() {
+  module.exports = DatepickerValidator;
+
+  DatepickerValidator.$inject = [];
+
+  function convertDate(value) {
+    if (typeof value === 'string' || value instanceof String) {
+      var parts = value.split('/');
+      if (parts.length === 2) {
+        value = new Date(parts[1], parts[0] - 1, 1);
+      } else if (parts.length === 3) {
+        value = new Date(parts[2], parts[0] - 1, parts[1]);
+      }
+    }
+
+    return value;
+  }
+
+  function convertISODate(dateString) {
+    return new Date(dateString.replace(/['"]+/g, ''));
+  }
+
+  function DatepickerValidator() {
     return {
       require: 'ngModel',
       link: function(scope, element, attrs, ngModel) {
@@ -8,13 +30,9 @@
             return true;
           }
 
-          var valueDate = value;
-          if (typeof value === 'string' || value instanceof String) {
-            var parts = value.split('/');
-            valueDate = new Date(parts[2], parts[0] - 1, parts[1]);
-          }
+          var valueDate = convertDate(value);
 
-          var minDate = new Date(attrs.minDate.replace(/['"]+/g, ''));
+          var minDate = convertISODate(attrs.minDate);
           if (valueDate >= minDate) {
             return true;
           } else {
@@ -27,13 +45,9 @@
             return true;
           }
 
-          var valueDate = value;
-          if (typeof value === 'string' || value instanceof String) {
-            var parts = value.split('/');
-            valueDate = new Date(parts[2], parts[0] - 1, parts[1]);
-          }
+          var valueDate = convertDate(value);
 
-          var maxDate = new Date(attrs.maxDate.replace(/['"]+/g, ''));
+          var maxDate = convertISODate(attrs.maxDate);
           if (valueDate <= maxDate) {
             return true;
           } else {
@@ -42,5 +56,5 @@
         };
       }
     };
-  });
+  }
 })();
