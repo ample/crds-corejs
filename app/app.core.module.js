@@ -3,6 +3,8 @@
 
   angular.module('crossroads.core', [
     'ngResource',
+    'angulartics',
+    'angulartics.google.tagmanager',
     'ngSanitize',
     'ngPayments',
     'duScroll',
@@ -45,6 +47,7 @@
     .directive('requireMultiple', require('./shared/requireMultiple.directive.js'))
     .directive('autofocus', require('./shared/autofocus.directive.js'))
     .directive('errSrc', require('./shared/errSrc.directive.js'))
+    .directive('datepickerValidator', require('./date_field/datepicker_validator.js'))
     .factory('ContentPageService', require('./cms/services/content_page.service'))
     .factory('ContentSiteConfigService', require('./cms/services/content_siteconfig.service'))
     .factory('ResponsiveImageService', require('./components/responsiveImage/responsiveImage.service'))

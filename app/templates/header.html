@@ -31,7 +31,7 @@
 
             <!--PROFILE ICON AND DROPDOWN-->
             <div class="pull-right hidden-xs hidden-sm" dropdown on-toggle="toggled(open)">
-              <a href="#" id="user-dropdown" class="mobile-account" ng-show="$root.username != undefined" dropdown-toggle title="{{$root.username}}">
+              <a href="#" id="user-dropdown" class="mobile-account" ng-if="$root.username != undefined" dropdown-toggle title="{{$root.username}}">
                 <profile-picture-view class="nav-profile-image"/>
               </a>
               <ul class="dropdown-menu ng-cloak" aria-labelledby="user-dropdown" ng-show="$root.username != undefined" ng-cloak>
