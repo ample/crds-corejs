@@ -92,7 +92,7 @@
 
       if (!$rootScope.meta.image) {
         $rootScope.meta.image = {
-          filename:'http://crossroads-media.s3.amazonaws.com/images/coffee_cup.jpg'
+          filename:'//crossroads-media.s3.amazonaws.com/images/coffee_cup.jpg'
         };
       }
     }
