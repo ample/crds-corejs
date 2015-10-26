@@ -6,8 +6,10 @@
 
     return function(exception, cause) {
       //TODO: We need to queue these up and send them to the server
-      exception.message += ' (caused by "' + cause + '")';
-      throw exception;
+      //exception.message += ' (caused by "' + cause + '")';
+      $log.error(exception.message);
+
+      //throw exception;
     };
 
   }

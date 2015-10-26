@@ -54,7 +54,7 @@
     .factory('PageRenderedService', require('./components/pageRendered/pageRendered.service'))
     .factory('AttributeTypeService', require('./services/attributeType.service'))
     .factory('ImageService', require('./services/image.service'))
-    //.factory('$exceptionHandler', require('./services/errorHandler.service'))
+    .factory('$exceptionHandler', require('./services/errorHandler.service'))
     ;
 
 })();
