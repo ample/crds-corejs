@@ -13,6 +13,19 @@ var getCookie =  function(cname) {
   return '';
 };
 
+var convertStringToDate = function convertDate(value) {
+  if (typeof value === 'string' || value instanceof String) {
+    var parts = value.split('/');
+    if (parts.length === 2) {
+      value = new Date(parts[1], parts[0] - 1, 1);
+    } else if (parts.length === 3) {
+      value = new Date(parts[2], parts[0] - 1, parts[1]);
+    }
+  }
+
+  return value;
+};
+
 // This custom type is needed to allow us to NOT URLEncode slashes when using ui-sref
 // See this post for details: https://github.com/angular-ui/ui-router/issues/1119
 var preventRouteTypeUrlEncoding = function(urlMatcherFactory, routeType, urlPattern) {
@@ -83,5 +96,6 @@ module.exports = {
   getCookie: getCookie,
   preventRouteTypeUrlEncoding: preventRouteTypeUrlEncoding,
   checkLoggedin: checkLoggedin,
-  formatDate: formatDate
+  formatDate: formatDate,
+  convertStringToDate: convertStringToDate,
 };
