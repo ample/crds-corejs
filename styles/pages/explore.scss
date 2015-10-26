@@ -86,9 +86,9 @@
       background-size: cover;
       background-position: 50% 50%;
       background-repeat: no-repeat;
-      background-image: url(http://crossroads-media.imgix.net/images/explore/opening/explore_opening_bg.jpg?dpr=2&w=375&h=627&fit=crop);
+      background-image: url(//crossroads-media.imgix.net/images/explore/opening/explore_opening_bg.jpg?dpr=2&w=375&h=627&fit=crop);
       @media (min-width: $screen-sm-min) {
-        background-image: url(http://crossroads-media.imgix.net/images/explore/opening/explore_opening_bg.jpg?dpr=2&w1440&ixjsv=1.1.2&q=50);
+        background-image: url(//crossroads-media.imgix.net/images/explore/opening/explore_opening_bg.jpg?dpr=2&w1440&ixjsv=1.1.2&q=50);
       }
     };
     .opening-title {
@@ -279,21 +279,21 @@
     	width:60px;
     	height:60px;
       background-color:transparent;
-      background-image:url(http://crossroads-media.s3.amazonaws.com/images/explore/kidsclub/explore_kidsclub_bubble.png);
+      background-image:url(//crossroads-media.s3.amazonaws.com/images/explore/kidsclub/explore_kidsclub_bubble.png);
       background-size:60px;
     	}
     .mediumBubble{
     	width:100px;
     	height:100px;
       background-color:transparent;
-      background-image:url(http://crossroads-media.s3.amazonaws.com/images/explore/kidsclub/explore_kidsclub_bubble.png);
+      background-image:url(//crossroads-media.s3.amazonaws.com/images/explore/kidsclub/explore_kidsclub_bubble.png);
       background-size:100px;
     }
     .largeBubble{
     	width:140px;
     	height:140px;
       background-color:transparent;
-      background-image:url(http://crossroads-media.s3.amazonaws.com/images/explore/kidsclub/explore_kidsclub_bubble.png);
+      background-image:url(//crossroads-media.s3.amazonaws.com/images/explore/kidsclub/explore_kidsclub_bubble.png);
       background-size:140px;
     }
   }
