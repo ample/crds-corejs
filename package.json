@@ -1,6 +1,6 @@
 {
   "name": "crds-core",
-  "version": "0.0.100",
+  "version": "0.0.102",
   "description": "Core Angular Module for Crossroads",
   "main": "index.js",
   "repository": {
@@ -90,6 +90,7 @@
     "angular-aside": "./lib/angular-aside.js",
     "angular-addthis": "./lib/angular-addthis.js",
     "angular-payments": "./lib/angular.payments.js",
-    "angular-image-crop": "./lib/ng-img-crop.js"
+    "angular-image-crop": "./lib/ng-img-crop.js",
+    "angulartics-gtm": "./node_modules/angulartics/src/angulartics-gtm.js"
   }
 }
