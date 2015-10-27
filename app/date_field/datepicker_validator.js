@@ -4,19 +4,6 @@
 
   DatepickerValidator.$inject = [];
 
-  /*function convertDate(value) {*/
-    //if (typeof value === 'string' || value instanceof String) {
-      //var parts = value.split('/');
-      //if (parts.length === 2) {
-        //value = new Date(parts[1], parts[0] - 1, 1);
-      //} else if (parts.length === 3) {
-        //value = new Date(parts[2], parts[0] - 1, parts[1]);
-      //}
-    //}
-
-    //return value;
-  /*}*/
-
   function convertISODate(dateString) {
     return new Date(dateString.replace(/['"]+/g, ''));
   }
