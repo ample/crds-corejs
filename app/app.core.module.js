@@ -57,4 +57,6 @@
     .factory('$exceptionHandler', require('./services/errorHandler.service'))
     ;
 
+    require('./validators');
+
 })();
