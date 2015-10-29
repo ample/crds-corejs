@@ -36,14 +36,14 @@
               </a>
               <ul class="dropdown-menu ng-cloak" aria-labelledby="user-dropdown" ng-show="$root.username != undefined" ng-cloak>
                 <li>
-                  <a ui-sref="profile">{{$root.username}}</a>
+                  <a ui-sref="profile.personal">{{$root.username}}</a>
                 </li>
                 <li role="separator" class="divider"></li>
                 <li>
-                  <a ui-sref="profile">Profile</a>
+                  <a ui-sref="profile.personal">Profile</a>
                 </li>
                 <li>
-                  <a ui-sref="history">Giving History</a>
+                  <a ui-sref="profile.giving">Giving History</a>
                 </li>
                 <li>
                   <a ui-sref="serve-signup">Sign Up to Serve</a>
