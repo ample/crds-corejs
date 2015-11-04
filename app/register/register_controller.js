@@ -1,25 +1,45 @@
 ﻿'use strict';
 require('../services/auth_service');
 require('../services/user_service');
-(function () {
-    angular.module('crossroads.core').controller('RegisterCtrl', ['$scope', '$rootScope', 'AUTH_EVENTS','AuthService', 'MESSAGES', 'User', 'Session', '$log','$timeout', '$state', RegisterController]);
 
-    function RegisterController($scope, $rootScope, AUTH_EVENTS, AuthService, MESSAGES, User, Session, $log, $timeout, $state) {
+
+(function () {
+    angular.module('crossroads.core').controller('RegisterCtrl', ['$scope', '$rootScope', 'AUTH_EVENTS','AuthService', 'MESSAGES', 'User', 'Session', '$log','$timeout', '$state', 'zxcvbn', RegisterController]);
+
+    function RegisterController($scope, $rootScope, AUTH_EVENTS, AuthService, MESSAGES, User, Session, $log, $timeout, $state, zxcvbn) {
         $log.debug("Inside register controller");
         $scope.newuser = User;
         $scope.passwordPrefix = "registration";
-        $scope.registerShow = false; 
+        $scope.registerShow = false;
         $scope.showRegisterButton = true;
-       
+        $scope.passwordStrengthProgressClass = 'progress-bar-danger';
+
+
+
         var _this = this;
 
+        $scope.$watch("newuser.password", function() {
+          $scope.passwordStrength = zxcvbn($scope.newuser.password);
+          $scope.passwordStrengthProgress = ($scope.passwordStrength.score/4) * 100; 
+          switch ($scope.passwordStrength.score) {
+            case 3:
+              $scope.passwordStrengthProgressClass = 'progress-bar-warning';
+              break;
+            case 4:
+              $scope.passwordStrengthProgressClass = 'progress-bar-success';
+              break;
+            default:
+              $scope.passwordStrengthProgressClass = 'progress-bar-danger';
+          }
+        });
+
         $scope.firstnameError = function() {
-            return (($scope.registerForm.firstname.$pristine || $scope.registerForm.firstname.$invalid) && $scope.registerForm.$submitted)             
+            //return (($scope.registerForm.firstname.$pristine || $scope.registerForm.firstname.$invalid) && $scope.registerForm.$submitted)
         };
 
         $scope.lastnameError = function() {
-            return (($scope.registerForm.lastname.$pristine || $scope.registerForm.lastname.$invalid) && $scope.registerForm.$submitted)             
-        };   
+            //return (($scope.registerForm.lastname.$pristine || $scope.registerForm.lastname.$invalid) && $scope.registerForm.$submitted)
+        };
 
         $scope.openLogin = function (data) {
             $scope.passwordPrefix = "login-dropdown";
@@ -83,12 +103,12 @@ require('../services/user_service');
             });
 
         };
-      
+
         $scope.toggleDesktopRegister = function () {
             $scope.registerShow = !$scope.registerShow;
             if ($scope.loginShow)
                 $scope.loginShow = !$scope.loginShow;
         };
-       
+
     }
 })()
