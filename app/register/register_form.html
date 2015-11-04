@@ -23,22 +23,6 @@
             <password-field required="true" passwd="newuser.password" submitted="registerForm.$submitted" prefix="passwordPrefix"></password-field>
         </div>
 
-        <div>
-          <div class="progress">
-            <div class="progress-bar {{passwordStrengthProgressClass}}" role="progressbar" aria-valuenow="{{passwordStrengthProgress}}" aria-valuemin="0" aria-valuemax="100" style="width: {{passwordStrengthProgress}}%">
-              <span class="sr-only">{{passwordStrengthProgress}}</span>
-            </div>
-          </div>
-          Password Strength: {{passwordStrength.score}}
-          <br />
-          Password Warning: {{passwordStrength.feedback.warning}}
-          <br />
-          Password Suggestions:
-          <div ng-repeat="suggestion in passwordStrength.feedback.suggestions">
-            {{suggestion}}
-          </div>
-        </div>
-
 
         <p class="small push-half-bottom text-muted">Registering signifies that you have read and agreed to the <a href="/terms-of-service" target="_blank">terms of service</a> and <a href="/privacy-policy" target="_blank">privacy policy</a>.
         </p>

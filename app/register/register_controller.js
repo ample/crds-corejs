@@ -12,33 +12,15 @@ require('../services/user_service');
         $scope.passwordPrefix = "registration";
         $scope.registerShow = false;
         $scope.showRegisterButton = true;
-        $scope.passwordStrengthProgressClass = 'progress-bar-danger';
-
-
 
         var _this = this;
 
-        $scope.$watch("newuser.password", function() {
-          $scope.passwordStrength = zxcvbn($scope.newuser.password);
-          $scope.passwordStrengthProgress = ($scope.passwordStrength.score/4) * 100; 
-          switch ($scope.passwordStrength.score) {
-            case 3:
-              $scope.passwordStrengthProgressClass = 'progress-bar-warning';
-              break;
-            case 4:
-              $scope.passwordStrengthProgressClass = 'progress-bar-success';
-              break;
-            default:
-              $scope.passwordStrengthProgressClass = 'progress-bar-danger';
-          }
-        });
-
         $scope.firstnameError = function() {
-            //return (($scope.registerForm.firstname.$pristine || $scope.registerForm.firstname.$invalid) && $scope.registerForm.$submitted)
+            return (($scope.registerForm.firstname.$pristine || $scope.registerForm.firstname.$invalid) && $scope.registerForm.$submitted)
         };
 
         $scope.lastnameError = function() {
-            //return (($scope.registerForm.lastname.$pristine || $scope.registerForm.lastname.$invalid) && $scope.registerForm.$submitted)
+            return (($scope.registerForm.lastname.$pristine || $scope.registerForm.lastname.$invalid) && $scope.registerForm.$submitted)
         };
 
         $scope.openLogin = function (data) {
