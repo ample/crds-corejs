@@ -1,9 +1,9 @@
 require('./password_field.html');
 
 (function () {
-    angular.module("crossroads.core").directive("passwordField", ['$log', 'zxcvbn', PasswordField]);
+    angular.module("crossroads.core").directive("passwordField", ['$log', '$location', 'zxcvbn', PasswordField]);
 
-    function PasswordField($log, zxcvbn) {
+    function PasswordField($log, $location, zxcvbn) {
         return {
             restrict: 'EA',
             replace: true,
@@ -18,8 +18,13 @@ require('./password_field.html');
                 //scope.showPassword = false;
                 scope.inputType = 'password';
                 scope.pwprocessing = "SHOW";
-                scope.passwordStrengthProgressClass = "progress-bar-danger";
-                scope.passwordStrengthProgressLabel = 'Weak';
+                scope.passwordStrengthProgressClass = "danger";
+                scope.passwordStrengthProgressLabel = '';
+                scope.showMeter = false;
+
+                if ($location.$$path == '/register') {
+                  scope.showMeter = true;
+                }
 
                 scope.pwprocess = function () {
                     if (scope.pwprocessing == "SHOW") {
@@ -35,11 +40,15 @@ require('./password_field.html');
 
                 scope.$watch("passwd", function() {
                   scope.passwordStrength = zxcvbn(scope.passwd);
-                  //console.log(scope.passwordStrength);
+                  console.log(scope.passwordStrength);
                   //$log.debug(scope.passwordStrength);
 
                   scope.passwordStrengthProgress = (scope.passwordStrength.score/4) * 100; 
                   switch (scope.passwordStrength.score) {
+                    case 1:
+                      scope.passwordStrengthProgressClass = 'danger';
+                      scope.passwordStrengthProgressLabel = 'Weak';
+                      break;
                     case 2:
                       scope.passwordStrengthProgressClass = 'warning';
                       scope.passwordStrengthProgressLabel = 'Fair';
