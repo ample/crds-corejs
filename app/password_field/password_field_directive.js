@@ -21,6 +21,7 @@ require('./password_field.html');
                 scope.passwordStrengthProgressClass = "danger";
                 scope.passwordStrengthProgressLabel = '';
                 scope.showMeter = false;
+                scope.isCollapsed = true;
 
                 if ($location.$$path == '/register') {
                   scope.showMeter = true;
