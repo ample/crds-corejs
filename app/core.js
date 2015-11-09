@@ -17,6 +17,8 @@
   require('angular-match-media');
   require('angular-mailchimp');
   require('angular-image-crop');
+  require('angular-zxcvbn-module');
+  require('zxcvbn'); 
   require('angulartics');
   require('angulartics-gtm');
 

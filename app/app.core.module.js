@@ -13,6 +13,7 @@
     'ngMessages',
     'angular-growl',
     'angular-stripe',
+    'angular-zxcvbn-module',
     'toggle-switch',
     'sn.addthis',
     'ngAside',
