@@ -44,7 +44,7 @@ require('./password_field.html');
                   //console.log(scope.passwordStrength);
                   //$log.debug(scope.passwordStrength);
 
-                  scope.passwordStrengthProgress = (scope.passwordStrength.score/4) * 100; 
+                  scope.passwordStrengthProgress = (scope.passwordStrength.score/4) * 100;
                   switch (scope.passwordStrength.score) {
                     case 1:
                       scope.passwordStrengthProgressClass = 'danger';
