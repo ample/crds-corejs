@@ -3,7 +3,9 @@
 
   angular.module('crossroads.core')
     .controller('LoginController', require('./login_controller'))
+      .controller('PasswordController', require('./password_controller'))
     .directive('loginForm', require('./login_form_directive'))
+    //.directive('forgotPassword', require('./forgot_password_directive'))
     ;
 
   require('./login_form.html');
