@@ -42,8 +42,6 @@ require('./password_field.html');
 
                 scope.$watch("passwd", function() {
                   scope.passwordStrength = zxcvbn(scope.passwd);
-                  //console.log(scope.passwordStrength);
-                  //$log.debug(scope.passwordStrength);
 
                   scope.passwordStrengthProgress = (scope.passwordStrength.score/4) * 100;
                   switch (scope.passwordStrength.score) {
