@@ -11,7 +11,8 @@ require('./password_field.html');
                 passwd: "=passwd",
                 submitted: "=",
                 prefix: "=prefix",
-                required: "@required"
+                required: "@required",
+                passwdStrength: "="
             },
             templateUrl: 'password_field/password_field.html',
             link: (function (scope, el, attr, ctrl) {
@@ -23,7 +24,7 @@ require('./password_field.html');
                 scope.showMeter = false;
                 scope.isCollapsed = true;
 
-                if ($location.$$path == '/register') {
+                if (scope.passwdStrength) {
                   scope.showMeter = true;
                 }
 
