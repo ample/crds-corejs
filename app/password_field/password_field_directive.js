@@ -11,7 +11,8 @@ require('./password_field.html');
                 passwd: "=passwd",
                 submitted: "=",
                 prefix: "=prefix",
-                required: "@required"
+                required: "@required",
+                passwdStrength: "="
             },
             templateUrl: 'password_field/password_field.html',
             link: (function (scope, el, attr, ctrl) {
@@ -23,7 +24,7 @@ require('./password_field.html');
                 scope.showMeter = false;
                 scope.isCollapsed = true;
 
-                if ($location.$$path == '/register') {
+                if (scope.passwdStrength) {
                   scope.showMeter = true;
                 }
 
@@ -41,10 +42,8 @@ require('./password_field.html');
 
                 scope.$watch("passwd", function() {
                   scope.passwordStrength = zxcvbn(scope.passwd);
-                  console.log(scope.passwordStrength);
-                  //$log.debug(scope.passwordStrength);
 
-                  scope.passwordStrengthProgress = (scope.passwordStrength.score/4) * 100; 
+                  scope.passwordStrengthProgress = (scope.passwordStrength.score/4) * 100;
                   switch (scope.passwordStrength.score) {
                     case 1:
                       scope.passwordStrengthProgressClass = 'danger';
