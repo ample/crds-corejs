@@ -8,29 +8,35 @@ require('../services/password_service');
     PasswordController.$inject = [
         '$scope',
         '$log',
+        '$state',
         'PasswordService'];
 
     function PasswordController(
         $scope,
         $log,
+        $state,
         PasswordService) {
 
         $log.debug('Inside Password Controller');
         var vm = this;
+        vm.saving = false;
 
         $scope.emailAddress = "Email";
 
         $scope.resetRequest = function(form) {
-
-            if (form.$invalid) {
-                $rootScope.$emit('notify', $rootScope.MESSAGES.generalError);
-                vm.saving = false;
-            }
-
             var email = { 'email' : $scope.emailAddress }
+            PasswordService.ResetRequest.save(email).$promise.then(function (response) {
 
-            debugger;
-            PasswordService.ResetRequest.save(email);
+                //$rootScope.$emit('notify', $rootScope.MESSAGES.corkboardPostSuccess);
+                debugger;
+                vm.saving = false;
+                route = '';
+                $state.go('content', {link: '/'})
+            }, function (error) {
+                //$rootScope.$emit('notify', $rootScope.MESSAGES.generalError);
+                debugger;
+                vm.saving = false;
+            });
         }
     };
 })();
