@@ -11,7 +11,8 @@ html {
 body {
   font-weight: 300;
   font-size: 1em; /* equivalent to 14px */
-  line-height: 1.625; /* equivalent to 22.75px */
+  line-height: $line-height-base; /* equivalent to 22.75px */
+  -webkit-font-smoothing: antialiased;
 }
 
 body, caption, th, td, input, textarea, select, option, legend, fieldset, h1, h2, h3, h4, h5, h6 {
