@@ -6,14 +6,12 @@ require('../services/password_service');
     module.exports = PasswordController;
 
     PasswordController.$inject = [
-        '$scope',
         '$rootScope',
         '$log',
         '$state',
         'PasswordService'];
 
     function PasswordController(
-        $scope,
         $rootScope,
         $log,
         $state,
@@ -23,21 +21,37 @@ require('../services/password_service');
 
         var vm = this;
         vm.saving = false;
+        //vm.invalidAddress = false;
 
         vm.resetRequest = function(form) {
-            vm.saving = true;
-            var email = { 'email' : vm.emailAddress }
-            PasswordService.ResetRequest.save(email).$promise.then(function (response) {
 
-                $rootScope.$emit('notify', $rootScope.MESSAGES.resetRequestSuccess);
-                debugger;
-                vm.saving = false;
-                $state.go('content', {link: '/'});
-            }, function (error) {
-                $rootScope.$emit('notify', $rootScope.MESSAGES.generalError);
-                debugger;
-                vm.saving = false;
-            });
+            vm.saving = true;
+
+            if (form.forgotpasswordform.$valid) {
+
+                // don't send reset request if the email doesn't exist -- this is a little backwards
+                // because we're using an existing api call
+                PasswordService.EmailExists.get({ email: vm.emailAddress }, function (response) {
+                    debugger;
+                    $rootScope.$emit('notify', $rootScope.MESSAGES.generalError);
+                    vm.saving = false;
+                }, function (error) {
+                    var email = { 'email' : vm.emailAddress }
+                    PasswordService.ResetRequest.save(email).$promise.then(function (response) {
+                        debugger;
+                        $rootScope.$emit('notify', $rootScope.MESSAGES.resetRequestSuccess);
+                        $state.go('content', {link: '/'});
+                        vm.saving = false;
+                    }, function (error) {
+                        debugger;
+                        $rootScope.$emit('notify', $rootScope.MESSAGES.generalError);
+                        vm.saving = false;
+                    });
+                });
+
+
+            }
         }
+
     };
 })();

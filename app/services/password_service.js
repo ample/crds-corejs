@@ -7,7 +7,9 @@
 
     function PasswordService($resource) {
         return {
-            ResetRequest: $resource(__API_ENDPOINT__ + 'api/resetpasswordrequest')
+            ResetRequest: $resource(__API_ENDPOINT__ + 'api/resetpasswordrequest'),
+            EmailExists: $resource(__API_ENDPOINT__ + 'api/lookup/0/find/')
        };
     }
+
 })();
