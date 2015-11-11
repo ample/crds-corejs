@@ -28,9 +28,6 @@ require('../services/password_service');
 
             if (form.forgotpasswordform.$valid) {
 
-                var encodedEmail = encodeURI(vm.emailAddress).replace(/\+/g, '%2B');
-                debugger;
-
                 // don't send reset request if the email doesn't exist -- this is a little backwards
                 // because we're using an existing api call
                 PasswordService.EmailExists.get({ email: vm.emailAddress }, function (response) {
