@@ -44,6 +44,9 @@ require('../services/password_service');
                     });
                 });
             }
+            else {
+                vm.saving = false;
+            }
         }
 
     };
