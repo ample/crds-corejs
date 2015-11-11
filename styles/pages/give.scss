@@ -176,18 +176,17 @@
     margin-top: 50px;
     margin-bottom: 20px;
     position: relative;
-    border-bottom: 2px solid $gray;
-    .logo {
+    .giving-statement-content {
+      border-bottom: 2px solid $gray-light;
+    }
+    .giving-statement-logo {
       width: 140px;
       margin: 0;
-      position: absolute;
-      bottom: -8px;
-      left: 0;
     }
-    .statement-address {
-      position: absolute;
-      bottom: 0;
-      right: 0;
+    .statement-address p {
+      margin-bottom: 0px;
+      margin-top: 10px;
+      font-size: 7pt;
     }
   }
 }
