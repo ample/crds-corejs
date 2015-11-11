@@ -21,7 +21,6 @@ require('../services/password_service');
 
         var vm = this;
         vm.saving = false;
-        //vm.invalidAddress = false;
 
         vm.resetRequest = function(form) {
 
