@@ -17,7 +17,7 @@
         required: '@',
         passwdStrength: '@'
       },
-      templateUrl: 'password_field/passwordField.html',
+      templateUrl: 'passwordField/passwordField.html',
       controller: PasswordFieldController,
       controllerAs: 'passwd',
       bindToController: true
@@ -41,7 +41,7 @@
       ////////////////////////
 
       function activate() {
-        if (vm.passwdStrength) {
+        if (vm.passwdStrength === 'true') {
           vm.showMeter = true;
         }
       }
