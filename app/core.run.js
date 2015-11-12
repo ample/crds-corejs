@@ -79,7 +79,7 @@
     });
 
     function setupMetaData() {
-      var titleSuffix = ' | ' + ContentSiteConfigService.siteconfig.title;
+      var titleSuffix = ' | ' + ContentSiteConfigService.getTitle();
       $rootScope.meta.siteconfig = ContentSiteConfigService.siteconfig;
       if ($rootScope.meta.title.indexOf(titleSuffix, $rootScope.meta.title.length - titleSuffix.length) === -1) {
         $rootScope.meta.title = $rootScope.meta.title + titleSuffix;

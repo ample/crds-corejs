@@ -1,13 +1,22 @@
-(function () {
-    'use strict';
+(function() {
+  'use strict';
 
-    module.exports = ContentSiteConfigService;
+  module.exports = ContentSiteConfigService;
 
-    ContentSiteConfigService.$inject = [];
+  ContentSiteConfigService.$inject = [];
 
-    function ContentSiteConfigService() {
-        var service = {};
-        service.siteconfig = {};
-        return service;
+  function ContentSiteConfigService() {
+    var service = {
+      siteconfig: {},
+      getTitle: getTitle
+    };
+
+    function getTitle() {
+      return _.isEmpty(service.siteconfig.title) ?
+        'Crossroads' :
+        service.siteconfig.title;
     }
+
+    return service;
+  }
 })();
