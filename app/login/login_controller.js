@@ -91,14 +91,17 @@
               } else {
                 $state.go(url, JSON.parse(params));
               }
+            } else if ($state.current.name === 'login' || $state.current.name === 'register') {
+              $state.go('profile.personal');
             }
-          },//I think these newlines are dumb, but JSCS made me
+
+          },
 
            500);
           $scope.loginFailed = false;
           $rootScope.showLoginButton = false;
           $scope.navlogin.$setPristine();
-        },//I think these newlines are dumb, but JSCS made me
+        },
 
         function() {
           $scope.pending = false;
