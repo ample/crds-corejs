@@ -9,21 +9,24 @@ require('../services/password_service');
     '$rootScope',
     '$log',
     '$state',
-    'PasswordService'
+    'PasswordService',
+    'Validation'
   ];
 
   function PasswordController(
-        $rootScope,
-        $log,
-        $state,
-        PasswordService) {
+    $rootScope,
+    $log,
+    $state,
+    PasswordService,
+    Validation) {
 
     $log.debug('Inside Password Controller');
 
     var vm = this;
     vm.saving = false;
     vm.resetRequest = resetRequest;
-    vm.validateEmail = validateEmail;
+    vm.submitPassword = submitPassword;
+    vm.validation = Validation;
 
     function resetRequest() {
       vm.saving = true;
@@ -47,15 +50,24 @@ require('../services/password_service');
             vm.saving = false;
           });
         });
-      }
-      else {
+      } else {
         vm.saving = false;
       }
     }
 
-    function validateEmail() {
-      return (vm.forgotpasswordform.emailfield.$error.email || vm.forgotpasswordform.$invalid) &&
-       vm.forgotpasswordform.emailfield.$touched;
+    function submitPassword(form) {
+      var x = 1;
+      $log.debug('submitPassword start');
+      if (form !== null) {
+        form.$setSubmitted(true);
+        if (form.$valid) {
+          $log.debug('form valid');
+          resetRequest();
+        } else {
+          $log.debug('form INVALID');
+          $rootScope.$emit('notify', $rootScope.MESSAGES.generalError);
+        }
+      }
     }
   }
 })();
