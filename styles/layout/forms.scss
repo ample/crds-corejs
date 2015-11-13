@@ -34,10 +34,16 @@
 //Toggle Switches
 .form-group {
   .toggle-switch {
-    border: 1px solid darken(#cccccc, 20%);
+    border: 1px solid $gray-light;
     .switch-left {
-      background: $brand-primary;
+      background: $brand-success;
     }
+  }
+  .toggle-switch.disabled {
+    opacity: .5;
+  }
+  .toggle-switch.disabled > div > span.knob {
+    background: initial;
   }
 }
 
