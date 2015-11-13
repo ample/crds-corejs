@@ -15,13 +15,10 @@
                     <password-field required="true" passwd="credentials.password" submitted="navlogin.$submitted" prefix="passwordPrefix"></password-field>
                 </div>
                 <div>
-                    <ng-messages for="navlogin['password'].$error" ng-if="navlogin.$submitted">
-                      <ng-messages-include src="on-submit-messages"></ng-messages-include>
-                    </ng-messages>
-                    <!-- TODO Update to use ngMessages and a validator -->
-                    <span ng-show="loginFailed" ng-class="{'has-error': loginFailed }">
-                        <span ng-bind-html="$root.MESSAGES.loginFailed.content | html"></span>
-                    </span>
+                  <!-- TODO Update to use ngMessages and a validator -->
+                  <span ng-show="loginFailed" ng-class="{'has-error': loginFailed }">
+                      <span ng-bind-html="$root.MESSAGES.loginFailed.content | html"></span>
+                  </span>
                 </div>
                 <div class="row">
                   <!-- HTML for "keey me signed in feature" -->
