@@ -56,7 +56,6 @@ require('../services/password_service');
     }
 
     function submitPassword(form) {
-      var x = 1;
       $log.debug('submitPassword start');
       if (form !== null) {
         form.$setSubmitted(true);
