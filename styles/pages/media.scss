@@ -110,16 +110,8 @@
     color: $gray-lighter;
 		margin-right: 5px;
   }
-
-	a {
-		color: $gray-light;
-
-		&:hover {
-			color: $gray-lighter;
-		}
-	}
 }
-
+ 
 @media (max-width: $screen-sm-min) {
   .message-body {
     .btn {
