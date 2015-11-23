@@ -126,4 +126,12 @@
 
 .media-aspect-content {
   background: black;
+  overflow: hidden;
+}
+
+.soundcloud-attribution {
+  position: absolute;
+  top: 10px;
+  right: 0;
+  padding: 0 2%;
 }
