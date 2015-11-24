@@ -64,12 +64,12 @@ describe('Password Field Directive', function() {
       isolate = element.isolateScope();
     });
 
-    it('should have a valid password if the there are more than 6 charactors', function() {
-      isolate.passwd.passwordForm.password.$setViewValue('passwor');
+    it('should have a valid password if the there are more than 8 characters', function() {
+      isolate.passwd.passwordForm.password.$setViewValue('passwords');
       expect(isolate.passwd.passwordInvalid()).toBe(false);
     });
 
-    it('should be invalid if there is less than 6 charactors', function() {
+    it('should be invalid if there is less than 6 characters', function() {
       isolate.passwd.passwordForm.password.$setViewValue('passw');
       expect(isolate.passwd.passwordInvalid()).toBe(true);
     });
