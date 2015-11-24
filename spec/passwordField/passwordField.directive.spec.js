@@ -58,6 +58,7 @@ describe('Password Field Directive', function() {
       element =
         '<password-field passwd=\'passwd\' submitted=\'submitted\'> </password-field>';
       scope.passwd = '';
+      scope.minLength = 8;
       scope.submitted = false;
       element = $compile(element)(scope);
       scope.$digest();
