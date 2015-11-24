@@ -60,6 +60,7 @@ describe('Password Field Directive', function() {
       scope.passwd = '';
       scope.minLength = 8;
       scope.submitted = false;
+      scope.passwdStrength = true;
       element = $compile(element)(scope);
       scope.$digest();
       isolate = element.isolateScope();
