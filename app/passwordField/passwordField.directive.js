@@ -38,7 +38,6 @@
       vm.showMeter = false;
       vm.isCollapsed = true;
 
-
       activate();
 
       ////////////////////////
