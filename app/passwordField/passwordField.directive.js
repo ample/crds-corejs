@@ -16,8 +16,7 @@
         prefix: '=',
         required: '@',
         passwdStrength: '@',
-        minLength: '@',
-        error: '@'
+        minLength: '@'
       },
       templateUrl: 'passwordField/passwordField.html',
       controller: PasswordFieldController,
