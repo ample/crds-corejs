@@ -38,6 +38,7 @@
       vm.showMeter = false;
       vm.isCollapsed = true;
 
+
       activate();
 
       ////////////////////////
@@ -51,7 +52,6 @@
       function passwordInvalid() {
         //TODO Once global validation logic method has been created, use that shorter method here
         if (vm.passwdStrength === 'true') {
-          debugger;
           return vm.passwordForm.password.$error.minlength ||
               vm.passwordForm.password.$error.required && vm.submitted &&
               vm.passwordForm.password.$dirty ||
@@ -63,7 +63,6 @@
               vm.passwordForm.password.$dirty &&
               !vm.passwordForm.password.$valid;
         } else {
-          debugger;
           return vm.passwordForm.password.$error.required && vm.submitted &&
               vm.passwordForm.password.$dirty ||
               vm.passwordForm.password.$error.required && vm.submitted &&

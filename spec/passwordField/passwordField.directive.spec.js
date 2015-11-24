@@ -65,12 +65,14 @@ describe('Password Field Directive', function() {
     });
 
     it('should have a valid password if the there are more than 8 characters', function() {
-      isolate.passwd.passwordForm.password.$setViewValue('passwords');
+      scope.passwd = 'abcdefghij';
+      scope.$digest();
       expect(isolate.passwd.passwordInvalid()).toBe(false);
     });
 
     it('should be invalid if there is less than 8 characters', function() {
-      isolate.passwd.passwordForm.password.$setViewValue('passw');
+      scope.passwd = 'abc';
+      scope.$digest();
       expect(isolate.passwd.passwordInvalid()).toBe(true);
     });
 
