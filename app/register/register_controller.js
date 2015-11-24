@@ -23,6 +23,13 @@ require('../services/user_service');
             return (($scope.registerForm.lastname.$pristine || $scope.registerForm.lastname.$invalid) && $scope.registerForm.$submitted)
         };
 
+        //$scope.passwordError = function() {
+        //    $log.debug($scope.passwordInvalid);
+        //    $log.debug(newuser.password);
+        //    $log.debug($scope.newuser.password);
+        //    return (($scope.newuser.password.$pristine || $scope.registerForm.lastname.$invalid) && $scope.registerForm.$submitted)
+        //};
+
         $scope.openLogin = function (data) {
             $scope.passwordPrefix = "login-dropdown";
             $scope.credentials.username = $scope.newuser.email;

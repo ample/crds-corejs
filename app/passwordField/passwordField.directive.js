@@ -15,7 +15,9 @@
         submitted: '=',
         prefix: '=',
         required: '@',
-        passwdStrength: '@'
+        passwdStrength: '@',
+        minLength: '@',
+        error: '@'
       },
       templateUrl: 'passwordField/passwordField.html',
       controller: PasswordFieldController,
@@ -48,16 +50,30 @@
 
       function passwordInvalid() {
         //TODO Once global validation logic method has been created, use that shorter method here
-        return vm.passwordForm.password.$error.minlength ||
-               vm.passwordForm.password.$error.required && vm.submitted &&
-               vm.passwordForm.password.$dirty ||
-               vm.passwordForm.password.$error.required && vm.submitted &&
-               !vm.passwordForm.password.$touched ||
-               vm.passwordForm.password.$error.required && vm.submitted &&
-               vm.passwordForm.password.$touched ||
-               !vm.passwordForm.password.$error.required &&
-               vm.passwordForm.password.$dirty &&
-               !vm.passwordForm.password.$valid;
+        if (vm.passwdStrength === 'true') {
+          debugger;
+          return vm.passwordForm.password.$error.minlength ||
+              vm.passwordForm.password.$error.required && vm.submitted &&
+              vm.passwordForm.password.$dirty ||
+              vm.passwordForm.password.$error.required && vm.submitted &&
+              !vm.passwordForm.password.$touched ||
+              vm.passwordForm.password.$error.required && vm.submitted &&
+              vm.passwordForm.password.$touched ||
+              !vm.passwordForm.password.$error.required &&
+              vm.passwordForm.password.$dirty &&
+              !vm.passwordForm.password.$valid;
+        } else {
+          debugger;
+          return vm.passwordForm.password.$error.required && vm.submitted &&
+              vm.passwordForm.password.$dirty ||
+              vm.passwordForm.password.$error.required && vm.submitted &&
+              !vm.passwordForm.password.$touched ||
+              vm.passwordForm.password.$error.required && vm.submitted &&
+              vm.passwordForm.password.$touched ||
+              !vm.passwordForm.password.$error.required &&
+              vm.passwordForm.password.$dirty &&
+              !vm.passwordForm.password.$valid;
+        }
       }
 
       function pwChanged() {
@@ -85,6 +101,7 @@
             vm.passwordStrengthProgressClass = 'danger';
             vm.passwordStrengthProgressLabel = 'Weak';
         }
+
 
       }
 

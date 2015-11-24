@@ -12,7 +12,7 @@
                     </ng-messages>
                 </div>
                 <div class="navbar--login__input" >
-                    <password-field required="true" passwd="credentials.password" submitted="navlogin.$submitted" prefix="passwordPrefix"></password-field>
+                    <password-field required="true" min-length="0" passwd-strength="false" passwd="credentials.password" submitted="navlogin.$submitted" prefix="passwordPrefix"></password-field>
                 </div>
                 <div>
                   <!-- TODO Update to use ngMessages and a validator -->
