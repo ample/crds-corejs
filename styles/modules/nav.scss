@@ -7,25 +7,29 @@
 .menu {
   margin-top: 10px;
 }
-
-.navbar-brand {
-  padding: $navbar-padding-vertical 2px;
-  &:hover,
-  &:focus {
-    text-decoration: none;
+.navbar-brand.logo {
+  width: 100%;
+  left: 0;
+  right: 0;
+  position: absolute;
+  z-index: 1;
+  width: 194px;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top:-10px;
+  > img {
+    width: 100%;
   }
-
-  @media (min-width: $grid-float-breakpoint) {
-    .navbar > .container & {
-      margin-left: -$navbar-padding-horizontal;
-    }
+  @media (min-width: $screen-md-min) {
+    width: 200px;
+    margin-left: 0;
+    margin-right: 0;
   }
 }
-
 .navbar{
   z-index: 100;
 }
-
 // Navbar nav links
 //
 // Builds on top of the `.nav` components with it's own modifier class to make
@@ -154,17 +158,16 @@ header.show .container {
   transition: all 0.5s;
   margin-top: 10px;
   .navbar-brand.logo {
-    width: 80%;
+    //width: 80%;
   }
   .navbar-brand.logo, .navbar--login {
-    opacity: 0;
+    //opacity: 0;
   }
 }
 
 .nav__side--toggle {
   position: relative;
-  padding: 9px 0px;
-  margin-top: 5px;
+  padding: 6px;
   margin-bottom: 0px;
   background-color: transparent;
   background-image: none;
@@ -175,7 +178,7 @@ header.show .container {
 }
 
 .nav__side--toggle .icon-bar {
-  background-color: #555;
+  background-color: $cr-grey;
   width: 22px;
   height: 3px;
   display: block;
@@ -469,24 +472,9 @@ header.show .container {
 /***** Mobile Nav *****/
 
 @media (max-width: $screen-md) {
-  .navbar-brand.logo {
-    width: 100%;
-    left: 0;
-    position: absolute;
-    z-index: 1;
-
-    > img {
-      margin-left: auto;
-      margin-right: auto;
-      width: 200px;
-      display: block;
-      margin-top: 0px;
-    }
-  }
   .side-nav__subnav__item-container, .navbar--login__container {
     margin-top: 15px;
   }
-
 }
 
 /***************************************************************************************
@@ -536,20 +524,6 @@ ul.cr-nav {
     }
   }
 }
-
-/***************************************************************************************
-* Logo
-***************************************************************************************/
-
-.logo {
-
-  img {
-    width: 200px;
-    margin-top: -6px;
-  }
-
-}
-
 
 /***************************************************************************************
 * Mega Menu
