@@ -7,25 +7,29 @@
 .menu {
   margin-top: 10px;
 }
-
-.navbar-brand {
-  padding: $navbar-padding-vertical 2px;
-  &:hover,
-  &:focus {
-    text-decoration: none;
+.navbar-brand.logo {
+  width: 100%;
+  left: 0;
+  right: 0;
+  position: absolute;
+  z-index: 1;
+  width: 194px;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top:-10px;
+  > img {
+    width: 100%;
   }
-
-  @media (min-width: $grid-float-breakpoint) {
-    .navbar > .container & {
-      margin-left: -$navbar-padding-horizontal;
-    }
+  @media (min-width: $screen-md-min) {
+    width: 200px;
+    margin-left: 0;
+    margin-right: 0;
   }
 }
-
 .navbar{
   z-index: 100;
 }
-
 // Navbar nav links
 //
 // Builds on top of the `.nav` components with it's own modifier class to make
@@ -134,6 +138,9 @@ header.show .container {
   border: 2px solid rgba(214, 224, 226, 0.8);
   position: relative;
 }
+.btn-nav {
+  min-height: 40px;
+}
 /******************** Mobile ********************/
 
 .navbar-header{
@@ -151,17 +158,16 @@ header.show .container {
   transition: all 0.5s;
   margin-top: 10px;
   .navbar-brand.logo {
-    width: 80%;
+    //width: 80%;
   }
   .navbar-brand.logo, .navbar--login {
-    opacity: 0;
+    //opacity: 0;
   }
 }
 
 .nav__side--toggle {
   position: relative;
-  padding: 9px 0px;
-  margin-top: 5px;
+  padding: 6px;
   margin-bottom: 0px;
   background-color: transparent;
   background-image: none;
@@ -172,7 +178,7 @@ header.show .container {
 }
 
 .nav__side--toggle .icon-bar {
-  background-color: #555;
+  background-color: $cr-grey;
   width: 22px;
   height: 3px;
   display: block;
@@ -414,20 +420,6 @@ header.show .container {
 }
 
 .navbar--login {
-  //float: right;
-  margin-top: 2px;
-  background-color: #fff;
-  &:hover {
-    a.dropdown-toggle:after {
-      content: "";
-      opacity: 0;
-    }
-  }
-
-  >li > .btn {
-    margin: 2px;
-  }
-
   .dropdown-menu {
     left: calc(100% - 315px);
     width: 300px;
@@ -480,24 +472,9 @@ header.show .container {
 /***** Mobile Nav *****/
 
 @media (max-width: $screen-md) {
-  .navbar-brand.logo {
-    width: 100%;
-    left: 0;
-    position: absolute;
-    z-index: 1;
-
-    > img {
-      margin-left: auto;
-      margin-right: auto;
-      width: 140px;
-      display: block;
-      margin-top: 0px;
-    }
-  }
   .side-nav__subnav__item-container, .navbar--login__container {
     margin-top: 15px;
   }
-
 }
 
 /***************************************************************************************
@@ -505,15 +482,17 @@ header.show .container {
 ***************************************************************************************/
 
 ul.cr-nav {
-  margin-left: 10px;
+  margin-left: 14px;
+  margin-right: 14px;
   > li {
     > a {
       display: inline-block;
       position: relative;
-      padding: 4px 10px;
+      padding: 6px 14px; //same size as normal .btn
       border-radius: 4px;
       text-transform: uppercase;
-
+      border: 1px solid transparent;
+      color: $cr-grey;
       &:hover, &:active, &.focus {
         color: #fff;
         // Tate - got rid of gradient. Don't love it.
@@ -559,6 +538,7 @@ ul.cr-nav {
   margin-right: 8px;
   padding: 20px 0px;
   right: 0%;
+  top: 84%;
 }
 
 .dropdown-menu-large > li > ul {

@@ -119,7 +119,6 @@
         controller: function($scope, $modalInstance) {
           $scope.ok = function(e) {
             $modalInstance.close();
-            e.stopPropagation();
           };
 
           $scope.cancel = function(e) {

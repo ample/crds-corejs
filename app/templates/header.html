@@ -26,9 +26,6 @@
               <img src="//crossroads-media.s3.amazonaws.com/images/logo_gray.svg" alt="crossroads">
             </a>
 
-            <!--MAIN NAV MENU-->
-            <ng-include src="'templates/nav.html'"> </ng-include>
-
             <!--PROFILE ICON AND DROPDOWN-->
             <div class="pull-right hidden-xs hidden-sm" dropdown on-toggle="toggled(open)">
               <a href="#" id="user-dropdown" class="mobile-account" ng-if="$root.username != undefined" dropdown-toggle title="{{$root.username}}">
@@ -76,6 +73,9 @@
                 </ul>
               </li>
             </ul>
+
+            <!--MAIN NAV MENU-->
+            <ng-include src="'templates/nav.html'"> </ng-include>
 
           </div><!--navbar-header-->
 
