@@ -38,6 +38,17 @@
     width: 100%;
 }
 
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
 /** Add/remove margins **/
 
 .push {
@@ -547,6 +558,7 @@
 
 @mixin aspect-ratio($width, $height) {
     position: relative;
+
     &:before{
         display: block;
         content: " ";
@@ -561,6 +573,10 @@
         right: 0;
         bottom: 0;
     }
+}
+
+.sixteen-nine {
+  @include aspect-ratio(16,9);
 }
 
 .sixteen-nine {
