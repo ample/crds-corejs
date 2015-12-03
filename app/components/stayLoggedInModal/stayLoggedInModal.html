@@ -2,7 +2,7 @@
   <h3 class="modal-title">Session Ended</h3>
 </div>
 <div class="modal-body">
-  <div ng-bind-html="$root.MESSAGES.sessionEndedMessage.content | html"></div>
+  <div dynamic-content="$root.MESSAGES.sessionEndedMessage.content | html"></div>
   <label>Password</label>
   <password-field required="true" passwd="credentials.password" submitted="navlogin.$submitted" prefix="passwordPrefix"></password-field>
 </div>

@@ -17,7 +17,7 @@
                 <div>
                   <!-- TODO Update to use ngMessages and a validator -->
                   <span ng-show="loginFailed" ng-class="{'has-error': loginFailed }">
-                      <span ng-bind-html="$root.MESSAGES.loginFailed.content | html"></span>
+                      <span dynamic-content="$root.MESSAGES.loginFailed.content | html"></span>
                   </span>
                 </div>
                 <div class="row">
