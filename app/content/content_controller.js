@@ -2,7 +2,7 @@
 module.exports = function($rootScope, $scope, $state, $stateParams, $log, ContentPageService, $sce) {
   $scope.main = 'ContentCtrl';
   $scope.params = $stateParams;
-  $scope.page = $sce.trustAsHtml(ContentPageService.page.content);
-  $scope.sidebarPage = $sce.trustAsHtml(ContentPageService.page.sidebarContent);
+  $scope.page = ContentPageService.page.content;
+  $scope.sidebarPage = ContentPageService.page.sidebarContent;
 
 };
