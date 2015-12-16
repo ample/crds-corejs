@@ -14,9 +14,25 @@
     '$state',
     'ResponsiveImageService',
     'PageRenderedService',
-    '$modal'];
+    '$modal',
+    '$anchorScroll',
+    '$location'
+  ];
 
-  function CoreController($scope, $rootScope, MESSAGES, ContentBlock, growl, $aside, screenSize, $state, ResponsiveImageService, PageRenderedService, $modal) {
+  function CoreController(
+    $scope,
+    $rootScope,
+    MESSAGES,
+    ContentBlock,
+    growl,
+    $aside,
+    screenSize,
+    $state,
+    ResponsiveImageService,
+    PageRenderedService,
+    $modal,
+    $anchorScroll,
+    $location) {
 
     var vm = this;
 
@@ -46,6 +62,9 @@
       ResponsiveImageService.updateResponsiveImages();
       PageRenderedService.pageLoaded();
       vm.resolving = false;
+      $location.hash('top-header');
+      $anchorScroll();
+
     });
 
     $scope.$on('$stateChangeError', function(event, toState, toParams, fromState, fromParams, error) {
