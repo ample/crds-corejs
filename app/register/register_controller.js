@@ -41,9 +41,11 @@ require('../services/user_service');
     };
 
     $scope.register = function() {
+      $scope.showRegisterButton = false;
 
       if ($scope.newuser == null || $scope.newuser.email == null || $scope.newuser.password == null || $scope.newuser.email == '' || $scope.newuser.password == '' || $scope.newuser.firstname == null || $scope.newuser.firstname == '' || $scope.newuser.lastname == null || $scope.newuser.lastname == '') {
         $rootScope.$emit('notify', $rootScope.MESSAGES.generalError);
+        $scope.showRegisterButton = true;
         return;
       }
 
@@ -51,7 +53,12 @@ require('../services/user_service');
       $scope.credentials.username = $scope.newuser.email;
       $scope.credentials.password = $scope.newuser.password;
 
-      User.$save().then(function() {
+      User.$save(function() {},
+
+        function() {
+          $scope.showRegisterButton = true;
+        }
+      ).then(function() {
         AuthService.login($scope.credentials).then(function(user) { // TODO Refactor this to a shared location for use here and in login_controller
           $log.debug('got a 200 from the server ');
           $log.debug(user);
@@ -77,8 +84,10 @@ require('../services/user_service');
           $log.debug('Bad password');
           $scope.pending = false;
           $scope.loginFailed = true;
+          $scope.showRegisterButton = true;
         }).then(function() {
           $scope.processing = false;
+          $scope.showRegisterButton = true;
         });
       });
     };
