@@ -62,9 +62,7 @@
       ResponsiveImageService.updateResponsiveImages();
       PageRenderedService.pageLoaded();
       vm.resolving = false;
-      $location.hash('top-header');
-      $anchorScroll();
-
+      $anchorScroll('top-header');
     });
 
     $scope.$on('$stateChangeError', function(event, toState, toParams, fromState, fromParams, error) {
