@@ -53,12 +53,7 @@ require('../services/user_service');
       $scope.credentials.username = $scope.newuser.email;
       $scope.credentials.password = $scope.newuser.password;
 
-      User.$save(function() {},
-
-        function() {
-          $scope.showRegisterButton = true;
-        }
-      ).then(function() {
+      User.$save().then(function() {
         AuthService.login($scope.credentials).then(function(user) { // TODO Refactor this to a shared location for use here and in login_controller
           $log.debug('got a 200 from the server ');
           $log.debug(user);
