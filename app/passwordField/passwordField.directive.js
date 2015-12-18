@@ -36,6 +36,7 @@
       vm.passwordStrengthProgressLabel = '';
       vm.showMeter = false;
       vm.isCollapsed = true;
+      vm.passwd = '';
 
       activate();
 
@@ -49,31 +50,19 @@
 
       function passwordInvalid() {
         //TODO Once global validation logic method has been created, use that shorter method here
-        if (vm.passwdStrength === 'true') {
-          return vm.passwordForm.password.$error.minlength ||
-              vm.passwordForm.password.$error.required && vm.submitted &&
-              vm.passwordForm.password.$dirty ||
-              vm.passwordForm.password.$error.required && vm.submitted &&
-              !vm.passwordForm.password.$touched ||
-              vm.passwordForm.password.$error.required && vm.submitted &&
-              vm.passwordForm.password.$touched ||
-              !vm.passwordForm.password.$error.required &&
-              vm.passwordForm.password.$dirty &&
-              !vm.passwordForm.password.$valid;
-        } else {
-          return vm.passwordForm.password.$error.required && vm.submitted &&
-              vm.passwordForm.password.$dirty ||
-              vm.passwordForm.password.$error.required && vm.submitted &&
-              !vm.passwordForm.password.$touched ||
-              vm.passwordForm.password.$error.required && vm.submitted &&
-              vm.passwordForm.password.$touched ||
-              !vm.passwordForm.password.$error.required &&
-              vm.passwordForm.password.$dirty &&
-              !vm.passwordForm.password.$valid;
-        }
+        return vm.passwordForm.password.$error.required && vm.submitted &&
+            vm.passwordForm.password.$dirty ||
+            vm.passwordForm.password.$error.required && vm.submitted &&
+            !vm.passwordForm.password.$touched ||
+            vm.passwordForm.password.$error.required && vm.submitted &&
+            vm.passwordForm.password.$touched ||
+            !vm.passwordForm.password.$error.required &&
+            vm.passwordForm.password.$dirty &&
+            !vm.passwordForm.password.$valid;
       }
 
       function pwChanged() {
+
         vm.passwordStrength = zxcvbn(vm.passwd);
         vm.passwordStrengthProgress = (vm.passwordStrength.score / 4) * 100;
 
@@ -98,7 +87,6 @@
             vm.passwordStrengthProgressClass = 'danger';
             vm.passwordStrengthProgressLabel = 'Weak';
         }
-
 
       }
 
