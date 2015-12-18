@@ -40,14 +40,13 @@ require('../services/auth_service');
       vm.TokenStatus.$promise.then(function(resolve) {
 
         var valueItem = resolve.TokenValid;
-        debugger;
+
         if (valueItem === false) {
           $rootScope.$emit('notify', $rootScope.MESSAGES.invalidPasswordResetKey);
           $state.go('content', {link: '/'}); // redirect to home if invalid link
         }
       }), function(err) {
-
-        debugger;
+        $rootScope.$emit('notify', $rootScope.MESSAGES.generalError);
       };
 
     };
