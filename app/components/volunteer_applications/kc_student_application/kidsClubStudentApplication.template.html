@@ -1,4 +1,4 @@
-<div dynamic-content="kcStudentApplication.pageInfo.page1"></div>
+<div dynamic-content="kcStudentApplication.pageInfo.page1 | html"></div>
 <form name="student" ng-submit="kcStudentApplication.save(this)" novalidate>
   <fieldset class="push-bottom">
     <legend>General Info</legend>
@@ -361,7 +361,7 @@
         </ng-messages>
       </div>
     </div>
-    <div dynamic-content="kcStudentApplication.pageInfo.contentBlock1"></div>
+    <div dynamic-content="kcStudentApplication.pageInfo.contentBlock1 | html"></div>
   </fieldset>
   <fieldset class="push-bottom">
     <legend>Personal References</legend>
@@ -653,13 +653,13 @@
       </div>
       </div>
     <!--/row-->
-    <div dynamic-content="kcStudentApplication.pageInfo.contentBlock2"></div>
+    <div dynamic-content="kcStudentApplication.pageInfo.contentBlock2 | html"></div>
   </fieldset>
 
     <fieldset class="push-bottom">
     <legend>Parent/Guardian Commitment</legend>
     <div class="row">
-      <div dynamic-content="kcStudentApplication.pageInfo.contentBlock3"></div>
+      <div dynamic-content="kcStudentApplication.pageInfo.contentBlock3 | html"></div>
       <div class="form-group col-sm-6" ng-class="{'has-error': kcStudentApplication.showError(student, 'parentLastName') }" >
         <label class="control-label required" for="parentLastName">Last Name</label>
         <input type="text"
@@ -824,4 +824,4 @@
   <button type="submit" name="submit" id="submit" class="btn btn-primary push-half-bottom" ng-disabled="kcStudentApplication.saving"> {{kcStudentApplication.submitButtonText}} </button>
 
 </form>
-<div dynamic-content="kcStudentApplication.pageInfo.page2"></div>
+<div dynamic-content="kcStudentApplication.pageInfo.page2 | html"></div>
