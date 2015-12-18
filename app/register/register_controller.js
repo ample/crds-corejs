@@ -12,14 +12,6 @@ require('../services/user_service');
     $scope.registerShow = false;
     $scope.showRegisterButton = true;
 
-    $scope.firstnameError = function() {
-      return (($scope.registerForm.firstname.$pristine || $scope.registerForm.firstname.$invalid) && $scope.registerForm.$submitted);
-    };
-
-    $scope.lastnameError = function() {
-      return (($scope.registerForm.lastname.$pristine || $scope.registerForm.lastname.$invalid) && $scope.registerForm.$submitted);
-    };
-
     $scope.openLogin = function(data) {
       $scope.passwordPrefix = 'login-dropdown';
       $scope.credentials.username = $scope.newuser.email;
