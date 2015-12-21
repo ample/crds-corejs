@@ -14,7 +14,10 @@ var definePlugin = new webpack.DefinePlugin({
 
 module.exports = {
     entry: {
-        core: './app/core.js'
+        core: './app/core.js',
+        ang: './app/ang.js',
+        ang2: './app/ang2.js'
+
     },
     watchPattern: 'app/**/**',
     externals: {

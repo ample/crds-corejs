@@ -1,6 +1,6 @@
 (function(){
   'use strict';
-
+         /*
   require('angular');
   require('angular-resource');
   require('angular-sanitize');
@@ -21,7 +21,7 @@
   require('zxcvbn'); 
   require('angulartics');
   require('angulartics-gtm');
-
+       */
   require('ui-event');
   require('ui-mask');
 
