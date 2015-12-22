@@ -56,7 +56,7 @@ describe('Password Field Directive', function() {
   describe('password validity', function() {
     beforeEach(function() {
       element =
-        '<password-field passwd=\'passwd\' submitted=\'submitted\' min-length=\'8\' passwd-strength=\'true\'> </password-field>';
+        '<password-field required=\'true\' passwd=\'passwd\' submitted=\'submitted\' min-length=\'8\' passwd-strength=\'true\'> </password-field>';
       scope.passwd = '';
       scope.submitted = false;
       element = $compile(element)(scope);
@@ -71,8 +71,9 @@ describe('Password Field Directive', function() {
     });
 
     it('should be invalid if there is less than 8 characters', function() {
-      scope.passwd = 'abc';
-      scope.$digest();
+      isolate.passwd.passwordForm.password.$setViewValue('abc');
+      isolate.$digest();
+      isolate.passwd.submitted = true;
       expect(isolate.passwd.passwordInvalid()).toBe(true);
     });
 
