@@ -2,14 +2,14 @@
 <div class="primary">
     <form id="nav_login" name="registerForm" role="form" ng-submit="register()" novalidate>
 
-        <div class="soft-half-bottom" ng-class="{'has-error': firstnameError() }">
+        <div class="soft-half-bottom" ng-class="{'has-error': registerForm.firstname.$invalid && registerForm.$submitted }">
               <input id="{{passwordPrefix}}-firstname" class="form-control" id="firstname" name="firstname" type="text" ng-model="newuser.firstname" required placeholder="First Name" autofocus>
                 <ng-messages for="registerForm.firstname.$error" ng-if="registerForm.$submitted">
                   <ng-messages-include src="on-submit-messages"></ng-messages-include>
                 </ng-messages>
        </div>
 
-        <div class="soft-half-bottom" ng-class="{'has-error': lastnameError() }">
+        <div class="soft-half-bottom" ng-class="{'has-error': registerForm.lastname.$invalid && registerForm.$submitted }">
                 <input id="{{passwordPrefix}}-lastname" class="form-control" id="lastname" name="lastname" type="text" ng-model="newuser.lastname" required placeholder="Last Name">
                 <ng-messages for="registerForm.lastname.$error" ng-if="registerForm.$submitted">
                   <ng-messages-include src="on-submit-messages"></ng-messages-include>
@@ -32,9 +32,8 @@
         </div>
 
 
-        <p class="small push-half-bottom text-muted">Registering signifies that you have read and agreed to the <a href="/terms-of-service" target="_blank">terms of service</a> and <a href="/privacy-policy" target="_blank">privacy policy</a>.
-        </p>
-        <input type="submit" class="btn btn-primary btn-block-mobile push-bottom " value="Register an Account"/>
+        <span dynamic-content="$root.MESSAGES.registrationFooter.content | html"></span>
+        <input type="submit" class="btn btn-primary btn-block-mobile push-bottom " value="Register an Account" ng-disabled="!showRegisterButton"/>
 
     </form>
 

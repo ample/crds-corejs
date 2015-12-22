@@ -50,24 +50,6 @@ require('./session_service');
           }) !== undefined));
     };
 
-    authService.resetPassword = function(email) {
-
-      return $http
-          .post(__API_ENDPOINT__ + 'api/resetpasswordrequest').then(function(res) {
-            console.log(res.data);
-            Session.create(res.data.userToken, res.data.userTokenExp, res.data.userId, res.data.username);
-
-            // The username from the credentials is really the email address
-            // In a future story, the contact email address will always be in sync with the user email address.
-            $rootScope.email = credentials.username;
-            $rootScope.username = res.data.username;
-            $rootScope.roles = res.data.roles;
-            $rootScope.userid = res.data.userId;
-            return res.data.username;
-          });
-
-    };
-
     return authService;
   }
 })();

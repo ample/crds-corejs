@@ -1,15 +1,17 @@
 (function() {
-    'use strict';
+  'use strict';
 
-    module.exports = PasswordService;
+  module.exports = PasswordService;
 
-    PasswordService.$inject = ['$resource'];
+  PasswordService.$inject = ['$resource'];
 
-    function PasswordService($resource) {
-        return {
-            ResetRequest: $resource(__API_ENDPOINT__ + 'api/resetpasswordrequest'),
-            EmailExists: $resource(__API_ENDPOINT__ + 'api/lookup/0/find/')
-       };
-    }
+  function PasswordService($resource) {
+    return {
+      ResetRequest: $resource(__API_ENDPOINT__ + 'api/requestpasswordreset'),
+      VerifyResetToken: $resource(__API_ENDPOINT__ + 'api/verifyresettoken/:token/'),
+      EmailExists: $resource(__API_ENDPOINT__ + 'api/lookup/0/find/'),
+      ResetPassword: $resource(__API_ENDPOINT__ + 'api/resetpassword')
+    };
+  }
 
 })();
