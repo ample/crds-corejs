@@ -13,6 +13,10 @@
       require: 'ngModel',
       link: function(scope, element, attrs, ngModel) {
         ngModel.$validators.minDate = function(value) {
+          if (value === undefined || value === null || value === '') {
+            return true;
+          }
+
           if (!attrs.minDate) {
             return true;
           }
