@@ -43,7 +43,9 @@ require('../services/auth_service');
 
         if (valueItem === false) {
           $rootScope.$emit('notify', $rootScope.MESSAGES.invalidPasswordResetKey);
-          $state.go('content', {link: '/'}); // redirect to home if invalid link
+
+          setTimeout(function() { $state.go('content', {link: '/'}); }, 1000);
+          //$state.go('content', {link: '/'}); // redirect to home if invalid link
         }
       }), function(err) {
         $rootScope.$emit('notify', $rootScope.MESSAGES.generalError);
