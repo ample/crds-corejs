@@ -12,6 +12,7 @@ require('../services/auth_service');
       '$log',
       '$state',
       'PasswordService',
+      '$timeout',
       'TokenStatus'
   ];
 
@@ -21,6 +22,7 @@ require('../services/auth_service');
       $log,
       $state,
       PasswordService,
+      $timeout,
       TokenStatus) {
 
     $log.debug('Inside Password Controller');
@@ -31,27 +33,21 @@ require('../services/auth_service');
     vm.resetToken = $stateParams.token;
     vm.pwprocessing = pwProcess;
     vm.submitPasswordReset = submitPasswordReset;
-    vm.TokenStatus = TokenStatus;
+
 
     activate();
 
     function activate() {
-
-      vm.TokenStatus.$promise.then(function(resolve) {
-
-        var valueItem = resolve.TokenValid;
-
-        if (valueItem === false) {
+      $timeout(function() {
+        if (TokenStatus.TokenValid === false) {
           $rootScope.$emit('notify', $rootScope.MESSAGES.invalidPasswordResetKey);
 
           setTimeout(function() { $state.go('content', {link: '/'}); }, 1000);
           //$state.go('content', {link: '/'}); // redirect to home if invalid link
         }
-      }), function(err) {
-        $rootScope.$emit('notify', $rootScope.MESSAGES.generalError);
-      };
+      }, 500);
 
-    };
+    }
 
     function submitPasswordReset() {
 
