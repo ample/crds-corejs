@@ -41,12 +41,9 @@ require('../services/auth_service');
       $timeout(function() {
         if (TokenStatus.TokenValid === false) {
           $rootScope.$emit('notify', $rootScope.MESSAGES.invalidPasswordResetKey);
-
           setTimeout(function() { $state.go('content', {link: '/'}); }, 1000);
-          //$state.go('content', {link: '/'}); // redirect to home if invalid link
         }
       }, 500);
-
     }
 
     function submitPasswordReset() {
