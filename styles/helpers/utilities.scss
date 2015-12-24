@@ -32,6 +32,14 @@
 .text-uppercase {
     text-transform: uppercase;
 }
+
+/** Text overflow **/
+.ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
 /** Spacing **/
 
 .full-width {

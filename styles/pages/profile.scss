@@ -14,6 +14,12 @@
         @media (min-width: $screen-sm-min) {
             margin-bottom: $line-height-computed;
         }
+
+        .btn {
+          .icon {
+            display: none;
+          }
+        }
     }
     .edit-church-site {
         padding-right: 20px;
