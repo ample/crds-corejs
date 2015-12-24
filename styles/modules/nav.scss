@@ -141,6 +141,7 @@ header.show .container {
 .btn-nav {
   min-height: 40px;
 }
+
 /******************** Mobile ********************/
 
 .navbar-header{
@@ -567,6 +568,13 @@ ul.cr-nav {
     &:hover,
     &:focus {
       background: white;
+    }
+  }
+
+  a.navimg {
+    &:hover,
+    &:focus {
+      background: transparent;
     }
   }
 
