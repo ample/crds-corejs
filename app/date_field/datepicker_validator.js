@@ -22,7 +22,7 @@
           }
 
           var valueDate = crds_utilities.convertStringToDate(value);
-
+          valueDate = new Date(value);
           var minDate = convertISODate(attrs.minDate);
           if (valueDate >= minDate) {
             return true;
@@ -32,12 +32,16 @@
         };
 
         ngModel.$validators.maxDate = function(value) {
+          if (value === undefined || value === null || value === '') {
+            return true;
+          }
+
           if (!attrs.maxDate) {
             return true;
           }
 
           var valueDate = crds_utilities.convertStringToDate(value);
-
+          valueDate = new Date(value);
           var maxDate = convertISODate(attrs.maxDate);
           if (valueDate <= maxDate) {
             return true;
