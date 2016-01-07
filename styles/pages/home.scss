@@ -1,26 +1,17 @@
-.main {
-  margin-top: 20px;
-  margin-bottom: 40px;
-  @media (max-width: $screen-md-min) {
-    margin-top: 10px;
-  }
-}
-
 /***************************************************************************************
 * Home
 ***************************************************************************************/
 
-.home {
-  margin-top: 40px;
-  margin-bottom: 60px;
-}
-.home .home-header {
-  color: $cr-blue;
-}
-.home .tagline {
-  margin-bottom: 20px;
-  margin-top: 10px;
-}
-.home .tagline small {
-  font-weight: 300;
+.homepage {
+  background: #000 url('https://crds-cms-uploads.imgix.net/content/images/cup3-02.jpg') no-repeat;
+  background-position: center top;
+
+  .brandbar-container {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  .icon-logo {
+    color: #fff;
+  }
 }
