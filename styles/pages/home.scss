@@ -14,4 +14,26 @@
   .icon-logo {
     color: #fff;
   }
+
+  ul.cr-nav > li > a {
+    color: #fff;
+  }
+
+  ul.navbar--login .btn-standard {
+    @extend .btn-standard-darker;
+
+  }
+
+  .home-intro {
+    color: #fff;
+    margin-top: $line-height-computed*5;
+    margin-bottom: $line-height-computed*6;
+
+    h1,
+    .subheading {
+      background: transparent;
+      color: #fff;
+      border: none;
+    }
+  }
 }
