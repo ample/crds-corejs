@@ -56,6 +56,7 @@
       background-color: transparent;
       border: 0;
       box-shadow: none;
+
       > li > a,
       .dropdown-header {
         padding: 5px 15px 5px 25px;
@@ -498,9 +499,8 @@ ul.cr-nav {
       color: $cr-grey;
       &:hover, &:active, &.focus {
         color: #fff;
-        // Tate - got rid of gradient. Don't love it.
         background: $brand-primary;
-        //@include gradient(#7AA8C2, #4A81A0);
+        border: 1px solid transparent;
       }
 
       &.btn {
@@ -513,6 +513,11 @@ ul.cr-nav {
       > a {
         color: #fff !important;
         background: $brand-primary !important;
+        border: 1px solid transparent;
+
+        &:focus {
+          border: 1px solid transparent;
+        }
       }
     }
 
@@ -523,6 +528,7 @@ ul.cr-nav {
         //background: $brand-primary;
         color: $brand-primary;
         background: transparent;
+        border: 1px solid transparent;
       }
     }
   }
