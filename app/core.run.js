@@ -41,12 +41,14 @@
         return;
       }
 
-      if (toState.data !== undefined && toState.data.preventRouteAuthentication) {
-        return;
+      if (fromState.name !== '' && fromState.name !== 'logout' && fromState.name !== 'login'  && fromState.name !== 'register') {
+        Session.addRedirectRoute(fromState.name, fromParams);
+      } else if (toState.name !== '' && toState.name !== 'logout' && toState.name !== 'login'  && toState.name !== 'register') {
+        Session.addRedirectRoute(toState.name, toParams);
       }
 
-      if (fromState.name !== 'logout' && fromState.name !== 'login'  && fromState.name !== 'register') {
-        Session.addRedirectRoute(fromState.name, fromParams);
+      if (toState.data !== undefined && toState.data.preventRouteAuthentication) {
+        return;
       }
 
       if (Session.isActive()) {
