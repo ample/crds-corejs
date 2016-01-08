@@ -45,6 +45,10 @@
         return;
       }
 
+      if (fromState.name !== 'logout' && fromState.name !== 'login'  && fromState.name !== 'register') {
+        Session.addRedirectRoute(fromState.name, fromParams);
+      }
+
       if (Session.isActive()) {
         $http({
           method: 'GET',
