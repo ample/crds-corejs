@@ -22,7 +22,9 @@
     'ui.bootstrap',
     'ui.mask',
     'ngImgCrop',
-    'angular-stripe'
+    'angular-stripe',
+    'ngAnimate',
+    'ngTouch'
     ])
     .constant('AUTH_EVENTS', {
       loginSuccess: 'auth-login-success',
