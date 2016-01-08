@@ -47,8 +47,8 @@
     ////////////////////////////
     // State Change Listeners //
     ////////////////////////////
-    $scope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
-      if (toState.resolve && !event.defaultPrevented) {
+    $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
+      if ((toState.resolve || toState.data.resolve) && !event.defaultPrevented) {
         vm.resolving = true;
       }
 
@@ -58,14 +58,14 @@
       }
     });
 
-    $scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
+    $rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
       ResponsiveImageService.updateResponsiveImages();
       PageRenderedService.pageLoaded();
       vm.resolving = false;
       $anchorScroll('top-header');
     });
 
-    $scope.$on('$stateChangeError', function(event, toState, toParams, fromState, fromParams, error) {
+    $rootScope.$on('$stateChangeError', function(event, toState, toParams, fromState, fromParams, error) {
       console.error('$stateChangeError: ' + error);
       console.error(error);
 
@@ -122,7 +122,8 @@
     function openAside(position, backdrop) {
       vm.asideState = {
         open: true,
-        position: position
+        position: position,
+        animation: false
       };
 
       function postClose() {
