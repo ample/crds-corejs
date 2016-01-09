@@ -71,7 +71,8 @@ module.exports = {
         definePlugin,
         new webpack.optimize.UglifyJsPlugin({
             sourceMap: false,
-            mangle: false
+            mangle: false,
+            output: { ascii_only: true }
         })
     ]
 };
