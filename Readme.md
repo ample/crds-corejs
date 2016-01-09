@@ -1,9 +1,8 @@
 # Crossroads Core Angular Module
 
-
 This is the core angular module for the Crossroads.net site. It includes multiple dependencies used throughout the crossroads ecosystem including:
 * Angular
-* Angular Resource 
+* Angular Resource
 * Angular Cookies
 * Angular Messages
 * Angular Sanitize
@@ -21,7 +20,7 @@ This is the core angular module for the Crossroads.net site. It includes multipl
 
 
 ### Installation
-`npm i crds-core --save-dev` 
+`npm i crds-core --save-dev`
 
 At the top of your entry file (most likely app.js) `require('crds-core')`
 
