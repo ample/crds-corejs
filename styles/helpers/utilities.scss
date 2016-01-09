@@ -24,6 +24,13 @@
 }
 
 /** Font styles **/
+.black {
+  color: $black;
+}
+
+.white {
+  color: $white;
+}
 
 .text-lowercase {
     text-transform: lowercase;
@@ -452,6 +459,7 @@
     margin-top: -41px;
     span {
         background: #fff; padding: 5px;
+        vertical-align: middle;
     }
 }
 
