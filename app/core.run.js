@@ -31,6 +31,10 @@
     }
 
     $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
+      if (~fromState.name.indexOf('give')) {
+        return;//short circut if giving, give has it's own stateChangeStart
+      }
+
       if (toState.name === 'logout') {
         if (fromState.data === undefined || !fromState.data.isProtected) {
           Session.addRedirectRoute(fromState.name, fromParams);
@@ -41,9 +45,15 @@
         return;
       }
 
-      if (fromState.name !== '' && fromState.name !== 'logout' && fromState.name !== 'login'  && fromState.name !== 'register') {
+      if (fromState.name !== ''
+        && fromState.name !== 'logout'
+        && fromState.name !== 'login'
+        && fromState.name !== 'register') {
         Session.addRedirectRoute(fromState.name, fromParams);
-      } else if (toState.name !== '' && toState.name !== 'logout' && toState.name !== 'login'  && toState.name !== 'register') {
+      } else if (toState.name !== ''
+        && toState.name !== 'logout'
+        && toState.name !== 'login'
+        && toState.name !== 'register') {
         Session.addRedirectRoute(toState.name, toParams);
       }
 
