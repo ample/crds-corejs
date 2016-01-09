@@ -41,6 +41,20 @@
         return;
       }
 
+      if (fromState.name !== ''
+        && fromState.name !== 'logout'
+        && fromState.name !== 'login'
+        && fromState.name !== 'register'
+        && !~fromState.name.indexOf('give')) {
+        Session.addRedirectRoute(fromState.name, fromParams);
+      } else if (toState.name !== ''
+        && toState.name !== 'logout'
+        && toState.name !== 'login'
+        && toState.name !== 'register'
+        && !~toState.name.indexOf('give')) {
+        Session.addRedirectRoute(toState.name, toParams);
+      }
+
       if (toState.data !== undefined && toState.data.preventRouteAuthentication) {
         return;
       }
@@ -90,9 +104,9 @@
         $rootScope.meta.statusCode = '200';
       }
 
-      if (!$rootScope.meta.image) {
+      if (!$rootScope.meta.image || $rootScope.meta.image.filename === '/assets/') {
         $rootScope.meta.image = {
-          filename:'//crossroads-media.s3.amazonaws.com/images/coffee_cup.jpg'
+          filename:'https://crossroads-media.s3.amazonaws.com/images/coffee_cup.jpg'
         };
       }
     }

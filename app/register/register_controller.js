@@ -52,7 +52,10 @@ require('../services/user_service');
           $scope.registerShow = !$scope.registerShow;
           $rootScope.showLoginButton = false; //TODO use emit or an event here, avoid using rootscope
           $rootScope.$emit('notify', $rootScope.MESSAGES.successfullRegistration);
-          $scope.registerForm.$setPristine();
+          if ($scope.registerForm) {
+            $scope.registerForm.$setPristine();
+          }
+
           $scope.newuser = {};
           $timeout(function() {
             if (Session.hasRedirectionInfo()) {
@@ -64,6 +67,8 @@ require('../services/user_service');
               } else {
                 $state.go(url, JSON.parse(params));
               }
+            } else {
+              $state.go('content', {link:'/registered-next-steps'});
             }
           }, 500);
         }, function() {
