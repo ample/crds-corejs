@@ -100,8 +100,23 @@
       font-weight: bold;
     }
 
+    @media only screen and (min-width:  $screen-md-min){
+      h4 {
+        margin-top: $line-height-computed;
+      }
+    }
+
     img {
-      margin-top: -$grid-gutter-width;
+      margin-top: -$grid-gutter-width/2;
+      margin-bottom: $grid-gutter-width;
+
+      @media only screen and (min-width:  $screen-sm-min){
+        margin-bottom: 0;
+      }
+
+      @media only screen and (min-width:  $screen-md-min){
+        margin-top: -$grid-gutter-width;
+      }
     }
 
     .home-series-img {
@@ -132,12 +147,11 @@
     }
 
     a {
-      @include gradient-vertical($start-color: rgba(0,0,0,.3), $end-color: rgba(0,0,0,0));
       position: absolute;
       top: 0;
       left: 0;
       right: 0;
-      bottom: 50%;
+      bottom: 0;
 
       span {
         display: none;
@@ -164,6 +178,20 @@
     background-size: cover;
     color: #fff;
     padding: $line-height-computed*4 0;
+    position: relative;
+
+    @media only screen and (max-width:  $screen-md-min){
+      &:before {
+        background: rgba(0,0,0,.5);
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        position: absolute;
+        content: " ";
+        display: block;
+      }
+    }
 
     h1 {
       color: #fff;
