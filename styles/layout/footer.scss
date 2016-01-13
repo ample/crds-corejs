@@ -3,19 +3,19 @@
 ***************************************************************************************/
 
 footer {
-  background-color: lighten($gray-light, 7%);
+  background-color: $gray-lighter;
   margin-top: 40px;
   padding-bottom: 200px;
   padding-top: 50px;
-  color: #fff;
+  color: $cr-grey;
 
   h5 {
     margin-top: 0;
-    color: #fff;
+    color: $cr-grey;
     font-weight: bold;
   }
 
   a {
-    color: #fff;
+    color: $cr-grey;
   }
 }
