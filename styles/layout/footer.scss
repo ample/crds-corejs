@@ -18,4 +18,11 @@ footer {
   a {
     color: $cr-grey;
   }
+  
+  svg {
+    background-color: $cr-grey;
+    color: $gray-lighter;
+    border-radius: 50%;
+    padding: 8px;
+  }
 }
