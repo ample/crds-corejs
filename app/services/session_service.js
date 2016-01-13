@@ -7,7 +7,7 @@
   function SessionService($log, $cookies, $http) {
     var vm = this;
 
-    vm.create = function(sessionId, userTokenExp, userId, username) {
+    vm.create = function(refreshToken, sessionId, userTokenExp, userId, username) {
       console.log('creating cookies!');
       var expDate = new Date();
       expDate.setTime(expDate.getTime() + (userTokenExp * 1000));
@@ -16,6 +16,7 @@
       });
       $cookies.put('userId', userId);
       $cookies.put('username', username);
+      $cookies.put('refreshToken', refreshToken);
       $http.defaults.headers.common.Authorization = sessionId;
     };
 
@@ -58,6 +59,7 @@
 
     vm.clear = function() {
       $cookies.remove('sessionId');
+      $cookies.remove('refreshToken');
       $cookies.remove('userId');
       $cookies.remove('username');
       $cookies.remove('family');
