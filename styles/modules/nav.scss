@@ -133,6 +133,7 @@ header.show .container {
 
 .nav-profile-image {
   width: 36px;
+  height: 36px;
   background-color: transparent;
   border-radius: 50%;
   border: 2px solid rgba(214, 224, 226, 0.8);
@@ -535,7 +536,7 @@ ul.cr-nav {
   margin-right: 8px;
   padding: 20px 0px;
   right: 0%;
-  top: 84%;
+  top: 40px;
 }
 
 .dropdown-menu-large > li > ul {
