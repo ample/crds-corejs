@@ -30,6 +30,10 @@ footer {
         height: 24px;
         width: 24px;
       }
+      
+      &:hover {
+        background-color: $brand-primary;
+      }
     }
   }
 }
