@@ -18,6 +18,7 @@
       $cookies.put('username', username);
       $cookies.put('refreshToken', refreshToken);
       $http.defaults.headers.common.Authorization = sessionId;
+      $http.defaults.headers.common.RefreshToken = refreshToken;
     };
 
     /*
@@ -65,6 +66,7 @@
       $cookies.remove('family');
       $cookies.remove('age');
       $http.defaults.headers.common.Authorization = undefined;
+      $http.defaults.headers.common.RefreshToken = undefined;
       return true;
     };
 
