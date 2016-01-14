@@ -17,6 +17,12 @@ footer {
     color: $cr-grey;
   }
   .social-icons {
+    text-align: left;
+
+    @media (min-width: $screen-lg-min) {
+      text-align: right;
+    }
+
     a {
       background: $cr-grey;
       color: $gray-lighter;
@@ -30,7 +36,7 @@ footer {
         height: 24px;
         width: 24px;
       }
-      
+
       &:hover {
         background-color: $brand-primary;
       }
