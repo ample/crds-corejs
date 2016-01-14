@@ -417,10 +417,6 @@ header.show .container {
   }
 }
 
-.login__container {
-  float: none;
-}
-
 .navbar--login {
   .dropdown-menu {
     left: calc(100% - 315px);
@@ -764,19 +760,7 @@ ul.cr-nav {
     input {
       position: static;
     }
-
-    .forgot_password {
-      a {
-        color: $gray-light;
-
-        &:hover {
-          color: $gray-lighter;
-        }
-      }
-    }
   }
-
-
 }
 
 /***************************************************************************************
