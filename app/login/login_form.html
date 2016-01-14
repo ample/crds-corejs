@@ -21,25 +21,35 @@
                   </span>
                 </div>
                 <div class="row">
-                  <!-- HTML for "keey me signed in feature" -->
+                  <!-- HTML for "keep me signed in feature" -->
                   <div class="col-xs-12 push-bottom" ng-hide="true" checked>
                     <input type="checkbox"> Stay Signed In
                   </div>
                   <div class="col-xs-12">
-                    <input type="submit" name="submit_nav" value="Sign In" ng-class="{disabled: processing }" id="submit_nav" class="btn btn-primary btn-block-mobile"/>
-                    <p class="forgot_password pull-right"><a ui-sref="forgotPassword">Forgot password?</a></p>
+                    <input type="submit" name="submit_nav" value="Sign In" ng-class="{disabled: processing }" id="submit_nav" class="btn btn-primary btn-block"/>
                   </div>
                 </div>
-                <div class="row">
-                  <div class="col-xs-12">
-                    <hr>
-                    <div class="text-center or-divider">
-                      <p><span> or </span></p>
-                    </div>
-                    <p class="text-center"><a class="link-secondary" ng-if="showRegister" ui-sref="{{registerUrl}}"  >Register an account</a></p>
-                  </div>
-                </div><!--/row-->
             </div>
         </form>
     </div>
+
+    <div class="row">
+      <div class="col-xs-12">
+        <hr>
+        <div class="text-center or-divider">
+          <p><span> or </span></p>
+        </div>
+        <p class="text-center"><a class="link-secondary" ng-if="showRegister" ui-sref="{{registerUrl}}" >Register an account</a></p>
+      </div>
+    </div><!--/row-->
+    <div class="row">
+      <div class="col-xs-12 text-center small text-muted">
+          <p class="sr-help">
+              <a class="text-muted" href="/help">Need Help?</a>
+              |
+              <a class="text-muted" ui-sref="forgotPassword">Forgot password?</a>
+          </p>
+      </div>
+    </div><!--/row-->
+
 </div>

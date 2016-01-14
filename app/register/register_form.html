@@ -1,40 +1,55 @@
-
-<div class="primary">
-    <form id="nav_login" name="registerForm" role="form" ng-submit="register()" novalidate>
-
-        <div class="soft-half-bottom" ng-class="{'has-error': registerForm.firstname.$invalid && registerForm.$submitted }">
-              <input id="{{passwordPrefix}}-firstname" class="form-control" id="firstname" name="firstname" type="text" ng-model="newuser.firstname" required placeholder="First Name" autofocus>
-                <ng-messages for="registerForm.firstname.$error" ng-if="registerForm.$submitted">
-                  <ng-messages-include src="on-submit-messages"></ng-messages-include>
-                </ng-messages>
+<form id="nav_login" name="registerForm" role="form" ng-submit="register()" novalidate>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="soft-half-bottom" ng-class="{'has-error': registerForm.firstname.$invalid && registerForm.$submitted }">
+                  <input id="{{passwordPrefix}}-firstname" class="form-control" id="firstname" name="firstname" type="text" ng-model="newuser.firstname" required placeholder="First Name" autofocus>
+                    <ng-messages for="registerForm.firstname.$error" ng-if="registerForm.$submitted">
+                      <ng-messages-include src="on-submit-messages"></ng-messages-include>
+                    </ng-messages>
+           </div>
        </div>
 
-        <div class="soft-half-bottom" ng-class="{'has-error': registerForm.lastname.$invalid && registerForm.$submitted }">
-                <input id="{{passwordPrefix}}-lastname" class="form-control" id="lastname" name="lastname" type="text" ng-model="newuser.lastname" required placeholder="Last Name">
-                <ng-messages for="registerForm.lastname.$error" ng-if="registerForm.$submitted">
-                  <ng-messages-include src="on-submit-messages"></ng-messages-include>
-                </ng-messages>
+       <div class="col-sm-6">
+            <div class="soft-half-bottom" ng-class="{'has-error': registerForm.lastname.$invalid && registerForm.$submitted }">
+                    <input id="{{passwordPrefix}}-lastname" class="form-control" id="lastname" name="lastname" type="text" ng-model="newuser.lastname" required placeholder="Last Name">
+                    <ng-messages for="registerForm.lastname.$error" ng-if="registerForm.$submitted">
+                      <ng-messages-include src="on-submit-messages"></ng-messages-include>
+                    </ng-messages>
+            </div>
         </div>
 
-        <span>
+        <div class="col-sm-12">
             <email-field email="newuser.email" submitted="registerForm.$submitted" prefix="passwordPrefix" focused="false"></email-field>
-        </span>
-
-        <div class="input-group col-xs-12">
-            <password-field
-                    min-length="8"
-                    passwd-strength="true"
-                    required="true"
-                    passwd="newuser.password"
-                    submitted="registerForm.$submitted"
-                    prefix="passwordPrefix">
-            </password-field>
         </div>
 
+        <div class="col-sm-12">
+            <div class="input-group col-xs-12">
+                <password-field
+                        min-length="8"
+                        passwd-strength="true"
+                        required="true"
+                        passwd="newuser.password"
+                        submitted="registerForm.$submitted"
+                        prefix="passwordPrefix">
+                </password-field>
+            </div>
+        </div>
 
-        <span dynamic-content="$root.MESSAGES.registrationFooter.content | html"></span>
-        <input type="submit" class="btn btn-primary btn-block-mobile push-bottom " value="Register an Account" ng-disabled="!showRegisterButton"/>
+        <div class="col-sm-12">
+            <input type="submit" class="btn btn-primary btn-block" value="Register an Account" ng-disabled="!showRegisterButton"/>
+            <br>
+            <span dynamic-content="$root.MESSAGES.registrationFooter.content | html"></span>
+        </div>
+    </div>
+</form>
 
-    </form>
-
-</div>
+<div class="row">
+  <div class="col-xs-12">
+    <hr>
+    <div class="text-center or-divider">
+      <p><span> or </span></p>
+    </div>
+    <!---To Do: ui-sref needs update to work in give flow. Shouldn't exscape give flow -->
+    <p class="text-center"><a class="link-secondary" ui-sref="login">Already have an account? Login</a></p>
+  </div>
+</div><!--/row-->
