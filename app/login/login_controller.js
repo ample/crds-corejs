@@ -81,23 +81,25 @@
           $scope.processing = false;
           $scope.loginShow = false;
           clearCredentials();
-          $timeout(function() {
-            if (Session.hasRedirectionInfo()) {
-              var url = Session.exists('redirectUrl');
-              var params = Session.exists('params');
-              Session.removeRedirectRoute();
-              if (params === undefined) {
-                $state.go(url);
+          if ($state.current.name === 'login' || $state.current.name === 'register') {
+            $timeout(function() {
+              if (Session.hasRedirectionInfo()) {
+                var url = Session.exists('redirectUrl');
+                var params = Session.exists('params');
+                Session.removeRedirectRoute();
+                if (params === undefined) {
+                  $state.go(url);
+                } else {
+                  $state.go(url, JSON.parse(params));
+                }
               } else {
-                $state.go(url, JSON.parse(params));
+                $state.go('profile.personal');
               }
-            } else if ($state.current.name === 'login' || $state.current.name === 'register') {
-              $state.go('profile.personal');
-            }
-
-          },
+            },
 
            500);
+          }
+
           $scope.loginFailed = false;
           $rootScope.showLoginButton = false;
           $scope.navlogin.$setPristine();
