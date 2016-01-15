@@ -42,6 +42,11 @@ $button-border-darken-amount: 15%;
 .btn-standard-dark {
   @include button-variant($btn-primary-color, $gray, $gray);
 }
+
+.btn-standard-darker {
+  @include button-variant($btn-primary-color, $gray-dark, $gray-dark);
+}
+
 .btn-standard {
   @include button-variant(black, $gray-lighter, $gray-lighter);
 }

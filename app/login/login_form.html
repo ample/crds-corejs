@@ -1,5 +1,8 @@
 <div class="dd_menu">
     <div class="primary">
+        <p class="alert alert-warning small">
+          Welcome to the new crossroads.net! We've upgraded the whole site and in order to protect your security, please reset your password when you log in. Need help? Email <a href="mailto:websupport@crossroads.net">websupport@crossroads.net</a>.
+        </p><!--/panel info-->
         <form id="navlogin" name="navlogin" ng-submit="login()" role="form" novalidate>
             <div class="form-group">
                 <div class="navbar--login__input" ng-class="{'has-error': checkEmail() }">
@@ -45,9 +48,7 @@
     <div class="row">
       <div class="col-xs-12 text-center small text-muted">
           <p class="sr-help">
-              <a class="text-muted" href="/help">Need Help?</a>
-              |
-              <a class="text-muted" ui-sref="forgotPassword">Forgot password?</a>
+              <a class="text-muted" href="/help">Need Help? </a>|<a class="text-muted" ui-sref="forgotPassword"> Forgot password?</a>
           </p>
       </div>
     </div><!--/row-->
