@@ -15,7 +15,18 @@
     'ContentSiteConfigService',
     'SiteConfig'];
 
-  function AppRun(Session, $rootScope, MESSAGES, $http, $log, $state, $timeout, $location, $cookies, $document, ContentSiteConfigService, SiteConfig) {
+  function AppRun(Session,
+      $rootScope,
+      MESSAGES,
+      $http,
+      $log,
+      $state,
+      $timeout,
+      $location,
+      $cookies,
+      $document,
+      ContentSiteConfigService,
+      SiteConfig) {
     $rootScope.MESSAGES = MESSAGES;
     setOriginForCmsPreviewPane($document);
 
