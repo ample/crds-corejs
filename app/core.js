@@ -53,6 +53,7 @@
   require('./core.config');
   require('./core.controller');
   require('./core.run');
+  require('./services/session_service');
 
   require('./errors');
 

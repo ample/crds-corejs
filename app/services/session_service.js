@@ -1,8 +1,9 @@
-(function () {
+(function() {
   'use strict';
+
   angular.module('crossroads.core').service('Session', SessionService);
 
-  SessionService.$inject = ['$log','$cookies', '$http'];
+  SessionService.$inject = ['$log', '$cookies', '$http'];
 
   function SessionService($log, $cookies, $http) {
     var vm = this;
@@ -16,7 +17,9 @@
       });
       $cookies.put('userId', userId);
       $cookies.put('username', username);
-      $cookies.put('refreshToken', refreshToken);
+      $cookies.put('refreshToken', refreshToken, {
+        expires: expDate
+      });
       $http.defaults.headers.common.Authorization = sessionId;
       $http.defaults.headers.common.RefreshToken = refreshToken;
     };
