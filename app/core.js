@@ -1,17 +1,12 @@
 (function(){
   'use strict';
 
-  require('ui-event');
-  require('ui-mask');
-
   require('lodash');
   require('expose?moment!moment');
   require('expose?imgix!../lib/imgix.min');
 
   require('../lib/angular-growl');
 
-  require('../node_modules/angular-toggle-switch/angular-toggle-switch-bootstrap.css');
-  require('../node_modules/angular-toggle-switch/angular-toggle-switch.css');
   require('../lib/angular-aside.css');
   require('../lib/angular-growl.css');
   require('../lib/ng-img-crop.css');

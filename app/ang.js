@@ -16,6 +16,8 @@
   require('angular-payments');
   require('angular-bootstrap-npm');
   require('angular-ui-router');
+  require('angular-ui-event');
+  require('angular-ui-mask');
   require('angular-addthis');
   require('angular-aside');
   require('angular-match-media');
