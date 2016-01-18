@@ -81,7 +81,9 @@
           $scope.processing = false;
           $scope.loginShow = false;
           clearCredentials();
-          if ($state.current.name === 'login' || $state.current.name === 'register') {
+          // If the state name ends with login or register (like 'login' or 'give.one_time_login'),
+          // either redirect to specified URL, or redirect to profile if URL is not specified.
+          if (/login$/.test($state.current.name) || /register$/.test($state.current.name)) {
             $timeout(function() {
               if (Session.hasRedirectionInfo()) {
                 var url = Session.exists('redirectUrl');
