@@ -3,9 +3,9 @@ require('../services/auth_service');
 require('../services/user_service');
 
 (function() {
-  angular.module('crossroads.core').controller('RegisterCtrl', ['$scope', '$rootScope', 'AUTH_EVENTS','AuthService', 'MESSAGES', 'User', 'Session', '$log','$timeout', '$state', 'zxcvbn', RegisterController]);
+  angular.module('crossroads.core').controller('RegisterCtrl', ['$scope', '$rootScope', 'AUTH_EVENTS','AuthService', 'MESSAGES', 'User', 'Session', '$log','$timeout', '$state', RegisterController]);
 
-  function RegisterController($scope, $rootScope, AUTH_EVENTS, AuthService, MESSAGES, User, Session, $log, $timeout, $state, zxcvbn) {
+  function RegisterController($scope, $rootScope, AUTH_EVENTS, AuthService, MESSAGES, User, Session, $log, $timeout, $state) {
     $log.debug('Inside register controller');
     $scope.newuser = User;
     $scope.passwordPrefix = 'registration';
