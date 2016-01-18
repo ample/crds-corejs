@@ -20,9 +20,10 @@
   margin-top:-10px;
   color: $cr-grey;
 
-  > img {
-    width: 100%;
+  .icon-logo {
+    max-height: 24px;
   }
+
   @media (min-width: $screen-md-min) {
     width: 200px;
     margin-left: 0;
