@@ -1,7 +1,6 @@
 
 require('../app/core');
 require('../app/ang');
-require('../app/ang2');
 describe('CoreController', function() {
 
   beforeEach(angular.mock.module('crossroads.core'));
