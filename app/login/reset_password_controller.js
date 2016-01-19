@@ -54,7 +54,7 @@ require('../services/auth_service');
         var reset = { password: vm.password, token: $stateParams.token };
 
         PasswordService.ResetPassword.save(reset).$promise.then(function(response) {
-          $rootScope.$emit('notify', $rootScope.MESSAGES.resetRequestSuccess);
+          $rootScope.$emit('notify', $rootScope.MESSAGES.resetPasswordSuccess);
           $state.go('login');
         }, function(error) {
 
