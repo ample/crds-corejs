@@ -30,10 +30,6 @@ describe('Password Field Directive', function() {
       isolate = element.isolateScope();
     });
 
-    it('should show the password meter', function() {
-      expect(isolate.passwd.showMeter).toBe(true);
-    });
-
   });
 
   describe('password meter false', function() {
@@ -45,10 +41,6 @@ describe('Password Field Directive', function() {
       element = $compile(element)(scope);
       scope.$digest();
       isolate = element.isolateScope();
-    });
-
-    it('should not show the password meter', function() {
-      expect(isolate.passwd.showMeter).toBe(false);
     });
 
   });

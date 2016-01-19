@@ -16,7 +16,6 @@ module.exports = {
     entry: {
         core: './app/core.js',
         ang: './app/ang.js',
-        ang2: './app/ang2.js'
     },
     watchPattern: 'app/**/**',
     externals: {

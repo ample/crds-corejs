@@ -1,4 +1,3 @@
-require('./session_service');
 (function() {
   'use strict';
   angular.module('crossroads.core').factory('AuthService', AuthService);
