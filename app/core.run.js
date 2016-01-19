@@ -56,12 +56,14 @@
         && fromState.name !== 'logout'
         && fromState.name !== 'login'
         && fromState.name !== 'register'
+        && !~fromState.name.toLowerCase().indexOf('password')
         && !~fromState.name.indexOf('give')) {
         Session.addRedirectRoute(fromState.name, fromParams);
       } else if (toState.name !== ''
         && toState.name !== 'logout'
         && toState.name !== 'login'
         && toState.name !== 'register'
+        && !~toState.name.toLowerCase().indexOf('password')
         && !~toState.name.indexOf('give')) {
         Session.addRedirectRoute(toState.name, toParams);
       }
