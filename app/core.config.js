@@ -56,10 +56,12 @@
             var expDate = new Date();
             expDate.setTime(expDate.getTime() + (1800000));
             $cookies.put('sessionId', response.headers('sessionId'), {
-              expires: expDate
+              expires: expDate,
+              path: '/'
             });
             $cookies.put('refreshToken', response.headers('refreshToken'), {
-              expires: expDate
+              expires: expDate,
+              path: '/'
             });
           }
 
