@@ -1,8 +1,6 @@
 <div class="dd_menu">
     <div class="primary">
-        <p class="alert alert-warning small">
-          Welcome to the new crossroads.net! We've upgraded the whole site and in order to protect your security, please reset your password when you log in. Need help? Email <a href="mailto:websupport@crossroads.net">websupport@crossroads.net</a>.
-        </p><!--/panel info-->
+        <div dynamic-content="$root.MESSAGES.loginFormTop.content | html"></div>
         <form id="navlogin" name="navlogin" ng-submit="login()" role="form" novalidate>
             <div class="form-group">
                 <div class="navbar--login__input" ng-class="{'has-error': checkEmail() }">
