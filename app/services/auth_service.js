@@ -2,16 +2,29 @@
   'use strict';
   angular.module('crossroads.core').factory('AuthService', AuthService);
 
-  AuthService.$inject = ['$http', 'Session', '$rootScope', 'AUTH_EVENTS'];
+  AuthService.$inject = [
+    '$http',
+    '$rootScope',
+    'Session',
+    'AUTH_EVENTS'];
 
-  function AuthService($http, Session, $rootScope, AUTH_EVENTS) {
+  function AuthService(
+    $http,
+    $rootScope,
+    Session,
+    AUTH_EVENTS) {
     var authService = {};
 
     authService.login = function(credentials) {
       return $http
         .post(__API_ENDPOINT__ + 'api/login', credentials).then(function(res) {
           console.log(res.data);
-          Session.create(res.data.refreshToken, res.data.userToken, res.data.userTokenExp, res.data.userId, res.data.username);
+          Session.create(
+            res.data.refreshToken,
+            res.data.userToken,
+            res.data.userTokenExp,
+            res.data.userId,
+            res.data.username);
 
           // The username from the credentials is really the email address
           // In a future story, the contact email address will always be in sync with the user email address.
@@ -53,4 +66,5 @@
 
     return authService;
   }
+
 })();

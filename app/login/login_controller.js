@@ -80,7 +80,12 @@
         AuthService.login($scope.credentials).then(function(user) {
           $scope.processing = false;
           $scope.loginShow = false;
+          if ($scope.modal) {
+            $scope.modal.close();
+          }
+
           clearCredentials();
+
           // If the state name ends with login or register (like 'login' or 'give.one_time_login'),
           // either redirect to specified URL, or redirect to profile if URL is not specified.
           if (_.endsWith($state.current.name, 'login') || _.endsWith($state.current.name, 'register')) {

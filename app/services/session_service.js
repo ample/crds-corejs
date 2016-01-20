@@ -3,9 +3,26 @@
 
   angular.module('crossroads.core').service('Session', SessionService);
 
-  SessionService.$inject = ['$log', '$cookies', '$http'];
+  var timeoutPromise;
 
-  function SessionService($log, $cookies, $http) {
+  SessionService.$inject = [
+    '$log',
+    '$http',
+    '$state',
+    '$timeout',
+    '$cookies',
+    '$modal',
+    '$injector'];
+
+  function SessionService(
+    $log,
+    $http,
+    $state,
+    $timeout,
+    $cookies,
+    $modal,
+    $injector
+  ) {
     var vm = this;
 
     vm.create = function(refreshToken, sessionId, userTokenExp, userId, username) {
@@ -22,6 +39,30 @@
       });
       $http.defaults.headers.common.Authorization = sessionId;
       $http.defaults.headers.common.RefreshToken = refreshToken;
+    };
+
+    vm.refresh = function(response) {
+      $http.defaults.headers.common.RefreshToken = response.headers('refreshToken');
+      $http.defaults.headers.common.Authorization = response.headers('sessionId');
+
+      console.log('updating cookies!');
+      var expDate = new Date();
+      var sessionLength = 1800000;
+      expDate.setTime(expDate.getTime() + sessionLength);
+      $timeout.cancel(timeoutPromise);
+      timeoutPromise = $timeout(
+        function() {
+          openStayLoggedInModal($injector, $state, $modal, vm);
+        },
+
+        sessionLength);
+
+      $cookies.put('sessionId', response.headers('sessionId'), {
+        expires: expDate
+      });
+      $cookies.put('refreshToken', response.headers('refreshToken'), {
+        expires: expDate
+      });
     };
 
     /*
@@ -111,6 +152,30 @@
     };
 
     return this;
+  }
+
+  function openStayLoggedInModal($injector, $state, $modal, Session) {
+    //Only open if on a protected page?
+    if ($state.current.data.isProtected) {
+      var AuthService = $injector.get('AuthService');
+      var modal = $modal.open({
+          templateUrl: 'stayLoggedInModal/stayLoggedInModal.html',
+          controller: 'StayLoggedInController as StayLoggedIn',
+          backdrop: 'static',
+          keyboard: false,
+          show: false,
+        });
+
+      modal.result.then(function(result) {
+        //login success
+      },
+
+      function(result) {
+        //TODO:Once we stop using rootScope we can remove this and the depenedency on Injector
+        AuthService.logout();
+        $state.go('content', {link: '/'});
+      });
+    }
   }
 
 })();

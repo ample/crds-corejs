@@ -17,8 +17,9 @@
           scope.passwordPrefix = attrs.prefix;
         }
 
-        if (attrs.sessionExtension) {
-          scope.sessionExtension = attrs.sessionExtension;
+        if (attrs.modal) {
+          //Eval to avoid isolated scope, and previous dependencies on shared scope
+          scope.modal = scope.$eval(attrs.modal);
           scope.credentials.username = $rootScope.email;
         }
 
