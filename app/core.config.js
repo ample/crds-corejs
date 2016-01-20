@@ -1,5 +1,5 @@
 'use strict()';
-(function(){
+(function() {
 
   var app = angular.module('crossroads.core');
   app.config(AppConfig);
@@ -35,40 +35,6 @@
     $httpProvider.defaults.useXDomain = true;
     $httpProvider.defaults.headers.common.Authorization = crds_utilities.getCookie('sessionId');
     $httpProvider.defaults.headers.common.RefreshToken = crds_utilities.getCookie('refreshToken');
-
-    //TODO: Consider replacing this with a factory to better handle the hacky cookies injection below
-    $httpProvider.interceptors.push(function() {
-      return {
-        request: function(config) {
-          return config;
-        },
-
-        response: function(response) {
-          if (response.headers('refreshToken')) {
-            $httpProvider.defaults.headers.common.RefreshToken = response.headers('refreshToken');
-            $httpProvider.defaults.headers.common.Authorization = response.headers('sessionId');
-            var $cookies;
-            angular.injector(['ngCookies']).invoke(['$cookies', function(_$cookies_) {
-              $cookies = _$cookies_;
-            }]);
-
-            console.log('updating cookies!');
-            var expDate = new Date();
-            expDate.setTime(expDate.getTime() + (1800000));
-            $cookies.put('sessionId', response.headers('sessionId'), {
-              expires: expDate,
-              path: '/'
-            });
-            $cookies.put('refreshToken', response.headers('refreshToken'), {
-              expires: expDate,
-              path: '/'
-            });
-          }
-
-          return response;
-        }
-      };
-    });
 
     // This is a dummy header that will always be returned
     // in any 'Allow-Header' from any CORS request

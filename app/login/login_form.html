@@ -1,11 +1,9 @@
 <div class="dd_menu">
     <div class="primary">
-        <p class="alert alert-warning small">
-          Welcome to the new crossroads.net! We've upgraded the whole site and in order to protect your security, please reset your password when you log in. Need help? Email <a href="mailto:websupport@crossroads.net">websupport@crossroads.net</a>.
-        </p><!--/panel info-->
+        <div dynamic-content="$root.MESSAGES.loginFormTop.content | html"></div>
         <form id="navlogin" name="navlogin" ng-submit="login()" role="form" novalidate>
             <div class="form-group">
-                <div class="navbar--login__input" ng-class="{'has-error': checkEmail() }">
+                <div ng-show="!modal" class="navbar--login__input" ng-class="{'has-error': checkEmail() }">
                     <input id="{{passwordPrefix}}-email" required class="form-control" ng-model-options="{ updateOn: 'blur', debounce: {'blur': 500} }" type="email" name="username" placeholder="Email" autocomplete="off" autocapitalize="off" ng-model="credentials.username" autofocus="">
                     <ng-messages for="navlogin['username'].$error" ng-if="navlogin.$submitted">
                       <ng-messages-include src="on-submit-messages"></ng-messages-include>
@@ -30,22 +28,23 @@
                   </div>
                   <div class="col-xs-12">
                     <input type="submit" name="submit_nav" value="Sign In" ng-class="{disabled: processing }" id="submit_nav" class="btn btn-primary btn-block"/>
+                    <input ng-if="modal" ng-click="modal.dismiss('sign out')" name="sign_out" value="Sign Out" ng-class="{disabled: processing }" id="sign_out" class="btn btn-standard btn-block"/>
                   </div>
                 </div>
             </div>
         </form>
     </div>
 
-    <div class="row">
+    <div ng-if="showRegister" class="row">
       <div class="col-xs-12">
         <hr>
         <div class="text-center or-divider">
           <p><span> or </span></p>
         </div>
-        <p class="text-center"><a class="link-secondary" ng-if="showRegister" ui-sref="{{registerUrl}}" >Register an account</a></p>
+        <p class="text-center"><a class="link-secondary" ui-sref="{{registerUrl}}" >Register an account</a></p>
       </div>
     </div><!--/row-->
-    <div class="row">
+    <div ng-if="!modal" class="row">
       <div class="col-xs-12 text-center small text-muted">
           <p class="sr-help">
               <a class="text-muted" href="/help">Need Help? </a>|<a class="text-muted" ui-sref="forgotPassword"> Forgot password?</a>
