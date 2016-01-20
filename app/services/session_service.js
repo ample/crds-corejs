@@ -26,7 +26,7 @@
     var vm = this;
 
     vm.create = function(refreshToken, sessionId, userTokenExp, userId, username) {
-      console.log('creating cookies!');
+      $log.debug('creating cookies!');
       var expDate = new Date();
       expDate.setTime(expDate.getTime() + (userTokenExp * 1000));
       $cookies.put('sessionId', sessionId, {
@@ -42,14 +42,14 @@
     };
 
     vm.refresh = function(response) {
-      $http.defaults.headers.common.RefreshToken = response.headers('refreshToken');
-      $http.defaults.headers.common.Authorization = response.headers('sessionId');
-
-      console.log('updating cookies!');
+      $log.debug('updating cookies!');
       var expDate = new Date();
       var sessionLength = 1800000;
       expDate.setTime(expDate.getTime() + sessionLength);
-      $timeout.cancel(timeoutPromise);
+      if (timeoutPromise) {
+        $timeout.cancel(timeoutPromise);
+      }
+
       timeoutPromise = $timeout(
         function() {
           openStayLoggedInModal($injector, $state, $modal, vm);
@@ -63,6 +63,8 @@
       $cookies.put('refreshToken', response.headers('refreshToken'), {
         expires: expDate
       });
+      $http.defaults.headers.common.RefreshToken = response.headers('refreshToken');
+      $http.defaults.headers.common.Authorization = response.headers('sessionId');
     };
 
     /*
