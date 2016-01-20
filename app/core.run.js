@@ -78,11 +78,13 @@
           url: __API_ENDPOINT__ + 'api/authenticated',
           withCredentials: true,
           headers: {
-            Authorization: $cookies.get('sessionId')
+            Authorization: $cookies.get('sessionId'),
+            RefreshToken: $cookies.get('refreshToken')
           }
         }).success(function(user) {
           $rootScope.userid = user.userId;
           $rootScope.username = user.username;
+          $rootScope.email = user.userEmail;
           $rootScope.roles = user.roles;
         }).error(function(e) {
           clearAndRedirect(event, toState, toParams);

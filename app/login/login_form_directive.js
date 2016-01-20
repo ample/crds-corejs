@@ -1,8 +1,8 @@
 (function() {
   'use strict';
   module.exports = LoginForm;
-  LoginForm.$inject = ['$log', 'AUTH_EVENTS'];
-  function LoginForm($log, AUTH_EVENTS) {
+  LoginForm.$inject = ['$log', 'AUTH_EVENTS', '$rootScope'];
+  function LoginForm($log, AUTH_EVENTS, $rootScope) {
     return {
       restrict: 'EA',
       templateUrl: 'login/login_form.html',
@@ -15,6 +15,12 @@
 
         if (attrs.prefix) {
           scope.passwordPrefix = attrs.prefix;
+        }
+
+        if (attrs.modal) {
+          //Eval to avoid isolated scope, and previous dependencies on shared scope
+          scope.modal = scope.$eval(attrs.modal);
+          scope.credentials.username = $rootScope.email;
         }
 
         if (attrs.registerUrl) {

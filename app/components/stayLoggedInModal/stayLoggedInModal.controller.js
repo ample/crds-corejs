@@ -1,21 +1,20 @@
-(function () {
+(function() {
   'use strict';
-  module.exports = stayLoggedInCtrl;
-  stayLoggedInCtrl.$inject = ['$modalInstance', '$scope', '$timeout'];
-    
-    
-    function stayLoggedInCtrl($modalInstance, $scope, $timeout) {
-    var _this = this;
+  module.exports = StayLoggedInCtrl;
+  StayLoggedInCtrl.$inject = ['$modalInstance', '$scope', '$timeout'];
+  function StayLoggedInCtrl($modalInstance, $scope, $timeout) {
+    var vm = this;
 
-    _this.ok = ok;
-    _this.cancel = cancel;
+    vm.ok = ok;
+    vm.cancel = cancel;
+    vm.modal = $modalInstance;
 
     function ok() {
       $modalInstance.close();
-    };
+    }
 
     function cancel() {
       $modalInstance.dismiss('cancel');
-    };
-  };
+    }
+  }
 })();
