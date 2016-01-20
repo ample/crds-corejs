@@ -44,6 +44,9 @@
     vm.refresh = function(response) {
       $log.debug('updating cookies!');
       var expDate = new Date();
+
+      //TODO: Consider how we could make this less hard coded,
+      // put the timeout in the header also?
       var sessionLength = 1800000;
       expDate.setTime(expDate.getTime() + sessionLength);
       if (timeoutPromise) {
