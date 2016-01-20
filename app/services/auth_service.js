@@ -16,6 +16,8 @@
           // The username from the credentials is really the email address
           // In a future story, the contact email address will always be in sync with the user email address.
           $rootScope.email = credentials.username;
+
+          //TODO: we really need to refactor "username" to be nickname
           $rootScope.username = res.data.username;
           $rootScope.roles = res.data.roles;
           $rootScope.userid = res.data.userId;

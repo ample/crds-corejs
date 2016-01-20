@@ -1,11 +1,9 @@
 <div class="dd_menu">
     <div class="primary">
-        <p class="alert alert-warning small">
-          Welcome to the new crossroads.net! We've upgraded the whole site and in order to protect your security, please reset your password when you log in. Need help? Email <a href="mailto:websupport@crossroads.net">websupport@crossroads.net</a>.
-        </p><!--/panel info-->
+      <div dynamic-content="$root.MESSAGES.loginAlert.content | html"></div>
         <form id="navlogin" name="navlogin" ng-submit="login()" role="form" novalidate>
             <div class="form-group">
-                <div class="navbar--login__input" ng-class="{'has-error': checkEmail() }">
+                <div ng-show="!sessionExtension" class="navbar--login__input" ng-class="{'has-error': checkEmail() }">
                     <input id="{{passwordPrefix}}-email" required class="form-control" ng-model-options="{ updateOn: 'blur', debounce: {'blur': 500} }" type="email" name="username" placeholder="Email" autocomplete="off" autocapitalize="off" ng-model="credentials.username" autofocus="">
                     <ng-messages for="navlogin['username'].$error" ng-if="navlogin.$submitted">
                       <ng-messages-include src="on-submit-messages"></ng-messages-include>
@@ -36,13 +34,13 @@
         </form>
     </div>
 
-    <div class="row">
+    <div ng-if="showRegister" class="row">
       <div class="col-xs-12">
         <hr>
         <div class="text-center or-divider">
           <p><span> or </span></p>
         </div>
-        <p class="text-center"><a class="link-secondary" ng-if="showRegister" ui-sref="{{registerUrl}}" >Register an account</a></p>
+        <p class="text-center"><a class="link-secondary" ui-sref="{{registerUrl}}" >Register an account</a></p>
       </div>
     </div><!--/row-->
     <div class="row">
