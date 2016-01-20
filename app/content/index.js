@@ -5,6 +5,7 @@ require('../templates/rightSideBar.html');
 require('../templates/leftSideBar.html');
 require('../templates/screenWidth.html');
 require('../templates/homePage.html');
+require('../templates/centeredContentPage.html');
 
 var app = angular.module("crossroads.core");
 app.controller("ContentCtrl", ['$rootScope', '$scope', '$state', '$stateParams', '$log', 'ContentPageService', '$sce', require("./content_controller")]);
