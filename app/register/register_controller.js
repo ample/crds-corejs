@@ -81,6 +81,14 @@ require('../services/user_service');
           $scope.processing = false;
           $scope.showRegisterButton = true;
         });
+      }).catch(function(error) {
+        $scope.processing = false;
+        $scope.showRegisterButton = true;
+        if (error.data && error.data.message === 'Duplicate User') {
+          $rootScope.$emit('notify', $rootScope.MESSAGES.emailInUse);
+        } else {
+          $rootScope.$emit('notify', $rootScope.MESSAGES.failedResponse);
+        }
       });
     };
 
