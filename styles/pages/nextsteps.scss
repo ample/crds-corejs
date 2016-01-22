@@ -1,5 +1,6 @@
 .nextstep-dark {
   color: #fff;
+  background-color: #020102;
 
   h4 {
     color: #fff;
@@ -14,22 +15,8 @@
   }
 }
 
-.nextstep-attend {
-  background: #020102 url(https://crds-cms-uploads.imgix.net/content/images/attendbg.jpg) no-repeat;
+.nextstep-background {
   background-position: top right;
-}
-
-.nextstep-app {
-  background: url(https://crds-cms-uploads.imgix.net/content/images/appbg.jpg) no-repeat;
-  background-position: top right;
-}
-
-.nextstep-groups {
-  background: #020102 url(https://crds-cms-uploads.imgix.net/content/images/groupbg.jpg) no-repeat;
-  background-position: top right;
-}
-
-.nextstep-generous {
-  background: url(https://crds-cms-uploads.imgix.net/content/images/generousbg.jpg) no-repeat;
-  background-position: top right;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
