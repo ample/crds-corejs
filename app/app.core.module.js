@@ -34,6 +34,9 @@
       isAuthenticated: 'auth-is-authenticated',
       notAuthorized: 'auth-not-authorized'
     })
+    .constant('STATE_CHANGE_EVENTS', {
+      clearResolving: 'state-change-clear-resolving',
+    })
 
     //TODO Pull out to service and/or config file
     .constant('MESSAGES', {})
