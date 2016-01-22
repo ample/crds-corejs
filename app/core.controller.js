@@ -16,7 +16,8 @@
     'PageRenderedService',
     '$modal',
     '$anchorScroll',
-    '$location'
+    '$location',
+    'STATE_CHANGE_EVENTS',
   ];
 
   function CoreController(
@@ -32,7 +33,9 @@
     PageRenderedService,
     $modal,
     $anchorScroll,
-    $location) {
+    $location,
+    STATE_CHANGE_EVENTS
+  ) {
 
     var vm = this;
 
@@ -63,6 +66,10 @@
       PageRenderedService.pageLoaded();
       vm.resolving = false;
       $anchorScroll('top-header');
+    });
+
+    $rootScope.$on(STATE_CHANGE_EVENTS.clearResolving, function() {
+      vm.resolving = false;
     });
 
     $rootScope.$on('$stateChangeError', function(event, toState, toParams, fromState, fromParams, error) {
