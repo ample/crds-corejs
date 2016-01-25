@@ -1,4 +1,5 @@
 require('../app/core');
+require('../app/ang');
 
 describe('CoreController', function() {
 

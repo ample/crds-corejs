@@ -5,7 +5,7 @@
 
   LoadingButton.$inject = [];
 
-  function LoadingButton(){
+  function LoadingButton() {
     return {
       restrict: 'E',
       replace: true,
@@ -18,11 +18,11 @@
         inputClasses: '@inputClasses'
       },
       templateUrl: 'loadingButton/loadingButton.html',
-      link : link
+      link: link
     };
   }
 
-  function link(scope,el,attr){
+  function link(scope,el,attr) {
 
     scope.buttonClass = buttonClass;
     scope.buttonText = buttonText;
@@ -30,15 +30,15 @@
 
     ////////////////////////////
 
-    function buttonClass(){
+    function buttonClass() {
       return scope.loading ? scope.loadingClass : '';
     }
 
-    function buttonText(){
+    function buttonText() {
       return scope.loading ? scope.loadingText : scope.normalText;
     }
 
-    function showInput(){
+    function showInput() {
       return scope.inputType === 'submit';
     }
   }

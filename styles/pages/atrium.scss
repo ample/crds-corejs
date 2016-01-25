@@ -1,6 +1,6 @@
 .atrium-event-container {
 
-  background: url('http://s3.amazonaws.com/crossroads-media/images/atriumbg.png') no-repeat center center fixed;
+  background: url('//s3.amazonaws.com/crossroads-media/images/atriumbg.png') no-repeat center center fixed;
   background-size: cover;
   position: fixed;
   top: 0;
@@ -49,7 +49,7 @@
   position: relative;
   width: 100%;
   height: 40px;
-  background: url('http://s3.amazonaws.com/crossroads-media/images/atrium-border.jpg') no-repeat center center;
+  background: url('//s3.amazonaws.com/crossroads-media/images/atrium-border.jpg') no-repeat center center;
   background-size: cover;
   border: 0px;
   margin: $line-height-computed 0;
@@ -78,7 +78,7 @@
 
   td, th {
     padding: 0px;
-    
+
     &.first-cell {
       width: 14%;
     }

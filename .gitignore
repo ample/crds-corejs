@@ -2,6 +2,9 @@
 logs
 *.log
 
+# tgz files
+*.tgz
+
 # Runtime data
 pids
 *.pid
@@ -28,3 +31,5 @@ node_modules
 
 assets/
 build/
+
+.idea/

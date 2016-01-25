@@ -8,7 +8,7 @@ describe('Date Field Directive', function() {
     angular.mock.module('crossroads.core');
   });
 
-  beforeEach(inject(function($compile, $rootScope) {
+  beforeEach(inject(function($compile, $rootScope, $httpBackend) {
     $scope = $rootScope;
     var element = angular.element(
       '<form name="form">' +

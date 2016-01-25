@@ -86,13 +86,6 @@
   }
 }
 
-.audio-container {
-  .media {
-    //margin-top: -($line-height-computed*2);
-
-  }
-}
-
 .media-details {
   color: $gray-light;
   padding-bottom: ($line-height-computed*3);
@@ -115,9 +108,10 @@
 
   .label {
     color: $gray-lighter;
+		margin-right: 5px;
   }
 }
-
+ 
 @media (max-width: $screen-sm-min) {
   .message-body {
     .btn {
@@ -171,7 +165,7 @@
 //Streaming Banner
 .streaming-banner {
 	position: relative;
-	background-image: url(http://crossroads-media.s3.amazonaws.com/images/streaming-banner-mobile.jpg);
+	background-image: url('//crossroads-media.s3.amazonaws.com/images/streaming-banner-mobile.jpg');
   background-size: cover;
 	background-position: top left;
 	background-repeat: no-repeat;
@@ -179,7 +173,7 @@
 	margin-top: 2.5vw;
 	margin-bottom: 2.5vw;
 	@media (min-width: $screen-sm-min) {
-		background-image: linear-gradient(to right, rgb(0,0,0) 1%, rgba(255,255,255,0) 45%), url(http://crossroads-media.s3.amazonaws.com/images/streaming-banner-bg.jpg);
+		background-image: linear-gradient(to right, rgb(0,0,0) 1%, rgba(255,255,255,0) 45%), url('//crossroads-media.s3.amazonaws.com/images/streaming-banner-bg.jpg');
 	}
 	img {
 		margin-top: -2.5vw;

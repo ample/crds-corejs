@@ -11,18 +11,15 @@ html {
 body {
   font-weight: 300;
   font-size: 1em; /* equivalent to 14px */
-  line-height: 1.625; /* equivalent to 22.75px */
+  line-height: $line-height-base; /* equivalent to 22.75px */
+  -webkit-font-smoothing: antialiased;
 }
 
 body, caption, th, td, input, textarea, select, option, legend, fieldset, h1, h2, h3, h4, h5, h6 {
   font-size-adjust: 0.5; //http://caniuse.com/#search=font-size-adjust
 }
-
-p .icon {
-  vertical-align: middle;
-  margin-bottom: 0px;
-  width: ceil(($font-size-base * 1.25));
-  height: ceil(($font-size-base * 1.25));
+p {
+  line-height: 1.425;
 }
 
 // Links
@@ -137,7 +134,10 @@ h1.subheading, h2.subheading, h3.subheading, h4.subheading {
   font-family: $brand-font-family;
   text-transform: uppercase;
   font-weight: 900;
-  letter-spacing: -1.8px;
+  letter-spacing: -1px;
+  @media (min-width: $screen-sm-min) {
+    letter-spacing: -1.8px;
+  }
 }
 
 .text-ellipsis {

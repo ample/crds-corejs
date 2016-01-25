@@ -1,24 +1,73 @@
-(function () {
+(function() {
   'use strict';
-  angular.module('crossroads.core').service('Session',SessionService);
 
-  SessionService.$inject = ['$log','$cookies', '$http'];
+  angular.module('crossroads.core').service('Session', SessionService);
 
-  function SessionService($log, $cookies, $http) {
-    var self = this;
-    this.create = function (sessionId, userTokenExp, userId, username) {
-      console.log('creating cookies!');
+  var timeoutPromise;
+
+  SessionService.$inject = [
+    '$log',
+    '$http',
+    '$state',
+    '$timeout',
+    '$cookies',
+    '$modal',
+    '$injector'];
+
+  function SessionService(
+    $log,
+    $http,
+    $state,
+    $timeout,
+    $cookies,
+    $modal,
+    $injector
+  ) {
+    var vm = this;
+
+    vm.create = function(refreshToken, sessionId, userTokenExp, userId, username) {
+      $log.debug('creating cookies!');
       var expDate = new Date();
       expDate.setTime(expDate.getTime() + (userTokenExp * 1000));
       $cookies.put('sessionId', sessionId, {
-         'expires': expDate
+        expires: expDate
       });
       $cookies.put('userId', userId);
       $cookies.put('username', username);
+      $cookies.put('refreshToken', refreshToken, {
+        expires: expDate
+      });
+      $http.defaults.headers.common.Authorization = sessionId;
+      $http.defaults.headers.common.RefreshToken = refreshToken;
+    };
 
-      // Set the defaults for $http in case the current page needs to
-      // authenticate to API without a new $httpProvider being injected
-      $http.defaults.headers.common['Authorization']= sessionId;
+    vm.refresh = function(response) {
+      $log.debug('updating cookies!');
+      var expDate = new Date();
+
+      //TODO: Consider how we could make this less hard coded,
+      // put the timeout in the header also?
+      var sessionLength = 1800000;
+      expDate.setTime(expDate.getTime() + sessionLength);
+      if (timeoutPromise) {
+        $timeout.cancel(timeoutPromise);
+      }
+
+      timeoutPromise = $timeout(
+        function() {
+          openStayLoggedInModal($injector, $state, $modal, vm);
+        },
+
+        sessionLength);
+
+      $cookies.put('sessionId', response.headers('sessionId'), {
+        expires: expDate
+      });
+      $cookies.put('refreshToken', response.headers('refreshToken'), {
+        expires: expDate
+      });
+      $http.defaults.headers.common.RefreshToken = response.headers('refreshToken');
+      $http.defaults.headers.common.Authorization = response.headers('sessionId');
     };
 
     /*
@@ -27,7 +76,7 @@
      *
      * @param family - an array of participant ids
      */
-    this.addFamilyMembers = function (family) {
+    vm.addFamilyMembers = function(family) {
       $log.debug('Adding ' + family + ' to family cookie');
       $cookies.put('family', family.join(','));
     };
@@ -35,48 +84,53 @@
     /*
      * @returns an array of participant ids
      */
-    this.getFamilyMembers = function () {
-      if(this.exists('family')){
-        return _.map($cookies.get('family').split(','), function(strFam){
+    vm.getFamilyMembers = function() {
+      if (this.exists('family')) {
+        return _.map($cookies.get('family').split(','), function(strFam) {
           return Number(strFam);
         });
       }
+
       return [];
     };
 
-    this.isActive = function () {
+    vm.isActive = function() {
       var ex = this.exists('sessionId');
-      if (ex === undefined || ex === null ) {
-          return false;
+      if (ex === undefined || ex === null) {
+        return false;
       }
+
       return true;
     };
 
-    this.exists = function (cookieId) {
+    vm.exists = function(cookieId) {
       return $cookies.get(cookieId);
     };
 
-    this.clear = function () {
+    vm.clear = function() {
       $cookies.remove('sessionId');
+      $cookies.remove('refreshToken');
       $cookies.remove('userId');
       $cookies.remove('username');
       $cookies.remove('family');
-      $http.defaults.headers.common['Authorization']= undefined;
+      $cookies.remove('age');
+      $http.defaults.headers.common.Authorization = undefined;
+      $http.defaults.headers.common.RefreshToken = undefined;
       return true;
     };
 
-    this.getUserRole = function () {
-        return '';
+    vm.getUserRole = function() {
+      return '';
     };
 
     //TODO: Get this working to DRY up login_controller and register_controller
-    this.redirectIfNeeded = function($state){
+    vm.redirectIfNeeded = function($state) {
 
-      if (self.hasRedirectionInfo()) {
-        var url = self.exists('redirectUrl');
-        var params = self.exists('params');
-        self.removeRedirectRoute();
-        if(params === undefined){
+      if (vm.hasRedirectionInfo()) {
+        var url = vm.exists('redirectUrl');
+        var params = vm.exists('params');
+        vm.removeRedirectRoute();
+        if (params === undefined) {
           $state.go(url);
         } else {
           $state.go(url, JSON.parse(params));
@@ -84,24 +138,49 @@
       }
     };
 
-    this.addRedirectRoute = function(redirectUrl, params) {
-        $cookies.put('redirectUrl', redirectUrl);
-		    $cookies.put('params', JSON.stringify(params));
+    vm.addRedirectRoute = function(redirectUrl, params) {
+      $cookies.put('redirectUrl', redirectUrl);
+      $cookies.put('params', JSON.stringify(params));
     };
 
-    this.removeRedirectRoute = function() {
-        $cookies.remove('redirectUrl');
-        $cookies.remove('params');
+    vm.removeRedirectRoute = function() {
+      $cookies.remove('redirectUrl');
+      $cookies.remove('params');
     };
 
-    this.hasRedirectionInfo = function() {
-        if (this.exists('redirectUrl') !== undefined) {
-            return true;
-        }
-        return false;
+    vm.hasRedirectionInfo = function() {
+      if (this.exists('redirectUrl') !== undefined) {
+        return true;
+      }
+
+      return false;
     };
 
     return this;
+  }
+
+  function openStayLoggedInModal($injector, $state, $modal, Session) {
+    //Only open if on a protected page?
+    if ($state.current.data.isProtected) {
+      var AuthService = $injector.get('AuthService');
+      var modal = $modal.open({
+          templateUrl: 'stayLoggedInModal/stayLoggedInModal.html',
+          controller: 'StayLoggedInController as StayLoggedIn',
+          backdrop: 'static',
+          keyboard: false,
+          show: false,
+        });
+
+      modal.result.then(function(result) {
+        //login success
+      },
+
+      function(result) {
+        //TODO:Once we stop using rootScope we can remove this and the depenedency on Injector
+        AuthService.logout();
+        $state.go('content', {link: '/'});
+      });
+    }
   }
 
 })();

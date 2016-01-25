@@ -4,29 +4,35 @@
 /***************************************************************************************
 * Navbar
 ***************************************************************************************/
+.menu {
+  margin-top: 10px;
+}
+.navbar-brand.logo {
+  width: 100%;
+  left: 0;
+  right: 0;
+  position: absolute;
+  z-index: 1;
+  width: 194px;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top:-10px;
+  color: $cr-grey;
 
-.navbar-brand {
-  float: left;
-  padding: $navbar-padding-vertical $navbar-padding-horizontal 0px $navbar-padding-horizontal;
-  font-size: $font-size-large;
-  line-height: $line-height-computed;
-
-  &:hover,
-  &:focus {
-    text-decoration: none;
+  .icon-logo {
+    max-height: 24px;
   }
 
-  @media (min-width: $grid-float-breakpoint) {
-    .navbar > .container & {
-      margin-left: -$navbar-padding-horizontal;
-    }
+  @media (min-width: $screen-md-min) {
+    width: 200px;
+    margin-left: 0;
+    margin-right: 0;
   }
 }
-
 .navbar{
   z-index: 100;
 }
-
 // Navbar nav links
 //
 // Builds on top of the `.nav` components with it's own modifier class to make
@@ -51,6 +57,7 @@
       background-color: transparent;
       border: 0;
       box-shadow: none;
+
       > li > a,
       .dropdown-header {
         padding: 5px 15px 5px 25px;
@@ -128,12 +135,19 @@ header.show .container {
   float: right;
 }
 
-/******************** Mobile ********************/
-
-
-.navbar-brand {
-  padding: 15px 0px;
+.nav-profile-image {
+  width: 36px;
+  height: 36px;
+  background-color: transparent;
+  border-radius: 50%;
+  border: 2px solid rgba(214, 224, 226, 0.8);
+  position: relative;
 }
+.btn-nav {
+  min-height: 40px;
+}
+
+/******************** Mobile ********************/
 
 .navbar-header{
   width: 100%;
@@ -150,17 +164,16 @@ header.show .container {
   transition: all 0.5s;
   margin-top: 10px;
   .navbar-brand.logo {
-    width: 80%;
+    //width: 80%;
   }
   .navbar-brand.logo, .navbar--login {
-    opacity: 0;
+    //opacity: 0;
   }
 }
 
 .nav__side--toggle {
   position: relative;
-  padding: 9px 0px;
-  margin-top: 5px;
+  padding: 6px;
   margin-bottom: 0px;
   background-color: transparent;
   background-image: none;
@@ -171,7 +184,7 @@ header.show .container {
 }
 
 .nav__side--toggle .icon-bar {
-  background-color: #555;
+  background-color: $cr-grey;
   width: 22px;
   height: 3px;
   display: block;
@@ -297,6 +310,14 @@ header.show .container {
   display: block;
 }
 
+.mobile-account {
+  float: right;
+  padding: 3px 0 0;
+  position: relative;
+  z-index: 1001;
+  color: $cr-grey;
+}
+
 
 /******************** Desktop ********************/
 
@@ -400,27 +421,9 @@ header.show .container {
   }
 }
 
-.login__container {
-  float: none;
-}
-
 .navbar--login {
-  float: right;
-  margin-top: 2px;
-  background-color: #fff;
-  &:hover {
-    a.dropdown-toggle:after {
-      content: "";
-      opacity: 0;
-    }
-  }
-
-  >li > .btn {
-    margin: 2px;
-  }
-
   .dropdown-menu {
-    left: calc(100% - 300px);
+    left: calc(100% - 315px);
     width: 300px;
   }
 }
@@ -434,24 +437,13 @@ header.show .container {
 }
 
 .navbar--login__dropdown  {
-  opacity: 0;
-  display: none;
-  position: absolute;
-  right: 12px;
-  top: -170%;
-  border: 1px solid #ccc;
-  background-color: #fff;
-  box-shadow: 0 6px 12px rgba(0,0,0,.175);
-  z-index: -1000000;
-  transition: opacity 0.2s, top 0.75s;
+  @extend .dropdown-menu;
+  top: 80%;
 }
-
 .navbar--login__dropdown.toggleOpen {
-  opacity: 1;
-  top: 75%;
+  top: 85%;
   display: block;
   z-index: 1000000;
-  transition: opacity 0.2s, top 0.75s;
 }
 
 .navbar--login__input {
@@ -472,23 +464,19 @@ header.show .container {
   top: 10px;
 }
 
+.current-user-name {
+  display: block;
+  float: left;
+  padding-right: 6px;
+  line-height: 1.5;
+}
+
 /***** Mobile Nav *****/
 
-@media (max-width: 992px) {
-  .navbar-brand.logo {
-    width: 75%;
-    > img {
-      margin-left: auto;
-      margin-right: auto;
-      width: 140px;
-      display: block;
-      margin-top: 0px;
-    }
-  }
+@media (max-width: $screen-md) {
   .side-nav__subnav__item-container, .navbar--login__container {
     margin-top: 15px;
   }
-
 }
 
 /***************************************************************************************
@@ -496,19 +484,26 @@ header.show .container {
 ***************************************************************************************/
 
 ul.cr-nav {
+  margin-left: 14px;
+  margin-right: 14px;
   > li {
     > a {
       display: inline-block;
       position: relative;
-      padding: 4px 10px;
+      padding: 6px 14px; //same size as normal .btn
       border-radius: 4px;
       text-transform: uppercase;
-
+      border: 1px solid transparent;
+      color: $cr-grey;
       &:hover, &:active, &.focus {
         color: #fff;
-        // Tate - got rid of gradient. Don't love it.
         background: $brand-primary;
-        //@include gradient(#7AA8C2, #4A81A0);
+        border: 1px solid transparent;
+      }
+
+      &.btn {
+        vertical-align: sub;
+        padding-bottom: 2px;
       }
     }
 
@@ -516,6 +511,11 @@ ul.cr-nav {
       > a {
         color: #fff !important;
         background: $brand-primary !important;
+        border: 1px solid transparent;
+
+        &:focus {
+          border: 1px solid transparent;
+        }
       }
     }
 
@@ -526,6 +526,7 @@ ul.cr-nav {
         //background: $brand-primary;
         color: $brand-primary;
         background: transparent;
+        border: 1px solid transparent;
       }
     }
   }
@@ -540,10 +541,11 @@ ul.cr-nav {
 }
 
 .dropdown-menu-large {
-  margin-left: 16px;
-  margin-right: 16px;
+  margin-left: 8px;
+  margin-right: 8px;
   padding: 20px 0px;
-  right: 1%;
+  right: 0%;
+  top: 40px;
 }
 
 .dropdown-menu-large > li > ul {
@@ -572,6 +574,13 @@ ul.cr-nav {
     &:hover,
     &:focus {
       background: white;
+    }
+  }
+
+  a.navimg {
+    &:hover,
+    &:focus {
+      background: transparent;
     }
   }
 
@@ -735,30 +744,32 @@ ul.cr-nav {
   .side-nav-search {
     padding: 10px;
     position: relative;
-
     input {
       position: static;
     }
   }
+
+  .side-nav-not-logged-in {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid lighten($gray-darker, 15%);
+
+    a {
+      color: $gray-light;
+
+      &:hover {
+        color: $gray-lighter;
+      }
+    }
+  }
+
   .side-nav-login {
     padding: 10px;
 
     input {
       position: static;
     }
-
-    .forgot_password {
-      a {
-        color: $gray-light;
-
-        &:hover {
-          color: $gray-lighter;
-        }
-      }
-    }
   }
-
-
 }
 
 /***************************************************************************************

@@ -13,6 +13,19 @@ var getCookie =  function(cname) {
   return '';
 };
 
+var convertStringToDate = function convertDate(value) {
+  if (typeof value === 'string' || value instanceof String) {
+    var parts = value.split('/');
+    if (parts.length === 2) {
+      value = new Date(parts[1], parts[0] - 1, 1);
+    } else if (parts.length === 3) {
+      value = new Date(parts[2], parts[0] - 1, parts[1]);
+    }
+  }
+
+  return value;
+};
+
 // This custom type is needed to allow us to NOT URLEncode slashes when using ui-sref
 // See this post for details: https://github.com/angular-ui/ui-router/issues/1119
 var preventRouteTypeUrlEncoding = function(urlMatcherFactory, routeType, urlPattern) {
@@ -50,7 +63,7 @@ var checkLoggedin = function ($q, $timeout, $http, $location, $rootScope, $cooki
       $rootScope.username = user.username;
     } else {
       Session.clear();
-      $rootScope.message = 'You need to log in.';
+      $rootScope.message = 'You need to sign in.';
       $timeout(function () {
         deferred.reject();
       }, 0);
@@ -76,12 +89,13 @@ function formatDate(date, days){
   }
   var d = moment(date);
   d.add(days, 'd');
-  return d.format('MM/DD/YY');
+  return d.format('MM/DD/YYYY');
 }
 
 module.exports = {
   getCookie: getCookie,
   preventRouteTypeUrlEncoding: preventRouteTypeUrlEncoding,
   checkLoggedin: checkLoggedin,
-  formatDate: formatDate
+  formatDate: formatDate,
+  convertStringToDate: convertStringToDate,
 };

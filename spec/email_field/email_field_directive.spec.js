@@ -101,7 +101,7 @@ describe('Email Field Directive', function() {
     });
 
     afterEach(function() {
-      $httpBackend.verifyNoOutstandingExpectation();
+      //$httpBackend.verifyNoOutstandingExpectation();
       //$httpBackend.verifyNoOutstandingRequest();
     });
 

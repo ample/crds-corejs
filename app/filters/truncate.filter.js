@@ -17,14 +17,14 @@
                 length = 10;
             }
 
-            var ellipses = "...";
+            var ellipses = '&hellip;';
             if (text.length <= length || text.length - ellipses.length <= length) {
                 return text;
             }
             else {
                 var shortString = text.substr(0, length);
-                return shortString.substr(0, Math.min(length, shortString.lastIndexOf(" ")))+ellipses;
+                return shortString.substr(0, Math.min(length, shortString.lastIndexOf(' ')))+ellipses;
             }
-        }
+        };
     }
 })();

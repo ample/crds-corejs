@@ -15,7 +15,7 @@ svg { fill: currentColor;
         content: "";
         min-height: 20px;
         min-width: 20px;
-        background-image: url('http://crossroads-media.s3.amazonaws.com/images/arrow-right9.svg');
+        background-image: url('//crossroads-media.s3.amazonaws.com/images/arrow-right9.svg');
         background-position: 0px;
         display: inline-block;
         vertical-align: bottom;
@@ -48,7 +48,6 @@ ol.breadcrumb li.active {
 ***************************************************************************************/
 
 .btn {
-  font-family: $brand-font-family;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -192,4 +191,49 @@ ol.breadcrumb li.active {
 label {
     @extend label;
     margin-bottom: 3px;
+
+}
+/***************************************************************************************
+* Labels
+***************************************************************************************/
+
+.label {
+    font-size: 65%;
+}
+/***************************************************************************************
+* Forms
+***************************************************************************************/
+select.form-control {
+  appearance: none;
+  background-image:
+    linear-gradient(45deg, transparent 50%, gray 50%),
+    linear-gradient(135deg, gray 50%, transparent 50%),
+    linear-gradient(to right, #ccc, #ccc);
+  background-position:
+    calc(100% - 20px) calc(1em + 2px),
+    calc(100% - 15px) calc(1em + 2px),
+    calc(100% - 2.5em) 0.5em;
+  background-size:
+    5px 5px,
+    5px 5px,
+    1px 1.5em;
+  background-repeat: no-repeat;
+  padding-right: 46px;
+  box-shadow: none;
+}
+input[type=text],
+input[type=email],
+input[type=textarea],
+input[type=textfield],
+input[type=search],
+input[type=password],
+input[type=tel],
+textarea
+ {
+  appearance: none;
+}
+// Position radios and checkboxes better
+input[type="radio"],
+input[type="checkbox"] {
+  margin: 6px 0 0;
 }

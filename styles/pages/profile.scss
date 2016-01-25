@@ -14,6 +14,12 @@
         @media (min-width: $screen-sm-min) {
             margin-bottom: $line-height-computed;
         }
+
+        .btn {
+          .icon {
+            display: none;
+          }
+        }
     }
     .edit-church-site {
         padding-right: 20px;
@@ -32,11 +38,16 @@
     }
 }
 
+.change-profile-pic {
+  height: 300px;
+}
+
 .profile-pic {
     position: relative;
     display: block;
     overflow: hidden;
     background: $gray-lighter;
+    cursor: pointer;
 
     .change-photo {
         display: block;
@@ -49,6 +60,7 @@
         background: $brand-primary;
         text-align: center;
         color: white;
+        font-weight: normal;
         @include transition(all .1s ease-in);
         @include opacity(.8);
     }
@@ -254,4 +266,18 @@
         border-bottom-right-radius: 0;
         color: black;
     }
+}
+
+.profile-ethnicity {
+  padding: 0 0 1px 0;
+  @media (min-width: $screen-sm-min) {
+      @include content-columns(2);
+  }
+  .checkbox {
+      margin-top: 0px;
+      clear: both;
+      @media (min-width: $screen-sm-min) {
+          margin-left: 0;
+      }
+  }
 }

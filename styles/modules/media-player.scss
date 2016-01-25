@@ -10,10 +10,22 @@
 // Controls
 .controls {
   position: absolute;
-  bottom: 0;
+  bottom: 10px;
   left: 0;
   right: 0;
   padding: 0 2%;
+  .progress-percentage {
+    color: white;
+    font-size: 80%;
+    white-space: nowrap;
+    margin-left: -20%;
+  }
+  .progress {
+      margin-left: -10%;
+  }
+  .progress-bar {
+    min-width: 0em !important;
+  }
 }
 
 // Progress bar
@@ -42,9 +54,6 @@
   img {
     opacity: 1;
   }
-}
-.progress-bar[aria-valuenow="0"] {
-  color: $brand-primary;
 }
 .plangular-icon {
   max-width: 24px;
@@ -113,4 +122,14 @@
 
 .custom-poster.player:after {
   display: none;
+}
+.media-aspect-content {
+  background: black;
+  overflow: hidden;
+}
+.soundcloud-attribution {
+  position: absolute;
+  top: 10px;
+  right: 0;
+  padding: 0 2%;
 }

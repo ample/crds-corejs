@@ -21,11 +21,6 @@
     .panel-body {
         padding: 10px 8px;
     }
-    .give-button {
-      svg {
-        vertical-align: sub;
-      }
-    }
 }
 
 .give-amount {
@@ -73,19 +68,19 @@
 }
 
 .cc-visa {
-    background-image: url('http://crossroads-media.s3.amazonaws.com/images/cc_visa.svg');
+    background-image: url('//crossroads-media.s3.amazonaws.com/images/cc_visa.svg');
 }
 
 .cc-mastercard {
-    background-image: url('http://crossroads-media.s3.amazonaws.com/images/cc_mastercard.svg');
+    background-image: url('//crossroads-media.s3.amazonaws.com/images/cc_mastercard.svg');
 }
 
 .cc-discover {
-    background-image: url('http://crossroads-media.s3.amazonaws.com/images/cc_discover.svg');
+    background-image: url('//crossroads-media.s3.amazonaws.com/images/cc_discover.svg');
 }
 
 .cc-american-express {
-    background-image: url('http://crossroads-media.s3.amazonaws.com/images/cc_american_express.svg');
+    background-image: url('//crossroads-media.s3.amazonaws.com/images/cc_american_express.svg');
 }
 
 .give-check-icon {
@@ -115,6 +110,10 @@
 
 .gift-table {
   border-bottom: 1px solid $table-border-color;
+
+  .icon {
+    vertical-align: sub;
+  }
 }
 
 .gift-table, .recent-gifts {
@@ -125,9 +124,8 @@
             display: block;
             padding-bottom: 5px;
             padding-left: 8px;
-
             .icon {
-              vertical-align: sub;
+              margin-right: 3px;
             }
         }
     }
@@ -139,30 +137,16 @@
         @extend .text-success;
         font-weight: bold;
     }
+
+    .dollar-amount-decline {
+      @extend .text-muted;
+      font-weight: bold;
+      text-decoration: line-through;
+    }
     .payment-type-icon {
       vertical-align: middle;
       height: 15px;
       width: 17px;
-    }
-
-    .pending {
-      @extend .text-muted;
-
-      .dollar-amount {
-        @extend .text-muted;
-      }
-
-      span.label {
-        margin-left: $line-height-computed/4;
-      }
-
-      @media screen {
-        svg {
-          -webkit-filter: grayscale(100%);
-          filter: grayscale(100%);
-          filter: gray;
-        }
-      }
     }
 }
 
@@ -192,18 +176,17 @@
     margin-top: 50px;
     margin-bottom: 20px;
     position: relative;
-    border-bottom: 2px solid $gray;
-    .logo {
+    .giving-statement-content {
+      border-bottom: 2px solid $gray-light;
+    }
+    .giving-statement-logo {
       width: 140px;
       margin: 0;
-      position: absolute;
-      bottom: -8px;
-      left: 0;
     }
-    .statement-address {
-      position: absolute;
-      bottom: 0;
-      right: 0;
+    .statement-address p {
+      margin-bottom: 0px;
+      margin-top: 10px;
+      font-size: 7pt;
     }
   }
 }
