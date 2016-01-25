@@ -143,6 +143,7 @@
         size: 'sm',
         controller: function($scope, $modalInstance) {
           $scope.ok = function(e) {
+            $location.path(e.target.pathname);
             $modalInstance.close();
           };
 
