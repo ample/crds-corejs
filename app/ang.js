@@ -25,4 +25,5 @@
   require('angular-image-crop');
   require('angulartics');
   require('angulartics-gtm');
+
 })();
