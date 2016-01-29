@@ -1,5 +1,8 @@
 @import 'helpers/variable-overrides.scss';
 @import '_bootstrap.scss';
+
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700');
+
 @import 'helpers/style-overrides.scss';
 @import 'helpers/gradient.scss';
 @import 'helpers/match-column-heights.scss';
@@ -57,5 +60,4 @@
 @import 'pages/profile.scss';
 @import 'animate/animate.scss';
 @import 'pages/my-trip.scss';
-@import 'fonts/webfonts.scss';
 @import 'pages/search.scss';
