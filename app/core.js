@@ -4,6 +4,7 @@
   require('lodash');
   require('expose?moment!moment');
   require('expose?imgix!../lib/imgix.min');
+  require('expose?fastclick!fastclick');
 
   require('../lib/angular-growl');
 
