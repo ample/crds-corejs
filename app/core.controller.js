@@ -16,6 +16,7 @@
     'PageRenderedService',
     '$modal',
     '$anchorScroll',
+    '$window',
     '$location',
     'STATE_CHANGE_EVENTS',
   ];
@@ -33,6 +34,7 @@
     PageRenderedService,
     $modal,
     $anchorScroll,
+    $window,
     $location,
     STATE_CHANGE_EVENTS
   ) {
@@ -143,7 +145,18 @@
         size: 'sm',
         controller: function($scope, $modalInstance) {
           $scope.ok = function(e) {
-            $location.path(e.target.pathname);
+
+            // This is a hack. It's a temporary fix to make external links work
+            // in the mobile nav. Tate - 01/26/16
+
+            if (e.target.host != location.host) {
+              // External Link
+              $window.location.href = e.target.href;
+            } else {
+              // Internal Link
+              $location.path(e.target.pathname);
+            }
+
             $modalInstance.close();
           };
 

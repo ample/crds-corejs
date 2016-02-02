@@ -10,7 +10,7 @@ var getCookie =  function(cname) {
     while (c.charAt(0) === ' ') { c = c.substring(1); }
     if (c.indexOf(name) === 0) { return c.substring(name.length, c.length); }
   }
-  return '';
+  return undefined;
 };
 
 var convertStringToDate = function convertDate(value) {
@@ -46,7 +46,7 @@ var preventRouteTypeUrlEncoding = function(urlMatcherFactory, routeType, urlPatt
 //================================================
 // Check if the user is connected
 //================================================
-var checkLoggedin = function ($q, $timeout, $http, $location, $rootScope, $cookies) {  
+var checkLoggedin = function ($q, $timeout, $http, $location, $rootScope, $cookies) {
   var deferred = $q.defer();
   $http.defaults.headers.common.Authorization = $cookies.get('sessionId');
   $http({
