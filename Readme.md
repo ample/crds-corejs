@@ -1,5 +1,6 @@
 # Crossroads Core Angular Module
 
+
 This is the core angular module for the Crossroads.net site. It includes multiple dependencies used throughout the crossroads ecosystem including:
 * Angular
 * Angular Resource
