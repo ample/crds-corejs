@@ -27,7 +27,6 @@
 
   // Common Components
   require('./components/btnLoading.directive');
-  require('./components/stopEvent.directive');  
   require('./components/svgIcon.directive');
   require('./components/preloader');
   require('./components/volunteer_applications');
