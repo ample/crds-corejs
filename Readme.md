@@ -1,5 +1,6 @@
 # Crossroads Core Angular Module
 
+ [ ![Teamcity Status](http://mp-ci.centralus.cloudapp.azure.com/app/rest/builds/buildType:(id:Code_Release_Core_)/statusIcon)](http://mp-ci.centralus.cloudapp.azure.com/viewType.html?       buildTypeId=Code_Release_Core&guest=1)
 
 This is the core angular module for the Crossroads.net site. It includes multiple dependencies used throughout the crossroads ecosystem including:
 * Angular
