@@ -31,3 +31,4 @@ The module is built with gulp using webpack for packaging.
 * Pull down the repo
 * Install dependencies `npm i`
 * Run tests `karma start karma.conf.js`
+* To run tests on a ci server, `karma start karma.ci.conf.js`
