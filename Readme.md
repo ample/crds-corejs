@@ -22,7 +22,6 @@ This is the core angular module for the Crossroads.net site. It includes multipl
 
 ### Installation
 `npm i crds-core --save-dev`
-
 At the top of your entry file (most likely app.js) `require('crds-core')`
 
 ### Building and Testing
