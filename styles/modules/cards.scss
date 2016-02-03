@@ -10,7 +10,7 @@
 .card-img {
   padding: $line-height-computed/4 $line-height-computed/2;
   text-align: center;
-  img, .corkboard-icon, .embed-responsive-item {
+  img, .corkboard-icon, .embed-responsive-item  {
     width: 100%;
     background-color: transparent;
     border-radius: 50%;
@@ -18,17 +18,12 @@
     margin: 0 auto;
   }
 }
-.card-img-stacked {
-  img, .corkboard-icon {
-    width: 30%;
-    @media (min-width: 500px) {
-      width: 20%;
-    }
-    @media (min-width: $screen-sm-min) {
-      width: 70%;
-    }
-  }
+
+.card-img-wrapper {
+  max-width: 155px;
+  margin: auto;
 }
+
 .card-header {
   padding: $line-height-computed/2 $grid-gutter-width/2;
    a {
