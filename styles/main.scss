@@ -1,6 +1,7 @@
 @import 'helpers/variable-overrides.scss';
 @import '_bootstrap.scss';
 @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700');
+@import 'helpers/browser-specific-styles.scss';
 @import 'helpers/style-overrides.scss';
 @import 'helpers/gradient.scss';
 @import 'helpers/match-column-heights.scss';
