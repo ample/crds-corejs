@@ -19,9 +19,8 @@
   "homepage": "https://github.com/crdschurch/crds-corejs#readme",
   "dependencies": {
     "angular": "^1.4.3",
-    "angular-bootstrap-npm": "^0.13.1",
     "angular-animate": "^1.4.3",
-    "angular-touch": "^1.4.3",
+    "angular-bootstrap-npm": "^0.13.1",
     "angular-cookies": "^1.4.3",
     "angular-growl": "^0.1.0",
     "angular-messages": "^1.4.3",
@@ -35,6 +34,7 @@
     "angular-ui-mask": "^1.4.1",
     "angular-ui-router": "^0.2.15",
     "angulartics": "^0.20.1",
+    "fastclick": "^1.0.6",
     "lodash": "^3.10.0",
     "moment": "^2.10.6"
   },

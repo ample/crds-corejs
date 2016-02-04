@@ -4,6 +4,7 @@
   require('lodash');
   require('expose?moment!moment');
   require('expose?imgix!../lib/imgix.min');
+  require('expose?fastclick!fastclick');
 
   require('../lib/angular-growl');
 
@@ -26,7 +27,6 @@
 
   // Common Components
   require('./components/btnLoading.directive');
-  require('./components/stopEvent.directive');  
   require('./components/svgIcon.directive');
   require('./components/preloader');
   require('./components/volunteer_applications');

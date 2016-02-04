@@ -69,6 +69,8 @@
         "_$location_" : false,
         "expect" : false,
         "addthis" : false,
-        "jasmine": false
+        "jasmine": false,
+        "moment": false,
+        "fastclick": false
     }
 }

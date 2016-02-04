@@ -29,6 +29,7 @@
       SiteConfig) {
     $rootScope.MESSAGES = MESSAGES;
     setOriginForCmsPreviewPane($document);
+    fastclick.attach(document.body);
 
     function clearAndRedirect(event, toState, toParams) {
       console.log($location.search());
