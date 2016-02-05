@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/crdschurch/crds-corejs#readme",
   "dependencies": {
-    "angular": "^1.4.3",
+    "angular": "~1.4.3",
     "angular-animate": "^1.4.3",
     "angular-bootstrap-npm": "^0.13.1",
     "angular-cookies": "^1.4.3",
