@@ -22,8 +22,7 @@
     'ui.mask',
     'ngImgCrop',
     'angular-stripe',
-    'ngAnimate',
-    'ngTouch'
+    'ngAnimate'
     ])
     .constant('AUTH_EVENTS', {
       loginSuccess: 'auth-login-success',

@@ -29,6 +29,12 @@
       SiteConfig) {
     $rootScope.MESSAGES = MESSAGES;
     setOriginForCmsPreviewPane($document);
+    fastclick.attach(document.body);
+
+    // Detect Browser Agent. use for browser targeting in CSS
+    var doc = document.documentElement;
+    doc.setAttribute('data-useragent', navigator.userAgent);
+    doc.setAttribute('data-platform', navigator.platform );
 
     function clearAndRedirect(event, toState, toParams) {
       console.log($location.search());

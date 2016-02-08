@@ -2,7 +2,6 @@
 
  [ ![Teamcity Status](http://mp-ci.centralus.cloudapp.azure.com/app/rest/builds/buildType:(id:Code_Release_Core_)/statusIcon)](http://mp-ci.centralus.cloudapp.azure.com/viewType.html?       buildTypeId=Code_Release_Core&guest=1)
 
-
 This is the core angular module for the Crossroads.net site. It includes multiple dependencies used throughout the crossroads ecosystem including:
 * Angular
 * Angular Resource
@@ -24,7 +23,6 @@ This is the core angular module for the Crossroads.net site. It includes multipl
 
 ### Installation
 `npm i crds-core --save-dev`
-
 At the top of your entry file (most likely app.js) `require('crds-core')`
 
 ### Building and Testing
@@ -33,3 +31,4 @@ The module is built with gulp using webpack for packaging.
 * Pull down the repo
 * Install dependencies `npm i`
 * Run tests `karma start karma.conf.js`
+* To run tests on a ci server, `karma start karma.ci.conf.js`
