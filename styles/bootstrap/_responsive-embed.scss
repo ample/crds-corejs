@@ -13,7 +13,8 @@
   iframe,
   embed,
   object,
-  video {
+  video,
+  image {
     position: absolute;
     top: 0;
     left: 0;
@@ -31,5 +32,10 @@
   // Modifier class for 4:3 aspect ratio
   &.embed-responsive-4by3 {
     padding-bottom: 75%;
+  }
+
+  // Modifier class for 1:1 aspect ratio
+  &.embed-responsive-1by1 {
+    padding-bottom: 100%;
   }
 }

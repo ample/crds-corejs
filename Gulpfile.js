@@ -39,7 +39,7 @@ gulp.task('bump', function () {
   }
 
   return gulp.src(['./package.json'])
-    .pipe(bump({type:rType}))
+    .pipe(bump({type:rType, preid : 'rc'}))
     .pipe(gulp.dest('./'));
 });
 
