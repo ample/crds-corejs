@@ -67,6 +67,10 @@
 
 .container-max {max-width: 1170px;}
 
+.media-curtain {
+	margin-bottom: -40px;
+}
+
 .media-background {
   background: $gray-darker;
 
@@ -111,7 +115,7 @@
 		margin-right: 5px;
   }
 }
- 
+
 @media (max-width: $screen-sm-min) {
   .message-body {
     .btn {
