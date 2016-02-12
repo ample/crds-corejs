@@ -1,0 +1,26 @@
+.group-finder {
+  background: $cr-blue;
+  width: 100%;
+  min-height: 100vh;
+  padding: 1em;
+
+  &, h2, h3 {
+    color: $white;
+  }
+
+  .navbar-brand.logo {
+    color: $white;
+    position: static;
+    margin: 0 0 1em;
+    margin-left: -18px;
+  }
+
+  .page-header {
+    clear: both;
+    border-bottom: lighten($cr-blue, 20);
+  }
+
+  .btns {
+    margin-top: 3.5em;
+  }
+}
