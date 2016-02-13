@@ -1,26 +1,161 @@
+$gf-blue: #0F2D49;
+$gf-tabs: #AEAEAE;
+$gf-tabs-active: #5E5E5E;
+
+// --------------------- //
+
 .group-finder {
-  background: $cr-blue;
+  background: $gf-blue url('https://s3.amazonaws.com/ample-useast/group-finder-hero-banner.jpg') top center no-repeat;
   width: 100%;
   min-height: 100vh;
-  padding: 1em;
+  padding: 0;
 
   &, h2, h3 {
     color: $white;
   }
 
+  header {
+    @include clearfix;
+  }
+
   .navbar-brand.logo {
+    @include clearfix;
     color: $white;
+    float: left;
     position: static;
     margin: 0 0 1em;
-    margin-left: -18px;
   }
 
   .page-header {
     clear: both;
     border-bottom: lighten($cr-blue, 20);
+    margin-bottom: 0;
+  }
+
+  .dashboard-header {
+    h2 > small {
+      color: $white;
+      display: block;
+      font-size: 97%;
+      font-style: italic;
+      font-weight: 200;
+    }
+    .btn-text {
+      color: $white;
+      text-decoration: underline;
+      font-size: 90%;
+    }
+  }
+
+  .dashboard {
+    @include clearfix;
+    background: #FFF;
+    padding-bottom: 2em;
+    &, h3 {
+      color: $gray-dark;
+    }
+
+    .page-header {
+      margin: 0;
+      text-align: center;
+      h3 {
+        font-weight: 300;
+        text-transform: capitalize;
+      }
+    }
+
+    .group {
+      border: 5px $gray-lighter solid;
+      border-radius: 20px;
+      text-align: center;
+      margin-bottom: 1em;
+      padding: 1em;
+    }
+
+    .group-images {
+      @include clearfix;
+      img {
+        max-width: 75px;
+        height: 75px;
+        border: 1px solid $gray-lighter;
+        margin: 0 7px 15px;
+      }
+    }
+
+    .group-description {
+      padding: 0 20px;
+    }
+
+    .groups {
+      margin-bottom: 1em;
+    }
+
+    .nav-tabs {
+      border: none;
+
+      & > li {
+        width: 50%;
+        & > a {
+          border: none;
+          background: $gf-tabs;
+          border-radius: 0;
+          color: $white;
+          font-size: 90%;
+          text-decoration: underline;
+          margin-right: 0;
+        }
+        &:first-child > a {
+          text-align: right;
+          padding-right: 2em;
+        }
+        &:last-child > a {
+          text-align: left;
+          padding-left: 2em;
+        }
+        &.active > a {
+          background: $gf-tabs-active;
+        }
+      }
+    }
+
   }
 
   .btns {
     margin-top: 3.5em;
+  }
+
+  .profile-image {
+    border: 3px $white solid;
+    margin: 0 auto;
+    margin-top: 1em;
+    max-width: 140px;
+  }
+
+  .group-detail {
+    h3 {
+      font-style: italic;
+      font-weight: 200;
+      font-size: 120%;
+    }
+  }
+
+  .member-detail {
+    padding: 0 15px;
+    h4 > small {
+      display: block;
+    }
+    ul {
+      margin: 0 0 0 1.25em;
+      padding: 0;
+      li {
+        font-size: 90%;
+        line-height: 140%;
+      }
+    }
+    .profile-image {
+      border: none;
+      max-width: 100%;
+      margin: 0;
+    }
   }
 }
