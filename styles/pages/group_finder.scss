@@ -1,10 +1,10 @@
 $gf-blue: #0F2D49;
+$gf-background: #2E5873;
 $gf-tabs: #AEAEAE;
 $gf-tabs-active: #5E5E5E;
 
-// --------------------- //
-
 .group-finder {
+  // TODO Update this URL.
   background: $gf-blue url('https://s3.amazonaws.com/ample-useast/group-finder-hero-banner.jpg') top center no-repeat;
   width: 100%;
   min-height: 100vh;
@@ -16,6 +16,21 @@ $gf-tabs-active: #5E5E5E;
 
   header {
     @include clearfix;
+  }
+
+  .btn-next-question {
+    @include button-variant($white, $cr-blue, $cr-blue);
+  }
+
+  .btn-previous-question {
+    @include button-variant($white, $gf-background, $white);
+  }
+
+  .btn-next-question,
+  .btn-previous-question {
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 90%;
   }
 
   .navbar-brand.logo {
@@ -140,7 +155,7 @@ $gf-tabs-active: #5E5E5E;
   }
 
   .member-detail {
-    padding: 0 15px;
+    padding: 0 1em;
     h4 > small {
       display: block;
     }
@@ -156,6 +171,29 @@ $gf-tabs-active: #5E5E5E;
       border: none;
       max-width: 100%;
       margin: 0;
+    }
+  }
+
+  .question.form-group {
+    .bordered {
+      border: 1px solid $white;
+      border-radius: 0.5em;
+    }
+    .radio {
+      padding-left: 1em;
+      border-bottom: 1px solid $white;
+      &:last-child {
+        border: none;
+      }
+    }
+    .radio, .radio + .radio,
+    .checkbox, .checkbox + .checkbox {
+      margin: 0;
+      padding: 0.5em 1.25em;
+      input[type="radio"],
+      input[type="checkbox"] {
+        margin-left: -1.5em;
+      }
     }
   }
 }
