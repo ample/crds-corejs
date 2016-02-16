@@ -2,13 +2,15 @@ $gf-blue: #0F2D49;
 $gf-background: #2E5873;
 $gf-tabs: #AEAEAE;
 $gf-tabs-active: #5E5E5E;
+$gf-border-radius: 1.25em;
 
 .group-finder {
+
   // TODO Update this URL.
   background: $gf-blue url('https://s3.amazonaws.com/ample-useast/group-finder-hero-banner.jpg') top center no-repeat;
   width: 100%;
   min-height: 100vh;
-  padding: 0;
+  padding: 0 0 5em 0;
 
   &, h2, h3 {
     color: $white;
@@ -62,9 +64,51 @@ $gf-tabs-active: #5E5E5E;
     }
   }
 
+  .group {
+    background: $gray-lighter;
+    color: $gray-dark;
+    border-radius: $gf-border-radius;
+    position: relative;
+    overflow: hidden;
+    font-size: 90%;
+    line-height: 110%;
+    border: 3px solid $cr-blue;
+    margin-bottom: 1em;
+
+    header {
+      background: $white;
+    }
+    header,
+    > div {
+      padding: 1.375em;
+      p {
+        padding-bottom: 1em;
+        border-bottom: 1px solid darken($gray-lighter, 10);
+      }
+    }
+    .list-unstyled {
+      margin-bottom: 0;
+      line-height: 140%;
+    }
+    .media-heading {
+      font-size: 125%;
+      font-weight: 500;
+    }
+    .media-left {
+      width: 70px;
+      padding-right: 20px;
+      img {
+        max-width: 100px;
+      }
+    }
+    .img-circle {
+      border: 3px solid $gray-lighter;
+    }
+  }
+
   .dashboard {
     @include clearfix;
-    background: #FFF;
+    background: $white;
     padding-bottom: 2em;
     &, h3 {
       color: $gray-dark;
@@ -79,9 +123,9 @@ $gf-tabs-active: #5E5E5E;
       }
     }
 
-    .group {
+    .group-card {
       border: 5px $gray-lighter solid;
-      border-radius: 20px;
+      border-radius: $gf-border-radius;
       text-align: center;
       margin-bottom: 1em;
       padding: 1em;
@@ -179,6 +223,7 @@ $gf-tabs-active: #5E5E5E;
       border: 1px solid $white;
       border-radius: 0.5em;
     }
+    .checkbox,
     .radio {
       padding-left: 1em;
       border-bottom: 1px solid $white;
@@ -195,5 +240,16 @@ $gf-tabs-active: #5E5E5E;
         margin-left: -1.5em;
       }
     }
+    textarea {
+      border-radius: $gf-border-radius / 2;
+      height: 10em;
+    }
+  }
+
+  .help-block {
+    color: $white;
+    font-size: 98%;
+    line-height: 130%;
+    font-style: italic;
   }
 }
