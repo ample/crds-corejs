@@ -252,6 +252,46 @@ $gf-border-radius: 1.25em;
     }
   }
 
+  .welcome {
+    max-width: 320px;
+    margin: 0 auto;
+    padding-bottom: 5em;
+    text-align: center;
+    hr {
+      border-color: lighten($cr-blue, 30);
+    }
+    h1 {
+      text-transform: uppercase;
+      line-height: 160%;
+      > small,
+      > span {
+        font-weight: 100;
+        color: #FFF;
+        display: block;
+        font-size: 180%;
+      }
+      > small {
+        font-size: 50%;
+        font-weight: 200;
+      }
+      > span.cr-logo-svg {
+        @media (min-width: $screen-md-min) {
+          margin-top: -13px;
+        }
+        margin-bottom: -10px;
+        font-size: 80%;
+        svg {
+          max-width: 180px;
+        }
+      }
+    }
+  }
+
+  .question-wrapper {
+    @include clearfix;
+    padding-bottom: 3em;
+  }
+
   .question.form-group {
     .bordered {
       border: 1px solid $white;
