@@ -10,7 +10,7 @@ $gf-border-radius: 1.25em;
   background: $gf-blue url('https://s3.amazonaws.com/ample-useast/group-finder-hero-banner.jpg') top center no-repeat;
   width: 100%;
   min-height: 100vh;
-  padding: 0 0 5em 0;
+  padding: 0;
 
   &, h2, h3 {
     color: $white;
@@ -26,6 +26,14 @@ $gf-border-radius: 1.25em;
 
   .btn-previous-question {
     @include button-variant($white, $gf-background, $white);
+  }
+
+  .btn-standard-dark {
+    max-width: 400px;
+    margin: 0 auto;
+    text-transform: uppercase;
+    font-size: 90%;
+    font-weight: 500;
   }
 
   .btn-next-question,
@@ -64,7 +72,55 @@ $gf-border-radius: 1.25em;
     }
   }
 
-  .group {
+  .group-cards {
+    @include clearfix;
+    @media (min-width: $screen-md-min) {
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-flex-flow: row wrap;
+      justify-content: space-around;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+  }
+
+  .group-card {
+    background: $white;
+    border: 5px darken($gray-lighter,5) solid;
+    border-radius: $gf-border-radius;
+    text-align: center;
+    padding: 1em;
+    max-width: 400px;
+    margin: 0 auto;
+    margin-bottom: 1em;
+    font-size: 90%;
+
+    .btn {
+      text-transform: uppercase;
+      font-size: 90%;
+      font-weight: 500;
+    }
+
+    .group-images {
+      @include clearfix;
+      img {
+        max-width: 75px;
+        height: 75px;
+        border: 1px solid $gray-lighter;
+        margin: 0 7px 15px;
+      }
+    }
+
+    .group-description {
+      padding: 0 2em;
+      min-height: 3.25em;
+    }
+  }
+
+  .group-profile {
     background: $gray-lighter;
     color: $gray-dark;
     border-radius: $gf-border-radius;
@@ -81,9 +137,9 @@ $gf-border-radius: 1.25em;
     header,
     > div {
       padding: 1.375em;
-      p {
-        padding-bottom: 1em;
-        border-bottom: 1px solid darken($gray-lighter, 10);
+      hr {
+        margin: 0 0 1em 0;
+        border-color: darken($gray-lighter, 10);
       }
     }
     .list-unstyled {
@@ -108,7 +164,7 @@ $gf-border-radius: 1.25em;
 
   .dashboard {
     @include clearfix;
-    background: $white;
+    background: $gray-lighter;
     padding-bottom: 2em;
     &, h3 {
       color: $gray-dark;
@@ -121,28 +177,6 @@ $gf-border-radius: 1.25em;
         font-weight: 300;
         text-transform: capitalize;
       }
-    }
-
-    .group-card {
-      border: 5px $gray-lighter solid;
-      border-radius: $gf-border-radius;
-      text-align: center;
-      margin-bottom: 1em;
-      padding: 1em;
-    }
-
-    .group-images {
-      @include clearfix;
-      img {
-        max-width: 75px;
-        height: 75px;
-        border: 1px solid $gray-lighter;
-        margin: 0 7px 15px;
-      }
-    }
-
-    .group-description {
-      padding: 0 20px;
     }
 
     .groups {
