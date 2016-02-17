@@ -1,4 +1,5 @@
 $gf-blue: #0F2D49;
+$gf-blue-lighter: #158EDA;
 $gf-background: #2E5873;
 $gf-tabs: #AEAEAE;
 $gf-tabs-active: #5E5E5E;
@@ -13,7 +14,9 @@ $gf-border-radius: 1.25em;
   min-height: 100vh;
   padding: 0;
 
-  &, h2, h3 {
+  // ---------------------------- Global
+
+  &, h2, h3, h4 {
     color: $white;
   }
 
@@ -21,6 +24,11 @@ $gf-border-radius: 1.25em;
     margin-bottom: 0.25em;
     font-size: 145%;
     font-weight: 500;
+  }
+
+  h4 {
+    text-transform: uppercase;
+    font-size: 100%;
   }
 
   p.lead {
@@ -33,12 +41,35 @@ $gf-border-radius: 1.25em;
     @include clearfix;
   }
 
+  .navbar-brand.logo {
+    @include clearfix;
+    color: $white;
+    float: left;
+    position: static;
+    margin: 0 0 1em;
+  }
+
+  .page-header {
+    clear: both;
+    border-bottom: lighten($cr-blue, 20);
+    margin-bottom: 0;
+  }
+
+  .host,
+  .dashboard,
+  .summary,
+  .welcome {
+    padding-bottom: 3em;
+  }
+
+  // ---------------------------- Buttons
+
   .btn-next-question {
     @include button-variant($white, $cr-blue, $cr-blue);
   }
 
   .btn-previous-question {
-    @include button-variant($white, $gf-background, $white);
+    @include button-variant($white, $gf-blue, $white);
   }
 
   .btn-standard-dark {
@@ -56,49 +87,11 @@ $gf-border-radius: 1.25em;
     font-size: 90%;
   }
 
-  .navbar-brand.logo {
-    @include clearfix;
-    color: $white;
-    float: left;
-    position: static;
-    margin: 0 0 1em;
+  .btns {
+    margin-top: 2em;
   }
 
-  .page-header {
-    clear: both;
-    border-bottom: lighten($cr-blue, 20);
-    margin-bottom: 0;
-  }
-
-  .dashboard-header {
-    h2 > small {
-      color: $white;
-      display: block;
-      font-size: 97%;
-      font-style: italic;
-      font-weight: 200;
-    }
-    .btn-text {
-      color: $white;
-      text-decoration: underline;
-      font-size: 90%;
-    }
-  }
-
-  .group-cards {
-    @include clearfix;
-    @media (min-width: $screen-md-min) {
-      display: -webkit-box;
-      display: -moz-box;
-      display: -ms-flexbox;
-      display: -webkit-flex;
-      display: flex;
-      -webkit-flex-flow: row wrap;
-      justify-content: space-around;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-  }
+  // ---------------------------- Directives
 
   .group-card {
     background: $white;
@@ -144,6 +137,11 @@ $gf-border-radius: 1.25em;
     border: 3px solid $cr-blue;
     margin-bottom: 1em;
 
+    h4 {
+      color: $gray-dark;
+      text-transform: none;
+    }
+
     header {
       background: $white;
     }
@@ -176,12 +174,32 @@ $gf-border-radius: 1.25em;
     }
   }
 
+  // ---------------------------- Dashboard
+
+  .dashboard-header {
+    h2 > small {
+      color: $white;
+      display: block;
+      font-size: 97%;
+      font-style: italic;
+      font-weight: 200;
+    }
+    .btn-text {
+      color: $white;
+      text-decoration: underline;
+      font-size: 90%;
+    }
+  }
+
   .dashboard {
     @include clearfix;
     background: $gray-lighter;
-    padding-bottom: 2em;
-    &, h3 {
+    &, h3, h4 {
       color: $gray-dark;
+    }
+
+    h4 {
+      text-transform: none;
     }
 
     .page-header {
@@ -227,8 +245,19 @@ $gf-border-radius: 1.25em;
 
   }
 
-  .btns {
-    margin-top: 2em;
+  .group-cards {
+    @include clearfix;
+    @media (min-width: $screen-md-min) {
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-flex-flow: row wrap;
+      justify-content: space-around;
+      max-width: 900px;
+      margin: 0 auto;
+    }
   }
 
   .profile-image {
@@ -239,15 +268,27 @@ $gf-border-radius: 1.25em;
   }
 
   .group-detail {
+    background: #FFF;
+    padding-bottom: 3em;
+    a {
+      color: $gf-blue-lighter; 
+    }
     h3 {
       font-style: italic;
       font-weight: 200;
       font-size: 120%;
     }
+    h4 {
+      font-weight: 500;
+    }
   }
 
   .member-detail {
     padding: 0 1em;
+    h4 {
+      margin-top: 0;
+      line-height: 180%;
+    }
     h4 > small {
       display: block;
     }
@@ -266,44 +307,10 @@ $gf-border-radius: 1.25em;
     }
   }
 
-  .welcome {
-    max-width: 320px;
-    margin: 0 auto;
-    padding-bottom: 5em;
-    text-align: center;
-    hr {
-      border-color: lighten($cr-blue, 30);
-    }
-    h1 {
-      text-transform: uppercase;
-      line-height: 160%;
-      > small,
-      > span {
-        font-weight: 100;
-        color: #FFF;
-        display: block;
-        font-size: 180%;
-      }
-      > small {
-        font-size: 50%;
-        font-weight: 200;
-      }
-      > span.cr-logo-svg {
-        @media (min-width: $screen-md-min) {
-          margin-top: -13px;
-        }
-        margin-bottom: -10px;
-        font-size: 80%;
-        svg {
-          max-width: 180px;
-        }
-      }
-    }
-  }
+  // ---------------------------- QA Flow
 
   .question-wrapper {
     @include clearfix;
-    padding-bottom: 3em;
   }
 
   .question.form-group {
@@ -349,5 +356,41 @@ $gf-border-radius: 1.25em;
     line-height: 130%;
     font-style: italic;
     margin-bottom: 1em;
+  }
+
+  // ---------------------------- Other
+
+  .welcome {
+    max-width: 320px;
+    margin: 0 auto;
+    text-align: center;
+    hr {
+      border-color: lighten($cr-blue, 30);
+    }
+    h1 {
+      text-transform: uppercase;
+      line-height: 160%;
+      > small,
+      > span {
+        font-weight: 100;
+        color: #FFF;
+        display: block;
+        font-size: 180%;
+      }
+      > small {
+        font-size: 50%;
+        font-weight: 200;
+      }
+      > span.cr-logo-svg {
+        @media (min-width: $screen-md-min) {
+          margin-top: -13px;
+        }
+        margin-bottom: -10px;
+        font-size: 80%;
+        svg {
+          max-width: 180px;
+        }
+      }
+    }
   }
 }
