@@ -1,4 +1,5 @@
 $gf-blue: #0F2D49;
+$gf-blue-light: #2C5671;
 $gf-blue-lighter: #158EDA;
 $gf-background: #2E5873;
 $gf-tabs: #AEAEAE;
@@ -58,6 +59,7 @@ $gf-border-radius: 1.25em;
   .host,
   .dashboard,
   .summary,
+  .results,
   .welcome {
     padding-bottom: 3em;
   }
@@ -70,6 +72,10 @@ $gf-border-radius: 1.25em;
 
   .btn-previous-question {
     @include button-variant($white, $gf-blue, $white);
+    background: transparent;
+    &:hover {
+      background: darken($gf-blue-light, 5);
+    }
   }
 
   .btn-standard-dark {
@@ -89,6 +95,21 @@ $gf-border-radius: 1.25em;
 
   .btns {
     margin-top: 2em;
+    .btn {
+      margin-bottom: 1em;
+    }
+  }
+
+  .input-group-btn {
+    font-size: inherit;
+    > .btn-primary {
+      @include border-right-radius(0.275em)
+      text-transform: uppercase;
+      font-weight: 500;
+      border: none;
+      padding: .515em 1.5em;
+      font-size: 95%;
+    }
   }
 
   // ---------------------------- Directives
@@ -113,8 +134,9 @@ $gf-border-radius: 1.25em;
     .group-images {
       @include clearfix;
       img {
-        max-width: 75px;
+        width: 75px;
         height: 75px;
+        max-width: 75px;
         border: 1px solid $gray-lighter;
         margin: 0 7px 15px;
       }
@@ -361,6 +383,10 @@ $gf-border-radius: 1.25em;
     line-height: 130%;
     font-style: italic;
     margin-bottom: 1em;
+  }
+
+  .results {
+    @include clearfix;
   }
 
   // ---------------------------- Other
