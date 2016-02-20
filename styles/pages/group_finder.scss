@@ -378,6 +378,12 @@ $gf-border-radius: 1.25em;
     }
   }
 
+  .rzNumber {
+    font-size: 280%;
+    line-height: 100%;
+    font-weight: 600;
+  }
+
   .help-block {
     color: $white;
     font-size: 90%;
@@ -423,6 +429,26 @@ $gf-border-radius: 1.25em;
           max-width: 180px;
         }
       }
+    }
+  }
+
+  rzslider {
+    .rz-bar {
+      height: 12px;
+      &.rz-selection {
+        background-color: lighten($cr-blue,2);
+      }
+    }
+    .rz-pointer {
+      @include box-shadow(1px 4px 5px 0px rgba(50, 50, 50, 0.75));
+      background-color: $white;
+      top: -11px;
+      &.rz-active:after {
+        background-color: $gray-light;
+      }
+    }
+    .rz-bubble {
+      display: none;
     }
   }
 
