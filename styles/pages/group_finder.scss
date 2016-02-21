@@ -195,6 +195,11 @@ $gf-border-radius: 1.25em;
     .img-circle {
       border: 3px solid $gray-lighter;
     }
+    .group-type {
+      text-transform: uppercase;
+      font-size: 90%;
+      color: $gray-light;
+    }
   }
 
   // ---------------------------- Dashboard
