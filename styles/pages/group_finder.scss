@@ -299,7 +299,7 @@ $gf-border-radius: 1.25em;
     background: #FFF;
     padding-bottom: 3em;
     a {
-      color: $gf-blue-lighter; 
+      color: $gf-blue-lighter;
     }
     h3 {
       font-style: italic;
@@ -357,6 +357,10 @@ $gf-border-radius: 1.25em;
       span {
         display: inline-block;
         padding: 0.3em 0 0.5em 0.4em;
+      }
+      label {
+        display: block;
+        width: 100%;
       }
     }
     .radio, .radio + .radio,
