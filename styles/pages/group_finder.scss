@@ -189,11 +189,19 @@ $gf-border-radius: 1.25em;
       width: 70px;
       padding-right: 20px;
       img {
-        max-width: 100px;
+        width: 100px;
+      }
+      .img-circle {
+        border: 3px solid $gray-lighter;
       }
     }
-    .img-circle {
-      border: 3px solid $gray-lighter;
+    .group-profile-picture {
+      .profile-pic {
+        background: transparent;
+      }
+      .profile-image {
+        margin-top: 0;
+      }
     }
     .group-type {
       text-transform: uppercase;
