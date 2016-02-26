@@ -70,7 +70,7 @@ $gf-border-radius: 1.25em;
     @include button-variant($white, $cr-blue, $cr-blue);
   }
 
-  .btn-previous-question {
+  .btn-previous-question, .btn-start-over {
     @include button-variant($white, $gf-blue, $white);
     background: transparent;
     &:hover {
@@ -87,7 +87,8 @@ $gf-border-radius: 1.25em;
   }
 
   .btn-next-question,
-  .btn-previous-question {
+  .btn-previous-question,
+  .btn-start-over {
     text-transform: uppercase;
     font-weight: 500;
     font-size: 90%;
@@ -392,6 +393,11 @@ $gf-border-radius: 1.25em;
       padding: 1em 1.25em;
       font-size: 95%;
       font-weight: 400;
+    }
+    select {
+      &.group-qa-day {
+        margin-top: 40px;
+      }
     }
   }
 
