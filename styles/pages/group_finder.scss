@@ -394,6 +394,11 @@ $gf-border-radius: 1.25em;
       font-size: 95%;
       font-weight: 400;
     }
+    select {
+      &.group-qa-day {
+        margin-top: 40px;
+      }
+    }
   }
 
   .rzNumber {
