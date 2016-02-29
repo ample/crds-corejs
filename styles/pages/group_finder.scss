@@ -5,6 +5,7 @@ $gf-background: #2E5873;
 $gf-tabs: #AEAEAE;
 $gf-tabs-active: #5E5E5E;
 $gf-border-radius: 1.25em;
+$gf-danger: #c9302c;
 
 .group-finder {
 
@@ -48,6 +49,17 @@ $gf-border-radius: 1.25em;
     float: left;
     position: static;
     margin: 0 0 1em;
+  }
+
+  .has-error {
+    background-color: $gf-danger;
+    color: $white;
+    border-radius: 0.2em;
+    span {
+      color: $white;
+      display: inline-block;
+      padding: 2px 15px;
+    }
   }
 
   .page-header {
@@ -393,11 +405,6 @@ $gf-border-radius: 1.25em;
       padding: 1em 1.25em;
       font-size: 95%;
       font-weight: 400;
-    }
-    select {
-      &.group-qa-day {
-        margin-top: 40px;
-      }
     }
   }
 
