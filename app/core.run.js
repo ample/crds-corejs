@@ -62,6 +62,7 @@
         && fromState.name !== 'logout'
         && fromState.name !== 'login'
         && fromState.name !== 'register'
+        && fromState.name.toLowerCase() !== ('group_finder')
         && !~fromState.name.toLowerCase().indexOf('password')
         && !~fromState.name.indexOf('give')) {
         Session.addRedirectRoute(fromState.name, fromParams);
@@ -69,6 +70,7 @@
         && toState.name !== 'logout'
         && toState.name !== 'login'
         && toState.name !== 'register'
+        && toState.name.toLowerCase() !== ('group_finder')
         && !~toState.name.toLowerCase().indexOf('password')
         && !~toState.name.indexOf('give')) {
         Session.addRedirectRoute(toState.name, toParams);
